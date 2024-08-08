@@ -1,31 +1,18 @@
-'use client';
+import { useLocale, useTranslations } from 'next-intl';
+import LocaleSwitcherSelect from './LocaleSwitcherSelect';
+import { locales } from '@/config';
 
-import { useLocale } from 'next-intl';
-import styles from './LocaleSwitcher.module.scss';
-import { ChangeEvent } from 'react';
-import { useRouter } from '@/navigation';
-
-const LocaleSwitcher = () => {
-  const currentLocale = useLocale();
-  const router = useRouter();
-
-  const changeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = event.target.value;
-    router.replace(`${nextLocale}`);
-  };
+export default function LocaleSwitcher() {
+  const t = useTranslations('LocaleSwitcher');
+  const locale = useLocale();
 
   return (
-    <label>
-      <select
-        className={styles.select}
-        defaultValue={currentLocale}
-        onChange={changeHandler}
-      >
-        <option value="en">en</option>
-        <option value="fr">fr</option>
-      </select>
-    </label>
+    <LocaleSwitcherSelect defaultValue={locale} label={t('label')}>
+      {locales.map((cur) => (
+        <option key={cur} value={cur}>
+          {t('locale', { locale: cur })}
+        </option>
+      ))}
+    </LocaleSwitcherSelect>
   );
-};
-
-export default LocaleSwitcher;
+}

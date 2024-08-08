@@ -4,10 +4,9 @@
 - Gestion des erreurs: il gère les cas ou la locale demandée n'est pas supportée en renvoyant une 404.
 */
 
-import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
-
-const locales = ['en', 'fr'];
+import { notFound } from 'next/navigation';
+import { locales } from './config';
 
 export default getRequestConfig(async ({ locale }) => {
   // Valide que le paramètre `locale` entrant est valide

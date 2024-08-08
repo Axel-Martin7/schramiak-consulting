@@ -5,11 +5,11 @@ Ce fichier est utilisé pour gérer les aspects liés à la localisation des URL
 */
 
 import createMiddleware from 'next-intl/middleware';
+import { locales } from './config';
 
 export default createMiddleware({
   // Liste de toutes les locales qui sont supportées
-  locales: ['en', 'fr'],
-
+  locales,
   // Utilisé lorsqu'aucune locale ne correspond
   defaultLocale: 'en',
 });
