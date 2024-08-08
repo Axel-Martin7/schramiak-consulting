@@ -1,11 +1,16 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 export default function Home() {
   const t = useTranslations('HomePage');
+
   return (
     <main className={styles.main}>
+      <Link href={'/about'}>
+        <p>About</p>
+      </Link>
       <h1>{t('title')}</h1>
     </main>
   );

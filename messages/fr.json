@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "Bonjour Monde!"
+  },
+  "AboutPage": {
+    "title": "Bonjour about!"
   }
 }
