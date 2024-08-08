@@ -1,10 +1,24 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-export default function Home() {
+type Props = {
+  params: { locale: string };
+};
+
+export default function Home({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale); // Appeler cette fonction sur chaques pages et layout ou on souhaite activer le rendu statique. https://www.youtube.com/watch?v=h3IA_Iax-dk
+
+  const t = useTranslations('HomePage');
+
   return (
     <main className={styles.main}>
-      <h1>Hello World!</h1>
+      <Link href={'/about'}>
+        <p>About</p>
+      </Link>
+      <h1>{t('title')}</h1>
     </main>
   );
 }

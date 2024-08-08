@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Bonjour Monde!"
+  },
+  "LocaleLayout": {
+    "metadata-title": "un exemple de next-intl",
+    "metadata-description": "Généré en créant une app Next"
+  },
+  "LocaleSwitcher": {
+    "label": "Changez de langue",
+    "locale": "{locale, select, fr {Français} en {English} other {Inconnue}}"
+  },
+
+  "AboutPage": {
+    "title": "Bonjour about!"
+  }
+}
