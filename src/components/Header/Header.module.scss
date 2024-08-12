@@ -1,6 +1,31 @@
 .header {
-  height: 80px;
+  position: fixed; // Fixe le header en haut de la page
+  top: 0;
+  left: 0;
+  width: 100%; // Le header couvre toute la largeur de la fenêtre
+  height: 60px; // Hauteur du header
+  z-index: 1002; // Place le header au-dessus du panneau déroulant et au même niveau que le burger menu
+  background-color: #fff; // Exemple de couleur de fond du header
   display: flex;
-  justify-content: space-around;
-  border: 1px solid red;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; // Ajoute du padding à gauche et à droite
+}
+.navbarDesktop {
+  display: none;
+}
+
+.burgerMenuContainer {
+  display: block;
+}
+
+/* Media queries pour la version desktop */
+@media (min-width: 768px) {
+  .navbarDesktop {
+    display: block;
+  }
+
+  .burgerMenuContainer {
+    display: none;
+  }
 }

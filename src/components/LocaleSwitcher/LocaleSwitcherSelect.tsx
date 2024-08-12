@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './LocaleSwitcherSelect.module.scss';
 import { usePathname, useRouter } from '@/navigation';
 import { useParams } from 'next/navigation';

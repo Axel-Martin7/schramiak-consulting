@@ -15,9 +15,6 @@ export default function Home({ params: { locale } }: Props) {
 
   return (
     <main className={styles.main}>
-      <Link href={'/about'}>
-        <p>About</p>
-      </Link>
       <h1>{t('title')}</h1>
     </main>
   );

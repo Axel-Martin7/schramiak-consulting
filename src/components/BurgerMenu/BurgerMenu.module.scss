@@ -1,0 +1,116 @@
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  // border: 1px solid red;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &-line {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.open {
+    .line1 {
+      transform: rotate(45deg) translate(6px, 5px);
+    }
+
+    .line2 {
+      opacity: 0;
+    }
+
+    .line3 {
+      transform: rotate(-45deg) translate(6px, -5px);
+    }
+  }
+}
+
+// // * Styles pour le bouton du menu burger
+// .burgerMenu {
+//   position: relative; // Positionne les lignes relativement pour permettre les transformations
+//   width: 30px; // Largeur du bouton burger
+//   height: 20px; // Hauteur totale du bouton (comprend les trois lignes)
+//   display: flex; // Les lignes du burger menu sont disposées en colonne
+//   flex-direction: column; // Les lignes sont empilées verticalement
+//   justify-content: space-between; // Espacement égal entre chaque ligne
+
+//   .line {
+//     width: 100%; // Chaque ligne occupe toute la largeur du bouton
+//     height: 3px; // Hauteur de chaque ligne
+//     background-color: #000; // Couleur des lignes (noir ici)
+//     border-radius: 3px; // Arrondit les coins des lignes pour un effet visuel agréable
+//   }
+//   // Lorsque le menu est ouvert (classe "open" ajoutée dynamiquement)
+//   &.open .line:nth-child(1) {
+//     transform: rotate(
+//       45deg
+//     ); // Fait pivoter la première ligne de 45 degrés pour former une diagonale
+//     position: absolute; // Positionnement absolu pour gérer la transformation
+//     top: 8px; // Positionne la première ligne verticalement au centre du bouton
+//     transform-origin: center; // Assure que la rotation se fait à partir du centre de la ligne
+//   }
+//   &.open .line:nth-child(2) {
+//     opacity: 0; // Règle l'opacité de la deuxième ligne à 0 pour la rendre invisible
+//   }
+//   &.open .line:nth-child(3) {
+//     transform: rotate(
+//       -45deg
+//     ); // Fait pivoter la troisième ligne de -45 degrés pour former l'autre diagonale
+//     position: absolute; // Positionnement absolu pour gérer la transformation
+//     bottom: 8px; // Positionne la troisième ligne verticalement au centre du bouton
+//     transform-origin: center; // Assure que la rotation se fait à partir du centre de la ligne
+//   }
+// }
+
+// ______________________________________________________________________________________________________________-
+// .burgerMenu {
+//
+
+//   border: none; // Supprime les bordures par défaut du bouton
+//   background: none; // Pas de fond pour le bouton
+//
+//   padding: 0;
+//
+//   z-index: 1002; // Place le bouton burger au-dessus du panneau déroulant et à la même hauteur que le header
+
+// // Panneau déroulant qui commence en dessous du header
+// .menuPanel {
+//
+//
+//
+//
+//
+//
+
+//
+
+//   // Contenu du panneau déroulant, centré avec Flexbox
+//   .menuContent {
+//
+
+//     ul {
+//       list-style: none; // Supprime les puces des éléments de la liste
+//       text-align: center; // Centre le texte des éléments de la liste
+
+//       li {
+//         margin: 20px 0; // Ajoute un espace vertical entre les éléments du menu
+//       }
+
+//       a {
+//         color: #fff; // Définit la couleur des liens en blanc pour les rendre visibles sur le fond sombre
+//         font-size: 24px; // Augmente la taille de la police des liens pour une meilleure lisibilité
+//         text-decoration: none; // Supprime le soulignement par défaut des liens
+//         transition: color 0.3s ease; // Transition fluide pour le changement de couleur au survol
+
+//         &:hover {
+//           color: #ff6347; // Change la couleur des liens en orange lors du survol pour un effet interactif
+//         }
+//       }
+//     }
+//   }
+// }
