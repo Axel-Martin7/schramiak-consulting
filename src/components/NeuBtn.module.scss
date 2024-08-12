@@ -1,0 +1,136 @@
+// .neuButton {
+//   // border: 1px solid red;
+//   position: absolute; // Positionne l'élément en utilisant des coordonnées absolues par rapport à son premier parent positionné.
+//   transform: translate(
+//     -50%,
+//     -50%
+//   ); // Centre l'élément par rapport à son propre centre en utilisant une translation de -50% de sa taille.
+//   left: 50%; // Positionne l'élément horizontalement au centre de son conteneur parent.
+//   top: 50%; // Positionne l'élément verticalement au centre de son conteneur parent.
+
+//   width: 200px;
+//   height: 200px;
+//   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+//     10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute une ombre portée externe pour créer un effet de "neumorphisme".Ajoute une ombre portée externe pour créer un effet de "neumorphisme".
+//   border-radius: 50%; // Rend l'élément circulaire en appliquant un rayon de bordure égal à 50% de sa taille.
+//   border: solid 8px #ececec; // Ajoute une bordure solide de 8 pixels de couleur gris clair (#ececec) autour de l'élément.
+// }
+
+// .active {
+//   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+//     10px 10px 15px rgba(70, 70, 70, 0.15),
+//     inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+//     inset 10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute des ombres internes supplémentaires lorsque le bouton est actif.
+//   &::before {
+//     color: #ff5c58; // Change la couleur de l'icône en rouge (#ff5c58) lorsque le bouton est actif.
+//   }
+// }
+
+.neuButton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.15);
+  border-radius: 50%;
+  border: solid 8px #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.15),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+}
+
+.burger {
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &-line {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.open {
+    .line1 {
+      transform: rotate(45deg) translate(6px, 5px);
+    }
+
+    .line2 {
+      opacity: 0;
+    }
+
+    .line3 {
+      transform: rotate(-45deg) translate(6px, -5px);
+    }
+  }
+}
+
+.menuPanel {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menuContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
+// ---- CODE DE BASE DU BOUTON, CE QUE JE N'AI PAS INCORPORé :  __________________________________
+// .neuButton {
+
+//   -webkit-appearance: none; // Supprime l'apparence par défaut du bouton.
+//   -moz-appearance: none; // Supprime l'apparence par défaut du bouton sur Firefox.
+//   appearance: none; // Supprime l'apparence par défaut du bouton.
+//   background: none; // Supprime le fond par défaut du bouton.
+//   border: none; // Supprime la bordure par défaut du bouton.
+
+//   outline: none; // Supprime le contour de focus par défaut qui apparaît lors de la sélection du bouton.
+
+//   display: flex; // Utilise Flexbox pour permettre le centrage du contenu interne.
+//   justify-content: center; // Centre le contenu à l'intérieur du bouton horizontalement.
+//   align-items: center; // Centre le contenu à l'intérieur du bouton verticalement.
+
+//   cursor: pointer; // Change le curseur en icône de main pour indiquer que l'élément est cliquable.
+
+//   &::before {
+//     font-family: 'Font Awesome 5 Free'; // Spécifie la police utilisée pour afficher l'icône dans le bouton.
+//     content: '\f0eb'; // Définit l'icône à afficher (ici une icône d'ampoule, utilisant Font Awesome).
+//     color: #000; // Définit la couleur de l'icône à noir.
+//     font-size: 5rem; // Définit la taille de l'icône à 5 rem (environ 80 pixels en fonction de la taille de la police de base).
+//   }
+// }
