@@ -113,6 +113,7 @@
   &.open {
     .line1 {
       transform: rotate(45deg) translate(6px, 5.5px);
+      background-color: cyan;
     }
 
     .line2 {
@@ -121,6 +122,7 @@
 
     .line3 {
       transform: rotate(-45deg) translate(6px, -5.5px);
+      background-color: cyan;
     }
   }
 }
