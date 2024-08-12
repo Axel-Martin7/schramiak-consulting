@@ -68,28 +68,59 @@
 // }
 
 .buttonContainer {
-  position: absolute; // Positionne l'élément en utilisant des coordonnées absolues par rapport à son premier parent positionné.
-  transform: translate(
-    -50%,
-    -50%
-  ); // Centre l'élément par rapport à son propre centre en utilisant une translation de -50% de sa taille.
-  left: 50%; // Positionne l'élément horizontalement au centre de son conteneur parent.
-  top: 50%; // Positionne l'élément verticalement au centre de son conteneur parent.
+  width: 60px;
+  height: 60px;
 
-  width: 80px;
-  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-    10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute une ombre portée externe pour créer un effet de "neumorphisme".Ajoute une ombre portée externe pour créer un effet de "neumorphisme".
-  border-radius: 50%; // Rend l'élément circulaire en appliquant un rayon de bordure égal à 50% de sa taille.
-  border: solid 8px #ececec; // Ajoute une bordure solide de 8 pixels de couleur gris clair (#ececec) autour de l'élément.
+    10px 10px 15px rgba(70, 70, 70, 0.15);
+
+  border-radius: 50%;
+  border: solid 8px #ececec;
+
+  // cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .active {
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
     10px 10px 15px rgba(70, 70, 70, 0.15),
     inset -10px -10px 15px rgba(255, 255, 255, 0.5),
-    inset 10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute des ombres internes supplémentaires lorsque le bouton est actif.
-  &::before {
-    color: #ff5c58; // Change la couleur de l'icône en rouge (#ff5c58) lorsque le bouton est actif.
+    inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+}
+
+.burger {
+  width: 24px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // cursor: pointer;
+  // transition: all 0.3s ease-in-out;
+  // border: 1px solid yellow;
+
+  &-line {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.open {
+    .line1 {
+      transform: rotate(45deg) translate(6px, 5.5px);
+    }
+
+    .line2 {
+      opacity: 0;
+    }
+
+    .line3 {
+      transform: rotate(-45deg) translate(6px, -5.5px);
+    }
   }
 }

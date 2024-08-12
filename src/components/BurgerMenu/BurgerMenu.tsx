@@ -47,6 +47,12 @@ export default function BurgerMenu() {
     <button
       className={`${styles.buttonContainer} ${isActive ? styles.active : ''}`}
       onClick={toggleActive}
-    ></button>
+    >
+      <div className={`${styles.burger} ${isActive ? styles.open : ''}`}>
+        <div className={`${styles['burger-line']} ${styles.line1}`}></div>
+        <div className={`${styles['burger-line']} ${styles.line2}`}></div>
+        <div className={`${styles['burger-line']} ${styles.line3}`}></div>
+      </div>
+    </button>
   );
 }
