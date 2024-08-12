@@ -21,46 +21,11 @@ export default function BurgerMenu() {
         <div className={`${styles['burger-line']} ${styles.line2}`}></div>
         <div className={`${styles['burger-line']} ${styles.line3}`}></div>
       </button>
+      <div className={`${styles.menuPanel} ${isOpen ? styles.open : ''}`}>
+        <div className={styles.menuContent}>
+          <p>Bonjour panneau</p>
+        </div>
+      </div>
     </>
   );
 }
-
-//   return (
-//     <>
-//       {/* Bouton Burger Menu -> */}
-//       {/*-------------------  La classe 'open' est ajoutée dynamiquement si isOpen est true, ce qui déclenche l'animation */}
-//       <button
-//         className={`${styles.burgerMenu} ${isOpen ? styles.open : ''}`}
-//         onClick={toggleMenu}
-//       >
-//         <span className={styles.line}></span>
-//         <span className={styles.line}></span>
-//         <span className={styles.line}></span>
-//       </button>
-
-//       {/* Panneau déroulant qui apparaît lorsque le menu est ouvert */}
-//       {/* ----------------------- La classe 'open' est ajoutée dynamiquement pour rendre le panneau visible */}
-//       {/* ----------------------- Ce panneau est placé au niveau supérieur pour ne pas couvrir les éléments du header */}
-//       <div className={`${styles.menuPanel} ${isOpen ? styles.open : ''}`}>
-//         {/* Contenu du panneau (ici, un menu de navigation) */}
-//         <div className={styles.menuContent}>coucou le panneau</div>
-//         {/* <nav className={styles.menuContent}>
-//           <ul>
-//             <li>
-//               <a href="#home">Home</a>
-//             </li>
-//             <li>
-//               <a href="#about">About</a>
-//             </li>
-//             <li>
-//               <a href="#services">Services</a>
-//             </li>
-//             <li>
-//               <a href="#contact">Contact</a>
-//             </li>
-//           </ul>
-//         </nav> */}
-//       </div>
-//     </>
-//   );
-// }
