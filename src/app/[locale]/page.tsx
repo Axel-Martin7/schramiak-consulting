@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import NeuBtn from '@/components/NeuBtn';
 
 type Props = {
   params: { locale: string };
@@ -15,10 +16,8 @@ export default function Home({ params: { locale } }: Props) {
 
   return (
     <main className={styles.main}>
-      <Link href={'/about'}>
-        <p>About</p>
-      </Link>
       <h1>{t('title')}</h1>
+      <NeuBtn />
     </main>
   );
 }

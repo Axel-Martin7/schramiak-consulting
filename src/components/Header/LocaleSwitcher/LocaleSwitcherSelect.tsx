@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './LocaleSwitcherSelect.module.scss';
 import { usePathname, useRouter } from '@/navigation';
 import { useParams } from 'next/navigation';
@@ -33,7 +34,8 @@ export default function LocaleSwitcherSelect({
 
   return (
     <label>
-      <p>{label}</p>
+      {/* <p>{label}</p> */}
+
       <select
         className={styles.select}
         defaultValue={defaultValue}

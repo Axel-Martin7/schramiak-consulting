@@ -7,9 +7,10 @@ import {
 } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.scss';
-import Header from '@/components/Header/Header';
+
 import { ReactNode } from 'react';
 import { locales } from '@/config';
+import Header from '@/components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -47,30 +48,10 @@ export default async function Layout({ children, params: { locale } }: Props) {
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <Header />
+
           {children}
         </NextIntlClientProvider>
       </body>
     </html>
   );
 }
-
-// export default async function LocaleLayout({
-//   children,
-//   params: { locale },
-// }: {
-//   children: React.ReactNode;
-//   params: { locale: string };
-// }) {
-//   // Providing all messages to the client side is the easiest way to get started
-//   const messages = await getMessages();
-//   return (
-//     <html lang={locale}>
-//       <body className={inter.className}>
-//         <NextIntlClientProvider messages={messages}>
-//           <Header />
-//           {children}
-//         </NextIntlClientProvider>
-//       </body>
-//     </html>
-//   );
-// }
