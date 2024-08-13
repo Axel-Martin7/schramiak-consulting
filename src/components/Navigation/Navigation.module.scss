@@ -3,6 +3,14 @@
   align-items: center;
   justify-content: center;
 
+  border: solid 8px #ececec;
+  padding: 15px 20px;
+  border-radius: 20px;
+
+  background-color: #ececec;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute une ombre autour du bouton pour donner un effet de relief
+
   .navList {
     display: flex;
     gap: 20px;

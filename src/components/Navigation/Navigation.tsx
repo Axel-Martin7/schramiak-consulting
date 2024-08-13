@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from '@/navigation';
 import styles from './Navigation.module.scss';
 
-type NavigationProps = {
-  orientation?: 'horizontal' | 'vertical';
-};
-
 export default function Navigation() {
   console.log('ServerComponent');
   return (

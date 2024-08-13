@@ -34,7 +34,8 @@ export default function LocaleSwitcherSelect({
 
   return (
     <label>
-      <p>{label}</p>
+      {/* <p>{label}</p> */}
+
       <select
         className={styles.select}
         defaultValue={defaultValue}

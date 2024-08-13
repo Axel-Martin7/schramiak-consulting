@@ -8,6 +8,7 @@ export default function LocaleSwitcher() {
 
   return (
     <LocaleSwitcherSelect defaultValue={locale} label={t('label')}>
+      {/* Remplacer `t('label')` par `''` */}
       {locales.map((cur) => (
         <option key={cur} value={cur}>
           {t('locale', { locale: cur })}
