@@ -1,130 +1,37 @@
-.welcomeContainer {
+.welcomeSection {
   height: calc(100vh - 100px);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: #ececec;
   border: 1px solid black;
 
-  .circlesContainer {
+  .contentContainer {
     position: relative;
-    width: 90%;
-    height: 90%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     border: 1px solid red;
+    width: 100%;
+    max-width: 600px;
+    min-width: 280px;
+    aspect-ratio: 1/1;
 
     .circle {
-      width: 600px;
-      height: 600px;
-      border: 1px solid orange;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // border: 1px solid blue;
       border-radius: 50%;
       clip-path: ellipse(100% 50% at 50% 0%);
       box-shadow: 0px -100px 50px -26px rgba(255, 255, 255, 0.9);
     }
 
-    .shadowsCircle {
+    .shadowCircle {
       position: absolute;
-      top: 112px;
-      width: 600px;
-      height: 600px;
-      border: 1px solid blue;
+      width: 100%;
+      height: 100%;
+      // border: 1px solid green;
       border-radius: 50%;
       clip-path: ellipse(100% 35% at 50% 0%);
       box-shadow: inset 0px 19px 10px -14px rgba(70, 70, 70, 0.15);
     }
   }
 }
-
-// .welcomeContainer {
-//   height: calc(100vh - 100px);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   background-color: #ececec;
-//   border: 1px solid black;
-
-//   .circlesContainer {
-//     position: relative;
-//     width: 90%;
-//     height: 90%;
-//     border: 1px solid red;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     .circle {
-//       position: relative;
-//       width: 600px;
-//       height: 600px;
-
-//       border: 1px solid orange;
-//       // border: solid 8px #ececec;
-//       border-radius: 50%;
-//       clip-path: ellipse(100% 50% at 50% 0%);
-//       box-shadow: 0px -100px 50px -26px rgba(255, 255, 255, 0.9);
-//       // inset 0px -5px 10px rgba(0, 0, 0, 0.1);
-//     }
-
-//     .lightCircle {
-//       position: absolute;
-//       width: 600px;
-//       height: 600px;
-
-//       border: 1px solid blue;
-//       border-radius: 50%;
-//       top: 113px;
-
-//       clip-path: ellipse(100% 35% at 50% 0%);
-//       box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1);
-//     }
-//   }
-// }
-
-// _________________________________________________________-
-// .welcomeContainer {
-//   border: 1px solid black;
-//   height: calc(100vh - 100px);
-//   background-color: #ececec;
-
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   .presentationContainer {
-//     border: 1px solid red;
-//     height: 90%;
-//     width: 90%;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     .circleContainer {
-//       position: relative;
-//       height: 50%; // Adjust this to match the circle's size in relation to the container
-//       width: 100%;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-
-//       .halfCircle {
-//         position: relative;
-//         width: 50%; // Adjust this to match the circle's size
-//         height: 0;
-//         padding-bottom: 50%; // This ensures the circle's aspect ratio remains 1:1
-//         border-radius: 50%;
-//         background: #f5f5f5; // Adjust this color to match the circle's background
-
-//         box-shadow: 0px -30px 50px 0px rgba(255, 255, 255, 0.9); // This replicates the light effect
-//       }
-//     }
-//   }
-// }
