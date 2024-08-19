@@ -26,12 +26,12 @@
 import React from 'react';
 import styles from './Welcome.module.scss';
 import Image from 'next/image';
-import backgroundImg from '../../../../public/modern-background4.jpg';
+import backgroundImg from '../../../../public/modern-background14.jpg';
 
 export default function Welcome() {
   return (
     <section className={styles.welcomeSection}>
-      <div className={styles.imageContainer}>
+      {/* <div className={styles.imageContainer}>
         <Image
           className={styles.image}
           alt="Background image"
@@ -41,7 +41,7 @@ export default function Welcome() {
           fill
           sizes="100vh"
         ></Image>
-      </div>
+      </div> */}
       <div className={styles.contentContainer}>
         <div className={styles.circle}></div>
         <div className={styles.shadowCircle}></div>
