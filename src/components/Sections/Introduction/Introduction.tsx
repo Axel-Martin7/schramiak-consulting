@@ -29,6 +29,9 @@ export default function Introduction() {
   return (
     <section className={styles.introductionSection}>
       <div className={styles.shapesContainer}>
+        <div className={styles.contentDiamond}>
+          <div className={styles.textContainer}>Coucou</div>
+        </div>
         <div className={styles.decorationDiamonds}>
           <div className={styles.diamond2}></div>
           <div className={styles.diamond3}></div>

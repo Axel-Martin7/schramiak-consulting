@@ -10,7 +10,28 @@
     align-items: center;
     border: 1px solid red;
 
+    .contentDiamond {
+      // Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
+      z-index: 2;
+      position: absolute;
+      width: calc(100% / sqrt(2));
+      max-width: calc(600px / sqrt(2));
+      min-width: calc(280px / sqrt(2));
+      transform: rotate(45deg);
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid red;
+
+      .textContainer {
+        transform: rotate(-45deg);
+        border: 1px solid yellow;
+      }
+    }
+
     .decorationDiamonds {
+      // Ce diamand va servir de base pour la création des autres diamants décoratifs
       position: relative;
       width: calc(100% / sqrt(2));
       max-width: calc(600px / sqrt(2));
