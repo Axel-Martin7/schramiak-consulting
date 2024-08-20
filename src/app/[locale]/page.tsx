@@ -3,8 +3,9 @@ import styles from './page.module.scss';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Welcome from '@/components/Sections/Welcome/Welcome';
-import WelcomeSquares from '@/components/Sections/Welcome/WelcomeSquares';
+import Welcome from '@/components/Sections/Introduction/Welcome';
+
+import Introduction from '@/components/Sections/Introduction/Introduction';
 
 type Props = {
   params: { locale: string };
@@ -19,7 +20,8 @@ export default function Home({ params: { locale } }: Props) {
     <main className={styles.main}>
       {/* <h1>{t('title')}</h1> */}
       {/* <Welcome /> */}
-      <WelcomeSquares />
+
+      <Introduction />
     </main>
   );
 }
