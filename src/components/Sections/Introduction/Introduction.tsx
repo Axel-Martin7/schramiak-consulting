@@ -7,7 +7,9 @@ export default function Introduction() {
       <div className={styles.shapesContainer}>
         <div className={styles.contentDiamond}>
           <div className={styles.textContainer}>Coucou</div>
+          <div className={styles.shadowEllipse}></div>
         </div>
+
         <div className={styles.decorationDiamonds}>
           <div className={styles.diamond2}></div>
           <div className={styles.diamond3}></div>
