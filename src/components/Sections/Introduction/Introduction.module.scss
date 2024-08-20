@@ -11,7 +11,7 @@
     border: 1px solid red;
 
     .contentDiamond {
-      // Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
+      //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
       z-index: 2;
       position: absolute;
       width: calc(100% / sqrt(2));
@@ -23,6 +23,8 @@
       justify-content: center;
       align-items: center;
       border: 1px solid red;
+      background-color: grey;
+      // background-color: red;
 
       .textContainer {
         transform: rotate(-45deg);
@@ -31,7 +33,7 @@
     }
 
     .decorationDiamonds {
-      // Ce diamand va servir de base pour la création des autres diamants décoratifs
+      //* Ce diamand va servir de base pour la création des autres diamants décoratifs
       position: relative;
       width: calc(100% / sqrt(2));
       max-width: calc(600px / sqrt(2));
@@ -51,12 +53,14 @@
       }
 
       .diamond2 {
+        z-index: 1;
         bottom: -60%; /* Place the square at the bottom */
         left: 50%; /* Align the left edge of the square to the center */
         transform: translateX(-50%); /* Center the square horizontally */
         width: 72.31%;
 
         border: 1px solid blue;
+        background-color: lightgrey;
       }
 
       .diamond3 {
@@ -89,6 +93,7 @@
         width: 47.69%;
 
         border: 1px solid yellowgreen;
+        background-color: grey;
       }
 
       .diamond7 {
@@ -98,140 +103,53 @@
 
         border: 1px solid yellowgreen;
       }
+
+      // * Polygones pour effet 3D avec ombres en dégradés autour des diamants
+      .polygon3,
+      .polygon4,
+      .polygon5,
+      .polygon6,
+      .polygon7 {
+        position: absolute;
+        top: 50%; // postionne le polygone au centre absolu du diamant
+        left: 50%; // postionne le polygone au centre absolu du diaman
+
+        background-color: rgba(255, 0, 255, 0.14);
+      }
+      .polygon3 {
+        width: 400%;
+        height: 400%;
+        transform: translate(-50%, -50%) rotate(266deg);
+        clip-path: polygon(50% 50%, 57.7% 73.1%, 75.8% 57.37%);
+      }
+      .polygon4 {
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%) rotate(210deg);
+        clip-path: polygon(50% 50%, 58.4% 78%, 84% 63.5%);
+      }
+      .polygon5 {
+        width: 380%;
+        height: 380%;
+        transform: translate(-50%, -50%) rotate(107deg);
+        clip-path: polygon(50% 50%, 61.7% 77.4%, 70.7% 60.87%);
+        background-color: rgba(255, 0, 255, 0.14);
+      }
+      .polygon6 {
+        z-index: -1;
+        width: 400%;
+        height: 400%;
+        transform: translate(-50%, -50%) rotate(74deg);
+        clip-path: polygon(50% 50%, 63.7% 74.96%, 78.46% 66.78%);
+      }
+
+      .polygon7 {
+        z-index: -1;
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%) rotate(318deg);
+        clip-path: polygon(50% 50%, 63.6% 81.2%, 79.2% 64%);
+      }
     }
   }
 }
-
-// .welcomeSection {
-//   height: calc(100vh - 100px);
-//   border: 1px solid black;
-
-//   .squaresContainer {
-//     height: 100%;
-//     width: 100%;
-//     border: 1px solid red;
-//     display: flex;
-
-//     justify-content: center;
-//     align-items: center;
-
-//     .contentSquare {
-//       z-index: 99;
-//       position: absolute;
-//       border: 1px solid orange;
-//       // background-color: orange;
-//       width: calc(100% / sqrt(2));
-//       max-width: calc(600px / sqrt(2));
-//       min-width: calc(280px / sqrt(2));
-//       transform: rotate(45deg);
-//       aspect-ratio: 1/1;
-//     }
-
-//     .square {
-//       z-index: 1;
-//       position: relative;
-//       border: 1px solid orange;
-//       width: calc(100% / sqrt(2));
-//       max-width: calc(600px / sqrt(2));
-//       min-width: calc(280px / sqrt(2));
-//       transform: rotate(45deg);
-//       aspect-ratio: 1/1;
-
-//       background: linear-gradient(145deg, #ffffff, #e6e6e6);
-//       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-//       border: 1px solid white;
-//       background-color: #ececec;
-//       box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-//         10px 10px 15px rgba(70, 70, 70, 0.15);
-
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-
-//       .textContainer {
-//         border: 1px solid yellow;
-//         transform: rotate(-45deg);
-//       }
-
-//       .square2 {
-//         z-index: 2;
-//         position: absolute;
-//         bottom: -60%; /* Place the square at the bottom */
-//         left: 50%; /* Align the left edge of the square to the center */
-//         transform: translateX(-50%); /* Center the square horizontally */
-//         width: 72.31%;
-//         aspect-ratio: 1/1;
-
-//         border: 1px solid white;
-//         background-color: #ececec;
-//         box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-//           10px 10px 15px rgba(70, 70, 70, 0.15);
-//       }
-
-//       .square3 {
-//         position: absolute;
-//        c
-//         // transform: translateX(-50%); /* Center the square horizontally */
-//         border: 1px solid blue;
-//         width: 67.69%;
-//         aspect-ratio: 1/1;
-//       }
-
-//       .square4 {
-//         position: absolute;
-//         bottom: 107%;
-//         left: 5%;
-//         border: 1px solid green;
-//         width: 58.46%;
-//         aspect-ratio: 1/1;
-//       }
-
-//       .square5 {
-//         position: absolute;
-//         top: 62%;
-//         right: 112%;
-//         border: 1px solid green;
-//         width: 50.77%;
-//         aspect-ratio: 1/1;
-//       }
-
-//       .square6 {
-//         position: absolute;
-//         top: 130%;
-//         right: 83%;
-//         border: 1px solid yellowgreen;
-//         width: 47.69%;
-//         aspect-ratio: 1/1;
-//         background-color: grey;
-//       }
-
-//       .square7 {
-//         position: absolute;
-//         bottom: 22%;
-//         left: 112%;
-//         border: 1px solid yellowgreen;
-//         width: 46.15%;
-//         aspect-ratio: 1/1;
-
-//         background: linear-gradient(145deg, #ffffff, #e6e6e6);
-//         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-//       }
-
-//       .triange6 {
-//         position: absolute;
-//         background: linear-gradient(90deg, transparent 0%, #6c6c6c 100%);
-//         // background-color: fuchsia;
-//         clip-path: polygon(
-//           50% 50%,
-//           /* Center point of square */ 50% 100%,
-//           /* Bottom-left corner of square6 */ 100% 100%
-//             /* Bottom-right corner of square6 */
-//         );
-//         width: 133%;
-//         height: 227%;
-//         z-index: -2; /* Placed under the square */
-//         transform: rotate(45deg);
-//       }
-//     }
-//   }
-// }
