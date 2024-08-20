@@ -9,13 +9,14 @@
     justify-content: center;
     align-items: center;
     border: 1px solid red;
+    overflow: hidden;
 
     .contentDiamond {
       //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
       z-index: 2;
       position: absolute;
       width: calc(100% / sqrt(2));
-      max-width: calc(600px / sqrt(2));
+      max-width: calc(400px / sqrt(2));
       min-width: calc(280px / sqrt(2));
       transform: rotate(45deg);
       aspect-ratio: 1/1;
@@ -36,7 +37,7 @@
       //* Ce diamand va servir de base pour la création des autres diamants décoratifs
       position: relative;
       width: calc(100% / sqrt(2));
-      max-width: calc(600px / sqrt(2));
+      max-width: calc(400px / sqrt(2));
       min-width: calc(280px / sqrt(2));
       transform: rotate(45deg);
       aspect-ratio: 1/1;
@@ -64,8 +65,8 @@
       }
 
       .diamond3 {
-        bottom: 87%;
-        left: 72%;
+        bottom: 86%;
+        left: 78%;
         width: 67.69%;
 
         border: 1px solid blue;
@@ -73,7 +74,7 @@
 
       .diamond4 {
         bottom: 107%;
-        left: 5%;
+        left: 8%;
         width: 58.46%;
 
         border: 1px solid green;
@@ -97,7 +98,7 @@
       }
 
       .diamond7 {
-        bottom: 22%;
+        bottom: 29%;
         left: 112%;
         width: 46.15%;
 
@@ -120,13 +121,13 @@
         width: 400%;
         height: 400%;
         transform: translate(-50%, -50%) rotate(266deg);
-        clip-path: polygon(50% 50%, 57.7% 73.1%, 75.8% 57.37%);
+        clip-path: polygon(50% 50%, 57.4% 74.6%, 75.5% 58.9%);
       }
       .polygon4 {
         width: 200%;
         height: 200%;
         transform: translate(-50%, -50%) rotate(210deg);
-        clip-path: polygon(50% 50%, 58.4% 78%, 84% 63.5%);
+        clip-path: polygon(50% 50%, 56.7% 79.2%, 82.3% 64.4%);
       }
       .polygon5 {
         width: 380%;
@@ -148,7 +149,7 @@
         width: 200%;
         height: 200%;
         transform: translate(-50%, -50%) rotate(318deg);
-        clip-path: polygon(50% 50%, 63.6% 81.2%, 79.2% 64%);
+        clip-path: polygon(50% 50%, 66% 78.7%, 81.4% 61.3%);
       }
     }
   }
