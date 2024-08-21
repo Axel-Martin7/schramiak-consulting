@@ -1,12 +1,33 @@
 import React from 'react';
 import styles from './Introduction.module.scss';
+import { barlow } from '@/styles/font';
 
 export default function Introduction() {
   return (
     <section className={styles.introductionSection}>
       <div className={styles.shapesContainer}>
         <div className={styles.contentDiamond}>
-          <div className={styles.textContainer}>Coucou</div>
+          <div className={styles.textContainer}>
+            <h2 className={`${styles.firstName} ${barlow.className}`}>
+              Steven
+            </h2>
+            <h1 className={`${styles.lastName} ${barlow.className}`}>
+              Schramiak
+            </h1>
+            <h3 className={`${styles.jobTitle} ${barlow.className}`}>
+              21 specialist
+            </h3>
+
+            {/* <h2 className={`${styles.firstName} ${barlow.className}`}>
+              Steven
+            </h2>
+            <h1 className={`${styles.lastName} ${barlow.className}`}>
+              Schramiak
+            </h1>
+            <h3 className={`${styles.jobTitle} ${barlow.className}`}>
+              21 specialist
+            </h3> */}
+          </div>
         </div>
 
         <div className={styles.decorationDiamonds}>
