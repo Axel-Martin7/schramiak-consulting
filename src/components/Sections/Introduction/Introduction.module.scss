@@ -34,23 +34,6 @@
         transform: rotate(-45deg);
         border: 1px solid yellow;
       }
-
-      .shadowEllipse {
-        position: absolute;
-        bottom: 50%;
-        border: 1px solid blue;
-        transform: translateX(-50%) rotate(-45deg);
-        width: 150%; /* Ajustez la largeur pour obtenir l'aplatissement désiré */
-        height: 30px; /* Ajustez la hauteur pour contrôler l'épaisseur de l'ellipse */
-        background: radial-gradient(
-          ellipse at center,
-          rgba(0, 0, 0, 0.25) 0%,
-          /* Une couleur plus foncée au centre pour plus de réalisme */
-            rgba(0, 0, 0, 0.15) 50%,
-          /* Dégradé progressif */ transparent 100%
-            /* Se fond progressivement dans le fond */
-        );
-      }
     }
 
     .decorationDiamonds {
@@ -169,6 +152,17 @@
         clip-path: polygon(50% 50%, 66% 78.7%, 81.9% 62.2%);
         background: linear-gradient(260deg, #868787 0%, transparent 45%);
       }
+    }
+
+    .shadowEllipse {
+      position: absolute;
+      bottom: 3%;
+      // border: 1px solid blue;
+      width: 50%;
+      height: 30px;
+      max-width: 500px;
+      min-width: 180px;
+      background: radial-gradient(#cecece 0%, transparent 79%);
     }
   }
 }

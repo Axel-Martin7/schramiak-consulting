@@ -7,7 +7,6 @@ export default function Introduction() {
       <div className={styles.shapesContainer}>
         <div className={styles.contentDiamond}>
           <div className={styles.textContainer}>Coucou</div>
-          <div className={styles.shadowEllipse}></div>
         </div>
 
         <div className={styles.decorationDiamonds}>
@@ -24,6 +23,8 @@ export default function Introduction() {
           <div className={styles.polygon6}></div>
           <div className={styles.polygon7}></div>
         </div>
+
+        <div className={styles.shadowEllipse}></div>
       </div>
     </section>
   );
