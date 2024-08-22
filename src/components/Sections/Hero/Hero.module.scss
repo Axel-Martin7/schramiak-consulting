@@ -11,7 +11,7 @@
     z-index: 1;
     height: 85%;
     width: 100%;
-
+    display: flex;
     border: 1px solid transparent;
     border-image: linear-gradient(
       90deg,
@@ -21,27 +21,52 @@
     );
     border-image-slice: 1;
     background-color: white;
-  }
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
 
-  // Classe réutilisable pour les ombres elliptiques
-  .shadowElipse {
-    position: absolute;
-    width: 100%;
-    height: 91px;
-    background: radial-gradient(
-      at 50% 50%,
-      #bbbbbb 5%,
-      #cecece 27%,
-      #e8e8e8 50%,
-      transparent 70%
-    );
+    .contentContainer {
+      width: 50%;
+      border: 1px solid red;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 50%;
+      }
+    }
+
+    .imageContainer {
+      position: relative;
+      width: 50%;
+      border: 1px solid red;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 50%;
+      }
+      .image {
+        object-fit: contain;
+      }
+    }
   }
-  .shadowElipseTop {
-    @extend .shadowElipse;
-    top: 4%;
-  }
-  .shadowElipseBottom {
-    @extend .shadowElipse;
-    bottom: 4%;
-  }
+}
+
+// Classe réutilisable pour les ombres elliptiques
+.shadowElipse {
+  position: absolute;
+  width: 100%;
+  height: 91px;
+  background: radial-gradient(
+    at 50% 50%,
+    #bbbbbb 5%,
+    #cecece 27%,
+    #e8e8e8 50%,
+    transparent 70%
+  );
+}
+.shadowElipseTop {
+  @extend .shadowElipse;
+  top: 4%;
+}
+.shadowElipseBottom {
+  @extend .shadowElipse;
+  bottom: 4%;
 }
