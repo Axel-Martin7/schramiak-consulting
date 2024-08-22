@@ -65,6 +65,8 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.mainContainer}></div>
+      <div className={styles.shadowElipseTop}></div>
+      <div className={styles.shadowElipseBottom}></div>
     </section>
   );
 }
