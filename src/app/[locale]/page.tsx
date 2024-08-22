@@ -7,6 +7,7 @@ import Welcome from '@/components/Sections/Introduction/Welcome';
 
 import Introduction from '@/components/Sections/Introduction/Introduction';
 import HeroGrid from '@/components/Sections/Hero/HeroGrid';
+import Hero from '@/components/Sections/Hero/Hero';
 
 type Props = {
   params: { locale: string };
@@ -20,7 +21,8 @@ export default function Home({ params: { locale } }: Props) {
   return (
     <main className={styles.main}>
       <Introduction />
-      <HeroGrid />
+      {/* <HeroGrid /> */}
+      <Hero />
     </main>
   );
 }

@@ -1,0 +1,21 @@
+.heroSection {
+  height: calc(100vh - 100px);
+  background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
+  // border: 1px solid black;
+
+  .mainContainer {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    // border-bottom: 1px solid transparent;
+    // border-top: 1px solid transparent;
+    // border-image: linear-gradient(
+    //   90deg,
+    //   rgba(198, 53, 117, 0),
+    //   #c63575,
+    //   rgba(198, 53, 117, 0)
+    // );
+    // border-image-slice: 1;
+  }
+}
