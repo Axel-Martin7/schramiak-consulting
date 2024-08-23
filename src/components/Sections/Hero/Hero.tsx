@@ -33,6 +33,8 @@
 //   );
 // }
 
+// ----------------------------------------------------------------------
+
 import React from 'react';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
@@ -46,6 +48,10 @@ export default function Hero() {
         <div className={styles.crossLineContainer}>
           <div className={styles.crossLine}></div>
           <div className={styles.crossLineShadow}></div>
+        </div>
+
+        <div className={styles.imageContainerPositioner}>
+          <div className={styles.imageContainer}>img</div>
         </div>
       </div>
 
