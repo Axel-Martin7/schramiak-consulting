@@ -9,6 +9,7 @@
 
   .mainContainer {
     z-index: 1;
+    position: relative;
     width: 100%;
     height: 80%;
 
@@ -19,10 +20,48 @@
       #bbbbbb,
       rgba(198, 53, 117, 0)
     );
-
     border-image-slice: 1;
 
     background-color: white;
+
+    .crossLineContainer {
+      z-index: 1;
+      position: relative;
+      height: 100%;
+      border: 1px solid red;
+
+      .crossLine {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          /* Orientation du dégradé de bas en haut */ rgba(198, 53, 117, 0) 0%,
+          /* Transparent en bas */ #bbbbbb 50%,
+          /* Couleur au centre */ rgba(198, 53, 117, 0) 100%
+            /* Transparent en haut */
+        );
+      }
+
+      .crossLineShadow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centre l'ombre sur la ligne */
+        width: 40px; /* Taille de l'ombre circulaire */
+        height: 100%; /* Taille de l'ombre circulaire */
+        background: radial-gradient(
+          at 50% 50%,
+          #bbbbbb 0%,
+          #d9d9d9 27%,
+          #e8e8e8 50%,
+          transparent 70%
+        );
+      }
+    }
   }
 }
 
