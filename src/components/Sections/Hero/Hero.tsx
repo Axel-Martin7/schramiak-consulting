@@ -9,21 +9,16 @@
 //     <section className={styles.heroSection}>
 //       <div className={styles.mainContainer}>
 //         <div className={styles.overlayContainer}>
-//           <div className={styles.contentContainer}></div>
+//           <div className={styles.contentContainer}>Content</div>
+//         </div>
+
+//         <div className={styles.crossLineContainer}>
+//           <div className={styles.crossLine}></div>
+//           <div className={styles.crossLineShadow}></div>
 //         </div>
 
 //         <div className={styles.imageContainerPositioner}>
-//           <div className={styles.imageContainer}>
-//             <Image
-//               className={styles.image}
-//               alt="image ampoule"
-//               src={ampoule}
-//               placeholder="blur"
-//               quality={100}
-//               fill
-//               sizes="100vh"
-//             ></Image>
-//           </div>
+//           <div className={styles.imageContainer}>img</div>
 //         </div>
 //       </div>
 
@@ -32,8 +27,6 @@
 //     </section>
 //   );
 // }
-
-// ----------------------------------------------------------------------
 
 import React from 'react';
 import styles from './Hero.module.scss';
@@ -45,17 +38,12 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.mainContainer}>
-        <div className={styles.overlayContainer}>
-          <div className={styles.contentContainer}>Content</div>
-        </div>
-
-        <div className={styles.crossLineContainer}>
-          <div className={styles.crossLine}></div>
-          <div className={styles.crossLineShadow}></div>
+        <div className={styles.crossBorderOverlayContainer}>
+          <div className={styles.overlayContainer}></div>
         </div>
 
         <div className={styles.imageContainerPositioner}>
-          <div className={styles.imageContainer}>img</div>
+          <div className={styles.imageContainer}>iMG</div>
         </div>
       </div>
 
