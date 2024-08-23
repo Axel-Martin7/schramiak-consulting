@@ -8,17 +8,22 @@
 //   return (
 //     <section className={styles.heroSection}>
 //       <div className={styles.mainContainer}>
-//         <div className={styles.contentContainer}>Content</div>
-//         <div className={styles.imageContainer}>
-//           <Image
-//             className={styles.image}
-//             alt="image ampoule"
-//             src={ampoule}
-//             placeholder="blur"
-//             quality={100}
-//             fill
-//             sizes="100vh"
-//           ></Image>
+//         <div className={styles.overlayContainer}>
+//           <div className={styles.contentContainer}></div>
+//         </div>
+
+//         <div className={styles.imageContainerPositioner}>
+//           <div className={styles.imageContainer}>
+//             <Image
+//               className={styles.image}
+//               alt="image ampoule"
+//               src={ampoule}
+//               placeholder="blur"
+//               quality={100}
+//               fill
+//               sizes="100vh"
+//             ></Image>
+//           </div>
 //         </div>
 //       </div>
 
@@ -37,25 +42,7 @@ import { barlow } from '@/styles/font';
 export default function Hero() {
   return (
     <section className={styles.heroSection}>
-      <div className={styles.mainContainer}>
-        <div className={styles.overlayContainer}>
-          <div className={styles.contentContainer}></div>
-        </div>
-
-        <div className={styles.imageContainerPositioner}>
-          <div className={styles.imageContainer}>
-            <Image
-              className={styles.image}
-              alt="image ampoule"
-              src={ampoule}
-              placeholder="blur"
-              quality={100}
-              fill
-              sizes="100vh"
-            ></Image>
-          </div>
-        </div>
-      </div>
+      <div className={styles.mainContainer}></div>
 
       <div className={styles.shadowElipseTop}></div>
       <div className={styles.shadowElipseBottom}></div>
