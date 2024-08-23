@@ -45,6 +45,10 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.mainContainer}>
+        <div className={styles.overlayContainer}>
+          <div className={styles.contentContainer}>Content</div>
+        </div>
+
         <div className={styles.crossLineContainer}>
           <div className={styles.crossLine}></div>
           <div className={styles.crossLineShadow}></div>
