@@ -1,117 +1,91 @@
 .heroSection {
   position: relative;
   height: calc(100vh - 100px);
-  background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
   display: flex;
   align-items: center;
-
+  background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
   border: 1px solid black;
 
   .mainContainer {
-    z-index: 1;
     position: relative;
     width: 100%;
     height: 80%;
+    border: 1px solid red;
+
     border: 2px solid transparent;
     border-image: linear-gradient(
       90deg,
       rgba(198, 53, 117, 0),
-      #bbbbbb,
+      #8d8d8d,
       rgba(198, 53, 117, 0)
     );
     border-image-slice: 1;
-    background-color: white;
-
-    .crossBorderOverlayContainer {
-      z-index: 2;
+    &::before {
+      content: '';
       position: absolute;
+      top: -10px;
+      left: 0%;
       width: 100%;
-      height: 100%;
-      clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 0% 100%);
-      background: radial-gradient(at 59% 50%, #bbbbbb 0%, transparent 70%);
-      @media screen and (max-width: 600px) {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 50%);
-      }
-
-      .overlayContainer {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(
-          0% 0%,
-          calc(50% - 2px) 0%,
-          calc(60% - 2px) 100%,
-          0% 100%
-        );
-        background-color: white;
-        @media screen and (max-width: 600px) {
-          clip-path: polygon(
-            0% 0%,
-            100% 0%,
-            100% calc(60% - 2px),
-            0% calc(50% - 2px)
-          );
-        }
-      }
+      height: 10px;
+      background: radial-gradient(
+        ellipse at bottom,
+        #bbbbbb 0%,
+        #e5e6e7 55%,
+        transparent 70%
+      );
     }
-
-    .imageContainerPositioner {
+    &::after {
+      content: '';
       position: absolute;
+      bottom: -10px;
+      left: 0%;
       width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: right;
-      @media screen and (max-width: 600px) {
-        align-items: end;
-      }
-
-      .imageContainer {
-        width: 50%;
-        height: 100%;
-        @media screen and (max-width: 600px) {
-          width: 100%;
-          height: 50%;
-        }
-      }
+      height: 10px;
+      background: radial-gradient(
+        ellipse at top,
+        #bbbbbb 0%,
+        #e5e6e7 55%,
+        transparent 70%
+      );
     }
   }
 }
 
 // Classe réutilisable pour les ombres elliptiques
-.shadowElipse {
-  position: absolute;
-  width: 100%;
-  height: 45px;
-  background: radial-gradient(
-    at 50% 50%,
-    #bbbbbb 0%,
-    #d9d9d9 27%,
+// .shadowElipse {
+//   position: absolute;
+//   width: 100%;
+//   height: 45px;
+//   background: radial-gradient(
+//     at 50% 50%,
+//     #bbbbbb 0%,
+//     #d9d9d9 27%,
 
-    #e8e8e8 50%,
-    transparent 70%
-  );
-}
-.shadowElipseTop {
-  @extend .shadowElipse;
-  top: 8%;
-}
-.shadowElipseBottom {
-  @extend .shadowElipse;
-  bottom: 8%;
-}
+//     #e8e8e8 50%,
+//     transparent 70%
+//   );
+// }
+// .shadowElipseTop {
+//   @extend .shadowElipse;
+//   top: 8%;
+// }
+// .shadowElipseBottom {
+//   @extend .shadowElipse;
+//   bottom: 8%;
+// }
 
 // .heroSection {
 //   position: relative;
 //   height: calc(100vh - 100px);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
 //   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
+//   display: flex;
+//   align-items: center;
+
 //   border: 1px solid black;
 
 //   .mainContainer {
-//     position: relative;
 //     z-index: 1;
+//     position: relative;
 //     width: 100%;
 //     height: 80%;
 //     border: 2px solid transparent;
@@ -125,79 +99,52 @@
 //     background-color: white;
 
 //     .overlayContainer {
-//       z-index: 2;
+//       z-index: 3;
 //       position: absolute;
 //       width: 100%;
 //       height: 100%;
 //       clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 0% 100%);
-
-//       border: 1px solid blue;
-//       background-color: rgba(0, 0, 255, 0.123);
+//       border: 1px solid red;
+//       background-color: white;
 //       @media screen and (max-width: 600px) {
 //         clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 50%);
-//         &::before {
-//           content: '';
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           width: 50%;
-//           height: 100%;
-//           border-right: 2px solid #bbbbbb;
-//           transform-origin: top right;
-//           transform: skewY(
-//             10deg
-//           ); /* Adaptez l'angle à celui de la coupure du polygone */
-//           clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
-//         }
-//       }
-
-//       .contentContainer {
-//         width: 50%;
-//         height: 100%;
-//         border: 1px solid green;
-//         @media screen and (max-width: 600px) {
-//           width: 100%;
-//           height: 50%;
-//         }
 //       }
 //     }
-
-//     .crossLineContainer {
+//     .crossBorderOverlayContainer {
+//       z-index: 2;
 //       position: absolute;
 //       width: 100%;
 //       height: 100%;
-
-//       .crossLine {
-//         position: absolute;
-//         top: 0;
-//         left: 55%;
-//         transform: translateX(-50%) rotate(349.2deg);
-//         width: 2px;
-//         height: 100%;
-//         background: linear-gradient(
-//           0deg,
-//           /* Orientation du dégradé de bas en haut */ rgba(198, 53, 117, 0) 0%,
-//           /* Transparent en bas */ #bbbbbb 50%,
-//           /* Couleur au centre */ rgba(198, 53, 117, 0) 100%
-//             /* Transparent en haut */
+//       clip-path: polygon(
+//         0% 0%,
+//         calc(50% + 2px) 0%,
+//         calc(60% + 2px) 100%,
+//         0% 100%
+//       );
+//       background: radial-gradient(at 59% 50%, #bbbbbb 0%, transparent 70%);
+//       @media screen and (max-width: 600px) {
+//         clip-path: polygon(
+//           0% 0%,
+//           100% 0%,
+//           100% calc(60% + 2px),
+//           0% calc(50% + 2px)
 //         );
 //       }
-
-//       .crossLineShadow {
-//         z-index: -1;
-//         position: absolute;
-//         top: 50%;
-//         left: 55%;
-//         transform: translate(-50%, -50%) rotate(349.2deg); /* Centre l'ombre sur la ligne */
-//         width: 40px; /* Taille de l'ombre circulaire */
-//         height: 100%; /* Taille de l'ombre circulaire */
-//         background: radial-gradient(
-//           at 50% 50%,
-//           #bbbbbb 0%,
-//           #d9d9d9 17%,
-//           #e8e8e8 30%,
-//           transparent 55%
-//         );
+//     }
+//     .crossShadowOverlayContainer {
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       clip-path: polygon(
+//         0% 0%,
+//         calc(50% + 80px) 0%,
+//         calc(60% + 80px) 100%,
+//         0% 100%
+//       );
+//       border: 1px solid blue;
+//       background: linear-gradient(90deg, #48abe0 0%, transparent 100%);
+//       @media screen and (max-width: 600px) {
+//         clip-path: polygon(0% 0%, 100% 0%, 100% 63%, 0% 53%);
 //       }
 //     }
 
@@ -214,8 +161,6 @@
 //       .imageContainer {
 //         width: 50%;
 //         height: 100%;
-//         border: 1px solid orange;
-//         background-color: rgba(255, 166, 0, 0.074);
 //         @media screen and (max-width: 600px) {
 //           width: 100%;
 //           height: 50%;
@@ -223,27 +168,27 @@
 //       }
 //     }
 //   }
+// }
 
-//   // Classe réutilisable pour les ombres elliptiques
-//   .shadowElipse {
-//     position: absolute;
-//     width: 100%;
-//     height: 45px;
-//     background: radial-gradient(
-//       at 50% 50%,
-//       #bbbbbb 0%,
-//       #d9d9d9 27%,
+// // Classe réutilisable pour les ombres elliptiques
+// .shadowElipse {
+//   position: absolute;
+//   width: 100%;
+//   height: 45px;
+//   background: radial-gradient(
+//     at 50% 50%,
+//     #bbbbbb 0%,
+//     #d9d9d9 27%,
 
-//       #e8e8e8 50%,
-//       transparent 70%
-//     );
-//   }
-//   .shadowElipseTop {
-//     @extend .shadowElipse;
-//     top: 8%;
-//   }
-//   .shadowElipseBottom {
-//     @extend .shadowElipse;
-//     bottom: 8%;
-//   }
+//     #e8e8e8 50%,
+//     transparent 70%
+//   );
+// }
+// .shadowElipseTop {
+//   @extend .shadowElipse;
+//   top: 8%;
+// }
+// .shadowElipseBottom {
+//   @extend .shadowElipse;
+//   bottom: 8%;
 // }
