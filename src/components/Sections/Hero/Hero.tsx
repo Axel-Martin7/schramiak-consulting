@@ -53,6 +53,19 @@ export default function Hero() {
     <section className={styles.heroSection}>
       <div className={styles.mainContainer}>
         <div className={styles.overlayContainer}></div>
+        <div className={styles.contentContainer}>
+          <h1> Bonjour voici un titre qui donne envie de cliquer</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi,
+            quos repellat impedit optio error harum corrupti praesentium
+            quibusdam voluptate nostrum repudiandae, id, libero quae
+            reprehenderit eligendi vel excepturi. Qui, ad? Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Quis perferendis dolore, labore
+            recusandae vitae distinctio dolor odio quae iste voluptatibus soluta
+            at, qui aperiam illum totam necessitatibus tempora laudantium
+            obcaecati!
+          </p>
+        </div>
       </div>
     </section>
   );
