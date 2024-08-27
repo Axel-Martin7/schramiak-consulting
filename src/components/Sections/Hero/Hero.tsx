@@ -53,7 +53,7 @@ export default function Hero() {
     <section className={styles.heroSection}>
       <div className={styles.mainContainer}>
         <div className={styles.overflowControl}>
-          <div className={styles.overlayContainer}></div>
+          <div className={styles.skewedContainer}></div>
           <div className={styles.contentContainer}>
             <h1> Bonjour voici un titre qui donne envie de cliquer</h1>
             <p>
