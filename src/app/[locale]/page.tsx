@@ -22,6 +22,7 @@ export default function Home({ params: { locale } }: Props) {
     <main className={styles.main}>
       <Introduction />
       {/* <HeroGrid /> */}
+
       <Hero />
     </main>
   );
