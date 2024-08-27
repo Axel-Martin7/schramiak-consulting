@@ -96,6 +96,31 @@
           height: 70%;
           transform: skewX(0deg) translateX(0%) skewY(-10deg) translateY(-29%);
           background-color: rgba(255, 0, 255, 0.241);
+          border-right: none; // Supprimer la bordure droite en mobile
+          border-bottom: 1px solid transparent;
+          border-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(141, 141, 141, 0.7),
+            rgba(0, 0, 0, 0)
+          );
+          border-image-slice: 1;
+          &::after {
+            top: auto;
+            bottom: -26px; // Décalage de l'ombrage en bas de la bordure
+            left: 0;
+            right: 0;
+            height: 25px;
+            width: 100%;
+            background: radial-gradient(
+              ellipse at top,
+              rgba(141, 141, 141, 0.7),
+              rgba(187, 187, 187, 0.6) 25%,
+              rgba(206, 206, 206, 0.2) 50%,
+              rgba(229, 230, 231, 0.1) 70%,
+              rgba(229, 230, 231, 0) 100%
+            );
+          }
         }
       }
       .contentContainer {
@@ -122,8 +147,6 @@
       display: flex;
       justify-content: right;
       background-color: white;
-      border: 1px solid red;
-      // background-color: red;
       @media screen and (max-width: 767px) {
         align-items: end;
       }
@@ -132,7 +155,6 @@
         width: 50%;
         height: 100%;
         border: 1px solid orange;
-
         @media screen and (max-width: 767px) {
           width: 100%;
           height: 50%;
