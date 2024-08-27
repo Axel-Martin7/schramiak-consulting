@@ -70,7 +70,17 @@ export default function Hero() {
         </div>
 
         <div className={styles.backgroundContainer}>
-          <div className={styles.imageContainer}></div>
+          <div className={styles.imageContainer}>
+            <Image
+              className={styles.image}
+              alt="image ampoule"
+              src={ampoule}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="100vw"
+            ></Image>
+          </div>
         </div>
       </div>
     </section>
