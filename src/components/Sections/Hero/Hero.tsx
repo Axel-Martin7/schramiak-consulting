@@ -68,6 +68,10 @@ export default function Hero() {
             </p>
           </div>
         </div>
+
+        <div className={styles.backgroundContainer}>
+          <div className={styles.imageContainer}></div>
+        </div>
       </div>
     </section>
   );
