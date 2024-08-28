@@ -5,14 +5,14 @@
   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
   border: 1px solid black;
   @media screen and (max-width: 767px) {
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     height: auto;
   }
 
   .mainContainer {
     position: relative;
-    width: 100%;
     height: 80%;
+    width: 100%;
     border: 1px solid transparent;
     border-image: linear-gradient(
       90deg,
@@ -21,7 +21,6 @@
       rgba(0, 0, 0, 0)
     );
     border-image-slice: 1;
-
     // gradient pour l'ombrage au dessus de la bordure top:
     &::before {
       content: '';
@@ -55,8 +54,7 @@
       );
     }
     @media screen and (max-width: 767px) {
-      min-height: 90vh;
-      height: auto;
+      min-height: 80vh;
     }
 
     .overflowControl {
@@ -64,6 +62,10 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      @media screen and (max-width: 767px) {
+        position: relative;
+        min-height: 50vh;
+      }
 
       .skewedContainer {
         z-index: 1;
@@ -71,7 +73,6 @@
         width: 100%;
         height: 100%;
         transform: skewX(10deg) translateX(-42%);
-        background-color: rgba(0, 0, 255, 0.293);
         border-right: 1px solid transparent;
         border-image: linear-gradient(
           to bottom,
@@ -104,13 +105,14 @@
       }
 
       .contentContainer {
-        position: relative;
         z-index: 1;
+        position: absolute;
         width: 50%;
         height: 100%;
         @media screen and (max-width: 767px) {
+          position: relative;
           width: 100%;
-          height: 50%;
+          min-height: inherit;
           background: linear-gradient(0deg, #ffffff 0%, transparent 70%),
             linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
         }
@@ -124,9 +126,7 @@
       justify-content: right;
       background-color: white;
       @media screen and (max-width: 767px) {
-        min-height: inherit; // Assure que la hauteur minimale du backgroundContainer est égale à celle de son parent mainContainer
-        flex-direction: column;
-        justify-content: flex-end;
+        min-height: 50vh; // utilisation de clamp ici pour ajuster en petit ecran
       }
 
       .imageContainer {
@@ -135,8 +135,8 @@
         height: 100%;
         @media screen and (max-width: 767px) {
           width: 100%;
-          height: 50%; // n'a pas d'effet actuellement
-          min-height: 400px; // Assure une hauteur minimale sur les petits écrans
+          height: auto;
+          min-height: inherit;
         }
         .image {
           object-fit: contain;
@@ -146,31 +146,16 @@
   }
 }
 
-//     .overflowControl {
-//       z-index: 2;
-
-//       .contentContainer {
-//         z-index: 1;
-//         position: relative;
-//         @media screen and (max-width: 767px) {
-//           width: 100%;
-//         }
-//       }
-//     }
-
-//     .backgroundContainer {
-//       // position: absolute;
-//     }
-//   }
-// }
-
-// ____________________________________________________________
 // .heroSection {
 //   height: calc(100vh - 100px);
 //   display: flex;
 //   align-items: center;
 //   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
 //   border: 1px solid black;
+//   @media screen and (max-width: 767px) {
+//     min-height: 100vh;
+//     height: auto;
+//   }
 
 //   .mainContainer {
 //     position: relative;
@@ -184,7 +169,6 @@
 //       rgba(0, 0, 0, 0)
 //     );
 //     border-image-slice: 1;
-//     background-color: white;
 
 //     // gradient pour l'ombrage au dessus de la bordure top:
 //     &::before {
@@ -193,7 +177,6 @@
 //       top: -16px;
 //       width: 100%;
 //       height: 15px;
-
 //       background: radial-gradient(
 //         ellipse at bottom,
 //         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
@@ -219,6 +202,10 @@
 //         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
 //       );
 //     }
+//     @media screen and (max-width: 767px) {
+//       min-height: 90vh;
+//       height: auto;
+//     }
 
 //     .overflowControl {
 //       position: absolute;
@@ -232,7 +219,7 @@
 //         width: 100%;
 //         height: 100%;
 //         transform: skewX(10deg) translateX(-42%);
-
+//         background-color: rgba(0, 0, 255, 0.293);
 //         border-right: 1px solid transparent;
 //         border-image: linear-gradient(
 //           to bottom,
@@ -260,79 +247,94 @@
 //           );
 //         }
 //         @media screen and (max-width: 767px) {
-//           height: 70%;
-//           transform: skewX(0deg) translateX(0%) skewY(-10deg) translateY(-29%);
-//           background-color: rgba(255, 0, 255, 0.241);
-//           border-right: none; // Supprimer la bordure droite en mobile
-//           border-bottom: 1px solid transparent;
-//           border-image: linear-gradient(
-//             to right,
-//             rgba(0, 0, 0, 0),
-//             rgba(141, 141, 141, 0.7),
-//             rgba(0, 0, 0, 0)
-//           );
-//           border-image-slice: 1;
-//           &::after {
-//             top: auto;
-//             bottom: -26px; // Décalage de l'ombrage en bas de la bordure
-//             left: 0;
-//             right: 0;
-//             height: 25px;
-//             width: 100%;
-//             background: radial-gradient(
-//               ellipse at top,
-//               rgba(141, 141, 141, 0.7),
-//               rgba(187, 187, 187, 0.6) 25%,
-//               rgba(206, 206, 206, 0.2) 50%,
-//               rgba(229, 230, 231, 0.1) 70%,
-//               rgba(229, 230, 231, 0) 100%
-//             );
-//           }
+//           display: none;
 //         }
 //       }
 
-//       .contentContainer {
-//         z-index: 1;
+//       .informationsContainer {
 //         position: relative;
+//         z-index: 1;
 //         width: 50%;
 //         height: 100%;
-
 //         display: flex;
-//         flex-direction: column;
-//         align-items: center;
 //         justify-content: center;
+//         align-items: center;
+
 //         gap: 40px;
-//         padding: 40px;
 
 //         border: 1px solid red;
 //         @media screen and (max-width: 767px) {
 //           width: 100%;
 //           height: 50%;
-//         }
-//         .title {
-//           font-size: 2rem;
-//           font-weight: 800;
-//           text-transform: uppercase;
-//           padding: 40px;
-//           border: 1px solid orange;
+//           // justify-content: baseline;
+//           align-items: baseline;
+//           background: linear-gradient(0deg, #ffffff 0%, transparent 70%),
+//             linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
 //         }
 
-//         .buttonsContainer {
+//         .contentContainer {
+//           width: 90%;
+//           height: 90%;
+//           padding: 40px;
 //           display: flex;
-//           gap: 40px;
+//           flex-direction: column;
+//           justify-content: center;
+//           gap: 80px;
+
+//           border: 1px solid orange;
+
+//           @media screen and (max-width: 767px) {
+//             width: 100%;
+//             height: 100%;
+//           }
+
+//           .titleContainer {
+//             font-size: 38px;
+//             text-transform: uppercase;
+
+//             border: 1px solid yellow;
+//             word-break: break-word; // Casse les mots longs sur plusieurs lignes si nécessaire
+
+//             .firstWord {
+//               display: block;
+//               margin-bottom: 0.2em;
+//             }
+//             .highlight {
+//               margin: 0 0.2em;
+//             }
+//           }
+
+//           .text {
+//             border: 1px solid yellow;
+//           }
+
+//           .buttonsContainer {
+//             border: 1px solid yellow;
+//             .primaryButton {
+//               display: inline-block;
+//               padding: 20px;
+//               border: 1px solid black;
+//             }
+//             .secondaryButton {
+//               display: inline-block;
+//               padding: 20px;
+//               border: 1px solid black;
+//             }
+//           }
 //         }
 //       }
 //     }
 
 //     .backgroundContainer {
-//       position: absolute;
 //       width: 100%;
 //       height: 100%;
 //       display: flex;
 //       justify-content: right;
 //       background-color: white;
 //       @media screen and (max-width: 767px) {
-//         align-items: end;
+//         min-height: inherit; // Assure que la hauteur minimale du backgroundContainer est égale à celle de son parent mainContainer
+//         flex-direction: column;
+//         justify-content: flex-end;
 //       }
 
 //       .imageContainer {
@@ -341,7 +343,8 @@
 //         height: 100%;
 //         @media screen and (max-width: 767px) {
 //           width: 100%;
-//           height: 50%;
+//           height: 50%; // n'a pas d'effet actuellement
+//           min-height: 400px; // Assure une hauteur minimale sur les petits écrans
 //         }
 //         .image {
 //           object-fit: contain;
