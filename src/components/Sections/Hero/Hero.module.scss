@@ -4,6 +4,10 @@
   align-items: center;
   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
   border: 1px solid black;
+  @media screen and (max-width: 767px) {
+    min-height: 100vh;
+    height: auto;
+  }
 
   .mainContainer {
     position: relative;
@@ -17,7 +21,6 @@
       rgba(0, 0, 0, 0)
     );
     border-image-slice: 1;
-    background-color: white;
 
     // gradient pour l'ombrage au dessus de la bordure top:
     &::before {
@@ -26,7 +29,6 @@
       top: -16px;
       width: 100%;
       height: 15px;
-
       background: radial-gradient(
         ellipse at bottom,
         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
@@ -52,6 +54,10 @@
         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
       );
     }
+    @media screen and (max-width: 767px) {
+      min-height: 90vh;
+      height: auto;
+    }
 
     .overflowControl {
       position: absolute;
@@ -65,7 +71,7 @@
         width: 100%;
         height: 100%;
         transform: skewX(10deg) translateX(-42%);
-
+        background-color: rgba(0, 0, 255, 0.293);
         border-right: 1px solid transparent;
         border-image: linear-gradient(
           to bottom,
@@ -93,72 +99,44 @@
           );
         }
         @media screen and (max-width: 767px) {
-          height: 70%;
-          transform: skewX(0deg) translateX(0%) skewY(-10deg) translateY(-29%);
-          background-color: rgba(255, 0, 255, 0.241);
-          border-right: none; // Supprimer la bordure droite en mobile
-          border-bottom: 1px solid transparent;
-          border-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0),
-            rgba(141, 141, 141, 0.7),
-            rgba(0, 0, 0, 0)
-          );
-          border-image-slice: 1;
-          &::after {
-            top: auto;
-            bottom: -26px; // Décalage de l'ombrage en bas de la bordure
-            left: 0;
-            right: 0;
-            height: 25px;
-            width: 100%;
-            background: radial-gradient(
-              ellipse at top,
-              rgba(141, 141, 141, 0.7),
-              rgba(187, 187, 187, 0.6) 25%,
-              rgba(206, 206, 206, 0.2) 50%,
-              rgba(229, 230, 231, 0.1) 70%,
-              rgba(229, 230, 231, 0) 100%
-            );
-          }
+          display: none;
         }
       }
+
       .contentContainer {
         position: relative;
+        z-index: 1;
         width: 50%;
         height: 100%;
-        padding: 20px;
-        background-color: transparent;
-        z-index: 2;
-        // transform: skewX(10deg); /* Inverser l'effet du skew de l'overlay */
-        // transform-origin: left;
-        border: 1px solid blue;
         @media screen and (max-width: 767px) {
           width: 100%;
           height: 50%;
+          background: linear-gradient(0deg, #ffffff 0%, transparent 70%),
+            linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
         }
       }
     }
 
     .backgroundContainer {
-      position: absolute;
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: right;
       background-color: white;
       @media screen and (max-width: 767px) {
-        align-items: end;
+        min-height: inherit; // Assure que la hauteur minimale du backgroundContainer est égale à celle de son parent mainContainer
+        flex-direction: column;
+        justify-content: flex-end;
       }
 
       .imageContainer {
         position: relative;
         width: 50%;
         height: 100%;
-        border: 1px solid orange;
         @media screen and (max-width: 767px) {
           width: 100%;
-          height: 50%;
+          height: 50%; // n'a pas d'effet actuellement
+          min-height: 400px; // Assure une hauteur minimale sur les petits écrans
         }
         .image {
           object-fit: contain;
@@ -168,8 +146,26 @@
   }
 }
 
+//     .overflowControl {
+//       z-index: 2;
+
+//       .contentContainer {
+//         z-index: 1;
+//         position: relative;
+//         @media screen and (max-width: 767px) {
+//           width: 100%;
+//         }
+//       }
+//     }
+
+//     .backgroundContainer {
+//       // position: absolute;
+//     }
+//   }
+// }
+
+// ____________________________________________________________
 // .heroSection {
-//   position: relative;
 //   height: calc(100vh - 100px);
 //   display: flex;
 //   align-items: center;
@@ -180,231 +176,177 @@
 //     position: relative;
 //     width: 100%;
 //     height: 80%;
-//     // fine bordure :
-//     border: 2px solid transparent;
+//     border: 1px solid transparent;
 //     border-image: linear-gradient(
 //       90deg,
-//       rgba(198, 53, 117, 0),
-//       #8d8d8d,
-//       rgba(198, 53, 117, 0)
+//       rgba(0, 0, 0, 0),
+//       rgba(141, 141, 141, 0.7),
+//       rgba(0, 0, 0, 0)
 //     );
 //     border-image-slice: 1;
+//     background-color: white;
+
 //     // gradient pour l'ombrage au dessus de la bordure top:
 //     &::before {
 //       content: '';
 //       position: absolute;
-//       top: -10px;
-//       left: 0%;
+//       top: -16px;
 //       width: 100%;
-//       height: 10px;
+//       height: 15px;
+
 //       background: radial-gradient(
 //         ellipse at bottom,
-//         #bbbbbb 0%,
-//         #e5e6e7 55%,
-//         transparent 70%
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
 //       );
 //     }
 //     // gradient pour l'ombrage en dessous de la bordure bottom:
 //     &::after {
 //       content: '';
 //       position: absolute;
-//       bottom: -10px;
-//       left: 0%;
+//       bottom: -16px;
 //       width: 100%;
-//       height: 10px;
+//       height: 15px;
 //       background: radial-gradient(
 //         ellipse at top,
-//         #bbbbbb 0%,
-//         #e5e6e7 55%,
-//         transparent 70%
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
 //       );
 //     }
 
-//     .overlayContainer {
+//     .overflowControl {
 //       position: absolute;
-//       width: 120%;
+//       width: 100%;
 //       height: 100%;
-//       transform: skewX(15deg) translateX(-54%);
+//       overflow: hidden;
 
-//       background-color: rgba(255, 0, 0, 0.159);
-
-//       // Bordure dégradée uniquement sur le côté droit
-//       border-right: 2px solid transparent;
-//       border-image: linear-gradient(
-//           to bottom,
-//           rgba(198, 53, 117, 0),
-//           #8d8d8d,
-//           rgba(198, 53, 117, 0)
-//         )
-//         1 0;
-//       border-image-slice: 1;
-
-//       // Ombrage extérieur:
-//       &::after {
-//         content: '';
+//       .skewedContainer {
+//         z-index: 1;
 //         position: absolute;
-//         top: 0;
-//         right: -10px; // Décalage de l'ombrage à droite de la bordure
+//         width: 100%;
 //         height: 100%;
-//         width: 10px;
-//         background: radial-gradient(
-//           ellipse at left,
-//           #bbbbbb 0%,
-//           #e5e6e7 55%,
-//           transparent 70%
+//         transform: skewX(10deg) translateX(-42%);
+
+//         border-right: 1px solid transparent;
+//         border-image: linear-gradient(
+//           to bottom,
+//           rgba(0, 0, 0, 0),
+//           rgba(141, 141, 141, 0.7),
+//           rgba(0, 0, 0, 0)
 //         );
+//         border-image-slice: 1;
+//         background: linear-gradient(365deg, #fcfcfc 0%, #e5e6e7 100%);
+//         // Ombrage extérieur:
+//         &::after {
+//           content: '';
+//           position: absolute;
+//           top: 0;
+//           right: -26px; // Décalage de l'ombrage à droite de la bordure
+//           height: 100%;
+//           width: 25px;
+//           background: radial-gradient(
+//             ellipse at left,
+//             /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//             /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
+//             /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//             /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//             /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//           );
+//         }
+//         @media screen and (max-width: 767px) {
+//           height: 70%;
+//           transform: skewX(0deg) translateX(0%) skewY(-10deg) translateY(-29%);
+//           background-color: rgba(255, 0, 255, 0.241);
+//           border-right: none; // Supprimer la bordure droite en mobile
+//           border-bottom: 1px solid transparent;
+//           border-image: linear-gradient(
+//             to right,
+//             rgba(0, 0, 0, 0),
+//             rgba(141, 141, 141, 0.7),
+//             rgba(0, 0, 0, 0)
+//           );
+//           border-image-slice: 1;
+//           &::after {
+//             top: auto;
+//             bottom: -26px; // Décalage de l'ombrage en bas de la bordure
+//             left: 0;
+//             right: 0;
+//             height: 25px;
+//             width: 100%;
+//             background: radial-gradient(
+//               ellipse at top,
+//               rgba(141, 141, 141, 0.7),
+//               rgba(187, 187, 187, 0.6) 25%,
+//               rgba(206, 206, 206, 0.2) 50%,
+//               rgba(229, 230, 231, 0.1) 70%,
+//               rgba(229, 230, 231, 0) 100%
+//             );
+//           }
+//         }
+//       }
+
+//       .contentContainer {
+//         z-index: 1;
+//         position: relative;
+//         width: 50%;
+//         height: 100%;
+
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 40px;
+//         padding: 40px;
+
+//         border: 1px solid red;
+//         @media screen and (max-width: 767px) {
+//           width: 100%;
+//           height: 50%;
+//         }
+//         .title {
+//           font-size: 2rem;
+//           font-weight: 800;
+//           text-transform: uppercase;
+//           padding: 40px;
+//           border: 1px solid orange;
+//         }
+
+//         .buttonsContainer {
+//           display: flex;
+//           gap: 40px;
+//         }
 //       }
 //     }
 
-//     .polygonContainer {
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 0% 100%);
-//       border: 1px solid blue;
-//       background-color: rgba(0, 0, 255, 0.16);
-//     }
-//   }
-// }
-//_________________________________________________
-// Classe réutilisable pour les ombres elliptiques
-// .shadowElipse {
-//   position: absolute;
-//   width: 100%;
-//   height: 45px;
-//   background: radial-gradient(
-//     at 50% 50%,
-//     #bbbbbb 0%,
-//     #d9d9d9 27%,
-
-//     #e8e8e8 50%,
-//     transparent 70%
-//   );
-// }
-// .shadowElipseTop {
-//   @extend .shadowElipse;
-//   top: 8%;
-// }
-// .shadowElipseBottom {
-//   @extend .shadowElipse;
-//   bottom: 8%;
-// }
-
-// .heroSection {
-//   position: relative;
-//   height: calc(100vh - 100px);
-//   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
-//   display: flex;
-//   align-items: center;
-
-//   border: 1px solid black;
-
-//   .mainContainer {
-//     z-index: 1;
-//     position: relative;
-//     width: 100%;
-//     height: 80%;
-//     border: 2px solid transparent;
-//     border-image: linear-gradient(
-//       90deg,
-//       rgba(198, 53, 117, 0),
-//       #bbbbbb,
-//       rgba(198, 53, 117, 0)
-//     );
-//     border-image-slice: 1;
-//     background-color: white;
-
-//     .overlayContainer {
-//       z-index: 3;
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 0% 100%);
-//       border: 1px solid red;
-//       background-color: white;
-//       @media screen and (max-width: 600px) {
-//         clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 50%);
-//       }
-//     }
-//     .crossBorderOverlayContainer {
-//       z-index: 2;
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       clip-path: polygon(
-//         0% 0%,
-//         calc(50% + 2px) 0%,
-//         calc(60% + 2px) 100%,
-//         0% 100%
-//       );
-//       background: radial-gradient(at 59% 50%, #bbbbbb 0%, transparent 70%);
-//       @media screen and (max-width: 600px) {
-//         clip-path: polygon(
-//           0% 0%,
-//           100% 0%,
-//           100% calc(60% + 2px),
-//           0% calc(50% + 2px)
-//         );
-//       }
-//     }
-//     .crossShadowOverlayContainer {
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       clip-path: polygon(
-//         0% 0%,
-//         calc(50% + 80px) 0%,
-//         calc(60% + 80px) 100%,
-//         0% 100%
-//       );
-//       border: 1px solid blue;
-//       background: linear-gradient(90deg, #48abe0 0%, transparent 100%);
-//       @media screen and (max-width: 600px) {
-//         clip-path: polygon(0% 0%, 100% 0%, 100% 63%, 0% 53%);
-//       }
-//     }
-
-//     .imageContainerPositioner {
+//     .backgroundContainer {
 //       position: absolute;
 //       width: 100%;
 //       height: 100%;
 //       display: flex;
 //       justify-content: right;
-//       @media screen and (max-width: 600px) {
+//       background-color: white;
+//       @media screen and (max-width: 767px) {
 //         align-items: end;
 //       }
 
 //       .imageContainer {
+//         position: relative;
 //         width: 50%;
 //         height: 100%;
-//         @media screen and (max-width: 600px) {
+//         @media screen and (max-width: 767px) {
 //           width: 100%;
 //           height: 50%;
+//         }
+//         .image {
+//           object-fit: contain;
 //         }
 //       }
 //     }
 //   }
-// }
-
-// // Classe réutilisable pour les ombres elliptiques
-// .shadowElipse {
-//   position: absolute;
-//   width: 100%;
-//   height: 45px;
-//   background: radial-gradient(
-//     at 50% 50%,
-//     #bbbbbb 0%,
-//     #d9d9d9 27%,
-
-//     #e8e8e8 50%,
-//     transparent 70%
-//   );
-// }
-// .shadowElipseTop {
-//   @extend .shadowElipse;
-//   top: 8%;
-// }
-// .shadowElipseBottom {
-//   @extend .shadowElipse;
-//   bottom: 8%;
 // }
