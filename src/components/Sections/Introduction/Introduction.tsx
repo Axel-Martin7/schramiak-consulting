@@ -17,16 +17,6 @@ export default function Introduction() {
             <h3 className={`${styles.jobTitle} ${barlow.className}`}>
               21 specialist
             </h3>
-
-            {/* <h2 className={`${styles.firstName} ${barlow.className}`}>
-              Steven
-            </h2>
-            <h1 className={`${styles.lastName} ${barlow.className}`}>
-              Schramiak
-            </h1>
-            <h3 className={`${styles.jobTitle} ${barlow.className}`}>
-              21 specialist
-            </h3> */}
           </div>
         </div>
 

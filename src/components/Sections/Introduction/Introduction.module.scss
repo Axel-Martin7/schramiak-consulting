@@ -1,7 +1,7 @@
 .introductionSection {
   height: calc(100vh - 100px);
-  border: 1px solid black;
-  background: linear-gradient(45deg, #e5e6e7 0%, #fcfcfc 100%);
+  // border: 1px solid black;
+  background: linear-gradient(45deg, #e5e6e7 0%, #fcfcfc 80%);
 
   .shapesContainer {
     height: 100%;
@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
     overflow: hidden;
 
     .contentDiamond {
@@ -24,10 +23,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       background: linear-gradient(0deg, #fcfcfc 0%, #e5e6e7 100%);
       border: 3px solid; /* Épaisseur de la bordure */
-
       border-image: linear-gradient(to bottom, #ffffff 30%, #e5e6e7 70%) 1;
       overflow: hidden;
 
