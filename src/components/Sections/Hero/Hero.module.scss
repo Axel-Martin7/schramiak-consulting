@@ -109,247 +109,154 @@
         position: absolute;
         width: 50%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0 0 80px;
+        border: 1px solid red;
         @media screen and (max-width: 767px) {
           position: relative;
           width: 100%;
           min-height: inherit;
+          padding: 40px;
           background: linear-gradient(0deg, #ffffff 0%, transparent 70%),
             linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
         }
+
+        .title {
+          font-size: clamp(24px, 6vw, 38px);
+          text-transform: uppercase;
+          color: #0d3c48;
+          border: 1px solid orange;
+
+          .firstWord {
+            display: flex;
+            font-size: 1.5em;
+            font-weight: 600;
+
+            background: #3db9cf;
+            background: radial-gradient(
+              ellipse farthest-corner at center center,
+              #3db9cf 0%,
+              #107d98 68%,
+              #0d3c48 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          .highlight {
+            font-size: 1em;
+            font-weight: 500;
+            color: #107d98;
+            background: #3db9cf;
+            background: radial-gradient(
+              ellipse farthest-corner at center center,
+              #3db9cf 0%,
+              #107d98 68%,
+              #0d3c48 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        .description {
+          margin: 80px 0;
+          border: 1px solid orange;
+          @media screen and (max-width: 767px) {
+            margin: 40px 0;
+          }
+        }
+
+        .buttonsContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          text-align: center;
+          // border: 1px solid orange;
+        }
+
+        // .contentContainer {
+        //   width: 100%;
+        //   height: 100%;
+        //   display: flex;
+        //   flex-direction: column;
+        //   justify-content: center; /* Centre verticalement le contenu */
+        //   padding: 0 20px;
+        //   text-align: left; /* Garde le texte aligné à gauche */
+        //   border: 1px solid red;
+
+        //   .title {
+        //     font-size: clamp(
+        //       24px,
+        //       6vw,
+        //       40px
+        //     ); /* Taille adaptative pour le titre */
+
+        //     word-break: break-word; /* Permet de retourner à la ligne si nécessaire */
+        //     border: 1px solid orange;
+
+        //     .firstWord {
+        //       display: block;
+        //     }
+        //     .highlight {
+        //       white-space: nowrap; /* Empêche la coupure du mot à l'intérieur */
+        //     }
+        //   }
+
+        //   .description {
+        //     margin: 20px 0;
+        //     font-size: 16px;
+        //     line-height: 1.5;
+        //     border: 1px solid orange;
+        //   }
+
+        //   .buttonGroup {
+        //     display: flex;
+        //     gap: 10px; /* Espace entre les boutons */
+        //     margin-top: 20px;
+        //     border: 1px solid orange;
+        //   }
+
+        //   .button {
+        //     padding: 10px 20px;
+        //     font-size: 14px;
+        //     cursor: pointer;
+        //     border: none;
+        //     background-color: #0d3c48;
+        //     color: #ffffff;
+        //     transition: background-color 0.3s;
+
+        //     &:hover {
+        //       background-color: #065a73;
+        //     }
+        //   }
+        // }
       }
     }
+  }
 
-    .backgroundContainer {
-      width: 100%;
+  .backgroundContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    background-color: white;
+    @media screen and (max-width: 767px) {
+      min-height: 50vh; // utilisation de clamp ici pour ajuster en petit ecran
+    }
+
+    .imageContainer {
+      position: relative;
+      width: 50%;
       height: 100%;
-      display: flex;
-      justify-content: right;
-      background-color: white;
       @media screen and (max-width: 767px) {
-        min-height: 50vh; // utilisation de clamp ici pour ajuster en petit ecran
+        width: 100%;
+        height: auto;
+        min-height: inherit;
       }
-
-      .imageContainer {
-        position: relative;
-        width: 50%;
-        height: 100%;
-        @media screen and (max-width: 767px) {
-          width: 100%;
-          height: auto;
-          min-height: inherit;
-        }
-        .image {
-          object-fit: contain;
-        }
+      .image {
+        object-fit: contain;
       }
     }
   }
 }
-
-// .heroSection {
-//   height: calc(100vh - 100px);
-//   display: flex;
-//   align-items: center;
-//   background: linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
-//   border: 1px solid black;
-//   @media screen and (max-width: 767px) {
-//     min-height: 100vh;
-//     height: auto;
-//   }
-
-//   .mainContainer {
-//     position: relative;
-//     width: 100%;
-//     height: 80%;
-//     border: 1px solid transparent;
-//     border-image: linear-gradient(
-//       90deg,
-//       rgba(0, 0, 0, 0),
-//       rgba(141, 141, 141, 0.7),
-//       rgba(0, 0, 0, 0)
-//     );
-//     border-image-slice: 1;
-
-//     // gradient pour l'ombrage au dessus de la bordure top:
-//     &::before {
-//       content: '';
-//       position: absolute;
-//       top: -16px;
-//       width: 100%;
-//       height: 15px;
-//       background: radial-gradient(
-//         ellipse at bottom,
-//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
-//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-//       );
-//     }
-//     // gradient pour l'ombrage en dessous de la bordure bottom:
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       bottom: -16px;
-//       width: 100%;
-//       height: 15px;
-//       background: radial-gradient(
-//         ellipse at top,
-//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
-//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-//       );
-//     }
-//     @media screen and (max-width: 767px) {
-//       min-height: 90vh;
-//       height: auto;
-//     }
-
-//     .overflowControl {
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       overflow: hidden;
-
-//       .skewedContainer {
-//         z-index: 1;
-//         position: absolute;
-//         width: 100%;
-//         height: 100%;
-//         transform: skewX(10deg) translateX(-42%);
-//         background-color: rgba(0, 0, 255, 0.293);
-//         border-right: 1px solid transparent;
-//         border-image: linear-gradient(
-//           to bottom,
-//           rgba(0, 0, 0, 0),
-//           rgba(141, 141, 141, 0.7),
-//           rgba(0, 0, 0, 0)
-//         );
-//         border-image-slice: 1;
-//         background: linear-gradient(365deg, #fcfcfc 0%, #e5e6e7 100%);
-//         // Ombrage extérieur:
-//         &::after {
-//           content: '';
-//           position: absolute;
-//           top: 0;
-//           right: -26px; // Décalage de l'ombrage à droite de la bordure
-//           height: 100%;
-//           width: 25px;
-//           background: radial-gradient(
-//             ellipse at left,
-//             /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-//             /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
-//             /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-//             /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-//             /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-//           );
-//         }
-//         @media screen and (max-width: 767px) {
-//           display: none;
-//         }
-//       }
-
-//       .informationsContainer {
-//         position: relative;
-//         z-index: 1;
-//         width: 50%;
-//         height: 100%;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-
-//         gap: 40px;
-
-//         border: 1px solid red;
-//         @media screen and (max-width: 767px) {
-//           width: 100%;
-//           height: 50%;
-//           // justify-content: baseline;
-//           align-items: baseline;
-//           background: linear-gradient(0deg, #ffffff 0%, transparent 70%),
-//             linear-gradient(298deg, #fcfcfc 0%, #e5e6e7 100%);
-//         }
-
-//         .contentContainer {
-//           width: 90%;
-//           height: 90%;
-//           padding: 40px;
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           gap: 80px;
-
-//           border: 1px solid orange;
-
-//           @media screen and (max-width: 767px) {
-//             width: 100%;
-//             height: 100%;
-//           }
-
-//           .titleContainer {
-//             font-size: 38px;
-//             text-transform: uppercase;
-
-//             border: 1px solid yellow;
-//             word-break: break-word; // Casse les mots longs sur plusieurs lignes si nécessaire
-
-//             .firstWord {
-//               display: block;
-//               margin-bottom: 0.2em;
-//             }
-//             .highlight {
-//               margin: 0 0.2em;
-//             }
-//           }
-
-//           .text {
-//             border: 1px solid yellow;
-//           }
-
-//           .buttonsContainer {
-//             border: 1px solid yellow;
-//             .primaryButton {
-//               display: inline-block;
-//               padding: 20px;
-//               border: 1px solid black;
-//             }
-//             .secondaryButton {
-//               display: inline-block;
-//               padding: 20px;
-//               border: 1px solid black;
-//             }
-//           }
-//         }
-//       }
-//     }
-
-//     .backgroundContainer {
-//       width: 100%;
-//       height: 100%;
-//       display: flex;
-//       justify-content: right;
-//       background-color: white;
-//       @media screen and (max-width: 767px) {
-//         min-height: inherit; // Assure que la hauteur minimale du backgroundContainer est égale à celle de son parent mainContainer
-//         flex-direction: column;
-//         justify-content: flex-end;
-//       }
-
-//       .imageContainer {
-//         position: relative;
-//         width: 50%;
-//         height: 100%;
-//         @media screen and (max-width: 767px) {
-//           width: 100%;
-//           height: 50%; // n'a pas d'effet actuellement
-//           min-height: 400px; // Assure une hauteur minimale sur les petits écrans
-//         }
-//         .image {
-//           object-fit: contain;
-//         }
-//       }
-//     }
-//   }
-// }
