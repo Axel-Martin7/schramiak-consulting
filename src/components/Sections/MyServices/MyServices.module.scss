@@ -1,0 +1,128 @@
+// .hexagon1 {
+//   position: absolute;
+//   width: 33.33%;
+
+//   aspect-ratio: 1 / cos(30deg);
+//   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+//   background-color: blue;
+// }
+
+.servicesSection {
+  height: calc(100vh - 100px);
+  border: 1px solid black;
+
+  .shapesContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    border: 1px solid red;
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 250px);
+      transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+      width: 500px;
+      height: 290px;
+      clip-path: polygon(0% 0%, 83.2% 0%, 100% 50%, 83.2% 100%, 0% 100%);
+
+      background-color: red;
+      aspect-ratio: 1 / cos(30deg);
+    }
+
+    .hexagon1,
+    .hexagon2,
+    .hexagon3,
+    .hexagon4 {
+      position: absolute;
+      transform: translateX(-50%);
+      width: 333.33px;
+      aspect-ratio: 1 / cos(30deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+      border: 1px solid red;
+      background-color: rgba(0, 0, 255, 0.269);
+    }
+
+    .hexagon1 {
+      top: 0%;
+      left: 50%;
+      background-color: rgba(0, 0, 255, 0.269);
+    }
+    .hexagon2 {
+      top: 17.2%;
+      left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
+    }
+    .hexagon3 {
+      bottom: 17.2%;
+      left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
+    }
+    .hexagon4 {
+      bottom: 0%;
+      left: 50%;
+    }
+
+    .centralHexagon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+      width: 333.33px;
+      aspect-ratio: 1 / cos(30deg);
+      clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+      border: 1px solid black;
+      background-color: rgba(255, 0, 0, 0.317);
+    }
+
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 16px;
+      border: 1px solid red;
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      padding: 20 0px;
+
+      .number {
+        font-size: 60px;
+      }
+
+      .title {
+        font-size: 24px;
+      }
+    }
+
+    // .helpHexagon {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: calc(50% - 167px);
+    //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    //   width: 333.33px;
+    //   aspect-ratio: 1 / cos(30deg);
+    //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+
+    //   background-color: rgba(0, 213, 255, 0.317);
+    // }
+    // .helpHexagon2 {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: calc(50% - 334px);
+    //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    //   width: 333.33px;
+    //   aspect-ratio: 1 / cos(30deg);
+    //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+
+    //   background-color: rgba(64, 255, 0, 0.317);
+    // }
+  }
+}
