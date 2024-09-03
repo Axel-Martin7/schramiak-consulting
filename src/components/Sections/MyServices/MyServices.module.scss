@@ -32,9 +32,9 @@
       transform: translateX(-50%);
       width: 333.33px;
       aspect-ratio: 1 / cos(30deg);
-      clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
       // background: linear-gradient(150deg, #ffffff 30%, #e5e6e7 100%);
-      background-color: rgba(255, 0, 0, 0.225);
+      background-color: rgb(255, 0, 0);
     }
 
     // Placement des hexagones :
@@ -55,40 +55,43 @@
       left: 50%;
     }
 
-    //* ----------------------  Hexagones d'ombrage :
-    // Création des hexagones d'ombrage :
-    .shadowHexagon1,
-    // .shadowHexagon2,
-     .shadowHexagon3,
-    .shadowHexagon4 {
+    //* ----------------------  Formes d'ombrage :
+    // Création des formes d'ombrage :
+    .shadowShape1,
+    .shadowShape2,
+    .shadowShape3,
+    .shadowShape4 {
       position: absolute;
       transform: translateX(-50%);
-      width: 383px;
+      width: 333.33px;
       aspect-ratio: 1 / cos(30deg);
       clip-path: polygon(
-        27% 6%,
-        74% 6%,
-        83% 14%,
+        69% 0%,
+        80% 10%,
         100% 50%,
         75% 100%,
-        39% 100%,
-        9% 42%
+        19% 100%,
+        -6% 50%
       );
 
       background-color: blue;
     }
-    // Placement des hexagones d'ombrage :
-    .shadowHexagon1 {
-      top: 0%;
-      left: 50%;
+    // Placement des formes d'ombrage :
+    .shadowShape1 {
+      top: 5%; /* Ajustez pour décaler légèrement vers le bas */
+      left: calc(50% + 47px); /* Ajuster pour déplacer vers la droite */
     }
-    .shadowHexagon3 {
-      bottom: 17.2%;
-      left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
+    .shadowShape2 {
+      top: 22.2%;
+      left: calc(50% + 317px); /* Ajuster pour déplacer vers la droite */
     }
-    .shadowHexagon4 {
-      top: 0%;
-      left: 10%;
+    .shadowShape3 {
+      bottom: 12.2%; /* Ajustez pour décaler légèrement vers le bas */
+      left: calc(50% + 317px); /* Ajuster pour déplacer vers la droite */
+    }
+    .shadowShape4 {
+      bottom: -5%; /* Ajustez pour décaler légèrement vers le bas */
+      left: calc(50% + 47px); /* Ajuster pour déplacer vers la droite */
     }
 
     //* ----------------------  Hexagones de repères :

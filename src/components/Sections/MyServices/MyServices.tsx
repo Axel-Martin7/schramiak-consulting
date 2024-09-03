@@ -43,11 +43,11 @@ export default function Myservices() {
         <div className={styles.borderHexagon3}></div>
         <div className={styles.borderHexagon4}></div>
 
-        {/* Hexagones des ombrages */}
-        <div className={styles.shadowHexagon1}></div>
-
-        <div className={styles.shadowHexagon3}></div>
-        <div className={styles.shadowHexagon4}></div>
+        {/* Formes des ombrages */}
+        <div className={styles.shadowShape1}></div>
+        <div className={styles.shadowShape2}></div>
+        <div className={styles.shadowShape3}></div>
+        <div className={styles.shadowShape4}></div>
 
         {/* Hexagones de repères */}
         <div className={styles.centralHexagon}></div>
