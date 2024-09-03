@@ -24,7 +24,6 @@
     // }
 
     //* ----------------------  Hexagones principaux :
-    // Création des sous-hexagones pour les bordures:
     .borderHexagon1,
     .borderHexagon2,
     .borderHexagon3,
@@ -34,12 +33,23 @@
       transform: translateX(-50%);
       width: 300px;
       aspect-ratio: 1 / cos(30deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-      background: linear-gradient(150deg, #ffffff 0%, #e5e6e7 100%);
+      background: linear-gradient(150deg, #ffffff 0%, #bbbbbb 100%);
+
+      .hexagon {
+        width: 97%;
+        height: 97%;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        background: linear-gradient(150deg, #e5e6e7 0%, #ffffff 100%);
+      }
 
       // background-color: red;
     }
 
+    // positionnement des hexagones :
     .borderHexagon1 {
       top: 6%;
       left: 50%;
@@ -93,143 +103,3 @@
     // }
   }
 }
-
-// .servicesSection {
-//   height: calc(100vh - 100px);
-//   background-color: #e5e6e7;
-//   border: 1px solid black;
-
-//   .shapesContainer {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     border: 1px solid red;
-
-//     //* ----------------------  Conteneur en forme de fleche :
-//     // .arrow {
-//     //   position: absolute;
-//     //   top: 50%;
-//     //   left: calc(50% - 250px);
-//     //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-//     //   width: 500px;
-//     //   height: 290px;
-//     //   aspect-ratio: 1 / cos(30deg);
-//     //   clip-path: polygon(0% 0%, 83.2% 0%, 100% 50%, 83.2% 100%, 0% 100%);
-//     //   background-color: red;
-//     // }
-//     //* ----------------------  Hexagones principaux :
-//     // Création des hexagones :
-//     .borderHexagon1,
-//     .borderHexagon2,
-//     .borderHexagon3,
-//     .borderHexagon4 {
-//       z-index: 1;
-//       position: absolute;
-//       transform: translateX(-50%);
-//       width: 333.33px;
-//       aspect-ratio: 1 / cos(30deg);
-//       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-//       background: linear-gradient(150deg, #ffffff 30%, #e5e6e7 100%);
-//       // background-color: rgb(255, 0, 0);
-//       // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.2);
-//     }
-
-//     // Placement des hexagones :
-//     .borderHexagon1 {
-//       top: 0%;
-//       left: 50%;
-//     }
-//     .borderHexagon2 {
-//       top: 17.2%;
-//       left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
-//     }
-//     .borderHexagon3 {
-//       bottom: 17.2%;
-//       left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
-//     }
-//     .borderHexagon4 {
-//       bottom: 0%;
-//       left: 50%;
-//     }
-
-//     //* ----------------------  Formes d'ombrage :
-//     // Création des formes d'ombrage :
-//     .shadowShape1,
-//     .shadowShape2,
-//     .shadowShape3,
-//     .shadowShape4 {
-//       position: absolute;
-//       transform: translateX(-50%);
-//       width: 333.33px;
-//       aspect-ratio: 1 / cos(30deg);
-//       clip-path: polygon(
-//         69% 0%,
-//         80% 10%,
-//         100% 50%,
-//         75% 100%,
-//         19% 100%,
-//         -6% 50%
-//       );
-//       background: radial-gradient(
-//         circle at center,
-//         rgba(0, 0, 0, 0.2),
-//         rgba(0, 0, 0, 0.1) 60%,
-//         rgba(0, 0, 0, 0) 100%
-//       );
-
-//       // background-color: blue;
-//     }
-//     // Placement des formes d'ombrage :
-//     .shadowShape1 {
-//       top: 5%; /* Ajustez pour décaler légèrement vers le bas */
-//       left: calc(50% + 47px); /* Ajuster pour déplacer vers la droite */
-//     }
-//     .shadowShape2 {
-//       top: 22.2%;
-//       left: calc(50% + 317px); /* Ajuster pour déplacer vers la droite */
-//     }
-//     .shadowShape3 {
-//       bottom: 12.2%; /* Ajustez pour décaler légèrement vers le bas */
-//       left: calc(50% + 317px); /* Ajuster pour déplacer vers la droite */
-//     }
-//     .shadowShape4 {
-//       bottom: -5%; /* Ajustez pour décaler légèrement vers le bas */
-//       left: calc(50% + 47px); /* Ajuster pour déplacer vers la droite */
-//     }
-
-//     //* ----------------------  Hexagones de repères :
-//     .centralHexagon {
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-//       width: 333.33px;
-//       aspect-ratio: 1 / cos(30deg);
-//       clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
-//       border: 1px solid black;
-//       background-color: rgba(255, 0, 0, 0.317);
-//     }
-//     // .helperHexagon1 {
-//     //   position: absolute;
-//     //   top: 50%;
-//     //   left: calc(50% - 167px);
-//     //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-//     //   width: 333.33px;
-//     //   aspect-ratio: 1 / cos(30deg);
-//     //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
-
-//     //   background-color: rgba(0, 213, 255, 0.317);
-//     // }
-//     // .helperHexagon2 {
-//     //   position: absolute;
-//     //   top: 50%;
-//     //   left: calc(50% - 334px);
-//     //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-//     //   width: 333.33px;
-//     //   aspect-ratio: 1 / cos(30deg);
-//     //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
-
-//     //   background-color: rgba(64, 255, 0, 0.317);
-//     // }
-//   }
-// }
