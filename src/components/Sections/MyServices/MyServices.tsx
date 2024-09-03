@@ -6,7 +6,9 @@ export default function Myservices() {
     <section className={styles.servicesSection}>
       <div className={styles.shapesContainer}>
         {/* Conteneur en forme de fléche */}
-        <div className={styles.arrow}></div>
+        <div className={styles.borderArrow}>
+          <div className={styles.arrow}></div>
+        </div>
 
         {/* Hexagones principaux */}
         <div className={styles.borderHexagon1}>
