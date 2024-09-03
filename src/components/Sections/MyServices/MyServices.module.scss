@@ -32,28 +32,28 @@
       z-index: 1;
       position: absolute;
       transform: translateX(-50%);
-      width: 333.33px;
+      width: 300px;
       aspect-ratio: 1 / cos(30deg);
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
-      background: linear-gradient(150deg, #ffffff 30%, #e5e6e7 100%);
+      background: linear-gradient(150deg, #ffffff 0%, #e5e6e7 100%);
 
       // background-color: red;
     }
 
     .borderHexagon1 {
-      top: 0%;
+      top: 6%;
       left: 50%;
     }
     .borderHexagon2 {
-      top: 17.2%;
-      left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
+      top: 20.8%;
+      left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
     }
     .borderHexagon3 {
-      bottom: 17.2%;
-      left: calc(50% + 270px); /* Ajuster pour déplacer vers la droite */
+      bottom: 20.8%;
+      left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
     }
     .borderHexagon4 {
-      bottom: 0%;
+      bottom: 6%;
       left: 50%;
     }
 
@@ -63,7 +63,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-      width: 333.33px;
+      width: 300px;
       aspect-ratio: 1 / cos(30deg);
       clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
       border: 1px solid black;
