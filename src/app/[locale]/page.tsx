@@ -9,6 +9,7 @@ import Introduction from '@/components/Sections/Introduction/Introduction';
 import HeroGrid from '@/components/Sections/Hero/HeroGrid';
 import Hero from '@/components/Sections/Hero/Hero';
 import Myservices from '@/components/Sections/MyServices/MyServices';
+import V2Services from '@/components/Sections/MyServices/V2Services';
 
 type Props = {
   params: { locale: string };
@@ -23,6 +24,8 @@ export default function Home({ params: { locale } }: Props) {
     <main className={styles.main}>
       <Introduction />
       <Hero />
+      <V2Services />
+
       <Myservices />
     </main>
   );
