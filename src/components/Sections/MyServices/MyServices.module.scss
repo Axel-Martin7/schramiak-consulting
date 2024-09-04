@@ -31,24 +31,28 @@
         clip-path: polygon(0% 0%, 83.3% 0%, 100% 50%, 83.3% 100%, 0% 100%);
         background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
         .contentContainer {
-          width: 97%;
+          width: 85%;
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           align-items: center;
-          border: 1px solid red;
+          justify-content: center;
 
           .title {
-            padding: 10px;
-            font-size: 28px;
-            text-transform: uppercase;
+            padding: 5px 10px;
+            font-size: 38px;
             font-weight: 600;
-            border-bottom: 2px solid black;
+            text-transform: uppercase;
+            color: #838383;
+            border-bottom: 2px solid #838383;
+            .colored {
+              color: #00a2c7;
+            }
           }
           .description {
+            color: #646464;
             padding: 20px;
-            font-size: 14px;
+            text-align: center;
           }
         }
       }
@@ -79,22 +83,52 @@
         .contentContainer {
           width: 70%;
           height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
           text-align: center;
-          border: 1px solid red;
+          padding: 30px 0;
+          // border: 1px solid red;
 
           .number {
-            margin: 20px 0;
-            font-size: 40px;
-          }
-          .serviceTitle {
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-size: 22px;
+            font-size: 38px;
             font-weight: 600;
+            color: #00a2c7;
           }
+
+          .serviceTitle {
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #838383;
+            .colored {
+              color: #00a2c7;
+            }
+          }
+
           .description {
-            font-size: 14px;
+            color: #646464;
+            padding: 0 30px;
           }
+
+          // .number {
+          //   font-size: 38px;
+          //   font-weight: 600;
+          //   color: #00a2c7;
+          // }
+          // .serviceTitle {
+          //   font-size: 24px;
+          //   font-weight: 600;
+          //   text-transform: uppercase;
+          //   color: #838383;
+          //   .colored {
+          //     color: #00a2c7;
+          //   }
+          // }
+          // .description {
+          //   color: #646464;
+          // }
         }
       }
 
