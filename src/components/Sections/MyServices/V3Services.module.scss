@@ -1,0 +1,538 @@
+.servicesSection {
+  height: calc(100vh - 100px);
+  background-color: #e5e6e7;
+  border: 1px solid black;
+
+  .mainContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+
+    .topInformationsContainer {
+      z-index: 2;
+      position: absolute;
+      left: calc(50% + -270px);
+      transform: translateX(-50%);
+      width: 370px;
+      height: 260px;
+      border: 1px solid red;
+      /*---------------------- Mobile ---------------------------*/
+      @media screen and (max-width: 767px) {
+        position: relative;
+        transform: none;
+        left: auto; // Réinitialise la position horizontale
+        top: auto; // Réinitialise la position verticale
+        width: 100%;
+      }
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        top: 2%;
+        left: calc(50% + -275px);
+        transform: none;
+        width: calc(540px + 10px);
+      }
+    }
+
+    .shapesContainer {
+      z-index: 1;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      filter: drop-shadow(10px 10px 14px #8d8d8d);
+      border: 1px solid green;
+      margin: 10px;
+      /*---------------------- Mobile ---------------------------*/
+      @media screen and (max-width: 767px) {
+        position: relative;
+      }
+
+      //* ----------------------  Arrow :
+      .bordersArrow {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 230px);
+        transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+        width: 450px;
+        height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+        background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+        /*------------------ Mobile + Ecran moyen ------------------*/
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        .arrow {
+          width: 98%;
+          height: 97%;
+          clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+          background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+        }
+      }
+
+      //* ----------------------  Hexagones principaux :
+      .bordersHexagon1,
+      .bordersHexagon2,
+      .bordersHexagon3,
+      .bordersHexagon4 {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 300px;
+        aspect-ratio: 1 / cos(30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          width: 100px;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          width: 270px;
+          height: calc(
+            270px * 1.1547
+          ); /* Hauteur fixe en fonction de l'hexagone parfait */
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0 25%
+          );
+        }
+
+        .hexagon {
+          width: 97%;
+          height: 97%;
+          clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0 50%
+          );
+          background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+          /*---------------------- Ecran moyen ----------------------*/
+          @media (min-width: 768px) and (max-width: 1024px) {
+            clip-path: polygon(
+              50% 0%,
+              100% 25%,
+              100% 75%,
+              50% 100%,
+              0% 75%,
+              0 25%
+            );
+          }
+        }
+      }
+
+      //* ----------------------  Positionnement des hexagones :
+      .bordersHexagon1 {
+        top: 6%;
+        left: 50%;
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          top: 50%;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + -275px);
+        }
+      }
+      .bordersHexagon2 {
+        top: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          top: 50%;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + -140px);
+        }
+      }
+      .bordersHexagon3 {
+        bottom: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          top: 50%;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + 140px);
+        }
+      }
+      .bordersHexagon4 {
+        bottom: 6%;
+        left: 50%;
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          top: 50%;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + 275px);
+        }
+      }
+    }
+
+    .backgroundContainer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(#fcfcfc 0%, transparent 50%);
+      /*---------------------- Mobile ---------------------------*/
+      @media screen and (max-width: 767px) {
+        position: absolute; // Position absolue pour prendre tout l'écran
+        /*---------------------- Ecran moyen ----------------------*/
+      }
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: calc(540px + 10px);
+        height: 97%;
+        border-radius: 20px;
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+          10px 10px 15px rgba(70, 70, 70, 0.15);
+        background: radial-gradient(
+          100% 60% at 50% 50%,
+          #fcfcfc 0%,
+          transparent 50%
+        );
+      }
+      .imageContainer {
+        position: relative;
+        width: 715px;
+        height: 570px;
+        filter: opacity(0.22) drop-shadow(-38px 31px 13px white);
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          height: 400px;
+        }
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 2%;
+        }
+        .image {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// .servicesSection {
+//   height: calc(100vh - 100px);
+//   background-color: #e5e6e7;
+//   border: 1px solid black;
+//   /*---------------------- Mobile ---------------------------*/
+//   @media screen and (max-width: 767px) {
+//     min-height: 100vh;
+//   }
+
+//   .mainContainer {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid red;
+
+//     .shapesContainer {
+//       z-index: 1;
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       filter: drop-shadow(10px 10px 14px #8d8d8d);
+
+//       border: 1px solid orange;
+
+//       //* ----------------------  Conteneur du titre et presentation (fleche en grand ecran) :
+//       .decorativePresentationShape {
+//         position: absolute;
+//         top: 50%;
+//         left: calc(50% - 230px);
+//         transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+//         width: 450px;
+//         height: 260px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+//         background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+//         /*---------------------- Mobile ---------------------------*/
+//         @media screen and (max-width: 768px) {
+//           position: static;
+//           width: 100%;
+//           transform: none;
+//           clip-path: none;
+//           background: none;
+//         }
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           position: static;
+//           width: calc(540px + 10px);
+//           transform: none;
+//           clip-path: none;
+//           background: none;
+//         }
+
+//         .presentationShape {
+//           width: 98%;
+//           height: 98%;
+//           clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+//           background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+//           /*---------------------- Mobile ---------------------------*/
+//           @media screen and (max-width: 768px) {
+//             width: 100%;
+//             height: 100%;
+//             clip-path: none;
+//             background: none;
+//           }
+//           /*---------------------- Ecran moyen ----------------------*/
+//           @media (min-width: 768px) and (max-width: 1024px) {
+//             width: 100%;
+//             height: 100%;
+//             clip-path: none;
+//             background: none;
+//           }
+
+//           .contentContainer {
+//             width: 82%;
+//             height: 100%;
+//             border: 1px solid red;
+//             position: relative; /* Nécessaire pour la gestion du texte */
+
+//             /*---------------------- Mobile ---------------------------*/
+//             @media screen and (max-width: 768px) {
+//               width: 100%;
+//               height: 100%;
+//             }
+//             /*---------------------- Ecran moyen ----------------------*/
+//             @media (min-width: 768px) and (max-width: 1024px) {
+//               width: 100%;
+//               height: 100%;
+//               margin-top: 15px;
+//             }
+
+//             .title {
+//               font-size: 30px;
+//               font-weight: 600;
+//               text-transform: uppercase;
+//               filter: none; /* Annule le filter hérité du parent */
+//             }
+//           }
+//         }
+//       }
+
+//       //* ----------------------  Hexagones principaux (conteneur version mobile) :
+//       .decorativeShape1,
+//       .decorativeShape2,
+//       .decorativeShape3,
+//       .decorativeShape4 {
+//         position: absolute;
+//         transform: translateX(-50%);
+//         width: 300px;
+//         aspect-ratio: 1 / cos(30deg);
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+//         background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+//         /*---------------------- Mobile ---------------------------*/
+//         @media screen and (max-width: 767px) {
+//           position: static;
+//           transform: none;
+//           aspect-ratio: 0;
+//           clip-path: none;
+//           width: 100%;
+//           height: 400px;
+//           margin: 20px 0;
+//           background: none;
+//         }
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           width: 270px;
+//           height: calc(
+//             270px * 1.1547
+//           ); /* Hauteur fixe en fonction de l'hexagone parfait */
+//           clip-path: polygon(
+//             50% 0%,
+//             100% 25%,
+//             100% 75%,
+//             50% 100%,
+//             0% 75%,
+//             0 25%
+//           );
+//         }
+
+//         .hexagon {
+//           width: 97%;
+//           height: 97%;
+//           clip-path: polygon(
+//             25% 0%,
+//             75% 0%,
+//             100% 50%,
+//             75% 100%,
+//             25% 100%,
+//             0 50%
+//           );
+//           background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+//           //           /*---------------------- Mobile ---------------------------*/
+//           @media screen and (max-width: 767px) {
+//             width: 90%;
+//             border: solid 3px #ececec;
+//             border-radius: 20px;
+//             box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+//               10px 10px 15px rgba(70, 70, 70, 0.15); //
+//             clip-path: none;
+//             // background: none;
+//           }
+//           //           /*---------------------- Ecran moyen ----------------------*/
+//           @media (min-width: 768px) and (max-width: 1024px) {
+//             clip-path: polygon(
+//               50% 0%,
+//               100% 25%,
+//               100% 75%,
+//               50% 100%,
+//               0% 75%,
+//               0 25%
+//             );
+//           }
+//         }
+//       }
+
+//       // Positionnement des hexagones :
+//       .decorativeShape1 {
+//         top: 6%;
+//         left: 50%;
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           top: 33.1%;
+//           left: calc(50% + -275px);
+//         }
+//       }
+//       .decorativeShape2 {
+//         top: 20.8%;
+//         left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           top: 60%;
+//           left: calc(50% + -140px);
+//         }
+//       }
+//       .decorativeShape3 {
+//         bottom: 20.8%;
+//         left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           top: 60%;
+//           left: calc(50% + 140px);
+//         }
+//       }
+//       .decorativeShape4 {
+//         bottom: 6%;
+//         left: 50%;
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           top: 33.1%;
+//           left: calc(50% + 275px);
+//         }
+//       }
+
+//       //* ----------------------  Hexagones de repères :
+//       .centralHexagon {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+//         width: 300px;
+//         aspect-ratio: 1 / cos(30deg);
+//         clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+//         background-color: rgba(255, 0, 0, 0.317);
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           width: 270px;
+//           height: calc(
+//             270px * 1.1547
+//           ); /* Hauteur fixe en fonction de l'hexagone parfait */
+//           clip-path: polygon(
+//             50% 0%,
+//             100% 25%,
+//             100% 75%,
+//             50% 100%,
+//             0% 75%,
+//             0 25%
+//           );
+//         }
+//       }
+//     }
+
+//     .backgroundContainer {
+//       position: relative;
+//       width: 100%;
+//       height: 100%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       background: radial-gradient(#fcfcfc 0%, transparent 50%);
+//       /*---------------------- Mobile ---------------------------*/
+//       @media screen and (max-width: 767px) {
+//         flex-direction: column;
+//       }
+//       /*---------------------- Ecran moyen ----------------------*/
+//       @media (min-width: 768px) and (max-width: 1024px) {
+//         width: calc(540px + 10px);
+//         height: 97%;
+//         display: block;
+//         border-radius: 20px;
+//         box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+//           10px 10px 15px rgba(70, 70, 70, 0.15);
+//         background: radial-gradient(
+//           100% 60% at 50% 50%,
+//           #fcfcfc 0%,
+//           transparent 50%
+//         );
+//       }
+
+//       .imageContainer {
+//         position: relative;
+//         width: 715px;
+//         height: 570px;
+//         filter: opacity(0.22) drop-shadow(-38px 31px 13px white);
+//         border: 1px solid orange;
+//         /*---------------------- Ecran moyen ----------------------*/
+//         @media (min-width: 768px) and (max-width: 1024px) {
+//           top: 35%;
+//           width: 100%;
+//           height: 50%;
+//         }
+//         .image {
+//           object-fit: cover;
+//         }
+//       }
+//     }
+//   }
+// }

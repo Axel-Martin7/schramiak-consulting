@@ -18,10 +18,12 @@ export default function Myservices() {
                 <span className={styles.colored}>Mes</span> services
               </h1>
               <p className={`${styles.description} ${barlow.className}`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus autem consequuntur minus libero! Debitis error
-                dignissimos dolor sint, tempore eaque beatae molestias esse quam
-                provident veritatis aliquid natus harum laboriosam.
+                En tant que consultant, mon rôle sera de définir les stratégies
+                et outils nécessaires pour atteindre vos objectifs et ceux de
+                vos clients, avec un haut niveau de confidentialité, de
+                transparence et de collaboration. Ces engagements nous
+                permettront d'optimiser vos ressources, de déployer des outils
+                adaptés à votre activité et de soutenir vos équipes.
               </p>
               <div className={styles.buttonContainer}>
                 <Button label="Learn more" variant="primary" />
