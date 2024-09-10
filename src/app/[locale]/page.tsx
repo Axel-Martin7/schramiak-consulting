@@ -8,8 +8,7 @@ import Welcome from '@/components/Sections/Introduction/Welcome';
 import Introduction from '@/components/Sections/Introduction/Introduction';
 import HeroGrid from '@/components/Sections/Hero/HeroGrid';
 import Hero from '@/components/Sections/Hero/Hero';
-import Myservices from '@/components/Sections/MyServices/MyServices';
-import V2Services from '@/components/Sections/MyServices/V2Services';
+
 import V3Services from '@/components/Sections/MyServices/V3Services';
 
 type Props = {
@@ -26,9 +25,6 @@ export default function Home({ params: { locale } }: Props) {
       <Introduction />
       <Hero />
       <V3Services />
-      <V2Services />
-
-      <Myservices />
     </main>
   );
 }
