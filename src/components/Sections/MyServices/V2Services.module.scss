@@ -1,0 +1,182 @@
+.servicesSection {
+  height: calc(100vh - 100px);
+  // background-color: #e5e6e7;
+  border: 1px solid black;
+  background-color: #e5e6e7;
+
+  .mainContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+
+    .shapesContainer {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(10px 10px 14px #8d8d8d);
+      border: 1px solid orange;
+
+      //* ----------------------  Hexagones principaux :
+      .borderHexagon1,
+      .borderHexagon2,
+      .borderHexagon3,
+      .borderHexagon4 {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 270px;
+        height: calc(
+          270px * 1.1547
+        ); /* Hauteur fixe en fonction de l'hexagone parfait */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0 25%);
+        background: linear-gradient(150deg, #ffffff 0%, #bbbbbb 100%);
+
+        .hexagon {
+          width: 97%;
+          height: 97%;
+          display: flex;
+          align-items: center;
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0 25%
+          );
+          background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+
+          .contentContainer {
+            width: 100%;
+            height: 58%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            border: 1px solid red;
+            .number {
+              font-size: 44px;
+              font-weight: 600;
+              color: #00a2c7;
+            }
+
+            .serviceTitle {
+              font-size: 26px;
+              font-weight: 600;
+              text-transform: uppercase;
+              color: #838383;
+              .colored {
+                color: #00a2c7;
+              }
+            }
+
+            .description {
+              color: #646464;
+              padding: 0 30px;
+            }
+          }
+        }
+      }
+
+      // positionnement des hexagones :
+      .borderHexagon1 {
+        bottom: 28.3%;
+        left: calc(50% + -290px);
+      }
+      .borderHexagon2 {
+        bottom: 0%;
+        left: calc(50% + -145px);
+      }
+      .borderHexagon3 {
+        bottom: 0%;
+        left: calc(50% + 145px);
+      }
+      .borderHexagon4 {
+        bottom: 28.3%;
+        left: calc(50% + 290px);
+      }
+
+      //* ----------------------  Hexagones de repères :
+      .centralHexagon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+        width: 270px;
+        height: calc(
+          270px * 1.1547
+        ); /* Hauteur fixe en fonction de l'hexagone parfait */
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0 25%);
+        background-color: rgba(255, 0, 0, 0.193);
+      }
+    }
+
+    .backgroundContainer {
+      position: relative;
+      width: calc(
+        540px + 20px + 20px
+      ); // tailles des 2 hexagones du bas + 20px de marges entre eux et 20px de marge entre les 2 du dessus.
+      height: 100%;
+
+      // border: 1px solid blue;
+      border-radius: 20px;
+      box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 15px rgba(70, 70, 70, 0.15);
+
+      background: radial-gradient(
+        100% 60% at 50% 68%,
+        #fcfcfc 0%,
+        transparent 50%
+      );
+
+      .informationsTopContainer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 1px solid orange;
+        width: 100%;
+        height: 50%;
+
+        .title {
+          margin: 40px 0;
+          padding: 10px 20px;
+          font-size: 38px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #838383;
+          border-bottom: 2px solid #838383;
+          .colored {
+            color: #00a2c7;
+          }
+        }
+
+        .description {
+          color: #646464;
+          padding: 0 40px 10px 40px;
+        }
+      }
+
+      .imageContainer {
+        position: relative;
+        top: 35%;
+        width: 100%;
+        height: 50%;
+        filter: opacity(0.22) drop-shadow(0px 7px 20px white);
+        border: 1px solid orange;
+
+        .image {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

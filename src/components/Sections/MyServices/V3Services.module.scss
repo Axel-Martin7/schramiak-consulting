@@ -1,0 +1,458 @@
+.servicesSection {
+  height: calc(100vh - 100px);
+  background-color: #e5e6e7;
+
+  .mainContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px;
+
+    .topInformationsContainer {
+      z-index: 2;
+      position: absolute;
+      left: calc(50% + -260px);
+      transform: translateX(-50%);
+      width: 370px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 40px; // marge sur les cotés
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        top: 2%;
+        left: calc(50% + -275px);
+        transform: none;
+        width: calc(540px + 10px);
+        height: 300px;
+      }
+
+      .title {
+        padding-bottom: 5px;
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #838383;
+        border-bottom: 2px solid #838383;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+        }
+        .colored {
+          color: #00a2c7;
+        }
+      }
+      .description {
+        padding: 20px 0;
+        color: #646464;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          padding: 40px 20px;
+        }
+      }
+    }
+
+    //* ----------------------  Conteneurs version desktop :
+    .shapesContainer {
+      z-index: 1;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      filter: drop-shadow(10px 10px 14px #8d8d8d);
+
+      //* ----------------------  Arrow :
+      .bordersArrow {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 230px);
+        transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+        width: 450px;
+        height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+        background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+        /*------------------ Ecran moyen ------------------*/
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        .arrow {
+          width: 98%;
+          height: 97%;
+          clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+          background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+        }
+      }
+
+      //* ----------------------  Hexagones principaux + contenu (sauf mobile):
+      .bordersHexagon1,
+      .bordersHexagon2,
+      .bordersHexagon3,
+      .bordersHexagon4 {
+        z-index: 2;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 300px;
+        aspect-ratio: 1 / cos(30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          width: 270px;
+          height: calc(
+            270px * 1.1547
+          ); /* Hauteur fixe en fonction de l'hexagone parfait */
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0 25%
+          );
+        }
+
+        .hexagon {
+          width: 97%;
+          height: 97%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0 50%
+          );
+          background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+          /*---------------------- Ecran moyen ----------------------*/
+          @media (min-width: 768px) and (max-width: 1024px) {
+            clip-path: polygon(
+              50% 0%,
+              100% 25%,
+              100% 75%,
+              50% 100%,
+              0% 75%,
+              0 25%
+            );
+          }
+
+          .contentContainer {
+            width: 58%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            /*---------------------- Ecran moyen ----------------------*/
+            @media (min-width: 768px) and (max-width: 1024px) {
+              width: 100%;
+              height: 80%;
+              padding: 20px;
+            }
+            .serviceNumber {
+              font-size: 38px;
+              font-weight: 600;
+              color: #00a2c7;
+            }
+
+            .serviceTitle {
+              font-size: 24px;
+              font-weight: 600;
+              text-transform: uppercase;
+              color: #838383;
+              .colored {
+                color: #00a2c7;
+              }
+            }
+            .serviceDescription {
+              color: #646464;
+            }
+          }
+        }
+      }
+
+      //* ----------------------  Positionnement des hexagones :
+      .bordersHexagon1 {
+        top: 6%;
+        left: 50%;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + -275px);
+        }
+      }
+      .bordersHexagon2 {
+        top: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + -140px);
+        }
+      }
+      .bordersHexagon3 {
+        bottom: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + 140px);
+        }
+      }
+      .bordersHexagon4 {
+        bottom: 6%;
+        left: 50%;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + 275px);
+        }
+      }
+    }
+
+    .mobileCardsContainer {
+      display: none;
+    }
+
+    .backgroundContainer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(#fcfcfc 0%, transparent 50%);
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: calc(540px + 10px);
+        height: 97%;
+        border-radius: 20px;
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+          10px 10px 15px rgba(70, 70, 70, 0.15);
+        background: radial-gradient(
+          100% 60% at 50% 50%,
+          #fcfcfc 0%,
+          transparent 50%
+        );
+      }
+
+      .imageContainer {
+        position: relative;
+        width: 715px;
+        height: 570px;
+        filter: opacity(0.22) drop-shadow(-38px 31px 13px white);
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 2%;
+        }
+
+        .image {
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------- Mobile ---------------------------*/
+@media screen and (max-width: 767px) {
+  .servicesSection {
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 100px);
+    background-color: #e5e6e7;
+
+    .mainContainer {
+      position: relative;
+      height: 100%;
+      margin: 40px;
+      display: block;
+
+      .topInformationsContainer {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: none;
+        left: auto;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 5px;
+          font-size: 32px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #838383;
+          border-bottom: 2px solid #838383;
+          .colored {
+            color: #00a2c7;
+          }
+        }
+        .description {
+          padding: 40px 0;
+          text-align: center;
+          color: #646464;
+        }
+        .buttonContainer {
+          display: none;
+        }
+      }
+
+      .shapesContainer {
+        display: none;
+      }
+
+      .mobileCardsContainer {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        .mobileCard1,
+        .mobileCard2,
+        .mobileCard3,
+        .mobileCard4 {
+          z-index: 1;
+          position: relative;
+          padding: 60px 40px 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          background: linear-gradient(150deg, #e5e6e7e3 0%, #fcfcfca3 100%);
+          border-radius: 40px;
+          box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+            10px 10px 15px rgba(70, 70, 70, 0.15); // Ajoute une ombre autour du bouton pour donner un effet de relief
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 40px; /* Applique le même border-radius */
+            padding: 3px; /* Ajuste l'épaisseur de la bordure */
+            background: linear-gradient(to bottom, #ffffff 30%, #e5e6e7 70%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none; /* Pour s'assurer que le pseudo-élément n'interfère pas avec les interactions de l'utilisateur */
+          }
+          .bordersHexagon1,
+          .bordersHexagon2,
+          .bordersHexagon3,
+          .bordersHexagon4 {
+            position: absolute;
+            top: -33px;
+            left: 50%; /* Centrage horizontal */
+            transform: translateX(-50%);
+            width: 80px;
+            aspect-ratio: 1 / cos(30deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(
+              25% 0%,
+              75% 0%,
+              100% 50%,
+              75% 100%,
+              25% 100%,
+              0 50%
+            );
+            background: linear-gradient(150deg, #ffffff 25%, #bbbbbb 100%);
+            .hexagon {
+              width: 92%;
+              height: 92%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              clip-path: polygon(
+                25% 0%,
+                75% 0%,
+                100% 50%,
+                75% 100%,
+                25% 100%,
+                0 50%
+              );
+              background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+
+              .serviceNumber {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 38px;
+                font-weight: 600;
+                color: #00a2c7;
+              }
+            }
+          }
+
+          .serviceTitle {
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #838383;
+            .colored {
+              color: #00a2c7;
+            }
+          }
+          .serviceDescription {
+            padding-top: 10px;
+            color: #646464;
+          }
+        }
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+      }
+
+      .backgroundContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .imageContainer {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          filter: opacity(0.22) drop-shadow(-38px 31px 13px white);
+          .image {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

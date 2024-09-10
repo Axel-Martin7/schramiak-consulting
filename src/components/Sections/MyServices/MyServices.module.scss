@@ -1,0 +1,210 @@
+.servicesSection {
+  position: relative;
+  height: calc(100vh - 100px);
+  background-color: #e5e6e7;
+  border: 1px solid black;
+
+  .shapesContainer {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    filter: drop-shadow(10px 10px 14px #8d8d8d);
+
+    //* ----------------------  Conteneur en forme de fleche :
+    .borderArrow {
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 230px);
+      transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+      width: 450px;
+      height: 255px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(0% 0%, 83.3% 0%, 100% 50%, 83.3% 100%, 0% 100%);
+      background: linear-gradient(150deg, #ffffff 0%, #bbbbbb 100%);
+      .arrow {
+        width: 98%;
+        height: 97%;
+        clip-path: polygon(0% 0%, 83.3% 0%, 100% 50%, 83.3% 100%, 0% 100%);
+        background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+        .contentContainer {
+          width: 85%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .title {
+            padding: 5px 10px;
+            font-size: 38px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #838383;
+            border-bottom: 2px solid #838383;
+            .colored {
+              color: #00a2c7;
+            }
+          }
+          .description {
+            color: #646464;
+            padding: 20px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    //* ----------------------  Hexagones principaux :
+    .borderHexagon1,
+    .borderHexagon2,
+    .borderHexagon3,
+    .borderHexagon4 {
+      z-index: 1;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 300px;
+      aspect-ratio: 1 / cos(30deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+      background: linear-gradient(150deg, #ffffff 0%, #bbbbbb 100%);
+      .hexagon {
+        width: 97%;
+        height: 97%;
+        display: flex;
+        justify-content: center;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        background: linear-gradient(150deg, #e5e6e7 0%, #fcfcfc 100%);
+        .contentContainer {
+          width: 70%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          padding: 30px 0;
+          // border: 1px solid red;
+
+          .number {
+            font-size: 44px;
+            font-weight: 600;
+            color: #00a2c7;
+          }
+
+          .serviceTitle {
+            font-size: 26px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #838383;
+            .colored {
+              color: #00a2c7;
+            }
+          }
+
+          .description {
+            color: #646464;
+            padding: 0 30px;
+          }
+
+          // .number {
+          //   font-size: 38px;
+          //   font-weight: 600;
+          //   color: #00a2c7;
+          // }
+          // .serviceTitle {
+          //   font-size: 24px;
+          //   font-weight: 600;
+          //   text-transform: uppercase;
+          //   color: #838383;
+          //   .colored {
+          //     color: #00a2c7;
+          //   }
+          // }
+          // .description {
+          //   color: #646464;
+          // }
+        }
+      }
+
+      // background-color: red;
+    }
+
+    // positionnement des hexagones :
+    .borderHexagon1 {
+      top: 6%;
+      left: 50%;
+    }
+    .borderHexagon2 {
+      top: 20.8%;
+      left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+    }
+    .borderHexagon3 {
+      bottom: 20.8%;
+      left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+    }
+    .borderHexagon4 {
+      bottom: 6%;
+      left: 50%;
+    }
+
+    //* ----------------------  Hexagones de repères :
+    // .centralHexagon {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    //   width: 300px;
+    //   aspect-ratio: 1 / cos(30deg);
+    //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+    //   border: 1px solid black;
+    //   background-color: rgba(255, 0, 0, 0.317);
+    // }
+    // .helperHexagon1 {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: calc(50% - 150px);
+    //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    //   width: 300px;
+    //   aspect-ratio: 1 / cos(30deg);
+    //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+
+    //   background-color: rgba(0, 213, 255, 0.317);
+    // }
+    // .helperHexagon2 {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: calc(50% - 300px);
+    //   transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    //   width: 300px;
+    //   aspect-ratio: 1 / cos(30deg);
+    //   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
+
+    //   background-color: rgba(64, 255, 0, 0.317);
+    // }
+  }
+
+  .backgroundContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#fcfcfc 0%, transparent 50%);
+
+    .imageContainer {
+      position: relative;
+      width: 715px;
+      height: 570px;
+      filter: opacity(0.22) drop-shadow(0px 7px 20px white);
+      .image {
+        object-fit: cover;
+      }
+    }
+  }
+}
