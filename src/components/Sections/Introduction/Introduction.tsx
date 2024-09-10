@@ -8,12 +8,12 @@ export default function Introduction() {
       <div className={styles.shapesContainer}>
         <div className={styles.contentDiamond}>
           <div className={styles.textContainer}>
-            <h2 className={`${styles.firstName} ${barlow.className}`}>
+            <h3 className={`${styles.firstName} ${barlow.className}`}>
               Steven
-            </h2>
-            <h1 className={`${styles.lastName} ${barlow.className}`}>
+            </h3>
+            <h2 className={`${styles.lastName} ${barlow.className}`}>
               Schramiak
-            </h1>
+            </h2>
             <h3 className={`${styles.jobTitle} ${barlow.className}`}>
               21 specialist
             </h3>
