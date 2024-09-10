@@ -202,6 +202,9 @@ export default function V3Services() {
             que ceux de vos clients, dans le but d optimiser vos ressources tout
             en accompagnant vos equipes
           </p>
+          <div className={styles.buttonContainer}>
+            <Button label="Learn more" variant="primary" />
+          </div>
         </div>
 
         {/* Conteneurs version mobile */}

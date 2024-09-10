@@ -474,6 +474,52 @@
   }
 
   .topInformationsContainer {
+    z-index: 2;
+    position: absolute;
+    left: calc(50% + -260px);
+    transform: translateX(-50%);
+    width: 370px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px; // marge sur les cotés
+    border: 1px solid red;
+    /*---------------------- Ecran moyen ----------------------*/
+    @media (min-width: 768px) and (max-width: 1024px) {
+      top: 2%;
+      left: calc(50% + -275px);
+      transform: none;
+      width: calc(540px + 10px);
+      height: 300px;
+    }
+
+    .title {
+      padding-bottom: 5px;
+      font-size: 32px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #838383;
+      border-bottom: 2px solid #838383;
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+      }
+      .colored {
+        color: #00a2c7;
+      }
+    }
+    .description {
+      padding: 20px 0;
+      color: #646464;
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        padding: 40px 20px;
+      }
+    }
   }
 
   .mobileCardsContainer {
@@ -532,12 +578,19 @@
       position: relative;
       height: 100%;
       margin: 40px;
+      display: block;
       border: 1px solid red;
 
       .topInformationsContainer {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transform: none;
+        left: auto;
 
         border: 1px solid orange;
 
@@ -559,6 +612,9 @@
           padding: 40px 0;
           text-align: center;
           color: #646464;
+        }
+        .buttonContainer {
+          display: none;
         }
       }
 
