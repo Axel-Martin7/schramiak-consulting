@@ -1,0 +1,140 @@
+.aboutSection {
+  height: calc(100vh - 100px);
+  border: 1px solid black;
+  /*---------------------- Mobile ---------------------------*/
+  @media screen and (max-width: 767px) {
+    height: auto;
+  }
+
+  .mainContainer {
+    width: calc(100% - 80px); // ajout de marge de 40px de chaques cotés
+    height: calc(100% - 80px); // ajout de marge de 40px en haut et en bas
+    margin: 40px;
+    border: 1px solid red;
+
+    .gridContainer {
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 40px;
+      border: 1px solid blue;
+      /*---------------------- Mobile ---------------------------*/
+      @media screen and (max-width: 767px) {
+        padding: 0;
+        display: block;
+      }
+
+      .titleCard {
+        border: 1px solid green;
+      }
+      .imageCard {
+        grid-row: span 4 / span 4;
+        border: 1px solid green;
+      }
+      .quoteCard {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 5;
+        border: 1px solid green;
+      }
+      .descriptionCard {
+        grid-row: span 5 / span 5;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        border: 1px solid green;
+      }
+    }
+  }
+}
+
+// /*---------------------- Mobile ---------------------------*/
+// @media screen and (max-width: 767px) {
+//   .aboutSection {
+//     min-height: calc(100vh - 100px);
+//     width: 100%;
+//     border: 1px solid black;
+
+//     .mainContainer {
+//       border: 1px solid red;
+//       margin: 10px;
+
+//       .gridContainer {
+//         border: 1px solid orange;
+//         margin: 10px;
+
+//         .titleCard {
+//           border: 1px solid blue;
+//           margin: 10px;
+//         }
+
+//         .imageCard {
+//           padding: 44px;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           border: 1px solid blue;
+//           margin: 10px;
+
+//           .imageFrame {
+//             position: relative;
+//             width: 350px;
+//             min-width: 200px;
+
+//             aspect-ratio: 1/1;
+
+//             border: 1px solid red;
+//             background-color: red;
+
+//             .topDecorationFrame {
+//               position: absolute;
+//               top: -13%;
+//               right: -13%;
+//               width: 100%;
+//               height: 100%;
+//               clip-path: polygon(
+//                 50% 0%,
+//                 100% 0%,
+//                 100% 50%,
+//                 90% 50%,
+//                 90% 10%,
+//                 50% 10%
+//               );
+//               border: 1px solid blue;
+//               background-color: blue;
+//             }
+
+//             .bottomDecorationFrame {
+//               position: absolute;
+//               bottom: -7%;
+//               left: -7%;
+//               width: 100%;
+//               height: 100%;
+//               clip-path: polygon(
+//                 0% 50%,
+//                 10% 50%,
+//                 10% 90%,
+//                 50% 90%,
+//                 50% 100%,
+//                 00% 100%
+//               );
+//               background-color: blue;
+//             }
+//           }
+//         }
+
+//         .quoteCard {
+//           border: 1px solid blue;
+//           margin: 10px;
+//         }
+
+//         .descriptionCard {
+//           border: 1px solid blue;
+//           margin: 10px;
+//         }
+//       }
+//     }
+//   }
+// }

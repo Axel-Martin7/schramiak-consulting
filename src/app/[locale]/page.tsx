@@ -10,6 +10,7 @@ import HeroGrid from '@/components/Sections/Hero/HeroGrid';
 import Hero from '@/components/Sections/Hero/Hero';
 
 import V3Services from '@/components/Sections/MyServices/V3Services';
+import About from '@/components/Sections/About/About';
 
 type Props = {
   params: { locale: string };
@@ -25,6 +26,7 @@ export default function Home({ params: { locale } }: Props) {
       <Introduction />
       <Hero />
       <V3Services />
+      <About />
     </main>
   );
 }
