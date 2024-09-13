@@ -1,5 +1,4 @@
 .statsSection {
-  height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   background: linear-gradient(130deg, #fcfcfc 0%, #e0e0e0 100%);
@@ -7,56 +6,80 @@
 
   .mainContainer {
     width: 100%;
-    height: 80%;
+    height: 100%;
     border: 1px solid red;
+    margin: 10px;
 
-    .objectsContainers {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
+    .objectsContainer {
       border: 1px solid orange;
+      margin: 10px;
 
       .firstObjectContainer {
-        width: 25%;
-        height: 100%;
+        position: relative;
+        height: 400px;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid blue;
+        margin: 10px;
+
+        .circle {
+          width: 160px;
+          height: 160px;
+          border: 1px solid blue;
+          // background-color: blue;
+          border-radius: 50%;
+        }
 
         .halfCircle {
-          position: relative;
-          width: 75%;
-          max-width: 300px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%); /* Centre parfaitement l'ombre */
+          width: 200px;
           aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
           border: 20px solid red;
           border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
 
-          .halfCircleReflection {
+          &::after {
+            content: '';
             position: absolute;
-            top: 100%; /* Place l'élément juste en dessous de halfCircle */
-            left: 50%; /* Centre horizontalement */
-            transform: translate(-50%);
-            width: calc(
-              100% + 40px
-            ); /* Garder la même largeur que le demi-cercle parent */
-            max-width: calc(
-              300px + 40px
-            ); /* Ajout de l'épaisseur totale de la bordure */
-            aspect-ratio: 2 / 1; /* Même taille que le demi-cercle original */
+            top: 124%; // Positionné directement sous le demi-cercle
+            left: -12.5%;
+            width: calc(100% + 40px);
+            aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
             border: 20px solid red;
-            border-top-left-radius: 150px; /* Rayon des coins supérieur gauche */
-            border-top-right-radius: 150px; /* Rayon des coins supérieur droit */
-            border-bottom: none; /* Pas de bordure en bas pour compléter le demi-cercle supérieur */
+            border-top-left-radius: 150px;
+            border-top-right-radius: 150px;
+            border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+            opacity: 0.3; // Transparence pour l'effet de reflet
           }
+        }
+
+        .shadow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%); /* Centre parfaitement l'ombre */
+          width: 200px;
+          height: 40px;
+          background: radial-gradient(
+            at 49% 50%,
+            #646464 0%,
+            #8d8d8d 0%,
+            #cecece 0%,
+            transparent 100%
+          );
+          border: 1px solid red;
         }
       }
     }
   }
 }
+
+// ---------------------------------------------------------
 
 // .statsSection {
 //   height: calc(100vh - 100px);
