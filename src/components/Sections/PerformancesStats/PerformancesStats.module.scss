@@ -44,19 +44,31 @@
           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
 
-          // &::after {
-          //   content: '';
-          //   position: absolute;
-          //   top: 124%; // Positionné directement sous le demi-cercle
-          //   left: -12.5%;
-          //   width: calc(100% + 40px);
-          //   aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
-          //   border: 20px solid red;
-          //   border-top-left-radius: 150px;
-          //   border-top-right-radius: 150px;
-          //   border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
-          //   opacity: 0.3; // Transparence pour l'effet de reflet
-          // }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 124%; // Positionné directement sous le demi-cercle
+            left: -12.5%;
+            width: calc(100% + 40px);
+            aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+            border: 20px solid red;
+            border-top-left-radius: 150px;
+            border-top-right-radius: 150px;
+            border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+            opacity: 0.1; // Transparence pour l'effet de reflet
+            -webkit-mask-image: linear-gradient(
+              to top,
+              rgba(255, 0, 0, 0) 0%,
+              /* Transparent en haut */ rgba(255, 0, 0, 1) 100%
+                /* Rouge intense en bas */
+            );
+            mask-image: linear-gradient(
+              to top,
+              rgba(255, 0, 0, 0) 0%,
+              /* Transparent en haut */ rgba(255, 0, 0, 1) 100%
+                /* Rouge intense en bas */
+            );
+          }
         }
 
         .shadow {
