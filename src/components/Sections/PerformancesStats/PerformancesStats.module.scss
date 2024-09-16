@@ -32,6 +32,7 @@
         }
 
         .halfCircle {
+          z-index: 1;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -43,36 +44,36 @@
           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
 
-          &::after {
-            content: '';
-            position: absolute;
-            top: 124%; // Positionné directement sous le demi-cercle
-            left: -12.5%;
-            width: calc(100% + 40px);
-            aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
-            border: 20px solid red;
-            border-top-left-radius: 150px;
-            border-top-right-radius: 150px;
-            border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
-            opacity: 0.3; // Transparence pour l'effet de reflet
-          }
+          // &::after {
+          //   content: '';
+          //   position: absolute;
+          //   top: 124%; // Positionné directement sous le demi-cercle
+          //   left: -12.5%;
+          //   width: calc(100% + 40px);
+          //   aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+          //   border: 20px solid red;
+          //   border-top-left-radius: 150px;
+          //   border-top-right-radius: 150px;
+          //   border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+          //   opacity: 0.3; // Transparence pour l'effet de reflet
+          // }
         }
 
         .shadow {
           position: absolute;
-          top: 50%;
+          top: 70%;
           left: 50%;
           transform: translateX(-50%); /* Centre parfaitement l'ombre */
           width: 200px;
           height: 40px;
           background: radial-gradient(
-            at 49% 50%,
-            #646464 0%,
-            #8d8d8d 0%,
-            #cecece 0%,
-            transparent 100%
+            ellipse at center,
+            rgba(0, 0, 0, 0.8) 10%,
+            rgba(0, 0, 0, 0.5) 25%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 70%
           );
-          border: 1px solid red;
+          filter: blur(5px);
         }
       }
     }
