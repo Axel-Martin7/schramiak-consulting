@@ -1,0 +1,462 @@
+.realisationsSection {
+  border: 1px solid black;
+
+  .mainContainer {
+    border: 1px solid red;
+    margin: 10px;
+
+    .titleContainer {
+      border: 1px solid orange;
+      margin: 10px;
+    }
+
+    .objectsContainer {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      border: 1px solid orange;
+      margin: 10px;
+
+      /*---------------------- Mobile ---------------------------*/
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .object1,
+      .object2,
+      .object3,
+      .object4 {
+        position: relative;
+        width: 25%;
+        max-width: 250px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        /*---------------------- Mobile ---------------------------*/
+        @media screen and (max-width: 767px) {
+          width: 250px;
+        }
+
+        .circleWrapper {
+          position: relative;
+          width: calc(100% - 50px);
+          aspect-ratio: 1/1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+
+          .circleBorder {
+            z-index: 2;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            box-shadow: 10px 10px 15px #646464;
+            mix-blend-mode: multiply;
+            background: linear-gradient(135deg, #ffffff 50%, #8d8d8d 85%);
+          }
+
+          .mainCircle {
+            z-index: 3;
+            position: absolute;
+            width: calc(100% - 5px);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background: linear-gradient(130deg, #e0e0e0 0%, #fcfcfc 50%);
+          }
+        }
+
+        .halfCircle {
+          z-index: 1;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+          border: 25px solid red;
+          border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
+          border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
+          border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
+          &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% + 26px);
+            left: 50%;
+            transform: translateX(-50%); /* Centre parfaitement l'ombre */
+            width: calc(100% + 50px);
+            aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+            border: 25px solid red;
+            border-top-left-radius: 150px;
+            border-top-right-radius: 150px;
+            border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+            opacity: 0.1; // Transparence pour l'effet de reflet
+            -webkit-mask-image: linear-gradient(
+              to bottom,
+              rgba(255, 0, 0, 1) 0%,
+              rgba(255, 0, 0, 0) 100%
+            );
+            mask-image: linear-gradient(
+              to bottom,
+              rgba(255, 0, 0, 1) 0%,
+              rgba(255, 0, 0, 0.2) 50%,
+              rgba(255, 0, 0, 0) 100%
+            );
+          }
+        }
+
+        .shadow {
+          position: absolute;
+          top: calc(100% - 17px);
+          left: 50%;
+          transform: translateX(-50%); /* Centre parfaitement l'ombre */
+          width: 200px;
+          height: 40px;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.8) 10%,
+            rgba(0, 0, 0, 0.5) 25%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 70%
+          );
+          filter: blur(5px);
+        }
+      }
+    }
+  }
+}
+
+// .realisationsSection {
+//   border: 1px solid black;
+
+//   .mainContainer {
+//     border: 1px solid red;
+//     margin: 10px;
+
+//     .titleContainer {
+//       border: 1px solid orange;
+//       margin: 10px;
+//     }
+
+//     .objectsContainer {
+//       display: flex;
+//       justify-content: center;
+//       border: 1px solid orange;
+//       margin: 10px;
+//       /*---------------------- Mobile ---------------------------*/
+//       @media screen and (max-width: 767px) {
+//         flex-direction: column;
+//         align-items: center;
+//       }
+
+//       .object1,
+//       .object2,
+//       .object3,
+//       .object4 {
+//         position: relative;
+//         width: 250px;
+//         height: calc(200px + 100px + 50px);
+//         display: flex;
+//         justify-content: center;
+//         border: 1px solid blue;
+
+//         .circleWrapper {
+//           position: relative;
+//           width: 200px;
+//           height: 200px;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           border: 1px solid blue;
+//           border-radius: 50%;
+
+//           .circleBorder {
+//             width: 200px;
+//             height: 200px;
+//             border: 1px solid green;
+//             background-color: green;
+//             border-radius: 50%;
+//           }
+
+//           .mainCircle {
+//             position: absolute;
+//             width: calc(200px - 10px);
+//             height: calc(200px - 10px);
+//             border-radius: 50%;
+//             border: 1px solid blue;
+//             background-color: blue;
+//           }
+//         }
+
+//         .halfCircle {
+//           z-index: 1;
+//           position: absolute;
+//           top: 28.8%;
+//           width: 250px;
+//           aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//           border: 25px solid red;
+//           border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
+//           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
+//           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
+//           &::after {
+//             content: '';
+//             position: absolute;
+//             top: calc(50% + 75px);
+//             left: 50%;
+//             transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//             width: calc(100% + 50px);
+//             aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//             border: 25px solid red;
+//             border-top-left-radius: 150px;
+//             border-top-right-radius: 150px;
+//             border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+//           }
+//         }
+
+//         .shadow {
+//           position: absolute;
+//           top: 58%;
+//           left: 50%;
+//           transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//           width: 200px;
+//           height: 40px;
+//           background: radial-gradient(
+//             ellipse at center,
+//             rgba(0, 0, 0, 0.8) 10%,
+//             rgba(0, 0, 0, 0.5) 25%,
+//             rgba(0, 0, 0, 0.1) 50%,
+//             rgba(0, 0, 0, 0) 70%
+//           );
+//           filter: blur(5px);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// ---------------------------------------------------------------------------------------------
+// .statsSection {
+//   border: 1px solid black;
+
+//   .mainContainer {
+//     border: 1px solid red;
+//     margin: 10px;
+
+//     .titleContainer {
+//       border: 1px solid orange;
+//       margin: 10px;
+//     }
+
+//     .objectsContainer {
+//       border: 1px solid orange;
+//       margin: 10px;
+
+//       .object1Container {
+//         position: relative;
+//         width: 250px;
+//         height: calc(200px + 100px + 50px);
+//         display: flex;
+//         justify-content: center;
+//         border: 1px solid blue;
+//         margin: 10px;
+
+//         .circleContainer {
+//           position: relative;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           width: 200px;
+//           height: 200px;
+//           border: 1px solid blue;
+//           border-radius: 50%;
+
+//           .circleBorders {
+//             z-index: 2;
+//             width: 200px;
+//             height: 200px;
+//             border: 1px solid green;
+//             border-radius: 50%;
+//             box-shadow: 10px 10px 15px #646464;
+//             mix-blend-mode: multiply;
+//             background: linear-gradient(135deg, #ffffff 50%, #8d8d8d 85%);
+//           }
+
+//           .circle {
+//             z-index: 3;
+//             position: absolute;
+
+//             width: calc(200px - 10px);
+//             height: calc(200px - 10px);
+//             // border: 1px solid orange;
+//             background: linear-gradient(130deg, #e0e0e0 0%, #fcfcfc 100%);
+//             border-radius: 50%;
+//           }
+//         }
+
+//         .halfCircle {
+//           z-index: 1;
+//           position: absolute;
+//           top: 28.5%;
+//           width: 250px;
+//           aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//           border: 25px solid red;
+//           border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
+//           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
+//           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
+//           &::after {
+//             content: '';
+//             position: absolute;
+//             top: calc(50% + 75px);
+//             left: 50%;
+//             transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//             width: calc(100% + 50px);
+//             aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//             border: 25px solid red;
+//             border-top-left-radius: 150px;
+//             border-top-right-radius: 150px;
+//             border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+//             opacity: 0.1; // Transparence pour l'effet de reflet
+//             -webkit-mask-image: linear-gradient(
+//               to bottom,
+//               rgba(255, 0, 0, 1) 0%,
+//               rgba(255, 0, 0, 0) 100%
+//             );
+//             mask-image: linear-gradient(
+//               to bottom,
+//               rgba(255, 0, 0, 1) 0%,
+//               rgba(255, 0, 0, 0.2) 50%,
+//               rgba(255, 0, 0, 0) 100%
+//             );
+//           }
+//         }
+
+//         .shadow {
+//           position: absolute;
+//           top: 58%;
+//           left: 50%;
+//           transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//           width: 200px;
+//           height: 40px;
+//           background: radial-gradient(
+//             ellipse at center,
+//             rgba(0, 0, 0, 0.8) 10%,
+//             rgba(0, 0, 0, 0.5) 25%,
+//             rgba(0, 0, 0, 0.1) 50%,
+//             rgba(0, 0, 0, 0) 70%
+//           );
+//           filter: blur(5px);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// -----------------------------------------------------------------------------
+// .statsSection {
+//   display: flex;
+//   background: linear-gradient(130deg, #fcfcfc 0%, #e0e0e0 100%);
+//   border: 1px solid black;
+
+//   .mainContainer {
+//     width: 100%;
+//     height: 100%;
+//     border: 1px solid red;
+//     margin: 10px;
+
+//     .objectsContainer {
+//       border: 1px solid orange;
+//       margin: 10px;
+
+//       .object1Container {
+//         position: relative;
+//         height: 400px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border: 1px solid blue;
+//         margin: 10px;
+
+//         .circleBorders {
+//           // position: relative;
+//           z-index: 2;
+//           width: 200px;
+//           height: 200px;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           border-radius: 50%;
+//           box-shadow: 10px 10px 15px #646464;
+//           mix-blend-mode: multiply;
+//           background: linear-gradient(135deg, #ffffff 50%, #8d8d8d 100%);
+//           // border: 1px solid red;
+//         }
+
+//         .circle {
+//           position: absolute;
+//           z-index: 3;
+//           width: calc(200px - 5px);
+//           height: calc(200px - 5px);
+//           border-radius: 50%;
+//           background: linear-gradient(130deg, #e0e0e0 0%, #fcfcfc 100%);
+//         }
+
+//         .halfCircle {
+//           z-index: 1;
+//           position: absolute;
+//           top: 50%;
+//           left: 50%;
+//           transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//           width: 250px;
+//           aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//           border: 25px solid red;
+//           border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
+//           border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
+//           border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
+//           &::after {
+//             content: '';
+//             position: absolute;
+//             top: 124%; // Positionné directement sous le demi-cercle
+//             left: -12.5%;
+//             width: calc(100% + 50px);
+//             aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+//             border: 25px solid red;
+//             border-top-left-radius: 150px;
+//             border-top-right-radius: 150px;
+//             border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+//             opacity: 0.1; // Transparence pour l'effet de reflet
+//             -webkit-mask-image: linear-gradient(
+//               to top,
+//               rgba(255, 0, 0, 0) 0%,
+//               /* Transparent en haut */ rgba(255, 0, 0, 1) 100%
+//                 /* Rouge intense en bas */
+//             );
+//             mask-image: linear-gradient(
+//               to top,
+//               rgba(255, 0, 0, 0) 0%,
+//               /* Transparent en haut */ rgba(255, 0, 0, 1) 100%
+//                 /* Rouge intense en bas */
+//             );
+//           }
+//         }
+
+//         .shadow {
+//           position: absolute;
+//           top: 76%;
+//           left: 50%;
+//           transform: translateX(-50%); /* Centre parfaitement l'ombre */
+//           width: 200px;
+//           height: 40px;
+//           background: radial-gradient(
+//             ellipse at center,
+//             rgba(0, 0, 0, 0.8) 10%,
+//             rgba(0, 0, 0, 0.5) 25%,
+//             rgba(0, 0, 0, 0.1) 50%,
+//             rgba(0, 0, 0, 0) 70%
+//           );
+//           filter: blur(5px);
+//         }
+//       }
+//     }
+//   }
+// }
