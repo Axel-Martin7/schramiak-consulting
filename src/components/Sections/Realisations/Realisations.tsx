@@ -104,13 +104,18 @@
 
 import React from 'react';
 import styles from './Realisations.module.scss';
+import { barlow } from '@/styles/font';
+import Button from '@/components/Buttons/Button';
 
 export default function Realisations() {
   return (
     <section className={styles.realisationsSection}>
       <div className={styles.mainContainer}>
         <div className={styles.titleContainer}>
-          <h2>Mes realisation</h2>
+          <h2 className={`${styles.title} ${barlow.className}`}>
+            Mes réalisations
+          </h2>
+          <div className={styles.titleSeparator}></div>
         </div>
 
         <div className={styles.objectsContainer}>

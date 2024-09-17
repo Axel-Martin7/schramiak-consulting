@@ -1,26 +1,48 @@
 .realisationsSection {
   border: 1px solid black;
+  background: linear-gradient(45deg, #e0e0e0 0%, #fcfcfc 80%);
 
   .mainContainer {
-    border: 1px solid red;
-    margin: 10px;
+    // border: 1px solid red;
+    margin: 40px;
 
     .titleContainer {
-      border: 1px solid orange;
-      margin: 10px;
+      display: flex;
+      align-items: center;
+
+      // border: 1px solid orange;
+      // margin: 10px;
+
+      .title {
+        padding-right: 40px;
+        font-size: 28px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #107d98;
+        text-shadow: -1px -1px 2px #ffffff, 1px 1px 2px #cecece; /* Ombres pour créer un effet de relief */
+      }
+
+      .titleSeparator {
+        height: 10px;
+        background-color: #f0f0f0; /* Utilise une couleur de ta palette */
+        flex-grow: 1; /* S'étend pour remplir l'espace disponible */
+        box-shadow: inset 1px 1px 2px #cecece, inset -1px -1px 2px #fcfcfc; /* Ombres pour créer un effet d'enfoncement */
+        border-radius: 20px;
+      }
     }
 
     .objectsContainer {
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      border: 1px solid orange;
-      margin: 10px;
+      justify-content: space-evenly;
+
+      // border: 1px solid orange;
+      // margin: 10px;
 
       /*---------------------- Mobile ---------------------------*/
       @media screen and (max-width: 767px) {
         flex-direction: column;
         align-items: center;
+        gap: 40px;
       }
 
       .object1,
@@ -30,6 +52,7 @@
         position: relative;
         width: 25%;
         max-width: 250px;
+        // min-width: 200px;
         aspect-ratio: 1/1;
         display: flex;
         justify-content: center;
@@ -56,7 +79,7 @@
             border-radius: 50%;
             box-shadow: 10px 10px 15px #646464;
             mix-blend-mode: multiply;
-            background: linear-gradient(135deg, #ffffff 50%, #8d8d8d 85%);
+            background: linear-gradient(45deg, #8d8d8d 15%, #ffffff 50%);
           }
 
           .mainCircle {
@@ -65,7 +88,7 @@
             width: calc(100% - 5px);
             aspect-ratio: 1/1;
             border-radius: 50%;
-            background: linear-gradient(130deg, #e0e0e0 0%, #fcfcfc 50%);
+            background: linear-gradient(45deg, #fcfcfc 50%, #e0e0e0 100%);
           }
         }
 
@@ -122,6 +145,23 @@
           );
           filter: blur(5px);
         }
+      }
+    }
+
+    .descriptionContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      border: 1px solid orange;
+      margin: 10px;
+
+      .description {
+        width: 50%;
+        border: 1px solid blue;
+      }
+
+      .buttonContainer {
       }
     }
   }
