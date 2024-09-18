@@ -1,0 +1,181 @@
+.shapesContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  border: 1px solid red;
+
+  .contentDiamond {
+    //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
+    z-index: 2;
+    position: absolute;
+    width: calc(100% / sqrt(2));
+    max-width: calc(400px / sqrt(2));
+    min-width: calc(280px / sqrt(2));
+    transform: rotate(45deg);
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, #fcfcfc 0%, #e8e8e8 100%);
+    border: 3px solid; /* Épaisseur de la bordure */
+    border-image: linear-gradient(to bottom, #ffffff 30%, #e8e8e8 70%) 1;
+    overflow: hidden;
+
+    .textContainer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transform: rotate(-45deg);
+      text-transform: uppercase;
+
+      .firstName {
+        font-size: 1rem;
+        color: #107d98;
+        letter-spacing: 6px;
+      }
+      .lastName {
+        font-size: 3rem;
+        color: #107d98;
+        letter-spacing: 3px;
+      }
+
+      .jobTitle {
+        font-size: 1rem;
+        color: #107d98;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .decorativesDiamonds {
+    //* Ce diamand va servir de base pour la création des autres diamants décoratifs
+    position: relative;
+    width: calc(100% / sqrt(2));
+    max-width: calc(400px / sqrt(2));
+    min-width: calc(280px / sqrt(2));
+    transform: rotate(45deg);
+    aspect-ratio: 1/1;
+
+    .diamond2,
+    .diamond3,
+    .diamond4,
+    .diamond5,
+    .diamond6,
+    .diamond7 {
+      position: absolute;
+      aspect-ratio: 1/1;
+      background: linear-gradient(0deg, #fcfcfc 0%, #e8e8e8 100%);
+      border: 3px solid; /* Épaisseur de la bordure */
+      border-image: linear-gradient(to bottom, #ffffff 30%, #e8e8e8 70%) 1;
+    }
+
+    .diamond2 {
+      z-index: 1;
+      bottom: -60%; /* Place the square at the bottom */
+      left: 50%; /* Align the left edge of the square to the center */
+      transform: translateX(-50%); /* Center the square horizontally */
+      width: 72.31%;
+    }
+
+    .diamond3 {
+      bottom: 86%;
+      left: 78%;
+      width: 67.69%;
+    }
+
+    .diamond4 {
+      bottom: 107%;
+      left: 8%;
+      width: 58.46%;
+    }
+
+    .diamond5 {
+      top: 62%;
+      right: 112%;
+      width: 50.77%;
+    }
+
+    .diamond6 {
+      top: 130%;
+      right: 83%;
+      width: 47.69%;
+    }
+
+    .diamond7 {
+      bottom: 28%;
+      left: 112%;
+      width: 46.15%;
+    }
+
+    // * Polygones pour effet 3D avec ombres en dégradés autour des diamants
+    .polygon3,
+    .polygon4,
+    .polygon5,
+    .polygon6,
+    .polygon7 {
+      position: absolute;
+      top: 50%; // postionne le polygone au centre absolu du diamant
+      left: 50%; // postionne le polygone au centre absolu du diaman
+    }
+
+    .polygon3 {
+      z-index: -2;
+      width: 400%;
+      height: 400%;
+      transform: translate(-50%, -50%) rotate(266deg);
+      clip-path: polygon(50% 50%, 57.4% 74.6%, 75.5% 58.9%);
+      background: radial-gradient(at 50% 50%, #838383 0%, transparent 37%);
+    }
+    .polygon4 {
+      z-index: -2;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%) rotate(210deg);
+      clip-path: polygon(50% 50%, 57.7% 79.2%, 82.8% 64.4%);
+      background: radial-gradient(#838383 0%, transparent 77%);
+    }
+    .polygon5 {
+      z-index: -2;
+      width: 380%;
+      height: 380%;
+      transform: translate(-50%, -50%) rotate(107deg);
+      clip-path: polygon(50% 50%, 61.7% 77.4%, 70.7% 60.87%);
+      background: radial-gradient(at 46% 50%, #838383 -5%, transparent 38%);
+    }
+    .polygon6 {
+      z-index: -2;
+      width: 400%;
+      height: 400%;
+      transform: translate(-50%, -50%) rotate(74deg);
+      clip-path: polygon(50% 50%, 63.7% 74.96%, 78.46% 66.78%);
+      background: radial-gradient(at 62% 50%, #838383 4%, transparent 34%);
+    }
+    .polygon7 {
+      z-index: -1;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%) rotate(318deg);
+      clip-path: polygon(50% 50%, 66% 78.7%, 81.9% 62.2%);
+      background: linear-gradient(260deg, #838383 0%, transparent 45%);
+    }
+
+    // * Ombre eliptique en dessous de la forme principale
+    .shadowEllipse {
+      position: absolute;
+      top: calc(108% + 65px);
+      left: 140%;
+      transform: translateX(-50%) rotate(-45deg);
+      width: 125%;
+      height: 30px;
+      background: radial-gradient(#cecece 0%, transparent 79%);
+    }
+  }
+}

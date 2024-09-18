@@ -5,6 +5,7 @@
   .mainContainer {
     // border: 1px solid red;
     margin: 40px;
+    padding-bottom: 100px;
 
     .titleContainer {
       display: flex;
@@ -161,8 +162,8 @@
         border: 1px solid blue;
       }
 
-      .buttonContainer {
-      }
+      // .buttonContainer {
+      // }
     }
   }
 }

@@ -1,0 +1,280 @@
+.heroMainContainer {
+  position: relative;
+  // height: 400px; // ! A MODIFIER
+  display: flex;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(141, 141, 141, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  border-image-slice: 1;
+  background: linear-gradient(45deg, #e8e8e8 2%, #ffff 50%);
+  // gradient pour l'ombrage au dessus de la bordure top:
+  &::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    width: 100%;
+    height: 15px;
+    background: radial-gradient(
+      ellipse at bottom,
+      /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+      /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+      /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+      /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+      /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+    );
+  }
+  // gradient pour l'ombrage en dessous de la bordure bottom:
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    width: 100%;
+    height: 15px;
+    background: radial-gradient(
+      ellipse at top,
+      /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+      /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+      /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+      /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+      /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+    );
+  }
+  /*------------------ Desktop------------------*/
+  @media screen and (min-width: 768px) {
+    height: 80%;
+    width: 100%;
+  }
+
+  .heroMain {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    border: 1px solid blue;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    .overflowControl {
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 768px) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .skewedContainer {
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 768px) {
+          z-index: 1;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transform: skewX(10deg) translateX(-42%);
+          border-right: 1px solid transparent;
+          border-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(141, 141, 141, 0.7),
+            rgba(0, 0, 0, 0)
+          );
+          border-image-slice: 1;
+          background: linear-gradient(15deg, #e8e8e8 0%, #fcfcfc 100%);
+          // Ombrage extérieur:
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -26px; // Décalage de l'ombrage à droite de la bordure
+            height: 100%;
+            width: 25px;
+            background: radial-gradient(
+              ellipse at left,
+              /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+              /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
+              /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+              /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+              /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+            );
+          }
+        }
+      }
+      .contentContainer {
+        border: 1px solid red;
+        margin: 10px;
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 768px) {
+          z-index: 1;
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 0 0 80px;
+        }
+      }
+    }
+
+    .backgroundContainer {
+      display: flex;
+      justify-content: center;
+      border: 1px solid green;
+      background-color: white;
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+      }
+
+      .imageContainer {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        // border: 1px solid yellowgreen;
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          height: 100%;
+        }
+        .image {
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+// .heroMainContainer {
+//   position: relative;
+//   height: 400px; // ! A MODIFIER
+//   display: flex;
+//   justify-content: center;
+//   border: 1px solid transparent;
+//   border-image: linear-gradient(
+//     90deg,
+//     rgba(0, 0, 0, 0),
+//     rgba(141, 141, 141, 0.7),
+//     rgba(0, 0, 0, 0)
+//   );
+//   border-image-slice: 1;
+//   background-color: white;
+//   // gradient pour l'ombrage au dessus de la bordure top:
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: -16px;
+//     width: 100%;
+//     height: 15px;
+//     background: radial-gradient(
+//       ellipse at bottom,
+//       /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//       /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//       /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//       /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//       /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//     );
+//   }
+//   // gradient pour l'ombrage en dessous de la bordure bottom:
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     bottom: -16px;
+//     width: 100%;
+//     height: 15px;
+//     background: radial-gradient(
+//       ellipse at top,
+//       /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//       /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//       /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//       /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//       /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//     );
+//   }
+
+//   /*------------------ Desktop------------------*/
+//   @media screen and (min-width: 768px) {
+//     height: 80%;
+//     width: 100%;
+//   }
+
+//   .heroMain {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     max-width: 1440px;
+
+//     border: 1px solid blue;
+
+//     .overflowControl {
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       border: 1px solid red;
+
+//       .skewedContainer {
+//         /*------------------ Desktop------------------*/
+//         @media screen and (min-width: 768px) {
+//           z-index: 1;
+//           position: absolute;
+//           width: 100%;
+//           height: 100%;
+//           transform: skewX(10deg) translateX(-42%);
+//           border-right: 1px solid transparent;
+//           border-image: linear-gradient(
+//             to bottom,
+//             rgba(0, 0, 0, 0),
+//             rgba(141, 141, 141, 0.7),
+//             rgba(0, 0, 0, 0)
+//           );
+//           border-image-slice: 1;
+//           background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 100%);
+//           // Ombrage extérieur:
+//           &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             right: -26px; // Décalage de l'ombrage à droite de la bordure
+//             height: 100%;
+//             width: 25px;
+//             background: radial-gradient(
+//               ellipse at left,
+//               /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//               /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
+//               /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//               /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//               /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//             );
+//           }
+//         }
+//       }
+//     }
+
+//     .backgroundContainer {
+//       width: 100%;
+//       height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: right;
+//       border: 1px solid green;
+
+//       .imageContainer {
+//         position: relative;
+//         width: 50%;
+//         height: 100%;
+//         border: 1px solid orange;
+//         .image {
+//           object-fit: contain;
+//         }
+//       }
+//     }
+//   }
+// }
