@@ -34,10 +34,6 @@
         box-shadow: -15px 15px 30px #bbbbbb, 15px -15px 30px #fcfcfc,
           inset 10px -10px 20px #cecece, inset -10px 10px 20px #ffffff;
       }
-      /*------------------ Tablets ------------------*/
-      @media (min-width: 768px) and (max-width: 1024px) {
-        padding: 40px;
-      }
 
       .titleContainer {
         display: flex;
@@ -53,9 +49,9 @@
 
         .titleSeparator {
           height: 10px;
-          background-color: #f0f0f0; /* Utilise une couleur de ta palette */
+          background-color: #f0f0f0;
           flex-grow: 1; /* S'étend pour remplir l'espace disponible */
-          box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc; /* Ombres pour créer un effet d'enfoncement */
+          box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
           border-radius: 20px;
         }
       }
@@ -71,11 +67,8 @@
       @media screen and (min-width: 768px) {
         padding: calc(40px + 25px);
         grid-row: span 4 / span 4;
-        // box-shadow: #cecece -4px 4px 40px 0px, #ffffff 4px -4px 40px 0px,
-        //   10px -10px 20px 0px inset #cecece, -10px 10px 20px 0px inset #ffffff;
         box-shadow: -15px 15px 30px #bbbbbb, 15px -15px 30px #fcfcfc,
           inset 10px -10px 20px #cecece, inset -10px 10px 20px #ffffff;
-        // background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 100%);
         border-radius: 20px;
       }
 
