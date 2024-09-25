@@ -1,11 +1,20 @@
 .mainContainer {
-  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  //*---------------------- Version Mobile ---------------------------*/
   .mobileContainer {
     padding: 80px 40px;
     display: flex;
     flex-direction: column;
     gap: 80px;
+    /*---------------------- Desktop ---------------------------*/
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
 
     .topInformationsContainer {
       display: flex;
@@ -132,7 +141,6 @@
           flex-direction: column;
           gap: 20px;
           border-radius: 20px;
-
           box-shadow: inset -2px 2px 4px #bbbbbb, inset 2px -2px 4px #ffffff;
           text-align: center;
 
@@ -170,6 +178,290 @@
     .buttonContainer {
       display: flex;
       justify-content: center;
+    }
+  }
+
+  //*---------------------- Version Desktop --------------------------*/
+  .desktopContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*---------------------- Desktop ---------------------------*/
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    .topInformationsContainer {
+      z-index: 2;
+      position: absolute;
+      left: calc(50% + -260px);
+      transform: translateX(-50%);
+      width: 370px;
+      height: 260px;
+      padding: 32px; // marge sur les cotés
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        top: 2%;
+        left: calc(50% + -275px);
+        transform: none;
+        width: calc(540px + 10px);
+        height: 300px;
+        padding: 40px;
+      }
+
+      .sectionTitleContainer {
+        display: flex;
+        align-items: center;
+
+        .sectionTitle {
+          padding-right: 20px;
+          font-size: 32px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          color: #007b87;
+        }
+        .titleSeparator {
+          height: 10px;
+          background-color: #f0f0f0;
+          flex-grow: 1; /* S'étend pour remplir l'espace disponible */
+          box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
+          border-radius: 20px;
+        }
+      }
+
+      .sectionDescription {
+        color: #003e43;
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .shapesContainer {
+      z-index: 1;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      filter: drop-shadow(-10px 10px 15px #8d8d8d)
+        drop-shadow(10px -10px 15px #ffffff);
+
+      //* ----------------------  Arrow :
+      .bordersArrow {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 230px);
+        transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+        width: 450px;
+        height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+        background: linear-gradient(65deg, #bbbbbb 0%, #ffffff 55%);
+        /*------------------ Ecran moyen ------------------*/
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        .arrow {
+          width: 98%;
+          height: 97%;
+          clip-path: polygon(0% 0%, 82.2% 0%, 99% 50%, 82.2% 100%, 0% 100%);
+          background: linear-gradient(45deg, #fcfcfc 45%, #e8e8e8 100%);
+        }
+      }
+
+      //* ----------------------  Hexagones principaux + contenu:
+      .bordersHexagon1,
+      .bordersHexagon2,
+      .bordersHexagon3,
+      .bordersHexagon4 {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 300px;
+        aspect-ratio: 1 / cos(30deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        background: linear-gradient(65deg, #bbbbbb 0%, #ffffff 55%);
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          width: 270px;
+          height: calc(
+            270px * 1.1547
+          ); /* Hauteur fixe en fonction de l'hexagone parfait */
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0 25%
+          );
+          background: linear-gradient(45deg, #bbbbbb 0%, #ffffff 60%);
+        }
+
+        .hexagon {
+          width: 97%;
+          height: 97%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0 50%
+          );
+          background: linear-gradient(45deg, #fcfcfc 45%, #e8e8e8 100%);
+          /*---------------------- Ecran moyen ----------------------*/
+          @media (min-width: 768px) and (max-width: 1024px) {
+            clip-path: polygon(
+              50% 0%,
+              100% 25%,
+              100% 75%,
+              50% 100%,
+              0% 75%,
+              0 25%
+            );
+          }
+
+          .contentContainer {
+            width: 58%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+
+            /*---------------------- Ecran moyen ----------------------*/
+            @media (min-width: 768px) and (max-width: 1024px) {
+              width: 100%;
+              height: 80%;
+              padding: 20px;
+            }
+            .serviceNumber {
+              font-size: 44px;
+              font-weight: 800;
+              // color: #00b0bd;
+              color: #e8e8e8;
+              text-shadow: -2px 2px 2px #8d8d8d, 2px -2px 2px #ffffff;
+            }
+
+            .serviceTitle {
+              font-size: 24px;
+              font-weight: 600;
+              text-transform: uppercase;
+              // color: #007b87;
+              // text-shadow: -1px 1px 1px #bbbbbb, 1px -1px 1px #ffffff;
+              color: #007b87;
+              // background: radial-gradient(
+              //   ellipse farthest-corner at center center,
+              //   #00b0bd 0%,
+              //   #007b87 68%,
+              //   #003e43 100%
+              // );
+              background: radial-gradient(
+                ellipse farthest-corner at right center,
+                #00b0bd 0%,
+                #007b87 68%,
+                #003e43 100%
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            .serviceDescription {
+              color: #003e43;
+            }
+          }
+        }
+      }
+
+      //* ----------------------  Positionnement des hexagones :
+      .bordersHexagon1 {
+        top: 6%;
+        left: 50%;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + -275px);
+        }
+      }
+      .bordersHexagon2 {
+        top: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + -140px);
+        }
+      }
+      .bordersHexagon3 {
+        bottom: 20.8%;
+        left: calc(50% + 237px); /* Ajuster pour déplacer vers la droite */
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 60%;
+          left: calc(50% + 140px);
+        }
+      }
+      .bordersHexagon4 {
+        bottom: 6%;
+        left: 50%;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 33.1%;
+          left: calc(50% + 275px);
+        }
+      }
+    }
+
+    .backgroundContainer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(#ffffff 0%, transparent 70%);
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: calc(540px + 10px);
+        height: 97%;
+        border-radius: 20px;
+        box-shadow: -10px 10px 15px #bbbbbb, 10px -10px 15px #ffffff,
+          inset 3px -3px 5px #cecece, inset -3px 3px 10px #fcfcfc;
+      }
+
+      .imageContainer {
+        position: relative;
+        width: 715px;
+        height: 570px;
+        filter: opacity(0.22) drop-shadow(-38px 31px 13px white);
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          top: 2%;
+        }
+        .image {
+          object-fit: contain;
+        }
+      }
     }
   }
 }
