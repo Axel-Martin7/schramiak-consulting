@@ -46,6 +46,8 @@
     border: 1px solid black;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: center;
       height: calc(100vh - 100px);
     }
   }

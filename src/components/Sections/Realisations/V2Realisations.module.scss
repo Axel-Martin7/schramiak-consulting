@@ -1,50 +1,161 @@
 .mainContainer {
-  position: relative;
-  height: 400px; // ! A MODIFIER
-  border: 1px solid transparent;
-  border-image: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0),
-    rgba(141, 141, 141, 0.7),
-    rgba(0, 0, 0, 0)
-  );
-  border-image-slice: 1;
-  margin: 10px;
-  // gradient pour l'ombrage au dessus de la bordure top:
-  &::before {
-    content: '';
-    position: absolute;
-    top: -16px;
-    width: 100%;
-    height: 15px;
-    background: radial-gradient(
-      ellipse at bottom,
-      /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-      /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
-      /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-      /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-      /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-    );
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  .sectionTitleContainer {
+    display: flex;
+    align-items: center;
+
+    .title {
+      padding-right: 20px;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #007b87;
+    }
+    .titleSeparator {
+      height: 10px;
+      background-color: #f0f0f0;
+      flex-grow: 1; /* S'étend pour remplir l'espace disponible */
+      box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
+      border-radius: 20px;
+    }
   }
-  // gradient pour l'ombrage en dessous de la bordure bottom:
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -16px;
+
+  .objectsContainer {
     width: 100%;
-    height: 15px;
-    background: radial-gradient(
-      ellipse at top,
-      /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-      /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
-      /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-      /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-      /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*---------------------- Desktop ---------------------------*/
+    @media screen and (min-width: 767px) {
+      padding-bottom: calc(
+        250px / 2
+      ); // Taille du cercle / 2 : pour obtenir la place necessaire pour le reflet du demi-cercle
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .object1,
+    .object2,
+    .object3,
+    .object4 {
+      position: relative;
+      width: 250px;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      .circleWrapper {
+        position: relative;
+        width: calc(100% - 50px);
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        .circleBorder {
+          z-index: 2;
+          width: 100%;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          box-shadow: -10px 10px 15px #646464;
+          mix-blend-mode: multiply;
+          background: linear-gradient(45deg, #8d8d8d 15%, #ffffff 50%);
+        }
+
+        .mainCircle {
+          z-index: 3;
+          position: absolute;
+          width: calc(100% - 5px);
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background: linear-gradient(45deg, #fcfcfc 50%, #e0e0e0 100%);
+        }
+      }
+
+      .halfCircle {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+        border: 25px solid #00b0bd;
+        border-bottom-left-radius: 150px; /* Rayon des coins inférieur gauche */
+        border-bottom-right-radius: 150px; /* Rayon des coins inférieur droit */
+        border-top: none; /* Pas de bordure en haut pour compléter le demi-cercle inférieur */
+        //* Effet mirroir --->
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(100% + 26px);
+          left: 50%;
+          transform: translateX(-50%); /* Centre parfaitement l'ombre */
+          width: calc(100% + 50px);
+          aspect-ratio: 2 / 1; /* Le rapport de largeur/hauteur pour un demi-cercle */
+          border: 25px solid #00b0bd;
+          border-top-left-radius: 150px;
+          border-top-right-radius: 150px;
+          border-bottom: none; // Pas de bordure en bas pour le demi-cercle inversé
+          opacity: 0.1; // Transparence pour l'effet de reflet
+          -webkit-mask-image: linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 0, 0, 0) 100%
+          );
+          mask-image: linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 0, 0, 0.2) 50%,
+            rgba(255, 0, 0, 0) 100%
+          );
+        }
+      }
+
+      .shadow {
+        position: absolute;
+        top: calc(100% - 17px);
+        left: 50%;
+        transform: translateX(-50%); /* Centre parfaitement l'ombre */
+        width: 200px;
+        height: 40px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0.8) 10%,
+          rgba(0, 0, 0, 0.5) 25%,
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        filter: blur(5px);
+      }
+    }
   }
-  /*------------------ Desktop------------------*/
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    height: 80%;
+
+  .sectionDescriptionContainer {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border-radius: 20px;
+    box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
+
+    /*---------------------- Desktop ---------------------------*/
+    @media screen and (min-width: 767px) {
+      width: 550px;
+      margin: 0 auto;
+    }
+
+    .sectionDescription {
+      color: #003e43;
+    }
   }
 }
