@@ -97,7 +97,11 @@ export default function V2Contact() {
           </div>
         </div>
 
-        <div className={styles.contactInformationsContainer}></div>
+        <div className={styles.contactInformationsContainer}>
+          <h3 className={`${styles.auditTitle} ${barlow.className}`}>
+            Réservez un audit gratuit de vos besoins dès maintenant !
+          </h3>
+        </div>
       </div>
     </div>
   );
