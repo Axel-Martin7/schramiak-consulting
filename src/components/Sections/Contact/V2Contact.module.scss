@@ -1,10 +1,21 @@
 .mainContainer {
-  position: relative;
-  padding: 40px 20px;
+  width: 100%;
+  max-width: 1440px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   gap: 80px;
+  border-radius: 20px;
+  box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
   border: 1px solid red;
+  /*---------------------- Ecran moyen ----------------------*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 80px 40px;
+  }
+  /*------------------ Desktop------------------*/
+  @media screen and (min-width: 1024px) {
+    padding: 80px;
+  }
 
   .sectionTitleContainer {
     display: flex;
@@ -21,9 +32,95 @@
     .titleSeparator {
       height: 10px;
       background-color: #f0f0f0;
-      flex-grow: 1;
+      flex-grow: 1; /* S'étend pour remplir l'espace disponible */
       box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
       border-radius: 20px;
+    }
+  }
+
+  .contactContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 1px solid orange;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    .emptyCarvedBackground {
+      display: none;
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 1024px) {
+        width: 12.5%; // moitié de 25% car taille totale du parent découpée en 4 colonnes de 100%
+        display: block;
+        border-radius: 20px 120px 120px 20px;
+        box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
+        border: 1px solid red;
+      }
+    }
+
+    .contactItemsContainer {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-radius: 20px;
+      box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
+      border: 1px solid red;
+
+      /*---------------------- Ecran moyen ----------------------*/
+      @media (min-width: 768px) and (max-width: 1024px) {
+        flex-direction: row;
+      }
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 1024px) {
+        width: 190px;
+        justify-content: center;
+        gap: 40px;
+        box-shadow: none;
+      }
+
+      .item1,
+      .item2,
+      .item3,
+      .item4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        border: 1px solid blue;
+        /*---------------------- Ecran moyen ----------------------*/
+        @media (min-width: 768px) and (max-width: 1024px) {
+          max-width: 25%; // Chaque item ne dépasse pas 25% de la largeur du conteneur
+          flex: 1; // Chaque item occupe un espace égal
+        }
+        .circleContainer {
+          width: 80px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          border: 1px solid red;
+
+          .itemInformation {
+            // text-align: center;
+          }
+        }
+      }
+    }
+
+    .contactInformationsContainer {
+      border: 1px solid red;
+      height: 800px;
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 1024px) {
+        width: calc(
+          25% + 25% + 25% + 12.5% - 190px
+        ); // 25% = parent divisé en 4 partie. 12.5% moitiée restante de emptyCarveBackground, 190px = taille fixe de contactItemsContainer.
+        border-radius: 120px 20px 20px 120px;
+        box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
+      }
     }
   }
 }
