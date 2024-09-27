@@ -69,7 +69,6 @@
       border-radius: 20px;
       box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
       border: 1px solid red;
-
       /*---------------------- Ecran moyen ----------------------*/
       @media (min-width: 768px) and (max-width: 1024px) {
         flex-direction: row;
@@ -90,29 +89,38 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-
         border: 1px solid blue;
         /*---------------------- Ecran moyen ----------------------*/
         @media (min-width: 768px) and (max-width: 1024px) {
           max-width: 25%; // Chaque item ne dépasse pas 25% de la largeur du conteneur
           flex: 1; // Chaque item occupe un espace égal
         }
-        .circleContainer {
+        .circleBorder {
           width: 80px;
           aspect-ratio: 1/1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           border-radius: 50%;
-          border: 1px solid red;
+          background: linear-gradient(45deg, #cecece 25%, #ffffff 75%);
+          box-shadow: -6px 6px 12px #646464;
 
-          .itemInformation {
-            // text-align: center;
+          .circle {
+            width: calc(80px - 5px);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #fcfcfc 0%, #e8e8e8 100%);
           }
+        }
+
+        .itemInformation {
+          color: #003e43;
         }
       }
     }
 
     .contactInformationsContainer {
       border: 1px solid red;
-      height: 800px;
       /*------------------ Desktop------------------*/
       @media screen and (min-width: 1024px) {
         width: calc(
