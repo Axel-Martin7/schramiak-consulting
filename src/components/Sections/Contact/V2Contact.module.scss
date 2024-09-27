@@ -108,8 +108,17 @@
           .circle {
             width: calc(80px - 5px);
             aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 50%;
             background: linear-gradient(45deg, #fcfcfc 0%, #e8e8e8 100%);
+
+            .icon {
+              // border: 1px solid red;
+              filter: drop-shadow(-2px 2px 1px #bbbbbb)
+                drop-shadow(2px -2px 1px #ffffff);
+            }
           }
         }
 
