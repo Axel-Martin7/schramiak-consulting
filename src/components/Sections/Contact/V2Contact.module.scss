@@ -7,7 +7,6 @@
   gap: 80px;
   border-radius: 20px;
   box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
-  border: 1px solid red;
   /*---------------------- Ecran moyen ----------------------*/
   @media (min-width: 768px) and (max-width: 1024px) {
     padding: 80px 40px;
@@ -20,7 +19,6 @@
   .sectionTitleContainer {
     display: flex;
     align-items: center;
-    border: 1px solid orange;
 
     .title {
       padding-right: 20px;
@@ -42,7 +40,6 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    border: 1px solid orange;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 1024px) {
       flex-direction: row;
@@ -68,7 +65,7 @@
       gap: 20px;
       border-radius: 20px;
       box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
-      border: 1px solid red;
+
       /*---------------------- Ecran moyen ----------------------*/
       @media (min-width: 768px) and (max-width: 1024px) {
         flex-direction: row;
@@ -89,7 +86,7 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        border: 1px solid blue;
+
         /*---------------------- Ecran moyen ----------------------*/
         @media (min-width: 768px) and (max-width: 1024px) {
           max-width: 25%; // Chaque item ne dépasse pas 25% de la largeur du conteneur
@@ -128,11 +125,7 @@
       }
     }
 
-    .contactInformationsContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid red;
+    .informationsCarvedBackground {
       /*------------------ Desktop------------------*/
       @media screen and (min-width: 1024px) {
         width: calc(
@@ -142,10 +135,130 @@
         box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
       }
 
-      .auditTitle {
-        padding: 80px;
-        border: 1px solid orange;
+      .contactInformationsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 1024px) {
+          padding: 80px 40px;
+        }
+
+        .auditTitle {
+          font-size: 28px;
+          font-weight: 600;
+          text-transform: uppercase;
+
+          color: #003e43;
+
+          background: radial-gradient(
+            ellipse farthest-corner at right center,
+            #00b0bd 0%,
+            #007b87 68%,
+            #003e43 100%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          .highlight {
+            font-weight: 600;
+          }
+        }
+
+        .auditDescription {
+        }
+
+        .formContainer {
+          padding: 40px;
+          border-radius: 20px;
+          box-shadow: -15px 15px 30px #bbbbbb, 15px -15px 30px #fcfcfc,
+            inset 10px -10px 20px #cecece, inset -10px 10px 20px #ffffff;
+
+          .contactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .formGroup {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              label {
+                font-weight: 600;
+                color: #003e43;
+              }
+
+              input,
+              textarea {
+                padding: 10px 15px;
+                border: 1px solid #cecece;
+                border-radius: 10px;
+                font-size: 16px;
+                background-color: #f0f0f0;
+                box-shadow: inset -4px 4px 8px #cecece,
+                  inset 4px -4px 8px #fcfcfc;
+
+                &:focus {
+                  outline: none;
+                  border-color: #007b87;
+                  box-shadow: inset -4px 4px 8px #a0a0a0,
+                    inset 4px -4px 8px #ffffff;
+                }
+              }
+
+              textarea {
+                min-height: 150px;
+                resize: vertical;
+              }
+            }
+
+            .submitButton {
+              padding: 15px 20px;
+              background-color: #007b87;
+              color: #ffffff;
+              font-size: 18px;
+              font-weight: 600;
+              text-transform: uppercase;
+              border: none;
+              border-radius: 10px;
+              cursor: pointer;
+              align-self: flex-start;
+              box-shadow: -6px 6px 12px #646464;
+
+              &:hover {
+                background-color: #005f65;
+              }
+
+              &:active {
+                box-shadow: inset -6px 6px 12px #646464;
+              }
+            }
+          }
+        }
       }
     }
+
+    // .contactInformationsContainer {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   border: 1px solid red;
+    //   /*------------------ Desktop------------------*/
+    //   @media screen and (min-width: 1024px) {
+    //     width: calc(
+    //       25% + 25% + 25% + 12.5% - 190px
+    //     ); // 25% = parent divisé en 4 partie. 12.5% moitiée restante de emptyCarveBackground, 190px = taille fixe de contactItemsContainer.
+    //     border-radius: 120px 20px 20px 120px;
+    //     box-shadow: inset -8px 8px 15px #cecece, inset 8px -8px 15px #fcfcfc;
+    //   }
+
+    //   .auditTitle {
+    //     padding: 80px;
+    //     border: 1px solid orange;
+    //   }
+    // }
   }
 }

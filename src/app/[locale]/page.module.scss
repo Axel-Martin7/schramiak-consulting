@@ -56,86 +56,12 @@
     padding: 0 20px;
     border: 1px solid black;
     background: linear-gradient(135deg, #e8e8e8 0%, #fcfcfc 80%);
-    // padding: 0 20px;
-    // border: 1px solid black;
-    // background: linear-gradient(135deg, #e8e8e8 0%, #fcfcfc 80%);
 
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
-      height: calc(100vh - 100px);
       padding: 0 40px;
       display: flex;
       justify-content: center;
     }
   }
 }
-
-// .main {
-//   padding-top: 100px;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 80px;
-//   border: 1px solid black;
-//   /*------------------ Desktop------------------*/
-//   @media screen and (min-width: 768px) {
-//     gap: 0;
-//   }
-
-//   .introductionSection {
-//     height: calc(100vh - 100px);
-//     background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 80%);
-//     border: 1px solid red;
-//     margin: 10px;
-//   }
-
-//   .heroSection {
-//     // min-height: 100vh;
-
-//     border: 1px solid red;
-//     margin: 10px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       height: calc(100vh - 100px);
-//       display: flex;
-//       align-items: center;
-//     }
-//   }
-
-//   .aboutSection {
-//     border: 1px solid red;
-//     margin: 10px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       height: calc(100vh - 100px);
-//     }
-//   }
-
-//   .servicesSection {
-//     border: 1px solid red;
-//     margin: 10px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       height: calc(100vh - 100px);
-//     }
-//   }
-
-//   .realisationsSection {
-//     border: 1px solid red;
-//     margin: 10px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       height: calc(100vh - 100px);
-//       display: flex;
-//       align-items: center;
-//     }
-//   }
-
-//   .contactSection {
-//     border: 1px solid red;
-//     margin: 10px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       height: calc(100vh - 100px);
-//     }
-//   }
-// }
