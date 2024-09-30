@@ -3,15 +3,21 @@ import styles from './page.module.scss';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Welcome from '@/components/Sections/Introduction/Welcome';
 
 import Introduction from '@/components/Sections/Introduction/Introduction';
-import HeroGrid from '@/components/Sections/Hero/HeroGrid';
+
 import Hero from '@/components/Sections/Hero/Hero';
 
-import V3Services from '@/components/Sections/MyServices/V3Services';
+import MyServices from '@/components/Sections/MyServices/MyServices';
 import About from '@/components/Sections/About/About';
 import Realisations from '@/components/Sections/Realisations/Realisations';
+import Contact from '@/components/Sections/Contact/Contact';
+import V2Introduction from '@/components/Sections/Introduction/V2Introduction';
+import V2Hero from '@/components/Sections/Hero/V2Hero';
+import V2About from '@/components/Sections/About/V2About';
+import V2Services from '@/components/Sections/MyServices/V2Services';
+import V2Realisations from '@/components/Sections/Realisations/V2Realisations';
+import V2Contact from '@/components/Sections/Contact/V2Contact';
 
 type Props = {
   params: { locale: string };
@@ -24,104 +30,30 @@ export default function Home({ params: { locale } }: Props) {
 
   return (
     <main className={styles.main}>
-      <Introduction />
-      <Hero />
-      <V3Services />
-      <About />
-      <Realisations />
+      <section className={styles.introductionSection}>
+        <V2Introduction />
+      </section>
+      <section className={styles.heroSection}>
+        <V2Hero />
+      </section>
+      <section className={styles.aboutSection}>
+        <V2About />
+      </section>
+      <section className={styles.servicesSection}>
+        <V2Services />
+      </section>
+      <section className={styles.realisationsSection}>
+        <V2Realisations />
+      </section>
+      <section className={styles.contactSection}>
+        <V2Contact />
+      </section>
+      {/* <Introduction /> */}
+      {/* <Hero /> */}
+      {/* <MyServices /> */}
+      {/* <About /> */}
+      {/* <Realisations /> */}
+      {/* <Contact /> */}
     </main>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <main className={styles.main}>
-//       <div className={styles.description}>
-//         <p>
-//           Get started by editing&nbsp;
-//           <code className={styles.code}>src/app/page.tsx</code>
-//         </p>
-//         <div>
-//           <a
-//             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             By{' '}
-//             <Image
-//               src="/vercel.svg"
-//               alt="Vercel Logo"
-//               className={styles.vercelLogo}
-//               width={100}
-//               height={24}
-//               priority
-//             />
-//           </a>
-//         </div>
-//       </div>
-
-//       <div className={styles.center}>
-//         <Image
-//           className={styles.logo}
-//           src="/next.svg"
-//           alt="Next.js Logo"
-//           width={180}
-//           height={37}
-//           priority
-//         />
-//       </div>
-
-//       <div className={styles.grid}>
-//         <a
-//           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//           className={styles.card}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <h2>
-//             Docs <span>-&gt;</span>
-//           </h2>
-//           <p>Find in-depth information about Next.js features and API.</p>
-//         </a>
-
-//         <a
-//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//           className={styles.card}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <h2>
-//             Learn <span>-&gt;</span>
-//           </h2>
-//           <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-//         </a>
-
-//         <a
-//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//           className={styles.card}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <h2>
-//             Templates <span>-&gt;</span>
-//           </h2>
-//           <p>Explore starter templates for Next.js.</p>
-//         </a>
-
-//         <a
-//           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//           className={styles.card}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <h2>
-//             Deploy <span>-&gt;</span>
-//           </h2>
-//           <p>
-//             Instantly deploy your Next.js site to a shareable URL with Vercel.
-//           </p>
-//         </a>
-//       </div>
-//     </main>
-//   );
-// }
