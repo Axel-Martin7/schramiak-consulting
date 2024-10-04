@@ -1,17 +1,15 @@
 .main {
   min-height: 100vh;
   padding: calc(100px + 80px) 40px 80px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
   border: 1px solid black;
-  background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 80%);
 
   .pageHeader {
     position: relative;
-    width: 100%;
     padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     border: 1px solid transparent;
     border-image: linear-gradient(
       90deg,
@@ -58,8 +56,6 @@
       font-size: 38px;
       text-transform: uppercase;
       color: #003e43;
-      border: 1px solid orange;
-      margin: 10px;
       .highlight {
         font-weight: 600;
         color: #007b87;
@@ -88,7 +84,7 @@
         width: 10px;
         aspect-ratio: 1/1;
         border-radius: 50%;
-
+        // Ombre interne dans les cercles :
         &::after {
           content: '';
           position: absolute;
@@ -99,6 +95,7 @@
           mix-blend-mode: multiply;
         }
       }
+      // Couleur pour chaque cercle :
       .circle1 {
         background-color: #003e43;
       }
@@ -113,26 +110,143 @@
       }
     }
   }
-
-  .realisationsCards {
-    width: 100%;
-    max-width: 1440px;
-
-    border: 1px solid red;
-
-    .card1 {
-      height: 500px;
-      padding: 40px;
-      border-radius: 20px;
-      border: 1px solid orange;
-
-      .informationsContainer {
-        border: 1px solid blue;
-      }
-
-      .ribbonContainer {
-        border: 1px solid blue;
-      }
-    }
-  }
 }
+
+// .main {
+//   min-height: 100vh;
+//   padding: calc(100px + 80px) 40px 80px 40px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 80px;
+//   border: 1px solid black;
+//   background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 80%);
+
+//   .pageHeader {
+//     position: relative;
+//     width: 100%;
+//     padding: 40px 0;
+//     border: 1px solid transparent;
+//     border-image: linear-gradient(
+//       90deg,
+//       rgba(0, 0, 0, 0),
+//       rgba(141, 141, 141, 0.7),
+//       rgba(0, 0, 0, 0)
+//     );
+//     border-image-slice: 1;
+//     // gradient pour l'ombrage au dessus de la bordure top:
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       top: -16px;
+//       width: 100%;
+//       height: 15px;
+//       background: radial-gradient(
+//         ellipse at bottom,
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//       );
+//     }
+//     // gradient pour l'ombrage en dessous de la bordure bottom:
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       bottom: -16px;
+//       width: 100%;
+//       height: 15px;
+//       background: radial-gradient(
+//         ellipse at top,
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//       );
+//     }
+
+//     .pageTitle {
+//       text-align: center;
+//       font-size: 38px;
+//       text-transform: uppercase;
+//       color: #003e43;
+//       border: 1px solid orange;
+//       margin: 10px;
+//       .highlight {
+//         font-weight: 600;
+//         color: #007b87;
+//         background: radial-gradient(
+//           ellipse farthest-corner at right center,
+//           #00b0bd 0%,
+//           #007b87 68%,
+//           #003e43 100%
+//         );
+//         background-clip: text;
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//       }
+//     }
+
+//     .decorativeCirclesContainer {
+//       display: flex;
+//       justify-content: center;
+//       gap: 5px;
+
+//       .circle1,
+//       .circle2,
+//       .circle3,
+//       .circle4 {
+//         position: relative;
+//         width: 10px;
+//         aspect-ratio: 1/1;
+//         border-radius: 50%;
+
+//         &::after {
+//           content: '';
+//           position: absolute;
+//           width: 100%;
+//           height: 100%;
+//           border-radius: 50%;
+//           box-shadow: inset -3px 3px 3px #bbbbbb, inset 2px -2px 2px #ffffff;
+//           mix-blend-mode: multiply;
+//         }
+//       }
+//       .circle1 {
+//         background-color: #003e43;
+//       }
+//       .circle2 {
+//         background-color: #007b87;
+//       }
+//       .circle3 {
+//         background-color: #00a4b1;
+//       }
+//       .circle4 {
+//         background-color: #00b0bd;
+//       }
+//     }
+//   }
+
+//   .realisationsCards {
+//     width: 100%;
+//     max-width: 1440px;
+
+//     border: 1px solid red;
+
+//     .card1 {
+//       height: 500px;
+//       padding: 40px;
+//       border-radius: 20px;
+//       border: 1px solid orange;
+
+//       .informationsContainer {
+//         border: 1px solid blue;
+//       }
+
+//       .ribbonContainer {
+//         border: 1px solid blue;
+//       }
+//     }
+//   }
+// }
