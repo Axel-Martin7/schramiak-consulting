@@ -20,8 +20,8 @@ export default function Navigation() {
         </li>
 
         <li className={styles.navItem}>
-          <Link href={'/about'} title="Learn more about us">
-            About
+          <Link href={'/journey'} title="Learn more about us">
+            Parcour
           </Link>
         </li>
 
