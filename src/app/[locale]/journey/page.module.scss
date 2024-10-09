@@ -1,3 +1,247 @@
+// .main {
+//   padding: calc(100px + 40px) 0px 80px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 80px;
+//   border: 1px solid black;
+
+//   .pageHeader {
+//     position: relative;
+//     width: 100%;
+//     padding: 40px 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 10px;
+//     border: 1px solid transparent;
+//     border-image: linear-gradient(
+//       90deg,
+//       rgba(0, 0, 0, 0),
+//       rgba(141, 141, 141, 0.7),
+//       rgba(0, 0, 0, 0)
+//     );
+//     border-image-slice: 1;
+//     // gradient pour l'ombrage au dessus de la bordure top:
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       top: -16px;
+//       width: 100%;
+//       height: 15px;
+//       background: radial-gradient(
+//         ellipse at bottom,
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//       );
+//     }
+//     // gradient pour l'ombrage en dessous de la bordure bottom:
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       bottom: -16px;
+//       width: 100%;
+//       height: 15px;
+//       background: radial-gradient(
+//         ellipse at top,
+//         /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
+//         /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 22%,
+//         /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
+//         /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
+//         /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
+//       );
+//     }
+
+//     .pageTitle {
+//       text-align: center;
+//       font-size: 38px;
+//       text-transform: uppercase;
+//       color: #003e43;
+//       .highlight {
+//         font-weight: 600;
+//         color: #007b87;
+//         background: radial-gradient(
+//           ellipse farthest-corner at right center,
+//           #00b0bd 0%,
+//           #007b87 68%,
+//           #003e43 100%
+//         );
+//         background-clip: text;
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//       }
+//     }
+
+//     .decorativeCirclesContainer {
+//       display: flex;
+//       justify-content: center;
+//       gap: 5px;
+
+//       .circle1,
+//       .circle2,
+//       .circle3,
+//       .circle4 {
+//         position: relative;
+//         width: 10px;
+//         aspect-ratio: 1/1;
+//         border-radius: 50%;
+//         // Ombre interne dans les cercles :
+//         &::after {
+//           content: '';
+//           position: absolute;
+//           width: 100%;
+//           height: 100%;
+//           border-radius: 50%;
+//           box-shadow: inset -3px 3px 3px #bbbbbb, inset 2px -2px 2px #ffffff;
+//           mix-blend-mode: multiply;
+//         }
+//       }
+//       // Couleur pour chaque cercle :
+//       .circle1 {
+//         background-color: #003e43;
+//       }
+//       .circle2 {
+//         background-color: #007b87;
+//       }
+//       .circle3 {
+//         background-color: #00a4b1;
+//       }
+//       .circle4 {
+//         background-color: #00b0bd;
+//       }
+//     }
+//   }
+
+//   .cardsSection {
+//     position: relative;
+//     width: 100%;
+//     max-width: 1440px;
+//     padding: 40px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 40px;
+//     border: 1px solid red;
+
+//     .ribbonHelper {
+//       position: absolute;
+//       width: calc(100% - 80px);
+//       height: calc(100% - 80px);
+//       // height: 100%;
+//       // inset: 0; // Permet de couvrir tout l'espace disponible du parent
+//       // // clip-path: polygon(90% 0%, 100% 0%, 100% 10%, 10% 100%, 0% 100%, 0% 90%);
+//       // border: 1px solid orange;
+//       background-color: rgba(255, 166, 0, 0.249);
+
+//       display: flex;
+//       flex-direction: column;
+//       gap: 40px;
+//       clip-path: polygon(90% 0%, 100% 0%, 100% 10%, 10% 100%, 0% 100%, 0% 90%);
+//       border: 1px solid orange;
+//     }
+
+//     .card1,
+//     .card2,
+//     .card3,
+//     .card4,
+//     .card5,
+//     .card6 {
+//       position: relative;
+//       width: 100%;
+//       height: 290px;
+//       padding: 40px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-between;
+//       gap: 40px;
+//       border-radius: 20px;
+//       border: 1px solid blue;
+
+//       .cardHeader {
+//         display: flex;
+//         align-items: center;
+//         gap: 20px;
+//         border: 1px solid red;
+//         .cardTitle {
+//           font-size: 24px;
+//           text-transform: uppercase;
+//           border: 1px solid orange;
+//         }
+//         .titleSeparator {
+//           height: 10px;
+//           background-color: #f0f0f0;
+//           flex-grow: 1;
+//           box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
+//           border-radius: 20px;
+//         }
+//       }
+
+//       .cardContentContainer {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 20px;
+//         border: 1px solid red;
+
+//         .roleTitle {
+//           font-size: 20px;
+//           border: 1px solid orange;
+//         }
+
+//         .descriptionsList {
+//           border: 1px solid orange;
+//           .description {
+//             display: flex;
+//             align-items: center;
+//             gap: 10px;
+//             .decorativePoint {
+//               position: relative;
+//               width: 10px;
+//               aspect-ratio: 1/1;
+//               margin-right: 5px;
+//               display: inline-block;
+//               border-radius: 50%;
+//               background-color: red;
+//               // Ombre interne dans les cercles :
+//               &::after {
+//                 content: '';
+//                 position: absolute;
+//                 width: 100%;
+//                 height: 100%;
+//                 border-radius: 50%;
+//                 box-shadow: inset -3px 3px 3px #bbbbbb,
+//                   inset 2px -2px 2px #ffffff;
+//                 mix-blend-mode: multiply;
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .ribbonContainer1 {
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         inset: 0; // Permet de couvrir tout l'espace disponible du parent
+//         border: 1px solid red;
+//         background-color: rgba(255, 0, 0, 0.262);
+//         clip-path: polygon(90% 0%, 100% 0%, 100% 67%, 95.1% 100%, 75.1% 100%);
+//       }
+
+//       .ribbonContainer2 {
+//         position: absolute;
+//         width: calc(100% - 80px);
+//         height: 100%;
+//         inset: 0; // Permet de couvrir tout l'espace disponible du parent
+//         border: 1px solid blue;
+//         background-color: rgba(0, 0, 255, 0.307);
+//         clip-path: polygon(90% 0%, 100% 0%, 100% 67%, 95.1% 100%, 75.1% 100%);
+//       }
+//     }
+//   }
+// }
+
 .main {
   padding: calc(100px + 40px) 0px 80px;
   display: flex;
@@ -119,33 +363,154 @@
     position: relative;
     width: 100%;
     max-width: 1440px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     border: 1px solid red;
 
-    .diagonalBand {
+    .ribbonHelper {
       position: absolute;
-      width: 100%;
+      width: calc(100% - 80px);
       height: 100%;
-      background-color: orange;
+      clip-path: polygon(90% 0%, 100% 0%, 100% 7%, 10% 100%, 0% 100%, 0% 93%);
+      background-color: rgba(255, 166, 0, 0.242);
       border: 1px solid orange;
-      transform: rotate(-45deg);
     }
 
-    .card {
+    .card1,
+    .card2,
+    .card3,
+    .card4,
+    .card5,
+    .card6 {
       position: relative;
-      height: 100px;
+      width: 100%;
+      height: 290px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
       border: 1px solid blue;
+      // filter: drop-shadow(-2px 2px 2px red);
+      .cardHeader {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid red;
+        .cardTitle {
+          font-size: 24px;
+          text-transform: uppercase;
+          border: 1px solid orange;
+        }
+        .titleSeparator {
+          height: 10px;
+          background-color: #f0f0f0;
+          flex-grow: 1;
+          box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
+          border-radius: 20px;
+        }
+      }
 
-      .diagonalBand {
-        // top: 0;
-        // left: 50%;
-        // position: absolute;
-        // width: 110%;
-        // height: 100%;
-        // transform: rotate(-45deg);
-        // border: 1px solid green;
+      .cardContentContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid red;
+
+        .roleTitle {
+          font-size: 20px;
+          border: 1px solid orange;
+        }
+
+        .descriptionsList {
+          border: 1px solid orange;
+          .description {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .decorativePoint {
+              position: relative;
+              width: 10px;
+              aspect-ratio: 1/1;
+              margin-right: 5px;
+              display: inline-block;
+              border-radius: 50%;
+              background-color: red;
+              // Ombre interne dans les cercles :
+              &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                box-shadow: inset -3px 3px 3px #bbbbbb,
+                  inset 2px -2px 2px #ffffff;
+                mix-blend-mode: multiply;
+              }
+            }
+          }
+        }
+      }
+
+      .ribbonCard1,
+      .ribbonCard2,
+      .ribbonCard3,
+      .ribbonCard4,
+      .ribbonCard5,
+      .ribbonCard6 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        // background-color: rgba(0, 128, 0, 0.283);
+        // box-shadow: inset 1px 1px 1px red;
+        border: 1px solid green;
+        box-shadow: inset -5px 5px 10px rgba(0, 0, 0, 0.4),
+          inset 5px -5px 10px rgba(255, 255, 255, 0.2);
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   top: 0;
+        //   right: 0;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-color: inherit;
+        //   clip-path: inherit;
+        //   box-shadow: inset -5px 5px 10px rgba(0, 0, 0, 0.4),
+        //     inset 5px -5px 10px rgba(255, 255, 255, 0.2);
+        //   // mix-blend-mode: multiply;
+        // }
+      }
+
+      .ribbonCard1 {
+        clip-path: polygon(90% 0%, 100% 0%, 100% 47%, 92.4% 100%, 75.6% 100%);
+        background: linear-gradient(
+            292deg,
+            #646464 0%,
+            transparent 32%,
+            transparent 66%,
+            #646464 100%
+          ),
+          #00b0bd;
+        background-blend-mode: multiply;
+      }
+      .ribbonCard2 {
+        clip-path: polygon(73.5% 0%, 90.2% 0%, 75.8% 100%, 59.1% 100%);
+      }
+      .ribbonCard3 {
+        clip-path: polygon(57% 0%, 73.8% 0%, 59.4% 100%, 42.6% 100%);
+      }
+      .ribbonCard4 {
+        clip-path: polygon(40.5% 0%, 57.3% 0%, 43% 100%, 26.1% 100%);
+      }
+      .ribbonCard5 {
+        clip-path: polygon(24% 0%, 40.8% 0%, 26.5% 100%, 9.6% 100%);
+      }
+      .ribbonCard6 {
+        clip-path: polygon(7.5% 0%, 24.4% 0%, 9.9% 100%, 0% 100%, 0% 54%);
       }
     }
   }
