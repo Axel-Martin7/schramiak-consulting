@@ -6,11 +6,11 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import Introduction from '@/components/pages/Introduction';
 import Hero from '@/components/pages/Hero';
-import About from '@/components/pages/About';
-import MyServices from '@/components/pages/MyServices';
-import Realisations from '@/components/pages/Realisations';
-import Contact from '@/components/pages/Contact';
 
+import MyServices from '@/components/Sections/MyServices/MyServices';
+import About from '@/components/Sections/About/About';
+import Realisations from '@/components/Sections/Realisations/Realisations';
+import Contact from '@/components/Sections/Contact/Contact';
 import V2Introduction from '@/components/Sections/Introduction/V2Introduction';
 import V2Hero from '@/components/Sections/Hero/V2Hero';
 import V2About from '@/components/Sections/About/V2About';
@@ -28,50 +28,27 @@ export default function Home({ params: { locale } }: Props) {
   const t = useTranslations('HomePage');
 
   return (
-    // <main className={styles.main}>
-    //   <section className={styles.introductionSection}>
-    //     {/* <V2Introduction /> */}
-    //   </section>
-    //   <section className={styles.heroSection}>{/* <V2Hero /> */}</section>
-    //   <section className={styles.aboutSection}>{/* <V2About /> */}</section>
-    //   <section className={styles.servicesSection}>
-    //     {/* <V2Services /> */}
-    //   </section>
-    //   <section className={styles.realisationsSection}>
-    //     {/* <V2Realisations /> */}
-    //   </section>
-    //   <section className={styles.contactSection}>{/* <V2Contact /> */}</section>
-    //   {/* <Introduction /> */}
-    //   {/* <Hero /> */}
-    //   {/* <MyServices /> */}
-    //   {/* <About /> */}
-    //   {/* <Realisations /> */}
-    //   {/* <Contact /> */}
-    // </main>
-
     <main className={styles.main}>
       <section className={styles.introductionSection}>
-        <Introduction />
+        <V2Introduction />
       </section>
-
       <section className={styles.heroSection}>
-        <Hero />
+        {' '}
+        <V2Hero />{' '}
       </section>
-
       <section className={styles.aboutSection}>
-        <About />
+        {' '}
+        <V2About />{' '}
       </section>
-
       <section className={styles.servicesSection}>
-        <MyServices />
+        <V2Services />
       </section>
-
       <section className={styles.realisationsSection}>
-        <Realisations />
+        <V2Realisations />
       </section>
-
       <section className={styles.contactSection}>
-        <Contact />
+        {' '}
+        <V2Contact />
       </section>
     </main>
   );
