@@ -28,27 +28,6 @@ export default function Home({ params: { locale } }: Props) {
   const t = useTranslations('HomePage');
 
   return (
-    // <main className={styles.main}>
-    //   <section className={styles.introductionSection}>
-    //     {/* <V2Introduction /> */}
-    //   </section>
-    //   <section className={styles.heroSection}>{/* <V2Hero /> */}</section>
-    //   <section className={styles.aboutSection}>{/* <V2About /> */}</section>
-    //   <section className={styles.servicesSection}>
-    //     {/* <V2Services /> */}
-    //   </section>
-    //   <section className={styles.realisationsSection}>
-    //     {/* <V2Realisations /> */}
-    //   </section>
-    //   <section className={styles.contactSection}>{/* <V2Contact /> */}</section>
-    //   {/* <Introduction /> */}
-    //   {/* <Hero /> */}
-    //   {/* <MyServices /> */}
-    //   {/* <About /> */}
-    //   {/* <Realisations /> */}
-    //   {/* <Contact /> */}
-    // </main>
-
     <main className={styles.main}>
       <section className={styles.introductionSection}>
         <Introduction />

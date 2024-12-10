@@ -1,0 +1,10 @@
+@import './variables';
+
+@mixin font-style-carved {
+  color: transparent;
+  background: #007b87;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 4px 2px rgba(255, 255, 255, 0.3);
+}

@@ -5,7 +5,7 @@ import {
   getTranslations,
   unstable_setRequestLocale,
 } from 'next-intl/server';
-import { Inter } from 'next/font/google';
+import { montserrat } from '@/styles/font';
 import '@/styles/globals.scss';
 
 import { ReactNode } from 'react';
@@ -13,8 +13,6 @@ import { locales } from '@/config';
 // import Header from '@/components/Header/Header';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
@@ -47,7 +45,7 @@ export default async function Layout({ children, params: { locale } }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           {/* <Header /> */}
           <Header />

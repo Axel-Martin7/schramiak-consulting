@@ -1,3 +1,6 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
 .shapesContainer {
   width: 100%;
   height: 100%;
@@ -5,16 +8,222 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   border: 1px solid black;
 
   .contentDiamond {
+    //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
+    z-index: 2;
     position: absolute;
     width: calc(100% / sqrt(2));
     max-width: calc(400px / sqrt(2));
     min-width: calc(280px / sqrt(2));
     aspect-ratio: 1/1;
     transform: rotate(45deg);
-    border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.197);
+    background: linear-gradient(
+      0deg,
+      $color-light-grey 0%,
+      $color-dark-grey 100%
+    );
+    border: 3px solid; /* Épaisseur de la bordure */
+    border-image: linear-gradient(to bottom, #ffffff 30%, $color-dark-grey 70%)
+      1;
+    overflow: hidden;
+
+    .titlesContainer {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-45deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-transform: uppercase;
+      @include font-style-carved;
+
+      .mainTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .firstName {
+          font-weight: 300;
+          letter-spacing: 6px;
+        }
+        .lastName {
+          // font-size: clamp(30px, 10vw, 48px);
+          font-size: 48px;
+          font-weight: 600;
+        }
+      }
+
+      .titleSeparator {
+        height: 5px;
+        width: 97px;
+        border-radius: 20px;
+        box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
+      }
+
+      .role {
+        font-weight: 600;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .decorativesDiamonds {
+    // Ce diamand va servir de base pour la création des autres diamants décoratifs
+    position: relative;
+    width: calc(100% / sqrt(2));
+    max-width: calc(400px / sqrt(2));
+    min-width: calc(280px / sqrt(2));
+    transform: rotate(45deg);
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+
+    .diamond2,
+    .diamond3,
+    .diamond4,
+    .diamond5,
+    .diamond6,
+    .diamond7 {
+      position: absolute;
+      aspect-ratio: 1/1;
+      background: linear-gradient(
+        0deg,
+        $color-light-grey 0%,
+        $color-dark-grey 100%
+      );
+      border: 3px solid; /* Épaisseur de la bordure */
+      border-image: linear-gradient(
+          to bottom,
+          #ffffff 30%,
+          $color-dark-grey 70%
+        )
+        1;
+    }
+
+    .diamond2 {
+      z-index: 1;
+      bottom: -60%; /* Place the square at the bottom */
+      left: 50%; /* Align the left edge of the square to the center */
+      transform: translateX(-50%); /* Center the square horizontally */
+      width: 72.31%;
+    }
+    .diamond3 {
+      bottom: 86%;
+      left: 78%;
+      width: 67.69%;
+    }
+    .diamond4 {
+      bottom: 107%;
+      left: 8%;
+      width: 58.46%;
+    }
+    .diamond5 {
+      top: 62%;
+      right: 112%;
+      width: 50.77%;
+    }
+    .diamond6 {
+      top: 130%;
+      right: 83%;
+      width: 47.69%;
+    }
+
+    .diamond7 {
+      bottom: 27.5%;
+      left: 112%;
+      width: 46.15%;
+    }
+
+    // * Polygones pour effet 3D avec ombres en dégradés autour des diamants
+    .polygon3,
+    .polygon4,
+    .polygon5,
+    .polygon6,
+    .polygon7 {
+      position: absolute;
+      top: 50%; // postionne le polygone au centre absolu du diamant
+      left: 50%; // postionne le polygone au centre absolu du diaman
+      border: 1px solid red;
+    }
+
+    .polygon3 {
+      z-index: -2;
+      width: 400%;
+      height: 400%;
+      transform: translate(-50%, -50%) rotate(266deg);
+      clip-path: polygon(50% 50%, 57.6% 75.6%, 78.5% 59.8%);
+      border: 1px solid red;
+      background: radial-gradient(
+        at 50% 50%,
+        rgba(0, 0, 0, 0.6) 0%,
+        transparent 37%
+      );
+    }
+    .polygon4 {
+      z-index: -2;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%) rotate(210deg);
+      clip-path: polygon(50% 50%, 57.68% 78.63%, 82.6% 64.4%);
+      background: radial-gradient(rgba(0, 0, 0, 0.6) 0%, transparent 77%);
+    }
+    .polygon5 {
+      z-index: -2;
+      width: 380%;
+      height: 380%;
+      transform: translate(-50%, -50%) rotate(107deg);
+      clip-path: polygon(50% 50%, 61.5% 77.4%, 70.6% 60.8%);
+      background: radial-gradient(
+        at 46% 50%,
+        rgba(0, 0, 0, 0.6) -5%,
+        transparent 38%
+      );
+    }
+    .polygon6 {
+      z-index: -2;
+      width: 400%;
+      height: 400%;
+      transform: translate(-50%, -50%) rotate(74deg);
+      clip-path: polygon(50% 50%, 63.7% 74.96%, 78.4% 66.78%);
+      background: radial-gradient(
+        at 62% 50%,
+        rgba(0, 0, 0, 0.6) 4%,
+        transparent 34%
+      );
+    }
+    .polygon7 {
+      z-index: -1;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%) rotate(318deg);
+      clip-path: polygon(50% 50%, 65.6% 79%, 81.2% 62%);
+      background: linear-gradient(
+        260deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        transparent 45%
+      );
+    }
+
+    .shadowEllipse {
+      position: absolute;
+      top: calc(117% + 30px);
+      left: 141%;
+      transform: translateX(-50%) rotate(-45deg);
+      width: 125%;
+      height: 30px;
+      background: radial-gradient(
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.05) 35%,
+        transparent 70%
+      );
+      /*------------------ Desktop------------------*/
+      @media screen and (min-width: 768px) {
+        top: calc(117% + 50px);
+      }
+    }
   }
 }
