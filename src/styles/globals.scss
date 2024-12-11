@@ -1,9 +1,15 @@
 @import './reset';
+@import '@/styles/variables';
+@import '@/styles/mixins';
 
 body {
   height: 100vh; /* S'assure que la hauteur couvre tout l'écran */
-  background: linear-gradient(45deg, #ddd 0%, #fcfcfc 80%);
-  background: linear-gradient(45deg, #e4e4e4 0%, #fcfcfc 80%);
+  // background: linear-gradient(45deg, #ddd 0%, #fcfcfc 80%);
+  background: linear-gradient(
+    45deg,
+    $color-dark-grey 0%,
+    $color-light-grey 80%
+  );
   background-attachment: fixed; /* Le dégradé reste fixe */
   background-size: cover; /* Le dégradé couvre l'écran */
 }

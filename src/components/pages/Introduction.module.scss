@@ -10,6 +10,10 @@
   align-items: center;
   overflow: hidden;
   border: 1px solid black;
+  /*------------------ Desktop------------------*/
+  @media screen and (min-width: 768px) {
+    border: none;
+  }
 
   .contentDiamond {
     //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
@@ -23,7 +27,7 @@
     background: linear-gradient(
       0deg,
       $color-light-grey 0%,
-      $color-dark-grey 100%
+      $color-dark-grey-lighter 100%
     );
     border: 3px solid; /* Épaisseur de la bordure */
     border-image: linear-gradient(to bottom, #ffffff 30%, $color-dark-grey 70%)
@@ -93,7 +97,7 @@
       background: linear-gradient(
         0deg,
         $color-light-grey 0%,
-        $color-dark-grey 100%
+        $color-dark-grey-lighter 100%
       );
       border: 3px solid; /* Épaisseur de la bordure */
       border-image: linear-gradient(
