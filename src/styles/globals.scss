@@ -10,6 +10,8 @@ body {
     $color-dark-grey 0%,
     $color-light-grey 80%
   );
+  background: linear-gradient(45deg, #ddd 0%, $color-light-grey 80%);
+
   background-attachment: fixed; /* Le dégradé reste fixe */
   background-size: cover; /* Le dégradé couvre l'écran */
 }
