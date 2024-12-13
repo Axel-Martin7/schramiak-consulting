@@ -1,102 +1,11 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-// .heroWrapper {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-
-//   .skewedContainer {
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       z-index: 1;
-//       position: absolute;
-//       width: 100%;
-//       height: 100%;
-//       transform: skewX(10deg) translateX(-46%);
-//       // background: linear-gradient(45deg, #e4e4e4 0%, #fcfcfc 80%);
-//       background: linear-gradient(22deg, #ececec 0%, #fcfcfc 80%);
-//       &::before {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         right: -26px; // Décalage de l'ombrage à droite de la bordure
-//         height: 100%;
-//         width: 25px;
-//         // background: radial-gradient(
-//         //   ellipse at left,
-//         //   /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-//         //   /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
-//         //   /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-//         //   /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-//         //   /* Transition vers transparent */ rgba(229, 230, 231, 0) 100%
-//         // );
-//         background: radial-gradient(
-//           ellipse 50% 50% at 20% 70%,
-//           /* #8d8d8d avec alpha 0.7 */ rgba(141, 141, 141, 0.7),
-//           /* #bbbbbb avec alpha 0.6 */ rgba(187, 187, 187, 0.6) 25%,
-//           /* #cecece avec alpha 0.5 */ rgba(206, 206, 206, 0.2) 50%,
-//           /* #e5e6e7 avec alpha 0.3 */ rgba(229, 230, 231, 0.1) 70%,
-//           transparent 100% /* Transparence à 100% */
-//         );
-//       }
-//     }
-//   }
-
-//   .heroContainer {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     max-width: 1440px;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       margin: 0 auto;
-//       display: flex;
-//     }
-
-//     .informationsContainer {
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         z-index: 2;
-//         width: 50%;
-//         height: 100%;
-//       }
-//     }
-
-//     .backgroundImageContainer {
-//       display: flex;
-//       justify-content: center;
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         width: 50%;
-//         height: 100%;
-//       }
-
-//       .imageContainer {
-//         position: relative;
-//         width: 300px;
-//         height: 400px;
-//         min-width: 280px;
-//         mix-blend-mode: multiply;
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 768px) {
-//           width: 50%;
-//           height: 100%;
-//           mix-blend-mode: normal;
-//         }
-//         .image {
-//           object-fit: contain;
-//         }
-//       }
-//     }
-//   }
-// }
-
 .heroRibbon {
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #e4e4e4 0%, #fcfcfc 80%);
+  background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   &::before {
     content: '';
@@ -136,7 +45,6 @@
   @media screen and (min-width: 768px) {
     width: 100%;
     height: calc(100% - 80px);
-
     background: white;
   }
 
@@ -148,29 +56,11 @@
       width: 100%;
       height: 100%;
       transform: skewX(10deg) translateX(-46%);
-      // background: linear-gradient(45deg, #e4e4e4 0%, #fcfcfc 80%);
       background: linear-gradient(
         22deg,
-        $color-dark-grey-darker 0%,
-        #fcfcfc 80%
+        $color-slate-grey-4 0%,
+        $color-slate-grey-1 80%
       );
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   top: 0;
-      //   right: -40px; // Décalage de l'ombrage à droite de la bordure
-      //   height: 100%;
-      //   width: 40px;
-      //   background: radial-gradient(
-      //     ellipse 70% 100% at 0% 50%,
-      //     rgba(0, 0, 0, 0.4) 0%,
-      //     rgba(183, 183, 183, 0.6) 25%,
-      //     rgba(201, 201, 201, 0.2) 50%,
-      //     rgba(213, 213, 213, 0.1) 70%,
-      //     transparent 100%
-      //   );
-      // }
-
       &::before {
         content: '';
         position: absolute;
