@@ -156,7 +156,6 @@
       position: absolute;
       top: 50%; // postionne le polygone au centre absolu du diamant
       left: 50%; // postionne le polygone au centre absolu du diaman
-      border: 1px solid red;
     }
 
     .polygon3 {
@@ -165,10 +164,9 @@
       height: 400%;
       transform: translate(-50%, -50%) rotate(266deg);
       clip-path: polygon(50% 50%, 57.6% 75.6%, 78.5% 59.8%);
-      border: 1px solid red;
       background: radial-gradient(
         at 50% 50%,
-        rgba(0, 0, 0, 0.6) 0%,
+        rgba(28, 32, 36, 0.7),
         transparent 37%
       );
     }
@@ -178,7 +176,7 @@
       height: 200%;
       transform: translate(-50%, -50%) rotate(210deg);
       clip-path: polygon(50% 50%, 57.68% 78.63%, 82.6% 64.4%);
-      background: radial-gradient(rgba(0, 0, 0, 0.6) 0%, transparent 77%);
+      background: radial-gradient(rgba(28, 32, 36, 0.7) 0%, transparent 77%);
     }
     .polygon5 {
       z-index: -2;
@@ -188,7 +186,7 @@
       clip-path: polygon(50% 50%, 61.5% 77.4%, 70.6% 60.8%);
       background: radial-gradient(
         at 46% 50%,
-        rgba(0, 0, 0, 0.6) -5%,
+        rgba(28, 32, 36, 0.7) -5%,
         transparent 38%
       );
     }
@@ -200,7 +198,7 @@
       clip-path: polygon(50% 50%, 63.7% 74.96%, 78.4% 66.78%);
       background: radial-gradient(
         at 62% 50%,
-        rgba(0, 0, 0, 0.6) 4%,
+        rgba(28, 32, 36, 0.7) 4%,
         transparent 34%
       );
     }
@@ -212,7 +210,7 @@
       clip-path: polygon(50% 50%, 65.6% 79%, 81.2% 62%);
       background: linear-gradient(
         260deg,
-        rgba(0, 0, 0, 0.6) 0%,
+        rgba(28, 32, 36, 0.7) 0%,
         transparent 45%
       );
     }
@@ -222,13 +220,16 @@
       top: calc(117% + 30px);
       left: 141%;
       transform: translateX(-50%) rotate(-45deg);
-      width: 125%;
+      width: 150%;
       height: 30px;
+      border-radius: 50%;
       background: radial-gradient(
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.05) 35%,
+        ellipse at center,
+        rgba(28, 32, 36, 0.2) 0%,
+        rgba(28, 32, 36, 0.05) 50%,
         transparent 70%
       );
+      filter: blur(5px);
       /*------------------ Desktop------------------*/
       @media screen and (min-width: 768px) {
         top: calc(117% + 50px);

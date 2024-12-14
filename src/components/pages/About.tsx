@@ -13,10 +13,14 @@ export default function About() {
     // <div className={styles.descriptionCard}>description</div> */}
     // </div>
 
-    <div className={styles.aboutContainer}>
-      <div className={styles.aboutCard}></div>
+    // --------------------------------------------------------------
 
-      {/* <div className={styles.shadow}></div> */}
-    </div>
+    // <div className={styles.aboutContainer}>
+    //   <div className={styles.aboutCard}></div>
+
+    //   {/* <div className={styles.shadow}></div> */}
+    // </div>
+
+    <div className={styles.aboutContainer}></div>
   );
 }
