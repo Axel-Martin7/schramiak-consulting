@@ -25,15 +25,15 @@
     padding: 0 20px;
     display: flex;
     justify-content: center;
-    border: 2px solid black;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
       height: calc(100svh - 100px);
-      padding-bottom: 160px;
+      // padding-bottom: 160px;
       /* 160px = 
       80px (pour un espace de 80px en bas) +
       80px (taille du reflet de la carte)
       */
+      padding-bottom: 80px;
     }
   }
 
