@@ -1,315 +1,24 @@
-// .aboutContainer {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   max-width: 1440px;
-//   border: 1px solid black;
-//   background-color: #cecece;
-//   z-index: 1;
-
-//   /*------------------ Desktop------------------*/
-//   @media screen and (min-width: 768px) {
-//     position: relative;
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     grid-template-rows: repeat(6, 1fr);
-//     gap: 8px;
-
-//     border-radius: 40px;
-//   }
-
-//   .shadow {
-//     position: absolute;
-//     bottom: 0px;
-//     left: 0px;
-//     width: 100%;
-//     height: 40px;
-//     background-color: red;
-//     border: 1px solid red;
-//     z-index: 0;
-//   }
-
-//   .titleCard {
-//     border: 1px solid red;
-//     background-color: rgba(255, 0, 0, 0.298);
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       grid-column: span 2 / span 2;
-//     }
-//   }
-
-//   .imageCard {
-//     border: 1px solid red;
-//     background-color: rgba(255, 0, 0, 0.298);
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       grid-row: span 3 / span 3;
-//       grid-column-start: 2;
-//       grid-row-start: 2;
-//     }
-//   }
-
-//   .quoteCard {
-//     border: 1px solid red;
-//     background-color: rgba(255, 0, 0, 0.298);
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       grid-row: span 2 / span 2;
-//       grid-column-start: 2;
-//       grid-row-start: 5;
-//     }
-//   }
-
-//   .descriptionCard {
-//     border: 1px solid red;
-//     background-color: rgba(255, 0, 0, 0.298);
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       grid-row: span 5 / span 5;
-//       grid-column-start: 1;
-//       grid-row-start: 2;
-//     }
-//   }
-// }
-
-// --------------------------------------------------------------
-
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-// .aboutContainer {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   max-width: 1440px;
-//   padding-bottom: 80px;
-
-//   .aboutCard {
-//     z-index: 1;
-
-//     width: 100%;
-//     height: 100%;
-//     border-radius: 40px;
-//     background: linear-gradient(
-//       45deg,
-//       $color-slate-grey-4 0%,
-//       $color-slate-grey-1 80%
-//     );
-//     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-//     &::before {
-//       content: '';
-//       z-index: -1;
-//       position: absolute;
-//       bottom: 0px;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       width: 100%;
-//       height: 80px; // Meme valeur que padding-bottom de .aboutContainer
-//       border-top-left-radius: inherit;
-//       border-top-right-radius: inherit;
-//       background: inherit;
-//       opacity: 0.5;
-//       -webkit-mask-image: linear-gradient(
-//         to bottom,
-//         rgb(255, 0, 0) 0%,
-//         rgba(255, 0, 0, 0) 100%
-//       );
-//       mask-image: linear-gradient(
-//         to bottom,
-//         rgb(255, 0, 0) 0%,
-//         rgba(255, 0, 0, 0.2) 50%,
-//         rgba(255, 0, 0, 0) 100%
-//       );
-//     }
-//   }
-
-//   // .shadow {
-//   //   z-index: -1;
-//   //   position: absolute;
-//   //   bottom: 70px;
-//   //   left: 50%;
-//   //   transform: translateX(-50%);
-//   //   width: 80%;
-//   //   height: 20px;
-//   //   border-radius: 50%;
-//   //   background: radial-gradient(
-//   //     ellipse at bottom,
-//   //     rgba(0, 0, 0, 0.6) 0%,
-//   //     rgba(0, 0, 0, 0.2) 50%,
-//   //     transparent 100%
-//   //   );
-//   //   filter: blur(5px);
-//   // }
-// }
-
-// --------------------------------------
-
-// .aboutContainer {
-//   width: 100%;
-//   height: 100%;
-//   max-width: 1440px;
-//   /*------------------ Desktop------------------*/
-//   @media screen and (min-width: 768px) {
-//     position: relative;
-//     padding-bottom: 80px;
-//   }
-
-//   .aboutCard {
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       z-index: 2;
-//       position: relative;
-//       width: 100%;
-//       height: 100%;
-//       padding: 40px;
-//       display: grid;
-//       grid-template-columns: repeat(2, 1fr);
-//       grid-template-rows: repeat(6, 1fr);
-//       gap: 8px;
-//       border-radius: 40px;
-//       background: linear-gradient(
-//         45deg,
-//         $color-slate-grey-5 0%,
-//         $color-slate-grey-1 80%
-//       );
-//       box-shadow: -9px 8px 16px rgba(28, 32, 36, 0.3),
-//         inset 20px -20px 40px rgba(28, 32, 36, 0.2), inset -20px 20px 40px white;
-//     }
-
-//     .titleContainer {
-//       display: flex;
-//       align-items: center;
-//       border: 1px solid black;
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         grid-column: span 2 / span 2;
-//       }
-
-//       .sectionTitle {
-//         padding-right: 20px;
-//         font-size: 24px;
-//         font-weight: 600;
-//         text-transform: uppercase;
-//         color: transparent;
-//         background: #007782;
-//         -webkit-background-clip: text;
-//         -moz-background-clip: text;
-//         background-clip: text;
-//         text-shadow: 0px 4px 2px rgba(255, 255, 255, 0.3);
-//       }
-//       .titleSeparator {
-//         height: 10px;
-//         background-color: #f0f0f0;
-//         flex-grow: 1; /* S'étend pour remplir l'espace disponible */
-//         box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
-//         border-radius: 20px;
-//       }
-//     }
-
-//     .imageContainer {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       justify-content: center;
-//       border: 1px solid black;
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         grid-row: span 4 / span 4;
-//         grid-column-start: 2;
-//         grid-row-start: 2;
-//       }
-//     }
-
-//     .quoteContainer {
-//       border: 1px solid black;
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         grid-column-start: 2;
-//         grid-row-start: 6;
-//       }
-//     }
-
-//     .descriptionContainer {
-//       border: 1px solid black;
-//       border-radius: 20px;
-//       box-shadow: inset -4px 4px 8px rgba(28, 32, 36, 0.2),
-//         inset 4px -4px 8px white;
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 768px) {
-//         grid-row: span 5 / span 5;
-//         grid-column-start: 1;
-//         grid-row-start: 2;
-//       }
-//     }
-//   }
-
-//   .cardShadow {
-//     display: none;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       z-index: 1;
-//       position: absolute;
-//       bottom: 70px;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       width: 90%;
-//       height: 20px;
-//       display: block;
-//       border-radius: 50%;
-//       background: radial-gradient(
-//         ellipse at top,
-//         rgba(28, 32, 36, 0.4) 0%,
-//         transparent
-//       );
-//       filter: blur(5px);
-//     }
-//   }
-
-//   .cardReflect {
-//     display: none;
-//     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
-//       width: 100%;
-//       height: 80px;
-//       display: block;
-//       border-top-left-radius: 40px;
-//       border-top-right-radius: 40px;
-//       background: linear-gradient(
-//         45deg,
-//         $color-slate-grey-5 0%,
-//         $color-slate-grey-1 80%
-//       );
-//       opacity: 0.8; /* Ajuste la transparence du reflet */
-//       mask-image: linear-gradient(
-//         to bottom,
-//         rgba(255, 255, 255, 0.8) 0%,
-//         /* Opacité initiale plus élevée */ rgba(255, 255, 255, 0.4) 50%,
-//         /* Opacité moyenne */ rgba(255, 255, 255, 0) 100%
-//           /* Transparence totale */
-//       );
-//       -webkit-mask-image: linear-gradient(
-//         to bottom,
-//         rgba(255, 255, 255, 0.8) 0%,
-//         rgba(255, 255, 255, 0.4) 50%,
-//         rgba(255, 255, 255, 0) 100%
-//       );
-//     }
-//   }
-// }
-
 .aboutContainer {
+  position: relative;
   width: 100%;
   height: 100%;
   max-width: 1440px;
-  border: 1px solid red;
 
   .aboutCard {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     /*------------------ Laptop ------------------*/
     @media screen and (min-width: 768px) {
+      z-index: 1;
+      position: relative;
       width: 100%;
       height: 100%;
       padding: 40px;
+      gap: 40px;
       border-radius: 40px;
       background: linear-gradient(
         45deg,
@@ -318,21 +27,22 @@
       );
       box-shadow: -9px 8px 16px rgba(28, 32, 36, 0.3),
         inset 20px -20px 40px rgba(28, 32, 36, 0.2), inset -20px 20px 40px white;
-    }
-    /*------------------ Desktop ------------------*/
-    @media screen and (min-width: 1024px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      gap: 8px;
+      /*------------------ Desktop ------------------*/
+      @media screen and (min-width: 1280px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Définir la première ligne en auto pour le titre, puis 5 lignes en 1fr */
+        grid-template-rows: auto repeat(5, 1fr);
+        padding: 80px;
+        gap: 80px;
+      }
     }
 
     .titleSection {
       display: flex;
       align-items: center;
-      border: 1px solid red;
       /*------------------ Desktop ------------------*/
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1280px) {
       }
 
       .title {
@@ -342,7 +52,6 @@
         text-transform: uppercase;
         @include font-style-carved;
       }
-
       .titleSeparator {
         height: 10px;
         background-color: #f0f0f0;
@@ -355,49 +64,132 @@
     .imageSection {
       display: flex;
       justify-content: center;
-      border: 1px solid red;
       /*------------------ Desktop ------------------*/
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1280px) {
         grid-row: span 4 / span 4;
-      }
-
-      .imageContainer {
-        width: 400px;
-        min-width: 240px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        border: 1px solid black;
-        /*------------------ Desktop ------------------*/
-        @media screen and (min-width: 1024px) {
-          width: auto;
-          height: 100%;
-          aspect-ratio: 1/1;
-        }
       }
     }
 
     .quoteSection {
-      border: 1px solid red;
+      padding: 20px 40px;
+      /*------------------ Laptop ------------------*/
+      @media screen and (min-width: 768px) {
+        padding: 40px;
+      }
       /*------------------ Desktop ------------------*/
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1280px) {
+        padding: 0 40px;
         grid-row: span 2 / span 2;
         grid-column-start: 2;
         grid-row-start: 5;
+      }
+
+      .quote {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        @include font-style-carved;
       }
     }
 
     .presentationSection {
       padding: 20px;
-      box-shadow: inset -4px 4px 8px rgba(28, 32, 36, 0.4),
-        inset 4px -4px 8px white;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
       border-radius: 20px;
-      border: 1px solid red;
+      box-shadow: inset 2px -2px 4px white,
+        inset -2px 2px 4px rgba(28, 32, 36, 0.4);
+      /*------------------ Laptop ------------------*/
+      @media screen and (min-width: 768px) {
+        padding: 80px;
+        border-radius: 40px;
+      }
       /*------------------ Desktop ------------------*/
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1280px) {
+        padding: 40px;
         grid-row: span 5 / span 5;
         grid-column-start: 1;
         grid-row-start: 2;
+        justify-content: space-between;
       }
+
+      .descriptionsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-weight: 400;
+        color: $color-primary-dark-darker;
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+
+        .button {
+          padding: 10px 20px;
+          border: 1px solid black;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  // ----------- Décoration de la carte :
+  .cardShadow {
+    display: none;
+    /*------------------ Laptop------------------*/
+    @media screen and (min-width: 768px) {
+      z-index: 1;
+      position: absolute;
+      bottom: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 20px;
+      display: block;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at top,
+        rgba(28, 32, 36, 0.4) 0%,
+        transparent
+      );
+      filter: blur(5px);
+    }
+    /*------------------ Laptop------------------*/
+    @media screen and (min-width: 1280px) {
+      bottom: -15px;
+    }
+  }
+
+  .cardReflect {
+    display: none;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      width: 100%;
+      height: 80px;
+      display: block;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      background: linear-gradient(
+        45deg,
+        $color-slate-grey-5 0%,
+        $color-slate-grey-1 80%
+      );
+      opacity: 0.8; /* Ajuste la transparence du reflet */
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        /* Opacité initiale plus élevée */ rgba(255, 255, 255, 0.4) 50%,
+        /* Opacité moyenne */ rgba(255, 255, 255, 0) 100%
+          /* Transparence totale */
+      );
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
   }
 }

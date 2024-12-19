@@ -11,8 +11,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: 1px solid orange;
   /*------------------ Desktop ------------------*/
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     width: auto;
     max-width: none;
     height: 100%;
@@ -107,7 +108,7 @@
           $color-slate-grey-7 0%,
           $color-slate-grey-1 100%
         );
-        box-shadow: -4px 6px 16px rgba(28, 32, 36, 0.6),
+        box-shadow: -4px 6px 16px rgba(28, 32, 36, 0.8),
           inset -2px 2px 2px white, inset 2px -4px 8px rgba(28, 32, 36, 0.4);
 
         .imageContainer {
