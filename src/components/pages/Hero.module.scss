@@ -92,12 +92,14 @@
     }
 
     .informationsSection {
-      padding: 20px;
+      border: 1px solid red;
+      padding: 40px;
       /*------------------ Desktop------------------*/
       @media screen and (min-width: 768px) {
         z-index: 2;
         width: 50%;
         height: 100%;
+        padding: 80px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -141,6 +143,29 @@
 
       .description {
         padding: 40px 0;
+      }
+
+      .buttonsContainer {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        border: 1px solid red;
+
+        .button {
+          flex: 1;
+          max-width: 270px;
+          padding: 10px 20px;
+          border: 1px solid black;
+          border-radius: 20px;
+        }
+        .primaryButton {
+          flex: 1;
+          max-width: 270px;
+          padding: 10px 20px;
+          background-color: $color-primary;
+          border: 1px solid black;
+          border-radius: 20px;
+        }
       }
     }
   }

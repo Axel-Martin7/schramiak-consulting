@@ -29,7 +29,7 @@ export default function Home({ params: { locale } }: Props) {
 
   return (
     <main className={styles.main}>
-      <section className={styles.introductionSection}>
+      {/* <section className={styles.introductionSection}>
         <Introduction />
       </section>
 
@@ -51,6 +51,14 @@ export default function Home({ params: { locale } }: Props) {
 
       <section className={styles.contactSection}>
         <Contact />
+      </section> */}
+
+      <section className={styles.introductionSection}>
+        <Introduction />
+      </section>
+
+      <section className={styles.heroSection}>
+        <div className={styles.test}></div>
       </section>
     </main>
   );

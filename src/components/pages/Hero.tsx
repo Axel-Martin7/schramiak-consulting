@@ -21,13 +21,20 @@ export default function Hero() {
             <strong className={styles.highlightWords}>Financière</strong>
           </h2>
 
-          <p className={styles.description}>
+          <p className={`${styles.description} ${barlow.className}`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
             minim veniam. Lorem ipsum dolor sit amet consectetur, adipisicing
             elit. Esse reprehenderit eos qui dolore! Tempore assumenda voluptas
             consequuntur officiis quod quam iste, illum nesciunt minus sequi
             ullam cum veritatis quasi placeat!
           </p>
+
+          <div className={styles.buttonsContainer}>
+            <button className={styles.button}>Découvrez mes services</button>
+            <button className={styles.primaryButton}>
+              Demandez un audit gratuit
+            </button>
+          </div>
         </section>
 
         <section className={styles.backgroundImageSection}>

@@ -8,11 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: -4px 4px 25px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  border: 1px solid black;
   /*------------------ Desktop------------------*/
   @media screen and (min-width: 768px) {
     border: none;
+    box-shadow: none;
   }
 
   .contentDiamond {
@@ -27,12 +28,12 @@
     background: linear-gradient(
       0deg,
       $color-slate-grey-1 0%,
-      $color-slate-grey-4 100%
+      $color-slate-grey-3 80%
     );
     border: 3px solid; /* Épaisseur de la bordure */
     border-image: linear-gradient(
         to bottom,
-        #ffffff 30%,
+        $color-slate-grey-1 30%,
         $color-slate-grey-6 70%
       )
       1;
@@ -56,11 +57,11 @@
         align-items: center;
 
         .firstName {
+          font-size: 14px;
           font-weight: 300;
           letter-spacing: 6px;
         }
         .lastName {
-          // font-size: clamp(30px, 10vw, 48px);
           font-size: 48px;
           font-weight: 600;
         }
@@ -99,15 +100,16 @@
     .diamond7 {
       position: absolute;
       aspect-ratio: 1/1;
+
       background: linear-gradient(
         0deg,
         $color-slate-grey-2 0%,
-        $color-slate-grey-5 100%
+        $color-slate-grey-4 100%
       );
       border: 3px solid; /* Épaisseur de la bordure */
       border-image: linear-gradient(
           to bottom,
-          #ffffff 30%,
+          $color-slate-grey-2 30%,
           $color-slate-grey-6 70%
         )
         1;
@@ -226,7 +228,7 @@
       background: radial-gradient(
         ellipse at center,
         rgba(28, 32, 36, 0.2) 0%,
-        rgba(28, 32, 36, 0.05) 50%,
+        rgba(28, 32, 36, 0.06) 50%,
         transparent 70%
       );
       filter: blur(5px);

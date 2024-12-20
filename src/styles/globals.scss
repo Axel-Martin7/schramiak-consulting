@@ -7,14 +7,9 @@ body {
 
   background: linear-gradient(
     45deg,
-    $color-slate-grey-7 0%,
+    $color-slate-grey-6 0%,
+    $color-slate-grey-4 50%,
     $color-slate-grey-2 80%
-  );
-
-  background: linear-gradient(
-    45deg,
-    $color-slate-grey-7 0%,
-    $color-slate-grey-3 80%
   );
 
   background-attachment: fixed; /* Le dégradé reste fixe */

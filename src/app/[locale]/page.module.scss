@@ -5,73 +5,98 @@
   padding-top: 100px; // taille du Header
   border: 1px solid black;
 
+  // .introductionSection {
+  //   height: calc(100svh - 100px); // 100px = taille du Header
+  //   padding: 20px;
+  //   display: flex;
+  //   justify-content: center;
+
+  //   // background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 80%);
+  // }
+
+  // .heroSection {
+  //   border: 1px solid black;
+  //   border: 1px solid cyan;
+  //   padding-bottom: 80px;
+  //   /*------------------ Desktop------------------*/
+  //   @media screen and (min-width: 768px) {
+  //     height: calc(80svh - 100px);
+  //     padding-bottom: 0px;
+  //   }
+  // }
+
+  // .aboutSection {
+  //   padding: 0 20px 40px;
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 1px solid black;
+  //   /*------------------ Laptop-----------------*/
+  //   @media screen and (min-width: 768px) {
+  //     padding: 0 40px 80px; // padding de 40px sur les cotés + marge de 80px en bas
+  //   }
+  //   /*------------------ Desktop------------------*/
+  //   @media screen and (min-width: 1280px) {
+  //     height: calc(100svh - 100px);
+  //   }
+  // }
+
+  // .servicesSection {
+  //   padding: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 1px solid red;
+  //   height: 400px;
+  //   /*------------------ Desktop------------------*/
+  //   @media screen and (min-width: 768px) {
+  //     min-height: calc(100svh - 100px);
+  //   }
+  // }
+
+  // .realisationsSection {
+  //   padding: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 1px solid red;
+  //   height: 400px;
+  //   /*------------------ Desktop------------------*/
+  //   @media screen and (min-width: 768px) {
+  //     min-height: calc(100svh - 100px);
+  //   }
+  // }
+
+  // .contactSection {
+  //   padding: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 1px solid red;
+  //   height: 400px;
+  //   /*------------------ Desktop------------------*/
+  //   @media screen and (min-width: 768px) {
+  //     min-height: calc(100svh - 100px);
+  //   }
+  // }
+
   .introductionSection {
     height: calc(100svh - 100px); // 100px = taille du Header
     padding: 20px;
     display: flex;
     justify-content: center;
-
-    // background: linear-gradient(45deg, #e8e8e8 0%, #fcfcfc 80%);
+    border: 1px solid red;
   }
 
   .heroSection {
-    border: 1px solid black;
-    padding-bottom: 40px;
+    padding: 20px 0;
+    border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
       height: calc(80svh - 100px);
       padding-bottom: 0px;
     }
-  }
 
-  .aboutSection {
-    padding: 0 20px 40px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    /*------------------ Laptop-----------------*/
-    @media screen and (min-width: 768px) {
-      padding: 0 40px 80px; // padding de 40px sur les cotés + marge de 80px en bas
-    }
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 1280px) {
-      height: calc(100svh - 100px);
-    }
-  }
-
-  .servicesSection {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
-    height: 400px;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      min-height: calc(100svh - 100px);
-    }
-  }
-
-  .realisationsSection {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
-    height: 400px;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      min-height: calc(100svh - 100px);
-    }
-  }
-
-  .contactSection {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
-    height: 400px;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      min-height: calc(100svh - 100px);
+    .test {
+      padding: 40px;
+      height: 200px;
+      border: 1px solid orange;
     }
   }
 }
