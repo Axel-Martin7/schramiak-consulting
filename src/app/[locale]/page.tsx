@@ -58,8 +58,10 @@ export default function Home({ params: { locale } }: Props) {
       </section>
 
       <section className={styles.heroSection}>
-        <div className={styles.test}></div>
+        <Hero />
       </section>
+
+      <section className={styles.aboutSection}></section>
     </main>
   );
 }
