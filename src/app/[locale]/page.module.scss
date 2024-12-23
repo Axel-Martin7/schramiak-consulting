@@ -89,7 +89,7 @@
     border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
-      padding: 0;
+      padding: 0; // padding géré dabs .presentationSection
       height: calc(80svh - 100px);
       padding-bottom: 0px;
     }
@@ -100,9 +100,14 @@
     display: flex;
     justify-content: center;
     border: 1px solid red;
-    /*------------------ Desktop------------------*/
+    /*------------------ Laptop-------------------*/
     @media screen and (min-width: 768px) {
+      padding: 0 40px;
+    }
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 1280px) {
       height: calc(100svh - 100px);
+      padding: 0 80px 80px;
     }
   }
 }
