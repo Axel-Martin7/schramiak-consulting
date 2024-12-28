@@ -12,15 +12,18 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    transform: rotate(180deg);
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     border: 1px solid blue;
     background-color: rgba(0, 0, 255, 0.287);
+    left: -10%;
   }
 
   .base {
     position: relative;
     width: 100%;
     height: 100%;
+    transform: rotate(180deg);
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     // border: 1px solid blue;
     // background-color: rgba(0, 0, 255, 0.287);
@@ -35,25 +38,35 @@
       width: 100%;
       height: 100%;
       clip-path: polygon(0% 70%, 0% 60%, 50% 90%, 100% 60%, 100% 70%, 50% 100%);
+      .darkSide {
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 90%, 100% 60%, 100% 70%, 50% 100%);
+        // background: purple;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(148, 148, 148, 0.38) 100%
+        );
+      }
     }
     .firstFloor {
-      border: 1px solid red;
-      background-color: red;
+      background-color: #beeaef;
     }
     .secondFloor {
       bottom: 20%;
       border: 1px solid orange;
-      background-color: orange;
+      background-color: #8ed6de;
     }
     .thirdFloor {
       bottom: 40%;
       border: 1px solid yellow;
-      background-color: yellow;
+      background-color: #00b0bd;
     }
     .fourthFloor {
       bottom: 60%;
       border: 1px solid yellowgreen;
-      background-color: yellowgreen;
+      background-color: #007782;
     }
     .hatRepere {
       bottom: 80%;
@@ -92,9 +105,77 @@
       background-color: green;
     }
     .hat {
+      // position: relative;
+      z-index: 1;
       clip-path: polygon(42.3% 15.4%, 50% 0%, 57.8% 15.3%, 50% 20%);
       border: 1px solid blue;
-      background-color: blue;
+      background-color: #003e43;
+      .darkSide {
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 0%, 100% 10%, 50% 20%);
+        background: purple;
+      }
     }
+  }
+
+  .shadowFirstFloor,
+  .shadowSecondFloor,
+  .shadowThirdFloor,
+  .shadowFourthFloor,
+  .shadowHat {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.222);
+  }
+  .shadowFirstFloor {
+    clip-path: polygon(
+      9.2% 38.5%,
+      3.8% 27.5%,
+      50% 0%,
+      88.5% 23%,
+      84.5% 31%,
+      70.7% 38.5%
+    );
+  }
+  .shadowSecondFloor {
+    top: 20%;
+    clip-path: polygon(
+      17% 34%,
+      11.5% 23%,
+      50% 0%,
+      80.6% 18.5%,
+      77% 26%,
+      63% 34%
+    );
+  }
+  .shadowThirdFloor {
+    top: 40%;
+    clip-path: polygon(
+      24.6% 29.3%,
+      19.2% 18.5%,
+      50% 0%,
+      73% 14%,
+      69% 21.7%,
+      55.4% 29.3%
+    );
+  }
+  .shadowFourthFloor {
+    top: 60%;
+    clip-path: polygon(
+      32.3% 24.7%,
+      27% 13.8%,
+      50% 0%,
+      65.5% 9.2%,
+      61.2% 17.2%,
+      47.4% 24.7%
+    );
+  }
+  .shadowHat {
+    top: 5%;
+    clip-path: polygon(34.5% 84%, 50% 75%, 50% 95%, 42.2% 99.7%);
   }
 }
