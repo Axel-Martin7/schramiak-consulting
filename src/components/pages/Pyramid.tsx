@@ -6,6 +6,7 @@ export default function Pyramid() {
     <div className={styles.pyramidContainer}>
       <div className={styles.repere}></div>
       <div className={styles.base}>
+        {/* ----------  Etages ----------- */}
         <div className={styles.firstFloor}>
           <div className={styles.darkSide}></div>
         </div>
@@ -18,22 +19,23 @@ export default function Pyramid() {
         <div className={styles.fourthFloor}>
           <div className={styles.darkSide}></div>
         </div>
-        <div className={styles.hatRepere}></div>
+        <div className={styles.hatFloor}>
+          <div className={styles.darkSide}></div>
+        </div>
 
+        {/* ---------- face sombre des étages ----------- */}
         <div className={styles.firstFloorCeiling}></div>
         <div className={styles.secondFloorCeiling}></div>
         <div className={styles.thirdFloorCeiling}></div>
         <div className={styles.fourthFloorCeiling}></div>
-        <div className={styles.hat}>
-          <div className={styles.darkSide}></div>
-        </div>
       </div>
 
-      <div className={styles.shadowFirstFloor}></div>
-      <div className={styles.shadowSecondFloor}></div>
-      <div className={styles.shadowThirdFloor}></div>
-      <div className={styles.shadowFourthFloor}></div>
-      <div className={styles.shadowHat}></div>
+      {/* ----------  ombres portées ----------- */}
+      <div className={styles.firstFloorShadow}></div>
+      <div className={styles.secondFloorShadow}></div>
+      <div className={styles.thirdFloorShadow}></div>
+      <div className={styles.fourthFloorShadow}></div>
+      <div className={styles.hatFloorShadow}></div>
     </div>
   );
 }

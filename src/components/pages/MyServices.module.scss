@@ -82,135 +82,13 @@
         width: 50%;
         height: 100%;
       }
-
-      .repere {
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-        border: 1px solid blue;
-        background-color: rgba(0, 0, 255, 0.287);
-      }
-
-      .base {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-        border: 1px solid blue;
-        background-color: rgba(0, 0, 255, 0.287);
-
-        .firstFloor {
-          position: relative;
-          z-index: 1;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 70%,
-            0% 60%,
-            50% 90%,
-            100% 60%,
-            100% 70%,
-            50% 100%
-          );
-          border: 1px solid red;
-          background-color: red;
-        }
-        .secondFloor {
-          z-index: 1;
-          position: absolute;
-          top: -20%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 70%,
-            0% 60%,
-            50% 90%,
-            100% 60%,
-            100% 70%,
-            50% 100%
-          );
-          border: 1px solid orange;
-          background-color: orange;
-        }
-        .thirdFloor {
-          z-index: 1;
-          position: absolute;
-          top: -40%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 70%,
-            0% 60%,
-            50% 90%,
-            100% 60%,
-            100% 70%,
-            50% 100%
-          );
-          border: 1px solid yellow;
-          background-color: yellow;
-        }
-        .forthFloor {
-          z-index: 1;
-          position: absolute;
-          top: -60%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 70%,
-            0% 60%,
-            50% 90%,
-            100% 60%,
-            100% 70%,
-            50% 100%
-          );
-          border: 1px solid yellowgreen;
-          background-color: yellowgreen;
-        }
-
-        .firstFloorCeiling {
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(15% 69%, 85% 69%, 50% 90%);
-          border: 1px solid brown;
-          background-color: brown;
-        }
-        .secondFloorCeiling {
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(23% 54%, 77% 54%, 50% 70%);
-          border: 1px solid orangered;
-          background-color: orangered;
-        }
-        .thirdFloorCeiling {
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(30.8% 38.4%, 69.2% 38.4%, 50% 50%);
-          border: 1px solid gold;
-          background-color: gold;
-        }
-
-        .hat {
-          z-index: 2;
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(34.5% 30.7%, 50% 0%, 65.5% 30.7%, 50% 40%);
-          border: 1px solid green;
-          background-color: #008000cf;
-        }
-      }
     }
 
     .servicesListsContainer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
       position: relative;
       border: 1px solid orange;
       /*------------------ Laptop-------------------*/
@@ -218,129 +96,271 @@
         width: 50%;
         height: 100%;
       }
-
       .repere {
         z-index: 1;
         position: absolute;
         width: 100%;
         height: 100%;
+        transform: rotate(180deg);
         clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-        border: 1px solid blue;
-        background-color: rgba(0, 0, 255, 0.287);
+        // border: 1px solid blue;
+        // background-color: rgba(0, 0, 255, 0.287);
+        left: -10%;
       }
 
       .base {
+        z-index: 1;
         position: relative;
         width: 100%;
         height: 100%;
+        transform: rotate(180deg);
         clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-        border: 1px solid blue;
-        background-color: rgba(0, 0, 255, 0.287);
+        // border: 1px solid blue;
+        // background-color: rgba(0, 0, 255, 0.287);
 
-        .firstFloor {
+        .firstFloor,
+        .secondFloor,
+        .thirdFloor,
+        .fourthFloor,
+        .hatRepere {
           z-index: 1;
-          position: relative;
+          position: absolute;
           width: 100%;
           height: 100%;
           clip-path: polygon(
+            0% 70%,
             0% 60%,
-            0% 50%,
             50% 90%,
-            100% 50%,
             100% 60%,
+            100% 70%,
             50% 100%
           );
-          border: 1px solid red;
-          background-color: red;
+          .darkSide {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 90%, 100% 60%, 100% 70%, 50% 100%);
+            // background: purple;
+            background: linear-gradient(
+              90deg,
+              transparent 0%,
+              rgba(148, 148, 148, 0.38) 100%
+            );
+          }
+        }
+        .firstFloor {
+          background-color: #beeaef;
         }
         .secondFloor {
-          z-index: 1;
-          position: absolute;
-          top: -20%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 60%,
-            0% 50%,
-            50% 90%,
-            100% 50%,
-            100% 60%,
-            50% 100%
-          );
+          bottom: 20%;
           border: 1px solid orange;
-          background-color: orange;
+          background-color: #8ed6de;
         }
         .thirdFloor {
-          z-index: 1;
-          position: absolute;
-          top: -40%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 60%,
-            0% 50%,
-            50% 90%,
-            100% 50%,
-            100% 60%,
-            50% 100%
-          );
+          bottom: 40%;
           border: 1px solid yellow;
-          background-color: yellow;
+          background-color: #00b0bd;
         }
-        .forthFloor {
-          z-index: 1;
-          position: absolute;
-          top: -60%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            0% 60%,
-            0% 50%,
-            50% 90%,
-            100% 50%,
-            100% 60%,
-            50% 100%
-          );
+        .fourthFloor {
+          bottom: 60%;
           border: 1px solid yellowgreen;
-          background-color: yellowgreen;
+          background-color: #007782;
+        }
+        .hatRepere {
+          bottom: 80%;
+          border: 1px solid cyan;
+          background-color: cyan;
         }
 
-        .firstFloorCeiling {
+        .firstFloorCeiling,
+        .secondFloorCeiling,
+        .thirdFloorCeiling,
+        .fourthFloorCeiling,
+        .hat {
           position: absolute;
           top: 0%;
           width: 100%;
           height: 100%;
-          clip-path: polygon(17.5% 64%, 82.5% 64%, 50% 90%);
+        }
+        .firstFloorCeiling {
+          position: relative;
+          clip-path: polygon(15% 69%, 85% 69%, 50% 90%);
           border: 1px solid brown;
-          background-color: brown;
+          background-color: #6bc7d0;
+          &::before {
+            content: '';
+            position: absolute;
+            background: radial-gradient(
+              rgba(28, 32, 36, 0.95) 0%,
+              transparent 100%
+            );
+          }
         }
         .secondFloorCeiling {
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(25% 50%, 75% 50%, 50% 70%);
+          clip-path: polygon(23% 54%, 77% 54%, 50% 80%);
           border: 1px solid orangered;
           background-color: orangered;
         }
         .thirdFloorCeiling {
-          position: absolute;
-          top: 0%;
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(32% 36%, 68% 36%, 50% 50%);
+          clip-path: polygon(31% 38.4%, 69% 38.4%, 50% 60%);
           border: 1px solid gold;
           background-color: gold;
         }
+        .fourthFloorCeiling {
+          clip-path: polygon(38% 23%, 62% 23%, 50% 40%);
+          border: 1px solid green;
+          background-color: green;
+        }
         .hat {
-          z-index: 2;
+          // position: relative;
+          z-index: 1;
+          clip-path: polygon(42.3% 15.4%, 50% 0%, 57.8% 15.3%, 50% 20%);
+          border: 1px solid blue;
+          background-color: #003e43;
+          .darkSide {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 100% 10%, 50% 20%);
+            background: purple;
+          }
+        }
+      }
+
+      // .shadowFirstFloor,
+      // .shadowSecondFloor,
+      // .shadowThirdFloor,
+      // .shadowFourthFloor,
+      // .shadowHat {
+      //   position: absolute;
+      //   top: 0%;
+      //   width: 100%;
+      //   height: 100%;
+      //   border: 1px solid red;
+      //   // background-color: rgba(255, 0, 0, 0.222);
+      //   // background: linear-gradient(
+      //   //   62deg,
+      //   //   transparent 27%,
+      //   //   rgba(28, 32, 36, 0.1) 4%,
+      //   //   rgba(28, 32, 36, 0.6) 100%
+      //   // );
+      //   &::before {
+      //     content: '';
+      //     position: absolute;
+      //     inset: 0;
+      //     // le MEME dégradé pour tous
+      //     background: linear-gradient(
+      //       62deg,
+      //       transparent 27%,
+      //       rgba(28, 32, 36, 0.1) 4%,
+      //       rgba(28, 32, 36, 0.6) 100%
+      //     );
+      //     // Pour éviter que ça se répète ou se redimensionne différemment
+      //     background-size: 100% 100%;
+      //     // On place ce calque "sous" l'élément (ou au même niveau)
+      //     z-index: 0;
+      //   }
+      // }
+      // .shadowFirstFloor {
+      //   clip-path: polygon(
+      //     9.2% 38.5%,
+      //     3.8% 27.5%,
+      //     50% 0%,
+      //     88.5% 23%,
+      //     84.5% 31%,
+      //     70.7% 38.5%
+      //   );
+      // }
+      // .shadowSecondFloor {
+      //   top: 20%;
+      //   clip-path: polygon(
+      //     17% 34%,
+      //     11.5% 23%,
+      //     50% 0%,
+      //     80.6% 18.5%,
+      //     77% 26%,
+      //     63% 34%
+      //   );
+      // }
+      // .shadowThirdFloor {
+      //   top: 40%;
+      //   clip-path: polygon(
+      //     24.6% 29.3%,
+      //     19.2% 18.5%,
+      //     50% 0%,
+      //     73% 14%,
+      //     69% 21.7%,
+      //     55.4% 29.3%
+      //   );
+      // }
+      // .shadowFourthFloor {
+      //   top: 60%;
+      //   clip-path: polygon(
+      //     32.3% 24.7%,
+      //     27% 13.8%,
+      //     50% 0%,
+      //     65.5% 9.2%,
+      //     61.2% 17.2%,
+      //     47.4% 24.7%
+      //   );
+      // }
+      // .shadowHat {
+      //   top: 5%;
+      //   clip-path: polygon(34.5% 84%, 50% 75%, 50% 95%, 42.2% 99.7%);
+      // }
+      .shadowWrapper {
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+
+        .shadows {
           position: absolute;
           top: 0%;
           width: 100%;
-          height: 100%;
-          clip-path: polygon(35.6% 28.5%, 50% 0%, 64.4% 28.5%, 50% 40%);
-          border: 1px solid green;
-          background-color: #008000cf;
+          height: 105%;
+          clip-path: polygon(
+            4% 26%,
+            50% 0%,
+            88.5% 22%,
+            84.5% 29.5%,
+            76% 34%,
+            80.5% 36.5%,
+            77% 44%,
+            68% 48.5%,
+            73% 51.3%,
+            69% 59%,
+            60.6% 63%,
+            65.5% 66%,
+            61.4% 73.6%,
+            53% 78%,
+            57.7% 80.5%,
+            50% 95%,
+            42% 100%,
+            34.5% 85%,
+            42% 80.5%,
+            32% 80.5%,
+            27% 70%,
+            34.5% 66%,
+            24.5% 66%,
+            19% 55.7%,
+            27% 51.4%,
+            17% 51.4%,
+            11.5% 41%,
+            19% 36.5%,
+            10% 36.5%
+          );
+          // background: linear-gradient(
+          //   62deg,
+          //   transparent 25%,
+          //   rgba(28, 32, 36, 0.1) 60%,
+          //   rgba(28, 32, 36, 0.2) 68%,
+          //   rgba(28, 32, 36, 0.3) 100%
+          // );
+          background: linear-gradient(
+            63deg,
+            transparent 27%,
+            rgba(28, 32, 36, 0.2) 50%
+          );
+          border: 1px solid fuchsia;
         }
       }
     }
