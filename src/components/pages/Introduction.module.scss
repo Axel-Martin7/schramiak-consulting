@@ -243,13 +243,19 @@
 .shapesContainer {
   width: 100%;
   height: 100%;
-  // max-width: 1440px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: -4px 4px 25px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   border: 1px solid black;
+  /*------------------ Desktop------------------*/
+  @media screen and (min-width: 768px) {
+    max-width: 1440px;
+    border: none;
+    box-shadow: none;
+  }
 
   .contentDiamond {
     //* Création de ce diamant pour pouvoir gérer les z-index qui sont ingérable avec le transform rotate
@@ -472,44 +478,4 @@
       }
     }
   }
-
-  // .scrollIndicator {
-  //   z-index: 2;
-  //   position: absolute;
-  //   top: 90%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   span {
-  //     display: block;
-  //     width: 20px;
-  //     height: 20px;
-  //     border-bottom: 2px solid $color-primary-dark;
-  //     border-right: 2px solid $color-primary-dark;
-  //     transform: rotate(45deg);
-  //     margin: -10px;
-  //     animation: animate 2s infinite;
-  //   }
-  //   // Décaler le démarrage des 2ᵉ et 3ᵉ chevrons
-  //   span:nth-child(2) {
-  //     animation-delay: -0.2s;
-  //   }
-  //   span:nth-child(3) {
-  //     animation-delay: -0.4s;
-  //   }
-
-  //   // La clé d’animation pour l’effet "fade in/out" + translation
-  //   @keyframes animate {
-  //     0% {
-  //       opacity: 0;
-  //       transform: rotate(45deg) translate(-20px, -20px);
-  //     }
-  //     50% {
-  //       opacity: 1;
-  //     }
-  //     100% {
-  //       opacity: 0;
-  //       transform: rotate(45deg) translate(20px, 20px);
-  //     }
-  //   }
-  // }
 }
