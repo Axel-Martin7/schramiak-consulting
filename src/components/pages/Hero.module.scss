@@ -161,8 +161,7 @@
           padding: 16px 32px;
           border-radius: 20px;
           font-size: 18px;
-          // Pour animer l'agrandissement et le changement de couleur
-          transition: transform 0.3s ease, color 0.3s ease;
+          transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
           // *----------- Ombre portée ----------*
           &::before {
             content: '';
@@ -175,9 +174,8 @@
             border-radius: 50%;
             filter: blur(5px);
             mix-blend-mode: multiply;
-            pointer-events: none; // <-- On désactive les interactions
+            pointer-events: none;
           }
-
           /*------------------ Desktop------------------*/
           @media screen and (min-width: 768px) {
             width: 215px;
@@ -217,10 +215,10 @@
             );
             opacity: 0.8;
             filter: blur(5px);
-            pointer-events: none; // <-- On désactive les interactions
+            pointer-events: none;
           }
           &:hover {
-            transform: scale(1.05); // agrandissement
+            transform: scale(1.05);
             color: $color-primary-dark;
           }
         }
@@ -254,10 +252,10 @@
             );
             opacity: 0.8;
             filter: blur(5px);
-            pointer-events: none; // <-- On désactive les interactions
+            pointer-events: none;
           }
           &:hover {
-            transform: scale(1.05); // agrandissement
+            transform: scale(1.05);
             color: white;
           }
         }

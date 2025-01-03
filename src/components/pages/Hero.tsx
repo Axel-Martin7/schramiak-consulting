@@ -48,7 +48,7 @@ export default function Hero() {
               placeholder="blur"
               quality={100}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </section>
