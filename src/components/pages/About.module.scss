@@ -1,261 +1,14 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-// .aboutContainer {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   max-width: 1440px;
-
-//   .aboutCardFrame {
-//     /*------------------ Laptop ------------------*/
-//     @media screen and (min-width: 768px) {
-//       z-index: 1;
-//       position: relative;
-//       width: 100%;
-//       height: 100%;
-//       padding: 20px;
-//       border-radius: 40px;
-//       background: linear-gradient(
-//         45deg,
-//         $color-slate-grey-4 0%,
-//         $color-slate-grey-1 80%
-//       );
-//       box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.6), inset -4px 4px 8px white,
-//         inset 4px -4px 8px rgba(28, 32, 36, 0.4);
-//     }
-
-//     .aboutCard {
-//       /*------------------ Laptop ------------------*/
-//       @media screen and (min-width: 768px) {
-//         width: 100%;
-//         height: 100%;
-//         padding: 40px;
-//         border-radius: 20px;
-//         background: linear-gradient(
-//           45deg,
-//           $color-slate-grey-3 0%,
-//           $color-slate-grey-5 100%
-//         );
-//         box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.4), -4px 4px 8px white,
-//           inset -4px 4px 8px rgba(28, 32, 36, 0.6);
-//       }
-//       /*------------------ Desktop------------------*/
-//       @media screen and (min-width: 1280px) {
-//         display: grid;
-//         grid-template-columns: repeat(2, 1fr);
-//         grid-template-rows: repeat(6, 1fr);
-//         gap: 40px;
-//       }
-
-//       .titleSection {
-//         padding: 0 20px;
-//         display: flex;
-//         align-items: center;
-//         /*------------------ Laptop ------------------*/
-//         @media screen and (min-width: 768px) {
-//           padding: 20px 40px;
-//           border-radius: 20px;
-//           background: linear-gradient(
-//             45deg,
-//             $color-slate-grey-4 0%,
-//             $color-slate-grey-3 100%
-//           );
-//           box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.6),
-//             inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.2);
-//         }
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 1280px) {
-//           padding: 0 40px;
-//         }
-
-//         .title {
-//           padding-right: 20px;
-//           font-size: 28px;
-//           font-weight: 600;
-//           text-transform: uppercase;
-//           @include font-style-carved;
-//           /*------------------ Laptop ------------------*/
-//           @media screen and (min-width: 768px) {
-//             padding-right: 40px;
-//           }
-//         }
-//         .titleSeparator {
-//           height: 10px;
-//           background-color: #f0f0f0;
-//           flex-grow: 1; /* S'étend pour remplir l'espace disponible */
-//           box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
-//           border-radius: 20px;
-//         }
-//       }
-
-//       .imageSection {
-//         display: flex;
-//         justify-content: center;
-//         /*------------------ Laptop ------------------*/
-//         @media screen and (min-width: 768px) {
-//           padding-top: 27px;
-//         }
-
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 1280px) {
-//           padding-top: 0px;
-//           grid-row: span 4 / span 4;
-//         }
-//       }
-
-//       .quoteSection {
-//         padding: 40px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         /*------------------ Laptop ------------------*/
-//         @media screen and (min-width: 768px) {
-//           padding: 60px;
-//         }
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 1280px) {
-//           grid-row: span 2 / span 2;
-//           grid-column-start: 2;
-//           grid-row-start: 5;
-//           border-radius: 20px;
-//           background: linear-gradient(45deg, #e8e8ec 0%, #f0f0f3 100%);
-//           box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.6),
-//             inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.2);
-//         }
-
-//         .quote {
-//           max-width: 400px;
-//           font-size: 18px;
-//           text-align: center;
-//         }
-//       }
-
-//       .presentationSection {
-//         padding: 20px;
-//         display: flex;
-//         flex-direction: column;
-//         gap: 40px;
-//         border-radius: 20px;
-//         box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
-//           inset -4px 4px 8px rgba(28, 32, 36, 0.6),
-//           inset 4px -4px 8px rgba(255, 255, 255, 0.2);
-//         background: linear-gradient(
-//           45deg,
-//           $color-slate-grey-4 20%,
-//           $color-slate-grey-5 100%
-//         );
-//         /*------------------ Laptop ------------------*/
-//         @media screen and (min-width: 768px) {
-//           padding: 40px;
-//         }
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 1280px) {
-//           grid-row: span 5 / span 5;
-//           grid-column-start: 1;
-//           grid-row-start: 2;
-//           justify-content: center;
-//           gap: 60px;
-//         }
-
-//         .descriptionsContainer {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 20px;
-//           /*------------------ Laptop ------------------*/
-//           @media screen and (min-width: 768px) {
-//           }
-//         }
-
-//         .buttonContainer {
-//           display: flex;
-//           justify-content: center;
-
-//           .button {
-//             width: 150px;
-//             height: 50px;
-//             border-radius: 20px;
-//             box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
-//               10px 10px 15px rgba(70, 70, 70, 0.15);
-//             outline: none;
-//             cursor: pointer;
-//             transition: 0.2s ease-in-out;
-//             border: 1px solid #00b0bd;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   // *----------- Décorations de la carte ----------*
-//   .cardReflect {
-//     display: none;
-//     /*------------------ Laptop ------------------*/
-//     @media screen and (min-width: 768px) {
-//       width: 100%;
-//       height: 80px;
-//       display: block;
-//       border-radius: 40px 40px 0 0;
-
-//       background: linear-gradient(
-//         45deg,
-//         $color-slate-grey-3 0%,
-//         $color-slate-grey-1 80%
-//       );
-
-//       opacity: 0.8; /* Ajuste la transparence du reflet */
-//       mask-image: linear-gradient(
-//         to bottom,
-//         rgba(255, 255, 255, 0.8) 0%,
-//         /* Opacité initiale plus élevée */ rgba(255, 255, 255, 0.4) 50%,
-//         /* Opacité moyenne */ rgba(255, 255, 255, 0) 100%
-//           /* Transparence totale */
-//       );
-//       -webkit-mask-image: linear-gradient(
-//         to bottom,
-//         rgba(255, 255, 255, 0.8) 0%,
-//         rgba(255, 255, 255, 0.4) 50%,
-//         rgba(255, 255, 255, 0) 100%
-//       );
-
-//       // border: 1px solid blue;
-//       // background-color: white;
-//     }
-//   }
-
-//   .cardShadow {
-//     display: none;
-//     /*------------------ Laptop------------------*/
-//     @media screen and (min-width: 768px) {
-//       z-index: 1;
-//       position: absolute;
-//       bottom: 65px;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       width: 90%;
-//       height: 20px;
-//       display: block;
-//       border-radius: 50%;
-//       background: radial-gradient(
-//         ellipse at top,
-//         rgba(28, 32, 36, 0.4) 0%,
-//         transparent
-//       );
-//       filter: blur(5px);
-//     }
-//     /*------------------ Desktop ------------------*/
-//     @media screen and (min-width: 1280px) {
-//       bottom: -15px;
-//     }
-//   }
-// }
-
 .aboutContainer {
   position: relative;
-  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
 
   .aboutCardFrame {
-    /*------------------ Tablet / laptop -----------------*/
+    /*------------------ Desktop ------------------*/
     @media screen and (min-width: 768px) {
       z-index: 1;
       position: relative;
@@ -272,7 +25,7 @@
         inset 4px -4px 8px rgba(28, 32, 36, 0.4);
     }
     .aboutCard {
-      /*------------------ Laptop ------------------*/
+      /*------------------ Tablet to Desktop-----------------*/
       @media screen and (min-width: 768px) {
         width: 100%;
         height: 100%;
@@ -285,11 +38,19 @@
         );
         box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.4), -4px 4px 8px white,
           inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 1188px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+          gap: 40px;
+        }
       }
+
       .sectionTitle {
         padding: 20px;
         @include home-title-section;
-        /*------------------ Laptop ------------------*/
+        /*------------------ Tablet to Desktop-----------------*/
         @media screen and (min-width: 768px) {
           margin-bottom: 20px; // Pour faire un espace de 40px avec l'espace naturel de ProfilPictureShape
           padding: 20px 40px;
@@ -301,12 +62,20 @@
           );
           box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.6),
             inset -4px 4px 8px white, inset 4px -4px 8px rgba(28, 32, 36, 0.2);
+          /*------------------ Desktop------------------*/
+          @media screen and (min-width: 1188px) {
+            margin-bottom: 0;
+          }
         }
       }
 
       .imageSection {
         display: flex;
         justify-content: center;
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 1188px) {
+          grid-row: span 4 / span 4;
+        }
       }
 
       .quoteSection {
@@ -314,7 +83,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /*------------------ Laptop ------------------*/
+        /*------------------ Tablet to Desktop-----------------*/
         @media screen and (min-width: 768px) {
           margin: 40px 0;
           border-radius: 20px;
@@ -325,6 +94,13 @@
           );
           box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.6),
             inset -4px 4px 8px white, inset 4px -4px 8px rgba(28, 32, 36, 0.2);
+          /*------------------ Desktop------------------*/
+          @media screen and (min-width: 1188px) {
+            margin: 0;
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 5;
+          }
         }
 
         .quote {
@@ -350,13 +126,21 @@
         box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
           inset 2px -2px 4px rgba(255, 255, 255, 0.4),
           inset -2px 2px 4px rgba(28, 32, 36, 0.6);
-        /*------------------ Laptop ------------------*/
+        /*------------------ Tablet to Desktop-----------------*/
         @media screen and (min-width: 768px) {
           padding: 40px;
           gap: 60px; // Gap entre texte et bouton
           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
             inset 4px -4px 8px rgba(255, 255, 255, 0.4),
             inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+          /*------------------ Desktop------------------*/
+          @media screen and (min-width: 1188px) {
+            grid-row: span 5 / span 5;
+            grid-column-start: 1;
+            grid-row-start: 2;
+
+            justify-content: space-around;
+          }
         }
 
         .descriptionsContainer {
@@ -364,7 +148,7 @@
           flex-direction: column;
           gap: 10px;
           font-size: 14px;
-          /*------------------ Laptop ------------------*/
+          /*------------------ Desktop ------------------*/
           @media screen and (min-width: 768px) {
             gap: 20px;
           }
@@ -398,19 +182,17 @@
   // *----------- Décorations de la carte ----------*
   .cardReflect {
     display: none;
-    /*------------------ Laptop ------------------*/
+    /*------------------ Desktop ------------------*/
     @media screen and (min-width: 768px) {
       width: 100%;
       height: 80px;
       display: block;
       border-radius: 40px 40px 0 0;
-
       background: linear-gradient(
         45deg,
         $color-slate-grey-3 0%,
         $color-slate-grey-1 80%
       );
-
       opacity: 0.8; /* Ajuste la transparence du reflet */
       mask-image: linear-gradient(
         to bottom,
@@ -430,7 +212,7 @@
 
   .cardShadow {
     display: none;
-    /*------------------ Laptop------------------*/
+    /*------------------ Tablet to Desktop-----------------*/
     @media screen and (min-width: 768px) {
       z-index: 1;
       position: absolute;
@@ -447,10 +229,10 @@
         transparent
       );
       filter: blur(5px);
-    }
-    /*------------------ Desktop ------------------*/
-    @media screen and (min-width: 1280px) {
-      bottom: -15px;
+      /*------------------ Desktop ------------------*/
+      @media screen and (min-width: 1188px) {
+        bottom: -15px;
+      }
     }
   }
 }
