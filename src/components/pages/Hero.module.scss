@@ -3,7 +3,7 @@
 
 .heroRibbon {
   position: relative;
-  padding: 40px;
+  padding: 40px 40px 0; // L'image a deja un espace naturel
   background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   &::before {

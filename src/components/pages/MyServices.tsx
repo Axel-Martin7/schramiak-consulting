@@ -79,6 +79,30 @@ export default function MyServices() {
     //   </div>
     // </div>
 
-    <div className={styles.servicesContainer}>Services</div>
+    <div className={styles.servicesContainer}>
+      <header className={styles.sectionHeader}>
+        <div className={styles.sectionTitle}>
+          <h2 className={`${styles.title} ${barlow.className}`}>
+            Mes services
+          </h2>
+          <div className={styles.titleSeparator}></div>
+        </div>
+
+        <div className={styles.sectionPresentation}>
+          <p className={styles.presentation}>
+            En tant que consultant, mon rôle sera de mettre en place les
+            stratégies et outils nécessaires à l&apos;atteinte de vos objectifs
+            ainsi que de ceux de vos clients.
+          </p>
+          <p className={styles.presentation}>
+            Le plus haut niveau de confidentialité, une transparence et une
+            collaboration totale. <br></br>
+            Ces engagements nous permettront de gérer au mieux vos ressources et
+            de mettre en place les outils adaptés à votre activité, tout en
+            accompagnant vos équipes.
+          </p>
+        </div>
+      </header>
+    </div>
   );
 }

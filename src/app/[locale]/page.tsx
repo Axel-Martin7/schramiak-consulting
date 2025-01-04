@@ -60,9 +60,9 @@ export default function Home({ params: { locale } }: Props) {
         <About />
       </section>
 
-      <section className={styles.servicesSection}>
+      {/* <section className={styles.servicesSection}>
         <MyServices />
-      </section>
+      </section> */}
     </main>
   );
 }

@@ -69,13 +69,14 @@
     border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
+      padding: 0;
       display: flex;
       justify-content: center;
     }
   }
 
   .heroSection {
-    padding: 20px 0;
+    padding: 20px 0 0;
     border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
@@ -86,8 +87,12 @@
   }
 
   .aboutSection {
-    padding: 20px;
+    padding: 40px 20px;
     border: 1px solid red;
+    /*------------------ Tablet / laptop -----------------*/
+    @media screen and (min-width: 768px) {
+      padding: 80px;
+    }
   }
 
   .servicesSection {

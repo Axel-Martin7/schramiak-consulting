@@ -368,5 +368,25 @@
 // }
 
 .servicesContainer {
+  padding: 20px;
   border: 1px solid black;
+
+  .sectionHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 1px solid red;
+
+    .sectionTitle {
+      @include home-title-section;
+      border: 1px solid orange;
+    }
+
+    .sectionPresentation {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid orange;
+    }
+  }
 }
