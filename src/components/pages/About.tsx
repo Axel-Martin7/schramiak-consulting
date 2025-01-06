@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './About.module.scss';
 import ProfilPictureShape from './ProfilPictureShape';
 import { barlow } from '@/styles/font';
-
+import Image from 'next/image';
+import steven from '../../../public/Steven-Schramiak-profilpic.jpg';
 export default function About() {
   return (
     <div className={styles.aboutContainer}>

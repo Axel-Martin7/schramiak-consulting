@@ -17,6 +17,7 @@ import V2About from '@/components/Sections/About/V2About';
 import V2Services from '@/components/Sections/MyServices/V2Services';
 import V2Realisations from '@/components/Sections/Realisations/V2Realisations';
 import V2Contact from '@/components/Sections/Contact/V2Contact';
+import AboutV2 from '@/components/pages/AboutV2';
 
 type Props = {
   params: { locale: string };
@@ -60,9 +61,13 @@ export default function Home({ params: { locale } }: Props) {
         <About />
       </section>
 
-      {/* <section className={styles.servicesSection}>
+      <section className={styles.aboutv2Section}>
+        <AboutV2 />
+      </section>
+
+      <section className={styles.servicesSection}>
         <MyServices />
-      </section> */}
+      </section>
     </main>
   );
 }
