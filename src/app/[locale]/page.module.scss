@@ -87,6 +87,16 @@
       // padding-bottom: 0px;
     }
   }
+  .heroV2Section {
+    padding: 20px 0 0;
+    border: 1px solid red;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      padding: 0; // padding géré dans .presentationSection
+      height: 62svh;
+      // padding-bottom: 0px;
+    }
+  }
 
   .aboutSection {
     padding: 40px 20px;
@@ -105,11 +115,15 @@
   }
 
   .aboutv2Section {
-    height: calc(100svh - 100px);
-    padding: 80px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     border: 1px solid red;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      height: calc(100svh - 100px);
+      padding: 80px;
+    }
   }
 
   .servicesSection {
