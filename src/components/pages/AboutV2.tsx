@@ -83,9 +83,10 @@ export default function AboutV2() {
       </div>
 
       <div className={styles.aboutCardFrame}>
-        {/* <div className={styles.aboutCard}></div> */}
-
         <div className={styles.aboutCard}></div>
+        <div className={styles.aboutCardFrameReflect}>
+          <div className={styles.aboutCardReflect}></div>
+        </div>
       </div>
     </div>
   );
