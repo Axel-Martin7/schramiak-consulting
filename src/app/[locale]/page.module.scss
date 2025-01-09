@@ -126,6 +126,18 @@
     }
   }
 
+  .aboutv3Section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      height: calc(100svh - 100px);
+      padding: 80px;
+    }
+  }
+
   .servicesSection {
     padding: 40px;
     display: flex;
@@ -133,8 +145,8 @@
     border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 1188px) {
-      height: calc(100svh - 100px - 80px);
-      padding: 0 80px 80px;
+      height: calc(100svh - 100px);
+      padding: 80px;
     }
   }
 }

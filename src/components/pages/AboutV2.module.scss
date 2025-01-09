@@ -141,7 +141,12 @@
   }
   .sectionTitle {
     // border: 1px solid red;
+    padding: 0 20px;
     @include home-title-section;
+    /*------------------ Desktop------------------*/
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
 
   .aboutCardFrame {
@@ -160,6 +165,7 @@
       box-shadow: -50px 25px 100px -20px rgba(28, 32, 36, 0.4),
         -2px 2px 8px rgba(28, 32, 36, 0.2), inset -5px 5px 10px white,
         inset 5px -5px 10px rgba(28, 32, 36, 0.4);
+      // *--------- Ombre portée (gauche) de la carte :
       &::before {
         content: '';
         z-index: -1;
@@ -178,6 +184,7 @@
         );
         filter: blur(5px);
       }
+      // *--------- Ombre eliptique (dessous) de la carte :
       &::after {
         content: '';
         position: absolute;
@@ -202,6 +209,8 @@
       @media screen and (min-width: 768px) {
         width: 100%;
         height: 100%;
+        display: flex;
+        gap: 40px;
         border-radius: 10px;
         background: linear-gradient(
           45deg,
@@ -212,8 +221,138 @@
           inset -50px 50px 100px rgba(28, 32, 36, 0.025),
           inset 50px -50px 100px rgba(255, 255, 255, 0.2);
       }
+
+      .imageSection {
+        position: relative;
+        border: 1px solid red;
+        /*------------------ Desktop------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          height: 100%;
+          padding: 40px 80px;
+        }
+
+        .imageFrame {
+          position: relative;
+          top: 0%;
+          width: 100%;
+          height: calc(100% + 40px + 20px + 40px);
+          /* 40px = padding de imageSection
+            20px = taille de la bordure
+            40px = pour qu'il soit positionné 40px en dessous de la carte
+            */
+          padding: 20px;
+          border-radius: 20px;
+          background: linear-gradient(
+            45deg,
+            $color-slate-grey-4 0%,
+            $color-slate-grey-2 80%
+          );
+          box-shadow: -50px 25px 100px -20px rgba(28, 32, 36, 0.4),
+            -2px 2px 8px rgba(28, 32, 36, 0.2), inset -5px 5px 10px white,
+            inset 5px -5px 10px rgba(28, 32, 36, 0.4);
+
+          .imageContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(
+              45deg,
+              $color-slate-grey-4 0%,
+              $color-slate-grey-3 100%
+            );
+            box-shadow: 5px -5px 10px rgba(28, 32, 36, 0.2), -5px 5px 10px white,
+              inset -50px 50px 100px rgba(28, 32, 36, 0.025),
+              inset 50px -50px 100px rgba(255, 255, 255, 0.2);
+            .image {
+              position: absolute;
+              top: -20% !important;
+              height: 120% !important;
+              object-fit: cover;
+
+              border-radius: inherit;
+            }
+          }
+
+          .imageReflect {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+
+            .image {
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .presentationSection {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+        border: 1px solid red;
+
+        .quoteSection {
+          border: 1px solid blue;
+        }
+
+        .nameSection {
+          border: 1px solid blue;
+
+          .separator {
+            width: 50%;
+            height: 5px;
+            background-color: red;
+          }
+
+          .name {
+            padding-top: 40px;
+            font-size: 28px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+        }
+
+        .descriptionsContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          border: 1px solid blue;
+          font-size: 14px;
+        }
+
+        .buttonContainer {
+          display: flex;
+          justify-content: center;
+
+          .button {
+            padding: 16px 32px;
+            border-radius: 20px;
+            background: linear-gradient(
+              45deg,
+              $color-slate-grey-4 0%,
+              $color-slate-grey-3 100%
+            );
+            box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
+              inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.2);
+            transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
+            &:hover {
+              transform: scale(1.05);
+              color: $color-primary-dark;
+            }
+          }
+        }
+      }
     }
 
+    // *----------- Reflet de la carte ------------*
     .aboutCardFrameReflect {
       z-index: -1;
       position: absolute;
