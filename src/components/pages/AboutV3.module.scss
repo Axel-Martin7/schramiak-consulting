@@ -14,7 +14,6 @@
 //   }
 
 //   .sectionTitle {
-//     // border: 1px solid red;
 //     padding: 0 20px;
 //     @include home-title-section;
 //     /*------------------ Desktop------------------*/
@@ -24,7 +23,7 @@
 //   }
 
 //   .aboutCardFrame {
-//     border: 1px solid red;
+//     border: 1px solid black;
 //     /*------------------ Desktop------------------*/
 //     @media screen and (min-width: 768px) {
 //       height: 100%;
@@ -33,7 +32,7 @@
 //     }
 
 //     .aboutCard {
-//       border: 1px solid red;
+//       border: 1px solid black;
 //       /*------------------ Desktop------------------*/
 //       @media screen and (min-width: 768px) {
 //         position: relative;
@@ -46,7 +45,7 @@
 //         padding: 40px 0;
 //         display: flex;
 //         justify-content: center;
-//         border: 1px solid black;
+//         border: 1px solid red;
 //         /*------------------ Desktop------------------*/
 //         @media screen and (min-width: 768px) {
 //           width: 50%;
@@ -60,14 +59,14 @@
 //           height: 400px;
 //           padding: 20px;
 //           border-radius: 20px;
-//           border: 1px solid red;
+//           border: 1px solid black;
 //           /*------------------ Desktop------------------*/
 //           @media screen and (min-width: 768px) {
 //             height: calc(100% + 40px + 20px + 40px);
 //             /* 40px = padding de imageSection
-//                20px = taille de la bordure
-//                40px = pour qu'il soit positionné 40px en dessous de la carte
-//                */
+//                 20px = taille de la bordure
+//                 40px = pour qu'il soit positionné 40px en dessous de la carte
+//                 */
 //             max-width: none;
 //           }
 
@@ -76,7 +75,7 @@
 //             width: 100%;
 //             height: 100%;
 //             border-radius: 10px;
-//             border: 1px solid red;
+//             border: 1px solid black;
 
 //             .image {
 //               height: 130% !important;
@@ -97,40 +96,117 @@
 //         display: flex;
 //         justify-content: center;
 //         gap: 40px;
-//         border: 1px solid black;
+//         border: 1px solid red;
 //         /*------------------ Desktop------------------*/
 //         @media screen and (min-width: 768px) {
 //           position: absolute;
 //           flex-direction: column;
+//           bottom: 0%;
+//           left: calc(50% - 40px);
 //         }
 
 //         .item {
 //           width: 40px;
-//           height: 40px;
-//           background-color: blue;
+//           aspect-ratio: 1/1;
+//           border: 1px solid blue;
 //         }
 //       }
 
 //       .presentationSection {
+//         padding: 40px 0;
 //         display: flex;
 //         flex-direction: column;
 //         gap: 40px;
-//         border: 1px solid black;
+//         border: 1px solid red;
 //         /*------------------ Desktop------------------*/
 //         @media screen and (min-width: 768px) {
 //           width: 50%;
 //           height: 100%;
-//           padding: 40px;
+//           padding: 0;
+//           gap: 0;
 //         }
 
 //         .quote {
-//           border: 1px solid red;
+//           padding: 0 40px;
+//           text-align: center;
+//           border: 1px solid orange;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 768px) {
+//             padding: 40px;
+//           }
 //         }
 
 //         .separator {
 //           width: 50%;
 //           height: 20px;
-//           border: 1px solid red;
+//           margin: 0 auto;
+//           border-radius: 20px;
+//           border: 1px solid blue;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 768px) {
+//             margin: 0;
+//           }
+//         }
+
+//         .informationsContainer {
+//           padding: 40px 20px;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 40px;
+//           border-radius: 20px;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset 2px -2px 4px rgba(255, 255, 255, 0.4),
+//             inset -2px 2px 4px rgba(28, 32, 36, 0.6);
+//           border: 1px solid orange;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 768px) {
+//             padding: 40px;
+//             box-shadow: none;
+//           }
+
+//           .titlesContainer {
+//             border: 1px solid blue;
+//             text-transform: uppercase;
+
+//             .name {
+//               font-size: 24px;
+
+//               .lastName {
+//                 font-weight: 600;
+//               }
+//             }
+//           }
+
+//           .descriptionsContainer {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 10px;
+//             font-size: 14px;
+//             border: 1px solid blue;
+//           }
+
+//           .buttonContainer {
+//             display: flex;
+//             justify-content: center;
+
+//             .button {
+//               padding: 16px 32px;
+//               border-radius: 20px;
+//               background: linear-gradient(
+//                 45deg,
+//                 $color-slate-grey-4 0%,
+//                 $color-slate-grey-3 100%
+//               );
+//               box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
+//                 inset -2px 2px 4px white,
+//                 inset 2px -2px 4px rgba(28, 32, 36, 0.2);
+//               transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
+//               &:hover {
+//                 transform: scale(1.05);
+//                 color: $color-primary-dark;
+//               }
+//             }
+//           }
 //         }
 //       }
 //     }
@@ -200,12 +276,11 @@
           @media screen and (min-width: 768px) {
             height: calc(100% + 40px + 20px + 40px);
             /* 40px = padding de imageSection
-                20px = taille de la bordure
-                40px = pour qu'il soit positionné 40px en dessous de la carte
-                */
+                 20px = taille de la bordure
+                 40px = pour qu'il soit positionné 40px en dessous de la carte
+                 */
             max-width: none;
           }
-
           .imageContainer {
             position: relative;
             width: 100%;
@@ -249,100 +324,11 @@
       }
 
       .presentationSection {
-        padding: 40px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
         border: 1px solid red;
         /*------------------ Desktop------------------*/
         @media screen and (min-width: 768px) {
           width: 50%;
           height: 100%;
-          padding: 0;
-          gap: 0;
-        }
-
-        .quote {
-          padding: 0 40px;
-          text-align: center;
-          border: 1px solid orange;
-          /*------------------ Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            padding: 40px;
-          }
-        }
-
-        .separator {
-          width: 50%;
-          height: 20px;
-          margin: 0 auto;
-          border-radius: 20px;
-          border: 1px solid blue;
-          /*------------------ Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            margin: 0;
-          }
-        }
-
-        .informationsContainer {
-          padding: 40px 20px;
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
-          border-radius: 20px;
-          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-            inset 2px -2px 4px rgba(255, 255, 255, 0.4),
-            inset -2px 2px 4px rgba(28, 32, 36, 0.6);
-          border: 1px solid orange;
-          /*------------------ Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            padding: 40px;
-            box-shadow: none;
-          }
-
-          .titlesContainer {
-            border: 1px solid blue;
-            text-transform: uppercase;
-
-            .name {
-              font-size: 24px;
-
-              .lastName {
-                font-weight: 600;
-              }
-            }
-          }
-
-          .descriptionsContainer {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 14px;
-            border: 1px solid blue;
-          }
-
-          .buttonContainer {
-            display: flex;
-            justify-content: center;
-
-            .button {
-              padding: 16px 32px;
-              border-radius: 20px;
-              background: linear-gradient(
-                45deg,
-                $color-slate-grey-4 0%,
-                $color-slate-grey-3 100%
-              );
-              box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
-                inset -2px 2px 4px white,
-                inset 2px -2px 4px rgba(28, 32, 36, 0.2);
-              transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
-              &:hover {
-                transform: scale(1.05);
-                color: $color-primary-dark;
-              }
-            }
-          }
         }
       }
     }
