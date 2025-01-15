@@ -23,22 +23,21 @@
 //   }
 
 //   .aboutCardFrame {
-//     border: 1px solid black;
 //     /*------------------ Desktop------------------*/
 //     @media screen and (min-width: 768px) {
 //       height: 100%;
-//       padding: 20px;
+//       padding: 10px;
 //       border-radius: 20px;
+//       border: 1px solid black;
 //     }
 
 //     .aboutCard {
-//       border: 1px solid black;
 //       /*------------------ Desktop------------------*/
 //       @media screen and (min-width: 768px) {
-//         position: relative;
 //         height: 100%;
 //         display: flex;
 //         border-radius: 10px;
+//         border: 1px solid black;
 //       }
 
 //       .imageSection {
@@ -50,23 +49,22 @@
 //         @media screen and (min-width: 768px) {
 //           width: 50%;
 //           height: 100%;
-//           padding: 40px 80px;
+//           padding: 0;
 //         }
 
 //         .imageFrame {
 //           width: 100%;
 //           max-width: 300px;
 //           height: 400px;
-//           padding: 20px;
+//           padding: 10px;
 //           border-radius: 20px;
 //           border: 1px solid black;
 //           /*------------------ Desktop------------------*/
 //           @media screen and (min-width: 768px) {
-//             height: calc(100% + 40px + 20px + 40px);
-//             /* 40px = padding de imageSection
-//                 20px = taille de la bordure
-//                 40px = pour qu'il soit positionné 40px en dessous de la carte
-//                 */
+//             position: relative;
+//             top: 80px;
+//             width: calc(100% - 80px - 80px);
+//             height: 100%;
 //             max-width: none;
 //           }
 
@@ -76,7 +74,6 @@
 //             height: 100%;
 //             border-radius: 10px;
 //             border: 1px solid black;
-
 //             .image {
 //               height: 130% !important;
 //               top: -30% !important;
@@ -92,59 +89,41 @@
 //         }
 //       }
 
-//       .socialMediaSection {
-//         display: flex;
-//         justify-content: center;
-//         gap: 40px;
-//         border: 1px solid red;
-//         /*------------------ Desktop------------------*/
-//         @media screen and (min-width: 768px) {
-//           position: absolute;
-//           flex-direction: column;
-//           bottom: 0%;
-//           left: calc(50% - 40px);
-//         }
-
-//         .item {
-//           width: 40px;
-//           aspect-ratio: 1/1;
-//           border: 1px solid blue;
-//         }
-//       }
-
 //       .presentationSection {
-//         padding: 40px 0;
-//         display: flex;
-//         flex-direction: column;
-//         gap: 40px;
 //         border: 1px solid red;
 //         /*------------------ Desktop------------------*/
 //         @media screen and (min-width: 768px) {
 //           width: 50%;
 //           height: 100%;
-//           padding: 0;
-//           gap: 0;
+//           // padding: 40px;
+//           padding: 40px 80px 40px 0;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 40px;
 //         }
 
 //         .quote {
-//           padding: 0 40px;
+//           // padding: 0 40px;
 //           text-align: center;
+//           font-weight: 600;
+//           line-height: 20px;
 //           border: 1px solid orange;
 //           /*------------------ Desktop------------------*/
 //           @media screen and (min-width: 768px) {
-//             padding: 40px;
+//             // padding: 0;
+//             padding-left: 40px;
 //           }
 //         }
 
-//         .separator {
-//           width: 50%;
-//           height: 20px;
-//           margin: 0 auto;
-//           border-radius: 20px;
-//           border: 1px solid blue;
-//           /*------------------ Desktop------------------*/
-//           @media screen and (min-width: 768px) {
-//             margin: 0;
+//         .socialContainer {
+//           display: flex;
+//           justify-content: center;
+//           gap: 40px;
+//           border: 1px solid yellowgreen;
+//           .item {
+//             width: 40px;
+//             aspect-ratio: 1/1;
+//             border: 1px solid blue;
 //           }
 //         }
 
@@ -160,20 +139,16 @@
 //           border: 1px solid orange;
 //           /*------------------ Desktop------------------*/
 //           @media screen and (min-width: 768px) {
-//             padding: 40px;
+//             padding: 0;
 //             box-shadow: none;
 //           }
 
 //           .titlesContainer {
-//             border: 1px solid blue;
-//             text-transform: uppercase;
-
+//             border: 1px solid yellowgreen;
 //             .name {
 //               font-size: 24px;
-
-//               .lastName {
-//                 font-weight: 600;
-//               }
+//               font-weight: 600;
+//               text-transform: uppercase;
 //             }
 //           }
 
@@ -182,7 +157,7 @@
 //             flex-direction: column;
 //             gap: 10px;
 //             font-size: 14px;
-//             border: 1px solid blue;
+//             border: 1px solid yellowgreen;
 //           }
 
 //           .buttonContainer {
@@ -219,11 +194,6 @@
   flex-direction: column;
   gap: 40px;
   border: 1px solid black;
-  /*------------------ Desktop------------------*/
-  @media screen and (min-width: 768px) {
-    height: 100%;
-    max-width: 1440px;
-  }
 
   .sectionTitle {
     padding: 0 20px;
@@ -235,52 +205,21 @@
   }
 
   .aboutCardFrame {
-    border: 1px solid black;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      height: 100%;
-      padding: 20px;
-      border-radius: 20px;
-    }
-
     .aboutCard {
-      border: 1px solid black;
-      /*------------------ Desktop------------------*/
-      @media screen and (min-width: 768px) {
-        position: relative;
-        height: 100%;
-        display: flex;
-        border-radius: 10px;
-      }
-
       .imageSection {
         padding: 40px 0;
         display: flex;
         justify-content: center;
         border: 1px solid red;
-        /*------------------ Desktop------------------*/
-        @media screen and (min-width: 768px) {
-          width: 50%;
-          height: 100%;
-          padding: 40px 80px;
-        }
 
         .imageFrame {
           width: 100%;
           max-width: 300px;
           height: 400px;
-          padding: 20px;
+          padding: 10px;
           border-radius: 20px;
           border: 1px solid black;
-          /*------------------ Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            height: calc(100% + 40px + 20px + 40px);
-            /* 40px = padding de imageSection
-                 20px = taille de la bordure
-                 40px = pour qu'il soit positionné 40px en dessous de la carte
-                 */
-            max-width: none;
-          }
+
           .imageContainer {
             position: relative;
             width: 100%;
@@ -293,29 +232,16 @@
               top: -30% !important;
               object-fit: cover;
               border-radius: inherit;
-              /*------------------ Desktop------------------*/
-              @media screen and (min-width: 768px) {
-                height: 120% !important;
-                top: -20% !important;
-              }
             }
           }
         }
       }
 
-      .socialMediaSection {
+      .socialSection {
         display: flex;
         justify-content: center;
         gap: 40px;
         border: 1px solid red;
-        /*------------------ Desktop------------------*/
-        @media screen and (min-width: 768px) {
-          position: absolute;
-          flex-direction: column;
-          bottom: 0%;
-          left: calc(50% - 40px);
-        }
-
         .item {
           width: 40px;
           aspect-ratio: 1/1;
@@ -323,12 +249,65 @@
         }
       }
 
-      .presentationSection {
+      .quoteSection {
+        padding: 40px;
+        text-align: center;
+        font-weight: 600;
+        line-height: 20px;
         border: 1px solid red;
-        /*------------------ Desktop------------------*/
-        @media screen and (min-width: 768px) {
-          width: 50%;
-          height: 100%;
+      }
+
+      .separatorSection {
+        width: 50%;
+        height: 10px;
+        margin: 0 auto;
+        border-radius: 20px;
+        border: 1px solid blue;
+      }
+
+      .presentationSection {
+        margin: 40px 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        border-radius: 20px;
+        border: 1px solid red;
+
+        .presentationTitlesContainer {
+          border: 1px solid orange;
+          font-size: 24px;
+        }
+
+        .descriptionsContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          font-size: 14px;
+          border: 1px solid orange;
+        }
+
+        .buttonContainer {
+          display: flex;
+          justify-content: center;
+          border: 1px solid orange;
+
+          .button {
+            padding: 16px 32px;
+            border-radius: 20px;
+            background: linear-gradient(
+              45deg,
+              $color-slate-grey-4 0%,
+              $color-slate-grey-3 100%
+            );
+            box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
+              inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.2);
+            transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
+            &:hover {
+              transform: scale(1.05);
+              color: $color-primary-dark;
+            }
+          }
         }
       }
     }
