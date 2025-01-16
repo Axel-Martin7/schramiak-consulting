@@ -8,15 +8,16 @@
 //   gap: 40px;
 //   border: 1px solid black;
 //   /*------------------ Desktop------------------*/
-//   @media screen and (min-width: 768px) {
+//   @media screen and (min-width: 1229px) {
 //     height: 100%;
 //     max-width: 1440px;
+//     padding-bottom: 80px;
 //   }
 
 //   .sectionTitle {
 //     padding: 0 20px;
 //     @include home-title-section;
-//     /*------------------ Desktop------------------*/
+//     /*------------------ Tablet -----------------*/
 //     @media screen and (min-width: 768px) {
 //       padding: 0;
 //     }
@@ -24,7 +25,7 @@
 
 //   .aboutCardFrame {
 //     /*------------------ Desktop------------------*/
-//     @media screen and (min-width: 768px) {
+//     @media screen and (min-width: 1229px) {
 //       height: 100%;
 //       padding: 10px;
 //       border-radius: 20px;
@@ -32,119 +33,215 @@
 //     }
 
 //     .aboutCard {
-//       /*------------------ Desktop------------------*/
+//       /*------------------ Tablet to Desktop -----------------*/
 //       @media screen and (min-width: 768px) {
-//         height: 100%;
 //         display: flex;
-//         border-radius: 10px;
-//         border: 1px solid black;
+//         gap: 40px;
+//         /*------------------ Desktop------------------*/
+//         @media screen and (min-width: 1229px) {
+//           position: relative;
+//           height: 100%;
+//           gap: 0;
+//           border-radius: 10px;
+//           border: 1px solid black;
+//         }
 //       }
 
-//       .imageSection {
-//         padding: 40px 0;
-//         display: flex;
-//         justify-content: center;
-//         border: 1px solid red;
-//         /*------------------ Desktop------------------*/
+//       .leftColumn {
+//         border: 1px solid yellowgreen;
+//         /*------------------ Tablet to Desktop -----------------*/
 //         @media screen and (min-width: 768px) {
-//           width: 50%;
-//           height: 100%;
-//           padding: 0;
+//           flex: 0 0 40%;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: space-between;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 1229px) {
+//             width: 50%;
+//             height: 100%;
+//             flex: none;
+//             display: block;
+//           }
 //         }
 
-//         .imageFrame {
-//           width: 100%;
-//           max-width: 300px;
-//           height: 400px;
-//           padding: 10px;
-//           border-radius: 20px;
-//           border: 1px solid black;
+//         .imageSection {
+//           padding: 40px 0;
+//           display: flex;
+//           justify-content: center;
+//           border: 1px solid red;
 //           /*------------------ Desktop------------------*/
-//           @media screen and (min-width: 768px) {
-//             position: relative;
-//             top: 80px;
-//             width: calc(100% - 80px - 80px);
-//             height: 100%;
-//             max-width: none;
-//           }
-
-//           .imageContainer {
-//             position: relative;
+//           @media screen and (min-width: 1229px) {
 //             width: 100%;
 //             height: 100%;
-//             border-radius: 10px;
+//             padding: 0 80px;
+//           }
+
+//           .imageFrame {
+//             position: relative;
+//             width: 100%;
+//             max-width: 300px;
+//             height: 400px;
+//             padding: 10px;
+//             border-radius: 20px;
 //             border: 1px solid black;
-//             .image {
-//               height: 130% !important;
-//               top: -30% !important;
-//               object-fit: cover;
-//               border-radius: inherit;
+//             background-color: wheat;
+//             /*------------------ Tablet to Desktop -----------------*/
+//             @media screen and (min-width: 768px) {
+//               max-width: 420px;
+//               height: 450px;
 //               /*------------------ Desktop------------------*/
-//               @media screen and (min-width: 768px) {
-//                 height: 120% !important;
-//                 top: -20% !important;
+//               @media screen and (min-width: 1229px) {
+//                 position: relative;
+//                 top: 80px;
+//                 height: 100%;
+//                 max-width: none;
+//                 @media screen and (min-width: 1387px) {
+//                   height: calc(100% + 10px);
+//                 }
 //               }
+//             }
+//             &::before {
+//               content: '';
+//               z-index: -1;
+//               position: absolute;
+//               bottom: -15%;
+//               left: 0%;
+//               width: 100%;
+//               height: 100%;
+//               border: 1px solid blue;
+//               background-color: white;
+//               opacity: 0.1;
+//               -webkit-mask-image: linear-gradient(
+//                 to bottom,
+//                 rgb(255, 0, 0) 0%,
+//                 rgba(255, 0, 0, 0) 100%
+//               );
+//               mask-image: linear-gradient(
+//                 to bottom,
+//                 rgb(255, 0, 0) 0%,
+//                 rgba(255, 0, 0, 0.2) 50%,
+//                 rgba(255, 0, 0, 0) 100%
+//               );
+//             }
+
+//             .imageContainer {
+//               position: relative;
+//               width: 100%;
+//               height: 100%;
+//               border-radius: 10px;
+//               border: 1px solid black;
+
+//               .image {
+//                 height: 130% !important;
+//                 top: -30% !important;
+//                 object-fit: cover;
+//                 border-radius: inherit;
+//                 /*------------------ Tablet to Desktop -----------------*/
+//                 @media screen and (min-width: 768px) {
+//                   height: 125% !important;
+//                   top: -25% !important;
+//                   /*------------------ Desktop------------------*/
+//                   @media screen and (min-width: 1229px) {
+//                     height: 120% !important;
+//                     top: -20% !important;
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+
+//         .socialSection {
+//           display: flex;
+//           justify-content: center;
+//           gap: 40px;
+//           border: 1px solid red;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 1229px) {
+//             position: absolute;
+//             bottom: 20px;
+//             right: 20px;
+//             flex-direction: column;
+//             gap: 20px;
+//           }
+
+//           .item {
+//             width: 40px;
+//             aspect-ratio: 1/1;
+//             border: 1px solid blue;
+//             /*------------------ Desktop------------------*/
+//             @media screen and (min-width: 1229px) {
+//               width: 20px;
 //             }
 //           }
 //         }
 //       }
 
-//       .presentationSection {
-//         border: 1px solid red;
-//         /*------------------ Desktop------------------*/
+//       .rightColumn {
+//         border: 1px solid yellowgreen;
+//         /*------------------ Tablet to Desktop -----------------*/
 //         @media screen and (min-width: 768px) {
-//           width: 50%;
-//           height: 100%;
-//           // padding: 40px;
-//           padding: 40px 80px 40px 0;
 //           display: flex;
 //           flex-direction: column;
+//           justify-content: space-between;
 //           gap: 40px;
+//           /*------------------ Desktop------------------*/
+//           @media screen and (min-width: 1229px) {
+//             width: 50%;
+//             height: 100%;
+//             justify-content: center;
+//             gap: 0;
+//           }
 //         }
 
-//         .quote {
-//           // padding: 0 40px;
+//         .quoteSection {
+//           padding: 40px;
+//           font-size: 14px;
 //           text-align: center;
 //           font-weight: 600;
 //           line-height: 20px;
-//           border: 1px solid orange;
-//           /*------------------ Desktop------------------*/
+//           border: 1px solid red;
+//           /*------------------ Tablet to Desktop -----------------*/
 //           @media screen and (min-width: 768px) {
-//             // padding: 0;
-//             padding-left: 40px;
+//             padding: 0;
+//             /*------------------ Desktop------------------*/
+//             @media screen and (min-width: 1229px) {
+//               padding: 40px 80px 40px 0;
+//             }
 //           }
 //         }
 
-//         .socialContainer {
-//           display: flex;
-//           justify-content: center;
-//           gap: 40px;
-//           border: 1px solid yellowgreen;
-//           .item {
-//             width: 40px;
-//             aspect-ratio: 1/1;
-//             border: 1px solid blue;
+//         .separatorSection {
+//           width: 50%;
+//           height: 10px;
+//           margin: 0 auto;
+//           border-radius: 20px;
+//           border: 1px solid blue;
+//           /*------------------ Tablet -----------------*/
+//           @media screen and (min-width: 768px) {
+//             margin: 0;
 //           }
 //         }
 
-//         .informationsContainer {
+//         .presentationSection {
+//           margin: 40px 0;
 //           padding: 40px 20px;
 //           display: flex;
 //           flex-direction: column;
 //           gap: 40px;
 //           border-radius: 20px;
-//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-//             inset 2px -2px 4px rgba(255, 255, 255, 0.4),
-//             inset -2px 2px 4px rgba(28, 32, 36, 0.6);
-//           border: 1px solid orange;
-//           /*------------------ Desktop------------------*/
+//           border: 1px solid red;
+//           /*------------------ Tablet to Desktop -----------------*/
 //           @media screen and (min-width: 768px) {
+//             margin: 0;
 //             padding: 0;
-//             box-shadow: none;
+//             /*------------------ Desktop------------------*/
+//             @media screen and (min-width: 1229px) {
+//               padding: 40px 80px 40px 0;
+//             }
 //           }
 
-//           .titlesContainer {
-//             border: 1px solid yellowgreen;
+//           .presentationTitles {
 //             .name {
 //               font-size: 24px;
 //               font-weight: 600;
@@ -155,9 +252,9 @@
 //           .descriptionsContainer {
 //             display: flex;
 //             flex-direction: column;
-//             gap: 10px;
+//             gap: 20px;
 //             font-size: 14px;
-//             border: 1px solid yellowgreen;
+//             border: 1px solid orange;
 //           }
 
 //           .buttonContainer {
@@ -194,118 +291,201 @@
   flex-direction: column;
   gap: 40px;
   border: 1px solid black;
+  /*------------------ Desktop ------------------*/
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    max-width: 1440px;
+    //     padding-bottom: 80px;
+  }
 
   .sectionTitle {
     padding: 0 20px;
     @include home-title-section;
-    /*------------------ Desktop------------------*/
+    /*------------------ Desktop ------------------*/
     @media screen and (min-width: 768px) {
       padding: 0;
     }
   }
 
   .aboutCardFrame {
+    /*------------------ Desktop ------------------*/
+    @media screen and (min-width: 768px) {
+      height: 100%;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid black;
+    }
     .aboutCard {
-      .imageSection {
-        padding: 40px 0;
+      /*------------------ Desktop ------------------*/
+      @media screen and (min-width: 768px) {
+        position: relative;
+        height: 100%;
         display: flex;
-        justify-content: center;
-        border: 1px solid red;
-
-        .imageFrame {
-          width: 100%;
-          max-width: 300px;
-          height: 400px;
-          padding: 10px;
-          border-radius: 20px;
-          border: 1px solid black;
-
-          .imageContainer {
-            position: relative;
-            width: 100%;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      //*------------ Colonne de gauche : IMG + Socials :
+      .leftColumn {
+        /*------------------ Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          border: 1px solid blue;
+        }
+        .imageSection {
+          padding: 40px 0;
+          display: flex;
+          justify-content: center;
+          border: 1px solid red;
+          /*------------------ Desktop ------------------*/
+          @media screen and (min-width: 768px) {
             height: 100%;
-            border-radius: 10px;
-            border: 1px solid black;
+            margin-top: 80px;
+            padding: 0 80px;
+          }
 
-            .image {
-              height: 130% !important;
-              top: -30% !important;
-              object-fit: cover;
-              border-radius: inherit;
+          .imageFrame {
+            width: 100%;
+            height: 400px;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid black;
+            /*------------------ Desktop ------------------*/
+            @media screen and (min-width: 768px) {
+              height: 100%;
+              max-width: none;
+              min-width: 350px;
+            }
+
+            .imageContainer {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+              border: 1px solid black;
+
+              .image {
+                height: 130% !important;
+                top: -30% !important;
+                object-fit: cover;
+                border-radius: inherit;
+                /*------------------ Desktop ------------------*/
+                @media screen and (min-width: 768px) {
+                  height: 120% !important;
+                  top: -20% !important;
+                }
+              }
+            }
+          }
+        }
+
+        .socialSection {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          border: 1px solid red;
+          /*------------------ Desktop ------------------*/
+          @media screen and (min-width: 768px) {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .item {
+            width: 40px;
+            aspect-ratio: 1/1;
+            border: 1px solid blue;
+            /*------------------ Desktop ------------------*/
+            @media screen and (min-width: 768px) {
+              width: 20px;
             }
           }
         }
       }
 
-      .socialSection {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        border: 1px solid red;
-        .item {
-          width: 40px;
-          aspect-ratio: 1/1;
-          border: 1px solid blue;
-        }
-      }
-
-      .quoteSection {
-        padding: 40px;
-        text-align: center;
-        font-weight: 600;
-        line-height: 20px;
-        border: 1px solid red;
-      }
-
-      .separatorSection {
-        width: 50%;
-        height: 10px;
-        margin: 0 auto;
-        border-radius: 20px;
-        border: 1px solid blue;
-      }
-
-      .presentationSection {
-        margin: 40px 0;
-        padding: 40px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        border-radius: 20px;
-        border: 1px solid red;
-
-        .presentationTitlesContainer {
-          border: 1px solid orange;
-          font-size: 24px;
-        }
-
-        .descriptionsContainer {
+      //*------------ Colonne de droite : Quote + Separator + infos :
+      .rightColumn {
+        /*------------------ Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          justify-content: center;
+          border: 1px solid blue;
+        }
+        .quoteSection {
+          padding: 40px;
           font-size: 14px;
-          border: 1px solid orange;
+          text-align: center;
+          font-weight: 600;
+          line-height: 20px;
+          border: 1px solid red;
+          @media screen and (min-width: 768px) {
+            padding: 40px 80px 40px 0;
+          }
         }
 
-        .buttonContainer {
-          display: flex;
-          justify-content: center;
-          border: 1px solid orange;
+        .separatorSection {
+          width: 50%;
+          height: 10px;
+          margin: 0 auto;
+          border-radius: 20px;
+          border: 1px solid blue;
+          @media screen and (min-width: 768px) {
+            margin: 0;
+          }
+        }
 
-          .button {
-            padding: 16px 32px;
-            border-radius: 20px;
-            background: linear-gradient(
-              45deg,
-              $color-slate-grey-4 0%,
-              $color-slate-grey-3 100%
-            );
-            box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
-              inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.2);
-            transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
-            &:hover {
-              transform: scale(1.05);
-              color: $color-primary-dark;
+        .presentationSection {
+          margin: 40px 0;
+          padding: 40px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          border-radius: 20px;
+          border: 1px solid red;
+          @media screen and (min-width: 768px) {
+            padding: 0px 80px 0 0;
+          }
+
+          .presentationTitles {
+            .name {
+              font-size: 24px;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+          }
+
+          .descriptionsContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 14px;
+            border: 1px solid orange;
+          }
+
+          .buttonContainer {
+            display: flex;
+            justify-content: center;
+
+            .button {
+              padding: 16px 32px;
+              border-radius: 20px;
+              background: linear-gradient(
+                45deg,
+                $color-slate-grey-4 0%,
+                $color-slate-grey-3 100%
+              );
+              box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.4),
+                inset -2px 2px 4px white,
+                inset 2px -2px 4px rgba(28, 32, 36, 0.2);
+              transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
+              &:hover {
+                transform: scale(1.05);
+                color: $color-primary-dark;
+              }
             }
           }
         }

@@ -37,6 +37,20 @@ export default function Hero() {
               Obtenez un audit gratuit
             </button>
           </div>
+
+          {/* <div className={styles.buttonsContainer}>
+            <button className={styles.primaryButton}>
+              <div className={styles.background}></div>
+              <div className={styles.wrapper}>
+                <div className={styles.outline}></div>
+                <div className={styles.content}>
+                  <span className={` ${styles.text} ${barlow.className}`}>
+                    Obtenez un audit gratuit
+                  </span>
+                </div>
+              </div>
+            </button>
+          </div> */}
         </section>
 
         <section className={styles.backgroundImageSection}>

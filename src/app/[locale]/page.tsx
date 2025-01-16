@@ -19,6 +19,8 @@ import V2Realisations from '@/components/Sections/Realisations/V2Realisations';
 import V2Contact from '@/components/Sections/Contact/V2Contact';
 import AboutV2 from '@/components/pages/AboutV2';
 import AboutV3 from '@/components/pages/AboutV3';
+import Button from '@/components/common/Button';
+import ButtonV2 from '@/components/common/ButtonV2';
 
 type Props = {
   params: { locale: string };
@@ -57,17 +59,24 @@ export default function Home({ params: { locale } }: Props) {
       <section className={styles.heroSection}>
         <Hero />
       </section>
-      {/* 
-      <section className={styles.aboutSection}>
-        <About />
-      </section>
 
-      <section className={styles.aboutv2Section}>
+      {/* <section className={styles.aboutSection}>
+        <About />
+      </section> */}
+
+      {/* <section className={styles.aboutv2Section}>
         <AboutV2 />
       </section> */}
+      <section className={styles.buttonTestV2}>
+        <ButtonV2 />
+      </section>
 
       <section className={styles.aboutv3Section}>
         <AboutV3 />
+      </section>
+
+      <section className={styles.buttonTest}>
+        <Button />
       </section>
 
       <section className={styles.servicesSection}>
