@@ -3,6 +3,7 @@ import styles from './AboutV3.module.scss';
 import { barlow } from '@/styles/font';
 import Image from 'next/image';
 import steven from '../../../public/Steven-nobg.png';
+import Button from '../common/Button';
 
 export default function AboutV3() {
   return (
@@ -160,9 +161,7 @@ export default function AboutV3() {
               </article>
 
               <div className={styles.buttonContainer}>
-                <button className={`${styles.button} ${barlow.className}`}>
-                  Découvrez mon parcours
-                </button>
+                <Button variant="secondary">Découvrez mon parcours</Button>
               </div>
             </div>
           </div>
