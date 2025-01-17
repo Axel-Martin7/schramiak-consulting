@@ -3,6 +3,7 @@ import styles from './Hero.module.scss';
 import Image from 'next/image';
 import ampoule from '../../../public/ampoule.jpg';
 import { barlow } from '@/styles/font';
+import Button from '../common/Button';
 
 export default function Hero() {
   return (
@@ -30,27 +31,13 @@ export default function Hero() {
           </p>
 
           <div className={styles.buttonsContainer}>
-            <button className={`${styles.secondaryButton} ${barlow.className}`}>
+            <Button variant="secondary" className={styles.fullWidthButton}>
               Découvrez mes services
-            </button>
-            <button className={`${styles.primaryButton} ${barlow.className}`}>
+            </Button>
+            <Button variant="primary" className={styles.fullWidthButton}>
               Obtenez un audit gratuit
-            </button>
+            </Button>
           </div>
-
-          {/* <div className={styles.buttonsContainer}>
-            <button className={styles.primaryButton}>
-              <div className={styles.background}></div>
-              <div className={styles.wrapper}>
-                <div className={styles.outline}></div>
-                <div className={styles.content}>
-                  <span className={` ${styles.text} ${barlow.className}`}>
-                    Obtenez un audit gratuit
-                  </span>
-                </div>
-              </div>
-            </button>
-          </div> */}
         </section>
 
         <section className={styles.backgroundImageSection}>

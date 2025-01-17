@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './V2Realisations.module.scss';
-import Button from '@/components/Buttons/Button';
+
 import { barlow } from '@/styles/font';
 
 export default function V2Realisations() {
@@ -62,9 +62,7 @@ export default function V2Realisations() {
           repudiandae minus qui, repellendus nemo labore est suscipit vel?
           Veritatis, facere ipsam.
         </p>
-        <div className={styles.buttonContainer}>
-          <Button label="Learn more" variant="primary" />
-        </div>
+        <div className={styles.buttonContainer}></div>
       </div>
     </div>
   );

@@ -1,10 +1,23 @@
 //* ----------------------------- Colors ------------------------------
+
+// ------ Primary :
 $color-primary-light: #beeaef;
-
 $color-primary: #00b0bd;
-
 $color-primary-dark: #007782;
 $color-primary-dark-darker: #003e43;
+
+$color-teal-1: #f3f7f7;
+$color-teal-2: #eaf4f5;
+$color-teal-3: #d4f0f3;
+$color-teal-4: #beeaef;
+$color-teal-5: #a8e2e8;
+$color-teal-6: #8ed6de;
+$color-teal-7: #6bc7d0;
+$color-teal-8: #0ab2bf;
+$color-teal-9: #00b0bd; // prinary
+$color-teal-10: #00a4b1;
+$color-teal-11: #007782;
+$color-teal-12: #003e43;
 
 // ---- Light grey :
 $color-slate-grey-1: #fcfcfd;
@@ -16,10 +29,10 @@ $color-slate-grey-4: #e8e8ec;
 $color-slate-grey-5: #e0e1e6;
 $color-slate-grey-6: #d9d9e0;
 $color-slate-grey-7: #cdced6;
-$color-slate-grey-8: #b9bbc6;
+$color-slate-grey-8: #b9bbc6; // rgba(185, 187, 198, 0.95);
 
 // ---- Dark grey :
-$color-slate-grey-9: #8b8d98;
-$color-slate-grey-10: #80838d;
+$color-slate-grey-9: #8b8d98; // rgba(139, 141, 152, 0.95);
+$color-slate-grey-10: #80838d; // rgba(128, 131, 141, 0.95);
 $color-slate-grey-11: #60646c; // rgba(96, 100, 108, 0.95)
 $color-slate-grey-12: #1c2024; // rgba(28, 32, 36, 0.95)

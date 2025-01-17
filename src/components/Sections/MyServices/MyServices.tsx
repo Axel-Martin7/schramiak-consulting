@@ -3,7 +3,6 @@ import styles from './MyServices.module.scss';
 import Image from 'next/image';
 import map from '../../../../public/world-map.png';
 import { barlow } from '@/styles/font';
-import Button from '@/components/Buttons/Button';
 
 export default function MyServices() {
   return (
@@ -19,9 +18,7 @@ export default function MyServices() {
             que ceux de vos clients, dans le but d optimiser vos ressources tout
             en accompagnant vos equipes
           </p>
-          <div className={styles.buttonContainer}>
-            <Button label="Learn more" variant="primary" />
-          </div>
+          <div className={styles.buttonContainer}></div>
         </div>
 
         {/* ----- Conteneurs version desktop ----- */}
@@ -190,9 +187,7 @@ export default function MyServices() {
             </p>
           </div>
 
-          <div className={styles.buttonContainer}>
-            <Button label="Learn more" variant="primary" />
-          </div>
+          <div className={styles.buttonContainer}></div>
         </div>
 
         <div className={styles.backgroundContainer}>

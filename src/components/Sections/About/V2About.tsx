@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './V2About.module.scss';
-import Button from '@/components/Buttons/Button';
+
 import Image from 'next/image';
 import steven from '../../../../public/Steven-Schramiak-profilpic.jpg';
 import { barlow } from '@/styles/font';
@@ -68,9 +68,7 @@ export default function V2About() {
               confidentialité totale.
             </p>
           </div>
-          <div className={styles.buttonContainer}>
-            <Button label="Mes services" variant="primary" />
-          </div>
+          <div className={styles.buttonContainer}></div>
         </div>
       </div>
     </div>

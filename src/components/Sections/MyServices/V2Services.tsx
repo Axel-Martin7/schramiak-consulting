@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './V2Services.module.scss';
-import Button from '@/components/Buttons/Button';
+
 import Image from 'next/image';
 import map from '../../../../public/world-map.png';
 import { barlow } from '@/styles/font';
@@ -118,9 +118,7 @@ export default function V2Services() {
           </div>
         </div>
 
-        <div className={styles.buttonContainer}>
-          <Button label="Mes services" variant="primary" />
-        </div>
+        <div className={styles.buttonContainer}></div>
       </div>
 
       {/*---------------------- Version Desktop --------------------------*/}
@@ -140,9 +138,7 @@ export default function V2Services() {
             en accompagnant vos equipes
           </p>
 
-          <div className={styles.buttonContainer}>
-            <Button label="Learn more" variant="primary" />
-          </div>
+          <div className={styles.buttonContainer}></div>
         </div>
 
         <div className={styles.shapesContainer}>

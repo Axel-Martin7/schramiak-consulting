@@ -3,7 +3,6 @@ import styles from './Hero.module.scss';
 import Image from 'next/image';
 import ampoule from '../../../../public/ampoule.jpg';
 import { barlow } from '@/styles/font';
-import Button from '@/components/Buttons/Button';
 
 export default function Hero() {
   return (
@@ -27,10 +26,7 @@ export default function Hero() {
               nesciunt minus sequi ullam cum veritatis quasi placeat!
             </p>
 
-            <div className={styles.buttonsContainer}>
-              <Button label="Mes services" variant="primary" />
-              <Button label="Audit gratuit" variant="secondary" />
-            </div>
+            <div className={styles.buttonsContainer}></div>
           </div>
         </div>
 

@@ -3,7 +3,6 @@ import styles from './About.module.scss';
 import { barlow } from '@/styles/font';
 import Image from 'next/image';
 import steven from '../../../../public/Steven-Schramiak-profilpic.jpg';
-import Button from '@/components/Buttons/Button';
 
 export default function About() {
   return (
@@ -89,9 +88,7 @@ export default function About() {
                 confidentialité totale.
               </p>
             </div>
-            <div className={styles.buttonContainer}>
-              <Button label="Mes services" variant="primary" />
-            </div>
+            <div className={styles.buttonContainer}></div>
           </div>
         </div>
       </div>
