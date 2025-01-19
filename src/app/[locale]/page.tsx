@@ -64,12 +64,12 @@ export default function Home({ params: { locale } }: Props) {
         <About />
       </section> */}
 
-      {/* <section className={styles.aboutv2Section}>
-        <AboutV2 />
-      </section> */}
-
       <section className={styles.aboutv3Section}>
         <AboutV3 />
+      </section>
+
+      <section className={styles.aboutv2Section}>
+        <AboutV2 />
       </section>
 
       <section className={styles.servicesSection}>
