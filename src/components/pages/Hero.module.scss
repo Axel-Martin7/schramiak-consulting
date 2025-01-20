@@ -92,15 +92,19 @@
     }
 
     .informationsSection {
-      /*------------------  Desktop-----------------*/
+      /*------------------  Tablet to Desktop-----------------*/
       @media screen and (min-width: 768px) {
         z-index: 2;
         width: 50%;
         height: 100%;
-        padding: 80px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        /*------------------ to desktop ------------------*/
+        @media screen and (min-width: 1200px) {
+          padding: 80px;
+        }
       }
 
       .heroTitleContainer {
@@ -114,9 +118,9 @@
           color: $color-primary;
           background: radial-gradient(
             ellipse farthest-corner at center center,
-            #00b0bd 0%,
-            #007b87 68%,
-            #003e43 100%
+            $color-primary 0%,
+            $color-primary-dark 68%,
+            $color-primary-dark-darker 100%
           );
           background-clip: text;
           -webkit-background-clip: text;
@@ -129,9 +133,9 @@
           font-weight: 600;
           background: radial-gradient(
             ellipse farthest-corner at right center,
-            #00b0bd 0%,
-            #007b87 68%,
-            #003e43 100%
+            $color-primary 0%,
+            $color-primary-dark 68%,
+            $color-primary-dark-darker 100%
           );
           background-clip: text;
           -webkit-background-clip: text;
@@ -143,123 +147,6 @@
         padding: 40px 0;
         font-size: 18px;
       }
-
-      // .buttonsContainer {
-      //   display: flex;
-      //   flex-direction: column;
-      //   gap: 20px;
-      //   /*------------------ Desktop------------------*/
-      //   @media screen and (min-width: 768px) {
-      //     flex-direction: row;
-      //     justify-content: space-between;
-      //     flex-wrap: wrap;
-      //   }
-
-      //   .secondaryButton,
-      //   .primaryButton {
-      //     position: relative;
-      //     padding: 16px 32px;
-      //     border-radius: 20px;
-      //     font-size: 18px;
-      //     transition: transform 0.3s ease, color 0.3s ease; // Pour animer l'agrandissement et le changement de couleur
-      //     // *----------- Ombre portée ----------*
-      //     &::before {
-      //       content: '';
-      //       position: absolute;
-      //       bottom: -5%;
-      //       left: 5%;
-      //       width: 90%;
-      //       height: 5px;
-      //       background-color: rgba(28, 32, 36, 0.4);
-      //       border-radius: 50%;
-      //       filter: blur(5px);
-      //       mix-blend-mode: multiply;
-      //       pointer-events: none;
-      //     }
-      //     /*------------------ Desktop------------------*/
-      //     @media screen and (min-width: 768px) {
-      //       width: 215px;
-      //     }
-      //   }
-
-      //   .secondaryButton {
-      //     background: linear-gradient(
-      //       15deg,
-      //       $color-slate-grey-5 0%,
-      //       $color-slate-grey-1 100%
-      //     );
-      //     box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.2),
-      //       inset -2px 2px 4px white, inset 2px -2px 4px rgba(28, 32, 36, 0.6);
-      //     // *----------- Reflet ----------------*
-      //     &::after {
-      //       content: '';
-      //       z-index: -1;
-      //       position: absolute;
-      //       top: 100%;
-      //       left: 0%;
-      //       width: 100%;
-      //       height: 100%;
-      //       border-radius: inherit;
-      //       background: linear-gradient(15deg, #f0f0f3 0%, #fcfcfd 100%);
-      //       -webkit-mask-image: linear-gradient(
-      //         to bottom,
-      //         rgb(255, 0, 0) 0%,
-      //         rgba(255, 0, 0, 0.2) 50%,
-      //         rgba(255, 0, 0, 0) 100%
-      //       );
-      //       mask-image: linear-gradient(
-      //         to bottom,
-      //         rgb(255, 0, 0) 10%,
-      //         rgba(255, 0, 0, 0.05) 50%,
-      //         rgba(255, 0, 0, 0) 100%
-      //       );
-      //       opacity: 0.8;
-      //       filter: blur(5px);
-      //       pointer-events: none;
-      //     }
-      //     &:hover {
-      //       transform: scale(1.05);
-      //       color: $color-primary-dark;
-      //     }
-      //   }
-      //   .primaryButton {
-      //     background: linear-gradient(15deg, $color-primary 0%, #6bc7d0 100%);
-      //     box-shadow: -4px 4px 8px rgba(28, 32, 36, 0.2),
-      //       inset -2px 2px 4px rgba(255, 255, 255, 0.4),
-      //       inset 2px -2px 4px rgba(28, 32, 36, 0.6);
-      //     // *----------- Reflet ----------------*
-      //     &::after {
-      //       content: '';
-      //       z-index: -1;
-      //       position: absolute;
-      //       top: 100%;
-      //       left: 0%;
-      //       width: 100%;
-      //       height: 100%;
-      //       border-radius: inherit;
-      //       background: inherit;
-      //       -webkit-mask-image: linear-gradient(
-      //         to bottom,
-      //         rgb(255, 0, 0) 0%,
-      //         rgba(255, 0, 0, 0.2) 50%,
-      //         rgba(255, 0, 0, 0) 100%
-      //       );
-      //       mask-image: linear-gradient(
-      //         to bottom,
-      //         rgb(255, 0, 0, 0.4) 0%,
-      //         rgba(255, 0, 0, 0.05) 50%,
-      //         rgba(255, 0, 0, 0) 100%
-      //       );
-      //       opacity: 0.8;
-      //       filter: blur(5px);
-      //       pointer-events: none;
-      //     }
-      //     &:hover {
-      //       transform: scale(1.05);
-      //       color: white;
-      //     }
-      //   }
-      // }
 
       .buttonsContainer {
         display: flex;

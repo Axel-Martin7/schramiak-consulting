@@ -17,7 +17,6 @@ import V2About from '@/components/Sections/About/V2About';
 import V2Services from '@/components/Sections/MyServices/V2Services';
 import V2Realisations from '@/components/Sections/Realisations/V2Realisations';
 import V2Contact from '@/components/Sections/Contact/V2Contact';
-import AboutV2 from '@/components/pages/AboutV2';
 import AboutV3 from '@/components/pages/AboutV3';
 
 import ButtonV2 from '@/components/common/Button';
@@ -60,17 +59,13 @@ export default function Home({ params: { locale } }: Props) {
         <Hero />
       </section>
 
-      <section className={styles.aboutSection}>
+      {/* <section className={styles.aboutSection}>
         <About />
-      </section>
+      </section> */}
 
       <section className={styles.aboutv3Section}>
         <AboutV3 />
       </section>
-
-      {/* <section className={styles.aboutv2Section}>
-        <AboutV2 />
-      </section> */}
 
       <section className={styles.servicesSection}>
         <MyServices />

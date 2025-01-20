@@ -68,7 +68,6 @@
   .introductionSection {
     height: calc(100svh - 100px); // 100px = taille du Header
     padding: 20px;
-    border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
       padding: 0;
@@ -79,23 +78,10 @@
 
   .heroSection {
     padding: 20px 0 0;
-    border: 1px solid red;
     /*------------------ Desktop------------------*/
     @media screen and (min-width: 768px) {
       padding: 0; // padding géré dans .presentationSection
       height: 62svh;
-
-      // padding-bottom: 0px;
-    }
-  }
-  .heroV2Section {
-    padding: 20px 0 0;
-    border: 1px solid red;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      padding: 0; // padding géré dans .presentationSection
-      height: 62svh;
-      // padding-bottom: 0px;
     }
   }
 
@@ -112,18 +98,6 @@
         height: calc(100svh - 100px);
         padding: 80px;
       }
-    }
-  }
-
-  .aboutv2Section {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid red;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      height: calc(100svh - 100px);
-      padding: 80px;
     }
   }
 
@@ -144,14 +118,22 @@
   }
 
   .servicesSection {
-    padding: 40px;
+    padding: 0 40px;
     display: flex;
     justify-content: center;
     border: 1px solid red;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 1188px) {
+    /*------------------ Tablet to  laptop to Desktop ------------------*/
+    @media screen and (min-width: 768px) {
       height: calc(100svh - 100px);
-      padding: 80px;
+      padding: 0px 40px;
+      /*------------------ to laptop ------------------*/
+      @media screen and (min-width: 1024px) {
+        padding: 80px 40px;
+        /*------------------ to desktop ------------------*/
+        @media screen and (min-width: 1200px) {
+          padding: 80px;
+        }
+      }
     }
   }
 }
