@@ -4,6 +4,7 @@ import { barlow } from '@/styles/font';
 import Image from 'next/image';
 import steven from '../../../public/Steven-nobg.png';
 import Button from '../common/Button';
+import SocialIcon from '../common/SocialIcon';
 
 export default function AboutV3() {
   return (
@@ -50,9 +51,27 @@ export default function AboutV3() {
             </div>
 
             <div className={styles.socialSection}>
-              <div className={styles.item}></div>
-              <div className={styles.item}></div>
-              <div className={styles.item}></div>
+              <div className={styles.item}>
+                <SocialIcon
+                  type="email"
+                  href="mailto:votre.email@example.com"
+                  ariaLabel="Envoyer un email"
+                />
+              </div>
+              <div className={styles.item}>
+                <SocialIcon
+                  type="whatsapp"
+                  href="mailto:votre.email@example.com"
+                  ariaLabel="Envoyer un email"
+                />
+              </div>
+              <div className={styles.item}>
+                <SocialIcon
+                  type="linkedin"
+                  href="mailto:votre.email@example.com"
+                  ariaLabel="Envoyer un email"
+                />
+              </div>
             </div>
           </div>
 
