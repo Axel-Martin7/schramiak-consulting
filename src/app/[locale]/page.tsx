@@ -60,17 +60,17 @@ export default function Home({ params: { locale } }: Props) {
         <Hero />
       </section>
 
-      {/* <section className={styles.aboutSection}>
+      <section className={styles.aboutSection}>
         <About />
-      </section> */}
+      </section>
 
       <section className={styles.aboutv3Section}>
         <AboutV3 />
       </section>
 
-      <section className={styles.aboutv2Section}>
+      {/* <section className={styles.aboutv2Section}>
         <AboutV2 />
-      </section>
+      </section> */}
 
       <section className={styles.servicesSection}>
         <MyServices />

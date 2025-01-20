@@ -61,15 +61,15 @@ export default function AboutV3() {
               <div className={styles.item}>
                 <SocialIcon
                   type="whatsapp"
-                  href="mailto:votre.email@example.com"
-                  ariaLabel="Envoyer un email"
+                  href="https://wa.me/votre-numero"
+                  ariaLabel="Envoyer un message WhatsApp"
                 />
               </div>
               <div className={styles.item}>
                 <SocialIcon
                   type="linkedin"
-                  href="mailto:votre.email@example.com"
-                  ariaLabel="Envoyer un email"
+                  href="https://linkedin.com/in/votre-profil"
+                  ariaLabel="Voir mon profil LinkedIn"
                 />
               </div>
             </div>
@@ -87,19 +87,21 @@ export default function AboutV3() {
 
             <div className={styles.presentationSection}>
               <div className={styles.presentationTitles}>
-                <h3 className={styles.name}>Steven Schramiak</h3>
+                <h3 className={styles.name}>
+                  <small className={styles.small}>Steven</small> Schramiak
+                </h3>
                 <h4 className={styles.role}>Consultant financier</h4>
               </div>
 
               <article className={styles.descriptionsContainer}>
                 <p className={styles.description}>
-                  Je suis Steven Schramiak, consultant en management financier
-                  avec une forte polyvalence et un esprit entrepreneurial. Avec
-                  plus de 10 ans d expérience dans le domaine, j ai aidé de
-                  nombreuses entreprises à optimiser leur gestion financière et
-                  opérationnelle. Mon parcours professionnel m a permis de
-                  développer une expertise pointue en controlling, gestion de
-                  projet et création de startups.
+                  Bienvenue, je suis Steven Schramiak, consultant en management
+                  financier avec une forte polyvalence et un esprit
+                  entrepreneurial. Avec plus de 10 ans d expérience dans le
+                  domaine, j ai aidé de nombreuses entreprises à optimiser leur
+                  gestion financière et opérationnelle. Mon parcours
+                  professionnel m a permis de développer une expertise pointue
+                  en controlling, gestion de projet et création de startups.
                 </p>
                 <p className={styles.description}>
                   Ayant collaboré avec des PME et des start-ups de divers

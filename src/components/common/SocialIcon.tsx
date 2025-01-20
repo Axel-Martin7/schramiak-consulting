@@ -45,6 +45,7 @@ export default function SocialIcon({ type, href, ariaLabel }: SocialIconProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
+      title={ariaLabel}
     >
       <svg
         className={styles.socialIcon}
