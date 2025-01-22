@@ -123,8 +123,8 @@
     justify-content: center;
     border: 1px solid red;
     /*------------------ Tablet to  laptop to Desktop ------------------*/
-    @media screen and (min-width: 768px) {
-      height: calc(100svh - 100px);
+    @media screen and (min-width: 868px) {
+      // height: calc(100svh - 100px);
       padding: 0px 40px;
       /*------------------ to laptop ------------------*/
       @media screen and (min-width: 1024px) {

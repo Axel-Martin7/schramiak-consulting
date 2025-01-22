@@ -30,13 +30,6 @@ export default function Pyramid() {
         <div className={styles.fourthFloorCeiling}></div>
       </div>
 
-      {/* ----------  ombres portées ----------- */}
-      {/* <div className={styles.firstFloorShadow}></div>
-      <div className={styles.secondFloorShadow}></div>
-      <div className={styles.thirdFloorShadow}></div>
-      <div className={styles.fourthFloorShadow}></div>
-      <div className={styles.hatFloorShadow}></div> */}
-
       <div className={styles.shadows}></div>
     </div>
   );
