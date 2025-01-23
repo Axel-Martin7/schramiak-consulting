@@ -105,7 +105,6 @@
     padding: 40px 20px;
     display: flex;
     justify-content: center;
-    border: 1px solid red;
     /*------------------ Tablet to Desktop ------------------*/
     @media screen and (min-width: 768px) {
       height: calc(100svh - 100px);
@@ -118,13 +117,10 @@
   }
 
   .servicesSection {
-    // padding: 0 20px;
     display: flex;
     justify-content: center;
-    border: 1px solid red;
     /*------------------ Tablet to  laptop to Desktop ------------------*/
     @media screen and (min-width: 868px) {
-      // height: calc(100svh - 100px);
       padding: 0px 40px;
       /*------------------ to laptop ------------------*/
       @media screen and (min-width: 1024px) {
@@ -132,6 +128,25 @@
         /*------------------ to desktop ------------------*/
         @media screen and (min-width: 1200px) {
           padding: 80px;
+        }
+      }
+    }
+  }
+
+  .realisationsSection {
+    padding: 80px 40px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    /*------------------ Tablet to Laptop to Desktop ------------------*/
+    @media screen and (min-width: 768px) {
+      padding: 80px 40px;
+      /*------------------ to Laptop ------------------*/
+      @media screen and (min-width: 1024px) {
+        padding: 0px 40px 80px;
+        /*------------------ to Desktop ------------------*/
+        @media screen and (min-width: 1200px) {
+          padding: 0px 80px 80px;
         }
       }
     }
