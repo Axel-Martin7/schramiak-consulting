@@ -267,11 +267,10 @@
           }
 
           .item {
-            border: 1px solid blue;
             width: 40px;
             aspect-ratio: 1/1;
-            filter: drop-shadow(1px -1px 0px rgba(28, 32, 36, 0.4))
-              drop-shadow(-1px 1px 0px white);
+            filter: drop-shadow(-1px 1px 0.5px $color-primary-dark-darker)
+              drop-shadow(1px -1px 0.5px $color-teal-1);
             /*------------------ Laptop ------------------*/
             @media screen and (min-width: 1024px) {
               width: 25px;
