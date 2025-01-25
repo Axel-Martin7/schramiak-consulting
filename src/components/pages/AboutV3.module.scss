@@ -267,6 +267,7 @@
           }
 
           .item {
+            border: 1px solid blue;
             width: 40px;
             aspect-ratio: 1/1;
             filter: drop-shadow(1px -1px 0px rgba(28, 32, 36, 0.4))

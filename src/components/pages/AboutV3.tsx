@@ -4,7 +4,8 @@ import { barlow } from '@/styles/font';
 import Image from 'next/image';
 import steven from '../../../public/Steven-nobg.png';
 import Button from '../common/Button';
-import SocialIcon from '../common/SocialIcon';
+import { SocialIcon } from '../common/SocialIcon';
+// import SocialIcon from '../common/SocialIcon';
 
 export default function AboutV3() {
   return (
@@ -50,12 +51,13 @@ export default function AboutV3() {
               </div>
             </div>
 
-            <div className={styles.socialSection}>
+            {/* <div className={styles.socialSection}>
               <div className={styles.item}>
                 <SocialIcon
                   type="email"
                   href="mailto:votre.email@example.com"
                   ariaLabel="Envoyer un email"
+                  variant="about"
                 />
               </div>
               <div className={styles.item}>
@@ -63,6 +65,7 @@ export default function AboutV3() {
                   type="whatsapp"
                   href="https://wa.me/votre-numero"
                   ariaLabel="Envoyer un message WhatsApp"
+                  variant="about"
                 />
               </div>
               <div className={styles.item}>
@@ -70,9 +73,46 @@ export default function AboutV3() {
                   type="linkedin"
                   href="https://linkedin.com/in/votre-profil"
                   ariaLabel="Voir mon profil LinkedIn"
+                  variant="about"
                 />
               </div>
-            </div>
+            </div> */}
+            <ul className={styles.socialSection}>
+              <li className={styles.item}>
+                <SocialIcon
+                  type="email"
+                  href="mailto:steven.schramiak@icloud.com"
+                  variant="about"
+                  ariaLabel="Envoyer un email"
+                />
+              </li>
+
+              <li className={styles.item}>
+                <SocialIcon
+                  type="whatsapp"
+                  href="https://wa.me/41782047078"
+                  variant="about"
+                  ariaLabel="Envoyer un message WhatsApp"
+                />
+              </li>
+
+              <li className={styles.item}>
+                <SocialIcon
+                  type="linkedin"
+                  href="https://www.linkedin.com/in/steven-schramiak-2005/"
+                  variant="about"
+                  ariaLabel="Visiter mon profil LinkedIn"
+                />
+              </li>
+              {/* <li className={styles.item}>
+                <SocialIcon
+                  type="location"
+                  href="https://www.google.com/maps/place/1208+Genève"
+                  variant="about"
+                  ariaLabel="Voir la localisation"
+                />
+              </li> */}
+            </ul>
           </div>
 
           {/* ---------- Colonne de droite : quote + seperator + infos ---------- */}
