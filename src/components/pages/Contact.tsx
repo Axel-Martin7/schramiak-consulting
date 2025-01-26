@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Contact.module.scss';
 import { barlow } from '@/styles/font';
 import { SocialIcon } from '../common/SocialIcon';
-// import SocialIcon from '../common/SocialIcon';
+import ContactForm from '../common/ContactForm';
 
 export default function Contact() {
   return (
@@ -38,84 +38,25 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* <ul className={styles.socialList}>
-            <li className={styles.item}>
-          
-              <a
-                className={styles.iconLinkContainer}
-                href="https://www.google.com/maps/place/1208+Genève"
-                target="_blank"
-                rel="noopener"
-                aria-label="Voir la localisation sur Google Maps"
-              >
-                <div className={styles.circleWrapper}>
-                  <div className={styles.circleIconContainer}>
-                    <div className={styles.icon}>
-                      <SocialIcon
-                        className={styles.contactGradient}
-                        type="email"
-                        disableLink // Désactivation de l'ancre
-                        ariaLabel="Envoyer un email"
-                        variant="contact"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a
-                className={styles.contactInfoLink}
-                href="https://www.google.com/maps/place/1208+Genève"
-                target="_blank"
-                rel="noopener"
-                aria-label="Voir la localisation sur Google Maps"
-              >
-                <span className={styles.contactLabel}>Localisation :</span>
-                <span className={styles.separator}></span>
-                <span className={styles.contactAdress}>1204 Genève</span>
-              </a>
-            </li>
-
+          <ul className={styles.socialList}>
             <li className={styles.item}>
               <SocialIcon
+                type="location"
+                href="https://www.google.com/maps/place/1208+Genève"
                 variant="contact"
-                type="email"
-                href="mailto:votre.email@example.com"
-                ariaLabel="Envoyer un email"
+                ariaLabel="Voir la localisation"
               />
-               <a
-                className={styles.iconLinkContainer}
-                href="mailto:steven.schramiak@icloud.com"
-                aria-label="Envoyer un email à Steven"
-              >
-                <div className={styles.circleWrapper}>
-                  <div className={styles.circleIconContainer}>
-                    <div className={styles.icon}>
-                      <SocialIcon
-                        type="email"
-                        href="mailto:votre.email@example.com"
-                        ariaLabel="Envoyer un email"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-
               <a
                 className={styles.contactInfoLink}
-                href="mailto:steven.schramiak@icloud.com"
-                aria-label="Envoyer un email à Steven"
+                href="https://www.google.com/maps/place/1208+Genève"
+                aria-label="Voir la localisation"
               >
-                <span className={styles.contactLabel}>E-mail :</span>
+                <span className={styles.contactLabel}>Localisation </span>
                 <span className={styles.separator}></span>
-                <span className={styles.contactAdress}>
-                  steven.schramiak@icloud.com
-                </span>
-              </a> 
+                <span className={styles.contactAdress}>1208 Genève</span>
+              </a>
             </li>
-          </ul>  */}
 
-          <ul className={styles.socialList}>
             <li className={styles.item}>
               <SocialIcon
                 type="email"
@@ -123,6 +64,18 @@ export default function Contact() {
                 variant="contact"
                 ariaLabel="Email contact"
               />
+
+              <a
+                className={styles.contactInfoLink}
+                href="mailto:steven.schramiak@icloud.com"
+                aria-label="Envoyer un email"
+              >
+                <span className={styles.contactLabel}>E-mail</span>
+                <span className={styles.separator}></span>
+                <span className={styles.contactAdress}>
+                  steven.schramiak@icloud.com
+                </span>
+              </a>
             </li>
 
             <li className={styles.item}>
@@ -132,11 +85,42 @@ export default function Contact() {
                 variant="contact"
                 ariaLabel="Visiter mon profil LinkedIn"
               />
+              <a
+                className={styles.contactInfoLink}
+                href="https://www.linkedin.com/in/steven-schramiak-2005/"
+                aria-label="Visiter mon profil LinkedIn"
+              >
+                <span className={styles.contactLabel}>Linkedin</span>
+                <span className={styles.separator}></span>
+                <span className={styles.contactAdress}>
+                  steven-schramiak-2005
+                </span>
+              </a>
+            </li>
+
+            <li className={styles.item}>
+              <SocialIcon
+                type="whatsapp"
+                href="https://wa.me/41782047078"
+                variant="contact"
+                ariaLabel="Envoyer un message WhatsApp"
+              />
+              <a
+                className={styles.contactInfoLink}
+                href="https://wa.me/41782047078"
+                aria-label="Envoyer un message WhatsApp"
+              >
+                <span className={styles.contactLabel}>Whatsapp</span>
+                <span className={styles.separator}></span>
+                <span className={styles.contactAdress}>+41.78.204.70.78</span>
+              </a>
             </li>
           </ul>
         </div>
 
-        <div className={styles.contactFormContainer}></div>
+        <div className={styles.contactFormContainer}>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );
