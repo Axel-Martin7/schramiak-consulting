@@ -157,9 +157,13 @@
     display: flex;
     justify-content: center;
     border: 1px solid red;
-    /*------------------ Tablet to Laptop to Desktop ------------------*/
+    /*------------------ Tablet to Desktop ------------------*/
     @media screen and (min-width: 768px) {
       padding: 0 40px;
+      /*------------------ to Desktop ------------------*/
+      @media screen and (min-width: 1200px) {
+        padding: 0px 80px;
+      }
     }
   }
 }

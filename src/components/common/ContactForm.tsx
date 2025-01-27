@@ -87,137 +87,6 @@ export default function ContactForm() {
   };
 
   return (
-    // <form className={styles.contactForm} onSubmit={handleSubmit}>
-    //   <div className={styles.formGroup}>
-    //     <label className={styles.formGroup__label} htmlFor="firstName">
-    //       Prénom
-    //     </label>
-    //     <input
-    //       type="text"
-    //       id="firstName"
-    //       name="firstName"
-    //       value={formData.firstName}
-    //       onChange={handleChange}
-    //       required
-    //       className={styles.formGroup__input}
-    //     />
-    //   </div>
-
-    //   <div className={styles.formGroup}>
-    //     <label className={styles.formGroup__label} htmlFor="lastName">
-    //       Nom
-    //     </label>
-    //     <input
-    //       type="text"
-    //       id="lastName"
-    //       name="lastName"
-    //       value={formData.lastName}
-    //       onChange={handleChange}
-    //       required
-    //       className={styles.formGroup__input}
-    //     />
-    //   </div>
-
-    //   <div className={styles.formGroup}>
-    //     <label className={styles.formGroup__label} htmlFor="email">
-    //       E-mail
-    //     </label>
-    //     <input
-    //       type="email"
-    //       id="email"
-    //       name="email"
-    //       value={formData.email}
-    //       onChange={handleChange}
-    //       required
-    //       className={styles.formGroup__input}
-    //     />
-    //   </div>
-
-    //   <div className={styles.formGroup}>
-    //     <label className={styles.formGroup__label} htmlFor="message">
-    //       Message
-    //     </label>
-    //     <textarea
-    //       id="message"
-    //       name="message"
-    //       value={formData.message}
-    //       onChange={handleChange}
-    //       required
-    //       className={styles.formGroup__textarea}
-    //     />
-    //   </div>
-
-    //   <button
-    //     type="submit"
-    //     disabled={status === 'sending'}
-    //     className={styles.submitButton}
-    //   >
-    //     {status === 'sending' ? 'Envoi...' : 'Envoyer'}
-    //   </button>
-
-    //   {status === 'success' && (
-    //     <p className={styles.successMessage}>
-    //       Votre message a été envoyé avec succès !
-    //     </p>
-    //   )}
-    //   {status === 'error' && (
-    //     <p className={styles.errorMessage}>{errorMessage}</p>
-    //   )}
-    // </form>
-
-    // --------------------------------------------
-
-    // <div className={styles.contactFormContainer}>
-    //   <h3 className={styles.formTitle}>Contact</h3>
-
-    //   <form className={styles.contactForm} onSubmit={handleSubmit}>
-    //     <div className={styles.formGroup}>
-    //       <input
-    //         className={styles.input}
-    //         type="text"
-    //         id="firstName"
-    //         name="firstName"
-    //         value={formData.firstName}
-    //         onChange={handleChange}
-    //         placeholder="Votre prénom"
-    //         required
-    //       />
-
-    //       <input
-    //         className={styles.input}
-    //         type="text"
-    //         id="lastName"
-    //         name="lastName"
-    //         value={formData.lastName}
-    //         onChange={handleChange}
-    //         placeholder="Votre nom"
-    //         required
-    //       />
-
-    //       <input
-    //         className={styles.input}
-    //         type="text"
-    //         id="email"
-    //         name="email"
-    //         value={formData.email}
-    //         onChange={handleChange}
-    //         placeholder="Votre adresse mail"
-    //         required
-    //       />
-
-    //       <textarea
-    //         className={styles.input}
-    //         id="message"
-    //         name="message"
-    //         value={formData.message}
-    //         onChange={handleChange}
-    //         placeholder="Votre message"
-    //         required
-    //       />
-    //     </div>
-    //   </form>
-    // </div>
-
     <div className={styles.contactFormContainer}>
       <h3 className={styles.formTitle}>Contact</h3>
 
@@ -267,9 +136,7 @@ export default function ContactForm() {
           />
         </div>
 
-        <Button variant="primary" className={styles.fullWidthButton}>
-          Envoyer
-        </Button>
+        <Button variant="primary">Envoyer</Button>
       </form>
     </div>
   );

@@ -1,154 +1,12 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-// .contactContainer {
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 40px;
-//   border: 1px solid black;
-//   /*------------------ Tablet ------------------*/
-//   @media screen and (min-width: 768px) {
-//     height: 100%;
-//     max-width: 1440px;
-//   }
-
-//   .sectionTitle {
-//     @include home-title-section;
-//   }
-
-//   .contactWrapper {
-//     border: 1px solid red;
-//     /*------------------ Tablet ------------------*/
-//     @media screen and (min-width: 768px) {
-//       display: flex;
-//       gap: 40px;
-//     }
-
-//     .contactInformationsContainer {
-//       display: flex;
-//       flex-direction: column;
-//       gap: 40px;
-//       border: 1px solid black;
-//       /*------------------ Tablet ------------------*/
-//       @media screen and (min-width: 768px) {
-//         width: 50%;
-//       }
-
-//       .CtoTitle {
-//         font-size: 38px;
-//         text-transform: uppercase;
-//         color: $color-primary-dark-darker;
-//         border: 1px solid blue;
-//         .firstWord {
-//           display: flex;
-//           font-size: 1.5em;
-//           font-weight: 600;
-//           color: #00b0bd;
-//           background: radial-gradient(
-//             ellipse farthest-corner at center center,
-//             #00b0bd 0%,
-//             #007782 68%,
-//             #003e43 100%
-//           );
-//           background-clip: text;
-//           -webkit-background-clip: text;
-//           -webkit-text-fill-color: transparent;
-//         }
-//         .smallWord {
-//           font-size: 0.8em;
-//         }
-//         .highlightedWord {
-//           font-weight: 600;
-//           background: radial-gradient(
-//             ellipse farthest-corner at right center,
-//             #00b0bd 0%,
-//             #007782 68%,
-//             #003e43 100%
-//           );
-//           background-clip: text;
-//           -webkit-background-clip: text;
-//           -webkit-text-fill-color: transparent;
-//         }
-//       }
-
-//       .descriptionsContainer {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 20px;
-//         font-size: 14px;
-//         color: $color-slate-grey-12;
-//       }
-
-//       .socialList {
-//         display: flex;
-//         flex-wrap: wrap;
-//         align-items: stretch; // Force les éléments à avoir la meme hauteur
-//         gap: 40px;
-//         border: 1px solid red;
-
-//         .item {
-//           display: flex;
-//           flex-direction: column;
-//           align-items: center;
-//           flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
-//           gap: 20px;
-//           border: 1px solid orange;
-
-//           .contactInfoLink {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             gap: 5px;
-//             text-decoration: none;
-
-//             .contactLabel {
-//               font-size: 14px;
-//               font-weight: 600;
-//               text-transform: uppercase;
-//               letter-spacing: 2px;
-//               color: $color-primary-dark-darker;
-//             }
-//             .separator {
-//               display: inline-block; /* Permet l'application de width et height */
-//               width: 50%;
-//               height: 1px;
-//               border-bottom: 1px solid;
-//               border-image: linear-gradient(
-//                 90deg,
-//                 rgba(0, 176, 189, 0),
-//                 $color-primary-dark,
-//                 rgba(0, 176, 189, 0)
-//               );
-//               border-image-slice: 1;
-//             }
-//             .contactAdress {
-//               font-size: 12px;
-//               color: $color-slate-grey-12;
-//             }
-//           }
-//         }
-//       }
-//     }
-
-//     .contactFormContainer {
-//       padding: 40px;
-//       border: 1px solid black;
-//       /*------------------ Tablet ------------------*/
-//       @media screen and (min-width: 768px) {
-//         width: 50%;
-//       }
-//     }
-//   }
-// }
-
-// -----------------------------------------
-
 .contactContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  border: 1px solid black;
   /*------------------ Tablet ------------------*/
   @media screen and (min-width: 768px) {
     height: 100%;
@@ -163,10 +21,18 @@
     }
   }
 
-  .carvedWrapper {
+  .contactWrapper {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    /*------------------ Laptop to Desktop ------------------*/
+    @media screen and (min-width: 1062px) {
+      flex-direction: row;
+      /*------------------ to Desktop ------------------*/
+      @media screen and (min-width: 1200px) {
+        gap: 80px;
+      }
+    }
 
     .contactInformationsSection {
       padding: 20px;
@@ -177,33 +43,54 @@
       box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
         inset 2px -2px 4px rgba(255, 255, 255, 0.4),
         inset -2px 2px 4px rgba(28, 32, 36, 0.6);
+      /*------------------ Tablet to Laptop ------------------*/
+      @media screen and (min-width: 768px) {
+        padding: 0;
+        flex-direction: row;
+        box-shadow: none;
+        /*------------------ to Laptop ------------------*/
+        @media screen and (min-width: 1062px) {
+          width: 50%;
+          padding: 40px;
+          flex-direction: column;
+          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+            inset 4px -4px 8px rgba(255, 255, 255, 0.4),
+            inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+        }
+      }
 
-      .ctoTitle {
-        text-transform: uppercase;
-        font-size: 38px;
-
-        .firstWord {
-          display: block;
-          font-size: 1.5em;
-          font-weight: 600;
-          color: #00b0bd;
-          background: radial-gradient(
-            ellipse farthest-corner at center center,
-            $color-primary 0%,
-            $color-primary-dark 68%,
-            $color-primary-dark-darker 100%
-          );
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+      .informationsHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        /*------------------ Tablet to Laptop ------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          padding: 40px;
+          justify-content: center;
+          border-radius: 20px;
+          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+            inset 4px -4px 8px rgba(255, 255, 255, 0.4),
+            inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+          /*------------------ to Laptop ------------------*/
+          @media screen and (min-width: 1062px) {
+            width: 100%;
+            padding: 0;
+            box-shadow: none;
+          }
         }
 
-        .line {
-          display: block;
-          .highlight {
+        .ctoTitle {
+          text-transform: uppercase;
+          font-size: 38px;
+
+          .firstWord {
+            display: block;
+            font-size: 1.5em;
             font-weight: 600;
+            color: #00b0bd;
             background: radial-gradient(
-              ellipse farthest-corner at right center,
+              ellipse farthest-corner at center center,
               $color-primary 0%,
               $color-primary-dark 68%,
               $color-primary-dark-darker 100%
@@ -212,15 +99,31 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
-          .small {
-            font-size: 0.8em;
+
+          .line {
+            display: block;
+            .highlight {
+              font-weight: 600;
+              background: radial-gradient(
+                ellipse farthest-corner at right center,
+                $color-primary 0%,
+                $color-primary-dark 68%,
+                $color-primary-dark-darker 100%
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            .small {
+              font-size: 0.8em;
+            }
           }
         }
-      }
 
-      .description {
-        font-size: 14px;
-        color: $color-slate-grey-12;
+        .description {
+          font-size: 14px;
+          color: $color-slate-grey-12;
+        }
       }
 
       .socialList {
@@ -228,6 +131,15 @@
         flex-wrap: wrap;
         align-items: stretch; // Force les éléments à avoir la meme hauteur
         gap: 20px;
+        /*------------------ Tablet to Laptop ------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+          align-items: center;
+          /*------------------ to Laptop ------------------*/
+          @media screen and (min-width: 1062px) {
+            width: 100%;
+          }
+        }
 
         .item {
           display: flex;
@@ -235,6 +147,10 @@
           align-items: center;
           flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
           gap: 20px;
+          /*------------------ Desktop ------------------*/
+          @media screen and (min-width: 1200px) {
+            flex: 1 1 192px;
+          }
 
           .contactInfoLink {
             display: flex;
@@ -273,7 +189,10 @@
     }
 
     .contactFormSection {
-      // border: 1px solid black;
+      /*------------------ to Laptop ------------------*/
+      @media screen and (min-width: 1062px) {
+        width: 50%;
+      }
     }
   }
 }
