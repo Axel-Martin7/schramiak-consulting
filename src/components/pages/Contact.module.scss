@@ -1,76 +1,224 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .contactContainer {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   border: 1px solid black;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 768px) {
+//     height: 100%;
+//     max-width: 1440px;
+//   }
+
+//   .sectionTitle {
+//     @include home-title-section;
+//   }
+
+//   .contactWrapper {
+//     border: 1px solid red;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 768px) {
+//       display: flex;
+//       gap: 40px;
+//     }
+
+//     .contactInformationsContainer {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 40px;
+//       border: 1px solid black;
+//       /*------------------ Tablet ------------------*/
+//       @media screen and (min-width: 768px) {
+//         width: 50%;
+//       }
+
+//       .CtoTitle {
+//         font-size: 38px;
+//         text-transform: uppercase;
+//         color: $color-primary-dark-darker;
+//         border: 1px solid blue;
+//         .firstWord {
+//           display: flex;
+//           font-size: 1.5em;
+//           font-weight: 600;
+//           color: #00b0bd;
+//           background: radial-gradient(
+//             ellipse farthest-corner at center center,
+//             #00b0bd 0%,
+//             #007782 68%,
+//             #003e43 100%
+//           );
+//           background-clip: text;
+//           -webkit-background-clip: text;
+//           -webkit-text-fill-color: transparent;
+//         }
+//         .smallWord {
+//           font-size: 0.8em;
+//         }
+//         .highlightedWord {
+//           font-weight: 600;
+//           background: radial-gradient(
+//             ellipse farthest-corner at right center,
+//             #00b0bd 0%,
+//             #007782 68%,
+//             #003e43 100%
+//           );
+//           background-clip: text;
+//           -webkit-background-clip: text;
+//           -webkit-text-fill-color: transparent;
+//         }
+//       }
+
+//       .descriptionsContainer {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 20px;
+//         font-size: 14px;
+//         color: $color-slate-grey-12;
+//       }
+
+//       .socialList {
+//         display: flex;
+//         flex-wrap: wrap;
+//         align-items: stretch; // Force les éléments à avoir la meme hauteur
+//         gap: 40px;
+//         border: 1px solid red;
+
+//         .item {
+//           display: flex;
+//           flex-direction: column;
+//           align-items: center;
+//           flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
+//           gap: 20px;
+//           border: 1px solid orange;
+
+//           .contactInfoLink {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             gap: 5px;
+//             text-decoration: none;
+
+//             .contactLabel {
+//               font-size: 14px;
+//               font-weight: 600;
+//               text-transform: uppercase;
+//               letter-spacing: 2px;
+//               color: $color-primary-dark-darker;
+//             }
+//             .separator {
+//               display: inline-block; /* Permet l'application de width et height */
+//               width: 50%;
+//               height: 1px;
+//               border-bottom: 1px solid;
+//               border-image: linear-gradient(
+//                 90deg,
+//                 rgba(0, 176, 189, 0),
+//                 $color-primary-dark,
+//                 rgba(0, 176, 189, 0)
+//               );
+//               border-image-slice: 1;
+//             }
+//             .contactAdress {
+//               font-size: 12px;
+//               color: $color-slate-grey-12;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .contactFormContainer {
+//       padding: 40px;
+//       border: 1px solid black;
+//       /*------------------ Tablet ------------------*/
+//       @media screen and (min-width: 768px) {
+//         width: 50%;
+//       }
+//     }
+//   }
+// }
+
+// -----------------------------------------
+
 .contactContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  border: 1px solid black;
   /*------------------ Tablet ------------------*/
   @media screen and (min-width: 768px) {
     height: 100%;
     max-width: 1440px;
   }
-
   .sectionTitle {
+    padding: 0 20px;
     @include home-title-section;
+    /*------------------ Tablet ------------------*/
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
 
-  .contactWrapper {
-    border: 1px solid red;
+  .carvedWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-    .contactInformationsContainer {
+    .contactInformationsSection {
+      padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 40px;
-      border: 1px solid black;
-      /*------------------ Tablet ------------------*/
-      @media screen and (min-width: 768px) {
-        width: 50%;
-      }
+      border-radius: 20px;
+      box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+        inset 2px -2px 4px rgba(255, 255, 255, 0.4),
+        inset -2px 2px 4px rgba(28, 32, 36, 0.6);
 
-      .CtoTitle {
-        font-size: 38px;
+      .ctoTitle {
         text-transform: uppercase;
-        color: $color-primary-dark-darker;
-        border: 1px solid blue;
+        font-size: 38px;
+
         .firstWord {
-          display: flex;
+          display: block;
           font-size: 1.5em;
           font-weight: 600;
           color: #00b0bd;
           background: radial-gradient(
             ellipse farthest-corner at center center,
-            #00b0bd 0%,
-            #007782 68%,
-            #003e43 100%
+            $color-primary 0%,
+            $color-primary-dark 68%,
+            $color-primary-dark-darker 100%
           );
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        .smallWord {
-          font-size: 0.8em;
-        }
-        .highlightedWord {
-          font-weight: 600;
-          background: radial-gradient(
-            ellipse farthest-corner at right center,
-            #00b0bd 0%,
-            #007782 68%,
-            #003e43 100%
-          );
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+
+        .line {
+          display: block;
+          .highlight {
+            font-weight: 600;
+            background: radial-gradient(
+              ellipse farthest-corner at right center,
+              $color-primary 0%,
+              $color-primary-dark 68%,
+              $color-primary-dark-darker 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          .small {
+            font-size: 0.8em;
+          }
         }
       }
 
-      .descriptionsContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+      .description {
         font-size: 14px;
         color: $color-slate-grey-12;
       }
@@ -79,8 +227,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: stretch; // Force les éléments à avoir la meme hauteur
-        gap: 40px;
-        border: 1px solid red;
+        gap: 20px;
 
         .item {
           display: flex;
@@ -88,7 +235,6 @@
           align-items: center;
           flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
           gap: 20px;
-          border: 1px solid orange;
 
           .contactInfoLink {
             display: flex;
@@ -126,12 +272,8 @@
       }
     }
 
-    .contactFormContainer {
-      border: 1px solid black;
-      /*------------------ Tablet ------------------*/
-      @media screen and (min-width: 768px) {
-        width: 50%;
-      }
+    .contactFormSection {
+      // border: 1px solid black;
     }
   }
 }

@@ -1,78 +1,60 @@
 'use client';
 
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './ContactForm.module.scss';
+import Button from '@/components/common/Button';
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  company?: string;
   message: string;
 }
 
+/**
+ * Composant de formulaire de contact
+ * @returns {React.ReactElement} - Élément React représentant le formulaire de contact
+ */
 export default function ContactForm() {
-  // Etat pour les données du formulaire
+  // Etat pour stocker les données du formulaire
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
-    company: '',
     message: '',
   });
-
-  // Etat pour gérer les messages de retour
+  // Etat pour gérer le statut de l'envoi du formulaire
   const [status, setStatus] = useState<
-    'idle' | 'loading' | 'success' | 'error'
+    'idle' | 'sending' | 'success' | 'error'
   >('idle');
+  // Etat pour stocker les message d'erreur
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  // Fonction pour gérer les changements dans les champs du formulaire
+  // Remplacer par useTranslations lorsque vous gérez les traductions
+  // const t = useTranslations('ContactForm');
+
+  /**
+   * Gestionnaire de changement pour les champs du formulaire
+   * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - Événement de changement
+   */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Fonction pour valider le formulaire
-  const validateForm = (): boolean => {
-    const { firstName, lastName, email, message } = formData;
-    if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !email.trim() ||
-      !message.trim()
-    ) {
-      setErrorMessage('Veuillez remplir tous les champs obligatoires.');
-      return false;
-    }
-    // Expression régulière pour valider l'email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setErrorMessage('Veuillez entrer une adresse email valide.');
-      return false;
-    }
-    setErrorMessage('');
-    return true;
-  };
-
-  // Fonction pour gérer la soumission du formulaire
-  const handleSubmit = async (e: FormEvent) => {
+  /**
+   * Gestionnaire de soumission du formulaire
+   * @param {React.FormEvent} e - Événement de soumission
+   */
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validation du formulaire avant l'envoi
-    if (!validateForm()) {
-      return;
-    }
-
-    setStatus('loading');
+    setStatus('sending');
+    setErrorMessage(''); // Réinitialiser le message d'erreur
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,111 +62,214 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         setStatus('success');
+        // Rénitialisation des champs du formulaire
         setFormData({
           firstName: '',
           lastName: '',
           email: '',
-          company: '',
           message: '',
         });
       } else {
-        const data = await response.json();
-        setErrorMessage(
-          data.error || 'Une erreur est survenue. Veuillez réessayer.'
-        );
         setStatus('error');
+        setErrorMessage(result.error || "Une erreur s'est produite.");
       }
     } catch (error) {
-      setErrorMessage('Une erreur est survenue. Veuillez réessayer.');
+      console.error('Erreur:', error);
       setStatus('error');
+      setErrorMessage(
+        "Une erreur s'est produite lors de l'envoi de votre message."
+      );
     }
   };
 
   return (
+    // <form className={styles.contactForm} onSubmit={handleSubmit}>
+    //   <div className={styles.formGroup}>
+    //     <label className={styles.formGroup__label} htmlFor="firstName">
+    //       Prénom
+    //     </label>
+    //     <input
+    //       type="text"
+    //       id="firstName"
+    //       name="firstName"
+    //       value={formData.firstName}
+    //       onChange={handleChange}
+    //       required
+    //       className={styles.formGroup__input}
+    //     />
+    //   </div>
+
+    //   <div className={styles.formGroup}>
+    //     <label className={styles.formGroup__label} htmlFor="lastName">
+    //       Nom
+    //     </label>
+    //     <input
+    //       type="text"
+    //       id="lastName"
+    //       name="lastName"
+    //       value={formData.lastName}
+    //       onChange={handleChange}
+    //       required
+    //       className={styles.formGroup__input}
+    //     />
+    //   </div>
+
+    //   <div className={styles.formGroup}>
+    //     <label className={styles.formGroup__label} htmlFor="email">
+    //       E-mail
+    //     </label>
+    //     <input
+    //       type="email"
+    //       id="email"
+    //       name="email"
+    //       value={formData.email}
+    //       onChange={handleChange}
+    //       required
+    //       className={styles.formGroup__input}
+    //     />
+    //   </div>
+
+    //   <div className={styles.formGroup}>
+    //     <label className={styles.formGroup__label} htmlFor="message">
+    //       Message
+    //     </label>
+    //     <textarea
+    //       id="message"
+    //       name="message"
+    //       value={formData.message}
+    //       onChange={handleChange}
+    //       required
+    //       className={styles.formGroup__textarea}
+    //     />
+    //   </div>
+
+    //   <button
+    //     type="submit"
+    //     disabled={status === 'sending'}
+    //     className={styles.submitButton}
+    //   >
+    //     {status === 'sending' ? 'Envoi...' : 'Envoyer'}
+    //   </button>
+
+    //   {status === 'success' && (
+    //     <p className={styles.successMessage}>
+    //       Votre message a été envoyé avec succès !
+    //     </p>
+    //   )}
+    //   {status === 'error' && (
+    //     <p className={styles.errorMessage}>{errorMessage}</p>
+    //   )}
+    // </form>
+
+    // --------------------------------------------
+
+    // <div className={styles.contactFormContainer}>
+    //   <h3 className={styles.formTitle}>Contact</h3>
+
+    //   <form className={styles.contactForm} onSubmit={handleSubmit}>
+    //     <div className={styles.formGroup}>
+    //       <input
+    //         className={styles.input}
+    //         type="text"
+    //         id="firstName"
+    //         name="firstName"
+    //         value={formData.firstName}
+    //         onChange={handleChange}
+    //         placeholder="Votre prénom"
+    //         required
+    //       />
+
+    //       <input
+    //         className={styles.input}
+    //         type="text"
+    //         id="lastName"
+    //         name="lastName"
+    //         value={formData.lastName}
+    //         onChange={handleChange}
+    //         placeholder="Votre nom"
+    //         required
+    //       />
+
+    //       <input
+    //         className={styles.input}
+    //         type="text"
+    //         id="email"
+    //         name="email"
+    //         value={formData.email}
+    //         onChange={handleChange}
+    //         placeholder="Votre adresse mail"
+    //         required
+    //       />
+
+    //       <textarea
+    //         className={styles.input}
+    //         id="message"
+    //         name="message"
+    //         value={formData.message}
+    //         onChange={handleChange}
+    //         placeholder="Votre message"
+    //         required
+    //       />
+    //     </div>
+    //   </form>
+    // </div>
+
     <div className={styles.contactFormContainer}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <h3 className={styles.formTitle}>Contact</h3>
+
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="firstName">Prénom *</label>
           <input
+            className={styles.input}
             type="text"
             id="firstName"
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
+            placeholder="Votre prénom *"
             required
           />
-        </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="lastName">Nom *</label>
           <input
+            className={styles.input}
             type="text"
             id="lastName"
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
+            placeholder="Votre nom *"
             required
           />
-        </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="email">Email *</label>
           <input
-            type="email"
+            className={styles.input}
+            type="text"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Votre adresse mail *"
             required
           />
-        </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="company">Entreprise</label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="message">Message *</label>
           <textarea
+            className={styles.input}
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
+            placeholder="Votre message "
             required
-          ></textarea>
-        </div>
-
-        {/* Champ honeypot pour lutter contre le spam */}
-        <div className={styles.honeypot} aria-hidden="true">
-          <label htmlFor="honeypot">Ne pas remplir</label>
-          <input
-            type="text"
-            id="honeypot"
-            name="honeypot"
-            value=""
-            onChange={() => {}}
           />
         </div>
 
-        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
-        {status === 'success' && (
-          <p className={styles.success}>
-            Votre message a été envoyé avec succès !
-          </p>
-        )}
-
-        <button type="submit" disabled={status === 'loading'}>
-          {status === 'loading' ? 'Envoi...' : 'Envoyer'}
-        </button>
+        <Button variant="primary" className={styles.fullWidthButton}>
+          Envoyer
+        </Button>
       </form>
     </div>
   );

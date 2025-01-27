@@ -47,7 +47,7 @@ interface ButtonProps {
   className?: string; // Pour les classe supplémentaires
 }
 
-export default function ButtonV2({
+export default function Button({
   children,
   variant = 'primary',
   type = 'button',
