@@ -1,0 +1,13 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.main {
+  padding-top: calc(100px + 80px);
+  /* 100px = taille du header global
+  80px = espace entre le header global et le pageHeader*/
+  border: 1px solid black;
+
+  .pageHeader {
+    @include page-header;
+  }
+}
