@@ -28,187 +28,173 @@ export default function ParcoursPage({ params: { locale } }: Props) {
         </div>
       </header>
 
-      <section className={styles.parcoursSection}>
-        {/*---------- CLIM DIFFUSION ---------- */}
+      <section className={styles.cardsSection}>
+        {/*---------- Clim diffusion ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2011</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>Clim diffusion</h2>
-              <h3 className={styles.projectRole}>Apprenti</h3>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Clim diffusion</h2>
+              <h3 className={styles.role}>Apprenti</h3>
             </div>
-          </header>
 
-          <ul className={styles.projectDescriptionsList}>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Développement commercial.</p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Mise en place de process de gestion.
-              </p>
-            </li>
-          </ul>
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Développement commercial.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Mise en place de process de gestion.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div className={styles.cardDate}>2011</div>
         </article>
 
-        {/*---------- MASTER  ---------- */}
+        {/*---------- Master ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2014</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>
-                Master de contrôle de gestion & Audit financier
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>
+                <span className={styles.line}>Master </span>
+                <span className={styles.line}> de Contrôle de gestion </span> &
+                Audit financier
               </h2>
             </div>
-          </header>
+          </div>
+
+          <div className={styles.cardDate}>2014</div>
         </article>
 
-        {/*---------- BLOOMBERG ---------- */}
+        {/*---------- Bloomberg ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2015</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>Bloomberg</h2>
-              <h3 className={styles.projectRole}>Analyste</h3>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Bloomberg</h2>
+              <h3 className={styles.role}>Analyste</h3>
             </div>
-          </header>
 
-          <ul className={styles.projectDescriptionsList}>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Analyse des états financiers des entreprises côtées en Europe.
-              </p>
-            </li>
-          </ul>
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>
+                  Analyse des états financiers des entreprises côtées en Europe-
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div className={styles.cardDate}>2015</div>
         </article>
 
-        {/*---------- VINCI CONSTRUCTION ---------- */}
+        {/*---------- Vinci Construction ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2017</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>Vinci Construction</h2>
-              <h3 className={styles.projectRole}>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Vinci construction</h2>
+              <h3 className={styles.role}>
                 Responsable administratif & comptable
               </h3>
             </div>
-          </header>
 
-          <ul className={styles.projectDescriptionsList}>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Contrôle de gestion et des coûts.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Etablissement des budgets.</p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Tableaux de suivi et indicateurs.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Gestion de la trésorerie.</p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Clôtures comptables.</p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Gestion des audits.</p>
-            </li>
-          </ul>
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Contrôle de gestion et des coûts.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Etablissement des budgets.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Tableaux de suivi et indicateurs.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Gestion de la trésorerie.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Clôtures comptables.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Gestion des audits.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div className={styles.cardDate}>2017</div>
         </article>
 
-        {/*---------- NEXUS AUTOMOTIVE ---------- */}
+        {/*---------- Nexus Automotive ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2019</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>Nexus automotive</h2>
-              <h3 className={styles.projectRole}>Manager contrôle financier</h3>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Nexus automotive</h2>
+              <h3 className={styles.role}>Manager contrôle financier</h3>
             </div>
-          </header>
 
-          <ul className={styles.projectDescriptionsList}>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Contrôle financier des startups du groupe.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Création de startups, Planification financière.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Structuration et amélioration des process de gestion.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Gestion de la trésorerie et financements.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>Gestion des audits.</p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Management de projets innovants.
-              </p>
-            </li>
-          </ul>
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Contrôle financier des startups du groupe.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Création de startups, planification financière.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Structuration et amélioration des process de gestion.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Gestion de la trésorerie et financements.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Gestion des audits.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Management de projets innovants.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div className={styles.cardDate}>2019</div>
         </article>
 
-        {/*---------- CONSULTANT INDEPENDANT ---------- */}
+        {/*---------- Consultant indépendant ----------*/}
         <article className={styles.card}>
-          <header className={styles.cardHeader}>
-            <div className={styles.projectYear}>2023</div>
-            <div className={styles.projectTitlesContainer}>
-              <h2 className={styles.projectName}>Consultant Indépendant</h2>
-              <h3 className={styles.projectRole}>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Consultant indépendant</h2>
+              <h3 className={styles.role}>
                 Management financier & optimisation des process
               </h3>
             </div>
-          </header>
 
-          <ul className={styles.projectDescriptionsList}>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Audit des système de gestion.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Accompagnement des collaborateurs et dirigeants.
-              </p>
-            </li>
-            <li className={styles.descriptionItem}>
-              <span className={styles.bubble}></span>
-              <p className={styles.description}>
-                Mise en place de process et d&apos;outils de reporting.
-              </p>
-            </li>
-          </ul>
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Audit des systèmes de gestion.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Accompagnement des collaborateurs et dirigeants.</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble}></span>
+                <p>Mise en place de process et d&apos;outils de reporting.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div className={styles.cardDate}>2023</div>
         </article>
       </section>
     </main>

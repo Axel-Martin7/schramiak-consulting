@@ -1,80 +1,180 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .main {
+//   padding: 100px 0 0;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 40px;
+//   border: 1px solid black;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 768px) {
+//     gap: 120px;
+//   }
+
+//   .pageHeader {
+//     @include page-header;
+//   }
+
+//   .cardsSection {
+//     width: calc(100% - 48px); // Pour avoir 24px de padding sur les cotées
+//     display: flex;
+//     flex-direction: column;
+//     gap: 24px;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 768px) {
+//       width: calc(100% - 160px); // Pour avoir 80px de padding sur les cotées
+//       max-width: 1200px;
+//     }
+
+//     .card {
+//       padding: 16px;
+//       display: flex;
+//       justify-content: space-between;
+//       gap: 16px;
+//       border-radius: 16px;
+//       background-color: $color-slate-grey-3;
+//       box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+//         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+//         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+//       /*------------------ Tablet ------------------*/
+//       @media screen and (min-width: 768px) {
+//         width: calc(50% + 100px / 2 + 24px);
+//         /* 100px = taille de .cardDate / 2 pour que les date soient parfaitement alignées verticalement
+//         + 24px = padding de .card
+//         */
+//         &:nth-child(even) {
+//           flex-direction: row-reverse;
+//           align-self: end;
+//         }
+//       }
+
+//       .cardInformationsContainer {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 16px;
+
+//         .titlesContainer {
+//           text-transform: uppercase;
+
+//           .cardName {
+//             font-size: 24px;
+//             font-weight: 600;
+//             margin-bottom: 4px;
+//             background: radial-gradient(
+//               ellipse farthest-corner at right center,
+//               #00b0bd 0%,
+//               #007782 68%,
+//               #003e43 100%
+//             );
+//             background-clip: text;
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+
+//             .line {
+//               display: block;
+//             }
+//           }
+
+//           .role {
+//             font-size: 14px;
+//             letter-spacing: 2px;
+//           }
+//         }
+
+//         .cardDescriptionsList {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 4px;
+
+//           .description {
+//             display: flex;
+//             align-items: center;
+//             gap: 16px;
+//             font-size: 14px;
+//             color: $color-slate-grey-12;
+
+//             .bubble {
+//               width: 8px;
+//               height: 8px;
+//               aspect-ratio: 1/1;
+//               border-radius: 50%;
+//               border: 1px solid black;
+//             }
+//           }
+//         }
+//       }
+
+//       .cardDate {
+//         max-height: 80px;
+//         padding: 16px;
+//         display: flex;
+//         justify-content: center;
+//         background-color: $color-teal-6;
+//         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
+//           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
+//           0 12.5px 10px rgba(28, 32, 36, 0.06),
+//           0 22.3px 17.9px rgba(28, 32, 36, 0.072),
+//           0 41.8px 33.4px rgba(28, 32, 36, 0.086),
+//           0 100px 80px rgba(28, 32, 36, 0.12);
+//       }
+//     }
+//   }
+// }
+
 .main {
-  padding-top: 100px;
-  /* 100px = taille du header global
-  80px = espace entre le header global et le pageHeader*/
+  padding: 100px 0 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-
+  gap: 64px;
   border: 1px solid black;
+  /*------------------ Tablet ------------------*/
+  @media screen and (min-width: 768px) {
+    gap: 120px;
+  }
 
   .pageHeader {
     @include page-header;
   }
 
-  .parcoursSection {
-    width: 100%;
-    padding: 0 20px;
+  .cardsSection {
+    width: calc(
+      100% - 48px
+    ); // 48px = 2x 24px pour avoir un espace de 24px de chaques cotées
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 1px solid red;
-    /*------------------ Tablet ------------------*/
-    @media screen and (min-width: 768px) {
-      max-width: 1440px;
-    }
+    gap: 16px;
 
     .card {
-      padding: 20px;
+      padding: 24px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      border-radius: 20px;
+      justify-content: space-between;
+      gap: 24px;
+      border-radius: 24px;
       background: linear-gradient(
         45deg,
-        $color-slate-grey-4 0%,
+        $color-slate-grey-3 0%,
         $color-slate-grey-1 100%
       );
       box-shadow: rgba(28, 32, 36, 0.4) 0px 2px 4px,
         rgba(28, 32, 36, 0.3) 0px 7px 13px -3px,
         rgba(28, 32, 36, 0.2) 0px -3px 0px inset;
 
-      .cardHeader {
+      .cardInfosContainer {
         display: flex;
-        align-items: stretch;
-        gap: 20px;
+        flex-direction: column;
+        gap: 24px;
 
-        .projectYear {
-          padding: 20px;
-          display: flex;
-          align-items: center;
-          border-radius: 20px;
-          background: linear-gradient(
-            45deg,
-            $color-primary 0%,
-            $color-primary-dark 100%
-          );
-          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-            inset -4px 4px 8px rgba(28, 32, 36, 0.4);
-          color: $color-teal-1;
-          font-weight: 600;
-          text-shadow: -1px 1px 2px #003e43;
-        }
+        .titlesContainer {
+          text-transform: uppercase;
 
-        .projectTitlesContainer {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 5px;
-
-          .projectName {
-            font-size: 20px;
+          .cardName {
+            margin-bottom: 4px;
+            font-size: 24px;
             font-weight: 700;
-            text-transform: uppercase;
             background: radial-gradient(
               ellipse farthest-corner at right center,
               $color-primary 0%,
@@ -84,38 +184,58 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            .line {
+              display: block;
+            }
           }
 
-          .projectRole {
-            font-size: 12px;
-            text-transform: uppercase;
+          .role {
+            font-size: 14px;
+            font-weight: 500;
             letter-spacing: 2px;
+            color: $color-primary-dark-darker;
+          }
+        }
+
+        .cardDescriptionsList {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .description {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: $color-slate-grey-12;
+
+            .bubble {
+              width: 8px;
+              height: 8px;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              background-color: $color-primary;
+              box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2), -1px 1px 2px white,
+                inset -1px 1px 2px rgba(28, 32, 36, 0.8);
+            }
           }
         }
       }
 
-      .projectDescriptionsList {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-
-        .descriptionItem {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 14px;
-          color: $color-slate-grey-12;
-
-          .bubble {
-            width: 10px;
-            height: 10px;
-            aspect-ratio: 1/1;
-            border-radius: 50%;
-            box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2), -1px 1px 2px white,
-              inset -1px 1px 2px rgba(28, 32, 36, 0.8);
-            background-color: $color-primary;
-          }
-        }
+      .cardDate {
+        max-height: 80px;
+        padding: 16px;
+        background-color: $color-teal-6;
+        box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
+          0 6.7px 5.3px rgba(28, 32, 36, 0.048),
+          0 12.5px 10px rgba(28, 32, 36, 0.06),
+          0 22.3px 17.9px rgba(28, 32, 36, 0.072),
+          0 41.8px 33.4px rgba(28, 32, 36, 0.086),
+          0 100px 80px rgba(28, 32, 36, 0.12);
+        color: $color-slate-grey-12;
+        font-size: 14px;
+        font-weight: 600;
       }
     }
   }
