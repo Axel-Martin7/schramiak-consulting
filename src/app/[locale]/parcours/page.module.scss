@@ -1,129 +1,6 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-// .main {
-//   padding: 100px 0 0;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   gap: 40px;
-//   border: 1px solid black;
-//   /*------------------ Tablet ------------------*/
-//   @media screen and (min-width: 768px) {
-//     gap: 120px;
-//   }
-
-//   .pageHeader {
-//     @include page-header;
-//   }
-
-//   .cardsSection {
-//     width: calc(100% - 48px); // Pour avoir 24px de padding sur les cotées
-//     display: flex;
-//     flex-direction: column;
-//     gap: 24px;
-//     /*------------------ Tablet ------------------*/
-//     @media screen and (min-width: 768px) {
-//       width: calc(100% - 160px); // Pour avoir 80px de padding sur les cotées
-//       max-width: 1200px;
-//     }
-
-//     .card {
-//       padding: 16px;
-//       display: flex;
-//       justify-content: space-between;
-//       gap: 16px;
-//       border-radius: 16px;
-//       background-color: $color-slate-grey-3;
-//       box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-//         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-//         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-//       /*------------------ Tablet ------------------*/
-//       @media screen and (min-width: 768px) {
-//         width: calc(50% + 100px / 2 + 24px);
-//         /* 100px = taille de .cardDate / 2 pour que les date soient parfaitement alignées verticalement
-//         + 24px = padding de .card
-//         */
-//         &:nth-child(even) {
-//           flex-direction: row-reverse;
-//           align-self: end;
-//         }
-//       }
-
-//       .cardInformationsContainer {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 16px;
-
-//         .titlesContainer {
-//           text-transform: uppercase;
-
-//           .cardName {
-//             font-size: 24px;
-//             font-weight: 600;
-//             margin-bottom: 4px;
-//             background: radial-gradient(
-//               ellipse farthest-corner at right center,
-//               #00b0bd 0%,
-//               #007782 68%,
-//               #003e43 100%
-//             );
-//             background-clip: text;
-//             -webkit-background-clip: text;
-//             -webkit-text-fill-color: transparent;
-
-//             .line {
-//               display: block;
-//             }
-//           }
-
-//           .role {
-//             font-size: 14px;
-//             letter-spacing: 2px;
-//           }
-//         }
-
-//         .cardDescriptionsList {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 4px;
-
-//           .description {
-//             display: flex;
-//             align-items: center;
-//             gap: 16px;
-//             font-size: 14px;
-//             color: $color-slate-grey-12;
-
-//             .bubble {
-//               width: 8px;
-//               height: 8px;
-//               aspect-ratio: 1/1;
-//               border-radius: 50%;
-//               border: 1px solid black;
-//             }
-//           }
-//         }
-//       }
-
-//       .cardDate {
-//         max-height: 80px;
-//         padding: 16px;
-//         display: flex;
-//         justify-content: center;
-//         background-color: $color-teal-6;
-//         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
-//           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
-//           0 12.5px 10px rgba(28, 32, 36, 0.06),
-//           0 22.3px 17.9px rgba(28, 32, 36, 0.072),
-//           0 41.8px 33.4px rgba(28, 32, 36, 0.086),
-//           0 100px 80px rgba(28, 32, 36, 0.12);
-//       }
-//     }
-//   }
-// }
-
 .main {
   padding: 100px 0 64px;
   display: flex;
@@ -131,9 +8,15 @@
   align-items: center;
   gap: 64px;
   border: 1px solid black;
-  /*------------------ Tablet ------------------*/
+  /*------------------ Tablet to Laptop ------------------*/
   @media screen and (min-width: 768px) {
-    gap: 120px;
+    padding: 100px 0 80px;
+    gap: 80px;
+    /*------------------ Laptop ------------------*/
+    @media screen and (min-width: 1024px) {
+      padding: 100px 0 120px;
+      gap: 120px;
+    }
   }
 
   .pageHeader {
@@ -147,6 +30,15 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    /*------------------ Tablet to Laptop ------------------*/
+    @media screen and (min-width: 768px) {
+      width: calc(100% - 160px);
+      /*------------------ Laptop ------------------*/
+      @media screen and (min-width: 1024px) {
+        max-width: 1200px;
+        gap: 24px;
+      }
+    }
 
     .card {
       padding: 24px;
@@ -162,6 +54,20 @@
       box-shadow: rgba(28, 32, 36, 0.4) 0px 2px 4px,
         rgba(28, 32, 36, 0.3) 0px 7px 13px -3px,
         rgba(28, 32, 36, 0.2) 0px -3px 0px inset;
+      /*------------------ Tablet to Laptop to Desktop ------------------*/
+      @media screen and (min-width: 768px) {
+        padding: 32px;
+        /*------------------ to Laptop ------------------*/
+        @media screen and (min-width: 1024px) {
+          width: calc(50% + 80px / 2 + 40px);
+          /* 80px = taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
+        40px = padding de .card
+        */
+          padding: 40px;
+          gap: 40px;
+          justify-content: flex-end;
+        }
+      }
 
       .cardInfosContainer {
         display: flex;
@@ -224,8 +130,11 @@
       }
 
       .cardDate {
+        width: 60px;
         max-height: 80px;
         padding: 16px;
+        display: flex;
+        justify-content: center;
         background-color: $color-teal-6;
         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
@@ -236,6 +145,35 @@
         color: $color-slate-grey-12;
         font-size: 14px;
         font-weight: 600;
+        /*------------------ Laptop ------------------*/
+        @media screen and (min-width: 1024px) {
+          width: 80px;
+          max-height: none;
+          flex-shrink: 0;
+        }
+      }
+
+      //*------------ CARTE PAIRES / IMPAIRES ------------*
+      /*------------------ Laptop ------------------*/
+      @media screen and (min-width: 1024px) {
+        /*----------- CARTES PAIRES : Positionnées à droite du conteneur -----------*/
+        &:nth-child(even) {
+          align-self: end;
+          flex-direction: row-reverse;
+        }
+
+        /*----------- CARTES IMPAIRES : Positionnées à gauche du conteneur -----------*/
+        &:nth-child(odd) {
+          .cardInfosContainer {
+            text-align: right;
+
+            .cardDescriptionsList {
+              .description {
+                flex-direction: row-reverse;
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -40,11 +40,11 @@ export default function ParcoursPage({ params: { locale } }: Props) {
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Développement commercial.</p>
+                <p>Développement commercial</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Mise en place de process de gestion.</p>
+                <p>Mise en place de process de gestion</p>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@ export default function ParcoursPage({ params: { locale } }: Props) {
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
                 <p>
-                  Analyse des états financiers des entreprises côtées en Europe-
+                  Analyse des états financiers des entreprises côtées en Europe
                 </p>
               </li>
             </ul>
@@ -101,27 +101,27 @@ export default function ParcoursPage({ params: { locale } }: Props) {
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Contrôle de gestion et des coûts.</p>
+                <p>Contrôle de gestion et des coûts</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Etablissement des budgets.</p>
+                <p>Etablissement des budgets</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Tableaux de suivi et indicateurs.</p>
+                <p>Tableaux de suivi et indicateurs</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Gestion de la trésorerie.</p>
+                <p>Gestion de la trésorerie</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Clôtures comptables.</p>
+                <p>Clôtures comptables</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Gestion des audits.</p>
+                <p>Gestion des audits</p>
               </li>
             </ul>
           </div>
@@ -140,27 +140,27 @@ export default function ParcoursPage({ params: { locale } }: Props) {
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Contrôle financier des startups du groupe.</p>
+                <p>Contrôle financier des startups du groupe</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Création de startups, planification financière.</p>
+                <p>Création de startups, planification financière</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Structuration et amélioration des process de gestion.</p>
+                <p>Structuration et amélioration des process de gestion</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Gestion de la trésorerie et financements.</p>
+                <p>Gestion de la trésorerie et financements</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Gestion des audits.</p>
+                <p>Gestion des audits</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Management de projets innovants.</p>
+                <p>Management de projets innovants</p>
               </li>
             </ul>
           </div>
@@ -181,15 +181,15 @@ export default function ParcoursPage({ params: { locale } }: Props) {
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Audit des systèmes de gestion.</p>
+                <p>Audit des systèmes de gestion</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Accompagnement des collaborateurs et dirigeants.</p>
+                <p>Accompagnement des collaborateurs et dirigeants</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble}></span>
-                <p>Mise en place de process et d&apos;outils de reporting.</p>
+                <p>Mise en place de process et d&apos;outils de reporting</p>
               </li>
             </ul>
           </div>
