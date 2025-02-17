@@ -51,13 +51,26 @@
         display: grid;
         grid-template-columns: 1fr 1fr; // 2 colonnes de meme largeur
         grid-template-rows: auto auto; // 2 lignes
+        grid-template-areas:
+          'title description'
+          'result result';
         gap: 40px;
+        // Inverser les zones pour les articles pairs
+        &:nth-of-type(even) {
+          grid-template-areas:
+            'description title'
+            'result result';
+        }
       }
 
       .projectTitleContainer {
         display: flex;
         flex-direction: column;
         border: 1px solid red;
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          grid-area: title;
+        }
 
         .separator {
           width: 100%;
@@ -94,9 +107,13 @@
         border-radius: 16px;
         @include paragraphe-text-style;
         border: 1px solid black;
-        /*------------------ Desktop ------------------*/
-        @media screen and (min-width: 1200px) {
-          padding: 40px;
+        /*------------------ Tablet to Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          grid-area: description;
+          /*------------------ Desktop ------------------*/
+          @media screen and (min-width: 1200px) {
+            padding: 40px;
+          }
         }
       }
 
@@ -107,7 +124,7 @@
         border: 1px solid red;
         /*------------------ Tablet ------------------*/
         @media screen and (min-width: 768px) {
-          grid-column: 1 / -1;
+          grid-area: result;
           flex-direction: row;
           gap: 40px;
         }
