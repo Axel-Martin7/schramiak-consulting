@@ -96,7 +96,7 @@
 
   .pageTitle {
     text-align: center;
-    font-size: 42px;
+    font-size: 43px;
     text-transform: uppercase;
     color: $color-primary-dark-darker;
 
@@ -143,4 +143,10 @@
       background-color: $color-teal-6;
     }
   }
+}
+
+@mixin paragraphe-text-style {
+  font-size: 12px;
+  line-height: 1.5;
+  color: $color-slate-grey-12;
 }
