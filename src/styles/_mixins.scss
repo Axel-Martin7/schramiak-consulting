@@ -145,6 +145,23 @@
   }
 }
 
+//*----------- TITRES ----------*
+
+// Sous-titres (h3) :
+@mixin sub-titles-style {
+  background: radial-gradient(
+    ellipse farthest-corner at right center,
+    $color-primary 0%,
+    $color-primary-dark 68%,
+    $color-primary-dark-darker 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//*----------- TEXTES ----------*
+// Texte global :
 @mixin paragraphe-text-style {
   font-size: 12px;
   line-height: 1.5;
