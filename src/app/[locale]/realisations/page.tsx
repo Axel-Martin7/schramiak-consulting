@@ -35,14 +35,13 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //   <section className={styles.realisationsSection}>
     //     {/*---------- Groupement International Automobile ----------*/}
     //     <article className={styles.projectContainer}>
-    //       <div className={styles.projectTitleContainer}>
-    //         <span className={styles.separator}></span>
+    //       <div className={styles.projectTitleCard}>
     //         <h2 className={styles.projectName}>
     //           Groupement International Automobile
     //         </h2>
     //       </div>
 
-    //       <div className={styles.descriptionCard}>
+    //       <div className={styles.projectDescriptionCard}>
     //         <p className={styles.description}>
     //           Au sein d&apos;un groupement international de distribution de
     //           pièces détachées automobiles, lancement de plusieurs projets et
@@ -61,9 +60,9 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //         </p>
     //       </div>
 
-    //       <ul className={styles.resultsItemsList}>
+    //       <ul className={styles.projectResultsItemsList}>
     //         {/*----- Time -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>3 ans</h3>
     //           <p className={styles.itemDescription}>
@@ -73,7 +72,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Role -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Gestion de projet</h3>
     //           <p className={styles.itemDescription}>
@@ -82,7 +81,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Résults -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Résultats</h3>
     //           <p className={styles.itemDescription}>
@@ -92,17 +91,17 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //       </ul>
+
+    //       <div className={styles.carvedBackground}></div>
     //     </article>
 
     //     {/*---------- MarketPlace B2B ----------*/}
     //     <article className={styles.projectContainer}>
-    //       <div className={styles.projectTitleContainer}>
-    //         <span className={styles.separator}></span>
+    //       <div className={styles.projectTitleCard}>
     //         <h2 className={styles.projectName}>Marketplace B2B</h2>
-    //         <span className={styles.emptySeparator}></span>
     //       </div>
 
-    //       <div className={styles.descriptionCard}>
+    //       <div className={styles.projectDescriptionCard}>
     //         <p className={styles.description}>
     //           Une startup nouvellement créée, dans le commerce de pièces
     //           détachées automobiles avec des acteurs internationaux.
@@ -119,9 +118,9 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //         </p>
     //       </div>
 
-    //       <ul className={styles.resultsItemsList}>
+    //       <ul className={styles.projectResultsItemsList}>
     //         {/*----- Time -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>2 ans</h3>
     //           <p className={styles.itemDescription}>
@@ -132,7 +131,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Role -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>CFO temps partiel</h3>
     //           <p className={styles.itemDescription}>
@@ -142,7 +141,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Résults -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Résultats</h3>
     //           <p className={styles.itemDescription}>
@@ -153,17 +152,17 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //       </ul>
+
+    //       <div className={styles.carvedBackground}></div>
     //     </article>
 
     //     {/*---------- Sous-traitant horloger ----------*/}
     //     <article className={styles.projectContainer}>
-    //       <div className={styles.projectTitleContainer}>
-    //         <span className={styles.separator}></span>
+    //       <div className={styles.projectTitleCard}>
     //         <h2 className={styles.projectName}>Sous-traitant horloger</h2>
-    //         <span className={styles.emptySeparator}></span>
     //       </div>
 
-    //       <div className={styles.descriptionCard}>
+    //       <div className={styles.projectDescriptionCard}>
     //         <p className={styles.description}>
     //           Un sous-traitant horloger avait connu des problèmes de suivi de sa
     //           comptabilité suite à un départ et un changement de logiciel.
@@ -179,34 +178,34 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //         </p>
     //       </div>
 
-    //       <ul className={styles.resultsItemsList}>
+    //       <ul className={styles.projectResultsItemsList}>
     //         {/*----- Time -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>1 mois</h3>
     //         </li>
     //         {/*----- Role -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Comptabilité</h3>
     //         </li>
     //         {/*----- Résults -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Etats financiers</h3>
     //         </li>
     //       </ul>
+
+    //       <div className={styles.carvedBackground}></div>
     //     </article>
 
     //     {/*---------- Transport de matériaux ----------*/}
     //     <article className={styles.projectContainer}>
-    //       <div className={styles.projectTitleContainer}>
-    //         <span className={styles.separator}></span>
+    //       <div className={styles.projectTitleCard}>
     //         <h2 className={styles.projectName}>Transport de matériaux</h2>
-    //         <span className={styles.emptySeparator}></span>
     //       </div>
 
-    //       <div className={styles.descriptionCard}>
+    //       <div className={styles.projectDescriptionCard}>
     //         <p className={styles.description}>
     //           Une jeune entreprise de transport avait besoin d&apos;un système
     //           de gestion de son activité, lui permettant de suivre tous les
@@ -222,9 +221,9 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //         </p>
     //       </div>
 
-    //       <ul className={styles.resultsItemsList}>
+    //       <ul className={styles.projectResultsItemsList}>
     //         {/*----- Time -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>3 mois</h3>
     //           <p className={styles.itemDescription}>
@@ -233,7 +232,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Role -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Contrôle de gestion</h3>
     //           <p className={styles.itemDescription}>
@@ -244,7 +243,7 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //         {/*----- Résults -----*/}
-    //         <li className={styles.item}>
+    //         <li className={styles.itemCard}>
     //           <div className={styles.iconContainer}></div>
     //           <h3 className={styles.itemTitle}>Résultats</h3>
     //           <p className={styles.itemDescription}>
@@ -255,6 +254,8 @@ export default function RealisationsPage({ params: { locale } }: Props) {
     //           </p>
     //         </li>
     //       </ul>
+
+    //       <div className={styles.carvedBackground}></div>
     //     </article>
     //   </section>
     // </main>
@@ -276,6 +277,8 @@ export default function RealisationsPage({ params: { locale } }: Props) {
       <section className={styles.realisationsSection}>
         {/*---------- Groupement International Automobile ----------*/}
         <article className={styles.projectContainer}>
+          <div className={styles.mobileSeparator}></div>
+
           <div className={styles.projectTitleCard}>
             <h2 className={styles.projectName}>
               Groupement International Automobile
@@ -316,26 +319,38 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>Gestion de projet</h3>
-              <p className={styles.itemDescription}>
-                Management de projet avec des équipes internationales. <br></br>
-                Elaboration de POCs (Proof of Concept).
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>Management de projet avec des équipes internationales.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Elaboration de POCs (Proof of Concept).</p>
+                </li>
+              </ul>
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>Résultats</h3>
-              <p className={styles.itemDescription}>
-                12 projets accompagnés.
-                <br></br>5 entreprises crées.
-                <br></br> Outils de prévision des ventes.
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>12 projets accompagnés.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>5 entreprises crées.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Outil de prévision des ventes.</p>
+                </li>
+              </ul>
             </li>
           </ul>
         </article>
 
         {/*---------- MarketPlace B2B ----------*/}
         <article className={styles.projectContainer}>
+          <div className={styles.mobileSeparator}></div>
+
           <div className={styles.projectTitleCard}>
             <h2 className={styles.projectName}>Marketplace B2B</h2>
           </div>
@@ -373,28 +388,44 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>CFO temps partiel</h3>
-              <p className={styles.itemDescription}>
-                Choix et configuration d&apos;un ERP. <br></br>
-                Définition des process de gestion. <br></br>
-                Mise en place du système comptable.
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>Choix et configuration d&apos;un ERP.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Définition des process de gestion.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Mise en place du système comptable.</p>
+                </li>
+              </ul>
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>Résultats</h3>
-              <p className={styles.itemDescription}>
-                Système de gestion déployé avec une équie restreinte. <br></br>
-                Levée de fonds réalisée. <br></br>
-                Ressources financières optimisées. <br></br>
-                Maîtrise de la trésorerie.
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>Système de gestion déployé avec une équipe restreinte.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Levée de fonds réalisée.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Ressources financières optimisées.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Maîtrise de la trésorerie.</p>
+                </li>
+              </ul>
             </li>
           </ul>
         </article>
 
         {/*---------- Sous-traitant horloger ----------*/}
         <article className={styles.projectContainer}>
+          <div className={styles.mobileSeparator}></div>
+
           <div className={styles.projectTitleCard}>
             <h2 className={styles.projectName}>Sous-traitant horloger</h2>
           </div>
@@ -436,6 +467,8 @@ export default function RealisationsPage({ params: { locale } }: Props) {
 
         {/*---------- Transport de matériaux ----------*/}
         <article className={styles.projectContainer}>
+          <div className={styles.mobileSeparator}></div>
+
           <div className={styles.projectTitleCard}>
             <h2 className={styles.projectName}>Transport de matériaux</h2>
           </div>
@@ -470,23 +503,38 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>Contrôle de gestion</h3>
-              <p className={styles.itemDescription}>
-                Mise en place d&apos;un système de gestion développé sur mesure.{' '}
-                <br></br>
-                Automatisation des tâches d&apos;envoi de rapports quotidien et
-                de facturation.
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>
+                    Mise en place d&apos;un système de gestion développé sur
+                    mesure.
+                  </p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>
+                    Automatisation des tâches d&apos;envoi de rapports quotiden
+                    et de facturation.
+                  </p>
+                </li>
+              </ul>
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}></div>
               <h3 className={styles.itemTitle}>Résultats</h3>
-              <p className={styles.itemDescription}>
-                Outil de gestion adapté à son activité. <br></br>
-                Gain mesuré de 3 jours / mois pour la facturation. <br></br>
-                Econnomies estimées de 40kCHF annuels sur ses frais de change.{' '}
-                <br></br>
-              </p>
+              <ul className={styles.itemDescriptionList}>
+                <li className={styles.itemDescription}>
+                  <p>Outil de gestion adapté à son activité.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>Gain mesuré de 3 jours / mois pour la facturation.</p>
+                </li>
+                <li className={styles.itemDescription}>
+                  <p>
+                    Economies estimées de 40kCHF annuel sur ses frais de change.
+                  </p>
+                </li>
+              </ul>
             </li>
           </ul>
         </article>
