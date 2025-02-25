@@ -182,7 +182,6 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
-    border: 1px solid red;
     /*------------------ Tablet  ------------------*/
     @media screen and (min-width: 768px) {
       width: calc(100% - 160px);
@@ -192,7 +191,6 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
-      border: 1px solid black;
 
       .mobileSeparator {
         width: 100%;
@@ -208,8 +206,6 @@
       }
 
       .projectTitleCard {
-        border: 1px solid black;
-
         .projectName {
           font-size: 25px;
           font-weight: 700;
@@ -223,14 +219,12 @@
         flex-direction: column;
         gap: 8px;
         @include paragraphe-text-style;
-        border: 1px solid black;
       }
 
       .projectResultsItemsList {
         display: flex;
         flex-direction: column;
         gap: 16px;
-        border: 1px solid black;
 
         .itemCard {
           padding: 24px;
@@ -241,22 +235,37 @@
           border-radius: 16px;
           background: linear-gradient(
             45deg,
-            $color-slate-grey-3 0%,
-            $color-slate-grey-1 100%
+            $color-slate-grey-4 0%,
+            $color-slate-grey-2 100%
           );
-          box-shadow: rgba(28, 32, 36, 0.4) 0px 2px 4px,
-            rgba(28, 32, 36, 0.3) 0px 7px 13px -3px,
-            rgba(28, 32, 36, 0.2) 0px -3px 0px inset;
-          border: 1px solid black;
+          box-shadow: -2px 2px 4px rgba(28, 32, 36, 0.4),
+            -8px 8px 14px 4px rgba(28, 32, 36, 0.25),
+            inset 3px -3px rgba(28, 32, 36, 0.2);
 
           .iconContainer {
             width: 80px;
             aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 50%;
-            border: 1px solid black;
+            background: linear-gradient(
+              45deg,
+              $color-slate-grey-3 0%,
+              $color-slate-grey-1 100%
+            );
+            box-shadow: -2px 2px 4px rgba(28, 32, 36, 0.4),
+              -8px 8px 14px rgba(28, 32, 36, 0.25),
+              inset 2px -2px rgba(28, 32, 36, 0.2);
+
+            .icon {
+              filter: drop-shadow(0.5px -0.5px 0px rgba(28, 32, 36, 0.8))
+                drop-shadow(-0.5px 0.5px 0px white);
+            }
           }
 
           .itemTitle {
+            padding-top: 8px;
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
@@ -272,7 +281,7 @@
           .itemDescriptionList {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 4px;
           }
         }
       }

@@ -4,9 +4,9 @@ import React from 'react';
 import styles from './page.module.scss';
 import { barlow } from '@/styles/font';
 import Image from 'next/image';
-import timeclock from '../../../../public/icons/clock-activity.svg';
-import lightbulb from '../../../../public/icons/lightbulb5.svg';
-import check from '../../../../public/icons/circled-check.svg';
+import timeclock from '../../../../public/icons/timeclock.svg';
+import lightBulb from '../../../../public/icons/lightbulb.svg';
+import check from '../../../../public/icons/check.svg';
 
 type Props = {
   params: { locale: string };
@@ -307,7 +307,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <ul className={styles.projectResultsItemsList}>
             {/*----- Time -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'horloge"
+                  src={timeclock}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>3 ans</h3>
               <p className={styles.itemDescription}>
                 Une expérience au sein d&apos;un groupe international, divisée
@@ -317,7 +325,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Role -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'amploule"
+                  src={lightBulb}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Gestion de projet</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
@@ -330,7 +346,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone check"
+                  src={check}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Résultats</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
@@ -375,7 +399,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <ul className={styles.projectResultsItemsList}>
             {/*----- Time -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'horloge"
+                  src={timeclock}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>2 ans</h3>
               <p className={styles.itemDescription}>
                 Un mandat longue durée, avec un rôle de Contrôleur financier à
@@ -386,7 +418,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Role -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'amploule"
+                  src={lightBulb}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>CFO temps partiel</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
@@ -402,7 +442,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone check"
+                  src={check}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Résultats</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
@@ -449,17 +497,41 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <ul className={styles.projectResultsItemsList}>
             {/*----- Time -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'horloge"
+                  src={timeclock}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>1 mois</h3>
             </li>
             {/*----- Role -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'amploule"
+                  src={lightBulb}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Comptabilité</h3>
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone check"
+                  src={check}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Etats financiers</h3>
             </li>
           </ul>
@@ -492,7 +564,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <ul className={styles.projectResultsItemsList}>
             {/*----- Time -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'horloge"
+                  src={timeclock}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>3 mois</h3>
               <p className={styles.itemDescription}>
                 Une présence régulière dans les locaux de l&apos;entreprise pour
@@ -501,7 +581,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Role -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone d'amploule"
+                  src={lightBulb}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Contrôle de gestion</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
@@ -520,7 +608,15 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
-              <div className={styles.iconContainer}></div>
+              <div className={styles.iconContainer}>
+                <Image
+                  className={styles.icon}
+                  alt="icone check"
+                  src={check}
+                  width={48}
+                  height={48}
+                />
+              </div>
               <h3 className={styles.itemTitle}>Résultats</h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
