@@ -157,7 +157,7 @@
 // }
 
 .main {
-  padding: 100px 0 0;
+  padding: 100px 0 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,9 +165,11 @@
   border: 1px solid black;
   /*------------------ Tablet to Desktop ------------------*/
   @media screen and (min-width: 768px) {
+    padding: 100px 0 80px;
     gap: 80px;
     /*------------------ to Desktop ------------------*/
     @media screen and (min-width: 1200px) {
+      padding: 100px 0 120px;
       gap: 120px;
     }
   }
@@ -191,6 +193,21 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      /*------------------ Tablet ------------------*/
+      @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr; // 2 colonnes de meme largeur
+        grid-template-rows: auto auto; // 2 lignes
+        grid-template-areas:
+          'title description'
+          'result result';
+        // Inverser les zones pour les articles pairs
+        &:nth-of-type(even) {
+          grid-template-areas:
+            'description title'
+            'result result';
+        }
+      }
 
       .mobileSeparator {
         width: 100%;
@@ -203,9 +220,22 @@
         );
         box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
           inset -2px 2px 4px rgba(28, 32, 36, 0.8);
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
       }
 
       .projectTitleCard {
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          grid-area: title;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          border: 1px solid black;
+        }
         .projectName {
           font-size: 25px;
           font-weight: 700;
@@ -219,12 +249,23 @@
         flex-direction: column;
         gap: 8px;
         @include paragraphe-text-style;
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          grid-area: description;
+          border: 1px solid black;
+        }
       }
 
       .projectResultsItemsList {
         display: flex;
         flex-direction: column;
         gap: 16px;
+        /*------------------ Tablet to Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          grid-area: result;
+          flex-direction: row;
+          border: 1px solid black;
+        }
 
         .itemCard {
           padding: 24px;
@@ -241,6 +282,10 @@
           box-shadow: -2px 2px 4px rgba(28, 32, 36, 0.4),
             -8px 8px 14px 4px rgba(28, 32, 36, 0.25),
             inset 3px -3px rgba(28, 32, 36, 0.2);
+          /*------------------ Tablet ------------------*/
+          @media screen and (min-width: 768px) {
+            flex: 1;
+          }
 
           .iconContainer {
             width: 80px;
