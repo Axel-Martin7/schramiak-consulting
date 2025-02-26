@@ -1,6 +1,324 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .main {
+//   padding: 100px 0 64px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 64px;
+//   border: 1px solid black;
+//   /*------------------ Tablet to Laptop ------------------*/
+//   @media screen and (min-width: 768px) {
+//     padding: 100px 0 80px;
+//     gap: 80px;
+//     /*------------------ Laptop ------------------*/
+//     @media screen and (min-width: 1024px) {
+//       padding: 100px 0 120px;
+//       gap: 120px;
+//     }
+//   }
+
+//   .pageHeader {
+//     @include page-header;
+//   }
+
+//   .cardsSection {
+//     width: calc(
+//       100% - 48px
+//     ); // 48px = 2x 24px pour avoir un espace de 24px de chaques cotées
+//     display: flex;
+//     flex-direction: column;
+//     gap: 16px;
+//     /*------------------ Tablet to Laptop ------------------*/
+//     @media screen and (min-width: 768px) {
+//       width: calc(100% - 160px);
+//       /*------------------ Laptop ------------------*/
+//       @media screen and (min-width: 1024px) {
+//         max-width: 1200px;
+//         gap: 24px;
+//       }
+//     }
+
+//     .card {
+//       padding: 24px;
+//       display: flex;
+//       justify-content: space-between;
+//       gap: 24px;
+//       border-radius: 24px;
+//       background: linear-gradient(
+//         45deg,
+//         $color-slate-grey-3 0%,
+//         $color-slate-grey-1 100%
+//       );
+//       box-shadow: rgba(28, 32, 36, 0.4) 0px 2px 4px,
+//         rgba(28, 32, 36, 0.3) 0px 7px 13px -3px,
+//         rgba(28, 32, 36, 0.2) 0px -3px 0px inset;
+//       /*------------------ Tablet to Laptop to Desktop ------------------*/
+//       @media screen and (min-width: 768px) {
+//         padding: 32px;
+//         /*------------------ to Laptop ------------------*/
+//         @media screen and (min-width: 1024px) {
+//           width: calc(50% + 80px / 2 + 40px);
+//           /* 80px = taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
+//          40px = padding de .card
+//          */
+//           padding: 40px;
+//           gap: 40px;
+//           justify-content: flex-end;
+//         }
+//       }
+
+//       .cardInfosContainer {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 24px;
+
+//         .titlesContainer {
+//           text-transform: uppercase;
+
+//           .cardName {
+//             margin-bottom: 4px;
+//             font-size: 24px;
+//             font-weight: 700;
+//             background: radial-gradient(
+//               ellipse farthest-corner at right center,
+//               $color-primary 0%,
+//               $color-primary-dark 68%,
+//               $color-primary-dark-darker 100%
+//             );
+//             background-clip: text;
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+
+//             .line {
+//               display: block;
+//             }
+//           }
+
+//           .role {
+//             font-size: 14px;
+//             font-weight: 500;
+//             letter-spacing: 2px;
+//             color: $color-primary-dark-darker;
+//           }
+//         }
+
+//         .cardDescriptionsList {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 4px;
+
+//           .description {
+//             display: flex;
+//             align-items: center;
+//             gap: 8px;
+//             font-size: 14px;
+//             color: $color-slate-grey-12;
+
+//             .bubble {
+//               width: 8px;
+//               height: 8px;
+//               aspect-ratio: 1/1;
+//               border-radius: 50%;
+//               background-color: $color-primary;
+//               box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2), -1px 1px 2px white,
+//                 inset -1px 1px 2px rgba(28, 32, 36, 0.8);
+//             }
+//           }
+//         }
+//       }
+
+//       .cardDate {
+//         width: 60px;
+//         max-height: 80px;
+//         padding: 16px;
+//         display: flex;
+//         justify-content: center;
+//         background-color: $color-teal-6;
+//         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
+//           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
+//           0 12.5px 10px rgba(28, 32, 36, 0.06),
+//           0 22.3px 17.9px rgba(28, 32, 36, 0.072),
+//           0 41.8px 33.4px rgba(28, 32, 36, 0.086),
+//           0 100px 80px rgba(28, 32, 36, 0.12);
+//         color: $color-slate-grey-12;
+//         font-size: 14px;
+//         font-weight: 600;
+//         /*------------------ Laptop ------------------*/
+//         @media screen and (min-width: 1024px) {
+//           width: 80px;
+//           max-height: none;
+//           flex-shrink: 0;
+//         }
+//       }
+
+//       //*------------ CARTE PAIRES / IMPAIRES ------------*
+//       /*------------------ Laptop ------------------*/
+//       @media screen and (min-width: 1024px) {
+//         /*----------- CARTES PAIRES : Positionnées à droite du conteneur -----------*/
+//         &:nth-child(even) {
+//           align-self: end;
+//           flex-direction: row-reverse;
+//         }
+
+//         /*----------- CARTES IMPAIRES : Positionnées à gauche du conteneur -----------*/
+//         &:nth-child(odd) {
+//           .cardInfosContainer {
+//             text-align: right;
+
+//             .cardDescriptionsList {
+//               .description {
+//                 flex-direction: row-reverse;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// ----------------------------------------
+// .main {
+//   padding: 100px 0 64px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 64px;
+//   border: 1px solid black;
+//   /*------------------ Tablet -> Desktop ------------------*/
+//   @media screen and (min-width: 768px) {
+//     padding: 100px 0 80px;
+//     gap: 80px;
+//     /*------------------ to Desktop ------------------*/
+//     @media screen and (min-width: 1200px) {
+//       padding: 100px 0 120px;
+//       gap: 120px;
+//     }
+//   }
+
+//   .pageHeader {
+//     @include page-header;
+//   }
+
+//   .cardsSection {
+//     position: relative;
+//     width: calc(100% - 64px);
+//     max-width: 1200px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 64px;
+//     border: 1px solid red;
+//     /*------------------ Tablet -> Desktop  ------------------*/
+//     @media screen and (min-width: 768px) {
+//       width: calc(100% - 160px);
+//       gap: 80px;
+//       /*------------------ to Desktop ------------------*/
+//       @media screen and (min-width: 1200px) {
+//         gap: 120px;
+//       }
+//     }
+
+//     .card {
+//       padding: 16px;
+//       display: flex;
+//       justify-content: space-between;
+//       gap: 16px;
+//       border-radius: 16px;
+//       @include page-card-style;
+
+//       .cardInfosContainer {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 16px;
+//         border: 1px solid red;
+
+//         .titlesContainer {
+//           text-transform: uppercase;
+//           border: 1px solid orange;
+
+//           .cardName {
+//             margin-bottom: 4px;
+//             font-size: 21px;
+//             font-weight: 700;
+//             @include sub-titles-style;
+
+//             .strong {
+//               display: block;
+//               font-size: 30px;
+//             }
+//             .line {
+//               display: block;
+//             }
+//           }
+
+//           .role {
+//             font-size: 12px;
+//             font-weight: 600;
+//             letter-spacing: 2px;
+//             color: $color-teal-12;
+//             text-shadow: -0.5px 0.5px 1px rgba(28, 32, 36, 0.4),
+//               0.5px -0.5px 1px white;
+//           }
+//         }
+
+//         .cardDescriptionsList {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 4px;
+//           border: 1px solid orange;
+
+//           .description {
+//             display: flex;
+//             align-items: center;
+//             gap: 8px;
+//             @include paragraphe-text-style;
+
+//             .bubble {
+//               width: 8px;
+//               height: 8px;
+//               aspect-ratio: 1/1;
+//               border-radius: 50%;
+//               background-color: $color-primary;
+//               box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2), -1px 1px 2px white,
+//                 inset -1px 1px 2px rgba(28, 32, 36, 0.8);
+//             }
+//           }
+//         }
+//       }
+
+//       .cardDate {
+//         width: 60px;
+//         max-height: 80px;
+//         padding: 16px;
+//         display: flex;
+//         justify-content: center;
+//         background-color: $color-teal-6;
+//         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
+//           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
+//           0 12.5px 10px rgba(28, 32, 36, 0.06),
+//           0 22.3px 17.9px rgba(28, 32, 36, 0.072),
+//           0 41.8px 33.4px rgba(28, 32, 36, 0.086),
+//           0 100px 80px rgba(28, 32, 36, 0.12);
+//         color: $color-slate-grey-12;
+//         font-size: 14px;
+//         font-weight: 600;
+//       }
+//     }
+
+//     .carvedArrow {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       height: 100%;
+//       width: 40px;
+//       // border: 1px solid blue;
+//     }
+//   }
+// }
+
 .main {
   padding: 100px 0 64px;
   display: flex;
@@ -8,99 +326,60 @@
   align-items: center;
   gap: 64px;
   border: 1px solid black;
-  /*------------------ Tablet to Laptop ------------------*/
-  @media screen and (min-width: 768px) {
-    padding: 100px 0 80px;
-    gap: 80px;
-    /*------------------ Laptop ------------------*/
-    @media screen and (min-width: 1024px) {
-      padding: 100px 0 120px;
-      gap: 120px;
-    }
-  }
 
   .pageHeader {
     @include page-header;
   }
 
   .cardsSection {
+    position: relative;
     width: calc(
-      100% - 48px
-    ); // 48px = 2x 24px pour avoir un espace de 24px de chaques cotées
+      100% - 64px
+    ); // 2x 64px pour avoir un espace de 32px de chaques cotées
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /*------------------ Tablet to Laptop ------------------*/
-    @media screen and (min-width: 768px) {
-      width: calc(100% - 160px);
-      /*------------------ Laptop ------------------*/
-      @media screen and (min-width: 1024px) {
-        max-width: 1200px;
-        gap: 24px;
-      }
-    }
 
     .card {
       padding: 24px;
+      border-radius: 16px;
       display: flex;
       justify-content: space-between;
       gap: 24px;
-      border-radius: 24px;
-      background: linear-gradient(
-        45deg,
-        $color-slate-grey-3 0%,
-        $color-slate-grey-1 100%
-      );
-      box-shadow: rgba(28, 32, 36, 0.4) 0px 2px 4px,
-        rgba(28, 32, 36, 0.3) 0px 7px 13px -3px,
-        rgba(28, 32, 36, 0.2) 0px -3px 0px inset;
-      /*------------------ Tablet to Laptop to Desktop ------------------*/
-      @media screen and (min-width: 768px) {
-        padding: 32px;
-        /*------------------ to Laptop ------------------*/
-        @media screen and (min-width: 1024px) {
-          width: calc(50% + 80px / 2 + 40px);
-          /* 80px = taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
-        40px = padding de .card
-        */
-          padding: 40px;
-          gap: 40px;
-          justify-content: flex-end;
-        }
-      }
+      @include page-card-style;
 
       .cardInfosContainer {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
 
         .titlesContainer {
           text-transform: uppercase;
 
           .cardName {
             margin-bottom: 4px;
-            font-size: 24px;
+            font-size: 21px;
             font-weight: 700;
-            background: radial-gradient(
-              ellipse farthest-corner at right center,
-              $color-primary 0%,
-              $color-primary-dark 68%,
-              $color-primary-dark-darker 100%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            @include sub-titles-style;
+            word-break: break-word;
 
+            .strong {
+              display: block;
+              font-size: 25px;
+            }
             .line {
               display: block;
             }
           }
 
           .role {
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 12px;
+            font-weight: 600;
             letter-spacing: 2px;
-            color: $color-primary-dark-darker;
+            color: $color-teal-12;
+            text-shadow: -0.5px 0.5px 1px rgba(28, 32, 36, 0.4),
+              0.5px -0.5px 1px white;
           }
         }
 
@@ -113,8 +392,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 14px;
-            color: $color-slate-grey-12;
+            @include paragraphe-text-style;
 
             .bubble {
               width: 8px;
@@ -130,11 +408,12 @@
       }
 
       .cardDate {
-        width: 60px;
-        max-height: 80px;
-        padding: 16px;
+        width: 56px;
+        height: 74px;
+        padding: 12px;
         display: flex;
         justify-content: center;
+        align-items: center;
         background-color: $color-teal-6;
         box-shadow: 0 2.8px 2.2px rgba(28, 32, 36, 0.034),
           0 6.7px 5.3px rgba(28, 32, 36, 0.048),
@@ -145,36 +424,21 @@
         color: $color-slate-grey-12;
         font-size: 14px;
         font-weight: 600;
-        /*------------------ Laptop ------------------*/
-        @media screen and (min-width: 1024px) {
-          width: 80px;
-          max-height: none;
-          flex-shrink: 0;
-        }
+        text-shadow: -0.5px 0.5px 1px rgba(28, 32, 36, 0.4),
+          0.5px -0.5px 1px $color-teal-1;
       }
+    }
 
-      //*------------ CARTE PAIRES / IMPAIRES ------------*
-      /*------------------ Laptop ------------------*/
-      @media screen and (min-width: 1024px) {
-        /*----------- CARTES PAIRES : Positionnées à droite du conteneur -----------*/
-        &:nth-child(even) {
-          align-self: end;
-          flex-direction: row-reverse;
-        }
-
-        /*----------- CARTES IMPAIRES : Positionnées à gauche du conteneur -----------*/
-        &:nth-child(odd) {
-          .cardInfosContainer {
-            text-align: right;
-
-            .cardDescriptionsList {
-              .description {
-                flex-direction: row-reverse;
-              }
-            }
-          }
-        }
-      }
+    .carvedArrow {
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: calc(100% + 64px);
+      width: 40px;
+      border-radius: 16px;
+      border: 1px solid blue;
     }
   }
 }
