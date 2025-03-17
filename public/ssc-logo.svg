@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" viewBox="0 0 375 375" height="500" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Dégradés pour faciliter la modification des couleurs -->
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b0bd"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#007782"/>
+      <stop offset="100%" stop-color="#005f61"/>
+    </linearGradient>
+
+    <!-- Filtre d'ombrage -->
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- ClipPaths simplifiés -->
+    <clipPath id="clip1">
+      <path d="M187 0 H349.83 V375 H187 Z"/>
+    </clipPath>
+    <clipPath id="clip2">
+      <path d="M25.08 0 H188 V375 H25.08 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Groupe avec premier chemin et dégradé 1 -->
+  <g clip-path="url(#clip1)" filter="url(#dropshadow)">
+    <path fill="url(#gradient1)" d="M187.5 331.71875 V374.914062 L349.742188 281.242188 L349.925781 237.941406 Z 
+      M187.5 165.972656 V209.167969 L221.632812 228.875 L187.5 248.582031 V291.777344 L268.394531 245.074219 V212.679688 Z 
+      M187.5 0.125 V43.320312 L274.785156 93.710938 L240.109375 113.632812 L187.5 83.257812 V126.453125 L240.0625 156.800781 L349.742188 93.792969 Z 
+      M187.5 0.125 Z"/>
+  </g>
+
+  <!-- Groupe avec deuxième chemin et dégradé 2 -->
+  <g clip-path="url(#clip2)" filter="url(#dropshadow)">
+    <path fill="url(#gradient2)" d="M187.5 0.125 L187.40625 0.0703125 L25.074219 93.792969 V281.242188 L187.40625 374.96875 
+      L187.5 374.914062 V331.71875 L187.40625 331.769531 C161.410156 316.761719 88.480469 274.65625 62.480469 259.644531 
+      V115.390625 L187.40625 43.265625 V43.320312 Z 
+      M187.5 291.777344 V248.582031 L187.40625 248.636719 L134.476562 218.078125 L97.070312 239.675781 L187.40625 291.832031 Z 
+      M187.5 83.257812 V83.207031 L106.421875 129.960938 V162.359375 L187.5 209.167969 V165.972656 L153.183594 146.160156 
+      C153.183594 146.160156 174.601562 133.792969 187.40625 126.402344 V126.453125 Z 
+      M187.5 83.257812 Z"/>
+  </g>
+</svg>

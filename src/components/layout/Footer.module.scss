@@ -1,176 +1,164 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
-
-// .footer {
-//   border: 1px solid black;
-
-//   .thanksSection {
-//     padding-bottom: 64px; // Ajout de l'espace en bas
-//     // background-color: white;
-//     position: relative;
-//     z-index: 1;
-//     border: 1px solid red;
-
-//     .contentContainer {
-//       position: relative;
-//       z-index: 2;
-//       display: flex;
-//       flex-direction: column;
-
-//       .separator {
-//         width: 100%;
-//         height: 4px;
-//         background-color: black;
-//       }
-
-//       .thanksMessageContainer {
-//         padding: 32px;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 16px;
-
-//         .thanksMessage {
-//           font-size: 21px;
-//           font-weight: 600;
-//           text-transform: uppercase;
-//         }
-//       }
-//     }
-
-//     .layoutContainer {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//       overflow: visible; // Permettre l'ombre de dépasser
-//       z-index: 2; // S'assurer que ce conteneur est au-dessus de .carvedSection
-
-//       border: 1px solid black;
-//       // Pseudo-élément pour le drop shadow sur la coupure
-
-//       .topLayout {
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-//         border: 1px solid orange;
-//         background: linear-gradient(
-//           45deg,
-//           $color-slate-grey-6 0%,
-//           $color-slate-grey-4 50%,
-//           $color-slate-grey-2 80%
-//         );
-//         background-attachment: fixed;
-//         background-size: cover;
-//         clip-path: polygon(
-//           0 0,
-//           100% 0%,
-//           100% 100%,
-//           50% calc(100% - 64px),
-//           0% 100%
-//         );
-//         /* Note : Le clip-path s'appliquera uniquement à .topLayout et non à son pseudo-élément désormais */
-//       }
-//     }
-//   }
-
-//   .carvedSection {
-//     margin-bottom: -64px; // Annule l'espace superflu en bas du footer crée par la remontée de 64px de carvedSection
-//     padding: 32px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 32px;
-//     border: 1px solid blue;
-//     background-color: aquamarine;
-
-//     position: relative;
-//     top: -64px; // Remontée de la section pour la superposer
-
-//     .logoContainer {
-//       width: 64px;
-//       aspect-ratio: 1/1;
-//       border-radius: 50%;
-//       border: 1px solid black;
-//     }
-
-//     .navList {
-//       display: flex;
-//       flex-direction: column;
-//       gap: 8px;
-//       border: 1px solid black;
-
-//       .navItem {
-//         font-size: 12px;
-//         text-transform: uppercase;
-//         font-weight: 600;
-//       }
-//     }
-
-//     .socialIcon {
-//       display: flex;
-//       gap: 16px;
-//       .icon {
-//         width: 32px;
-//         aspect-ratio: 1/1;
-//         border-radius: 50%;
-//         border: 1px solid black;
-//       }
-//     }
-
-//     .small {
-//       text-align: center;
-//       font-size: 10px;
-//     }
-//   }
-// }
+@font-face {
+  font-family: 'brillantine';
+  src: url('../../../public/fonts/BriliantineScript.ttf') format('truetype');
+}
 
 .footer {
+  overflow: hidden;
   border: 1px solid black;
 
   .thanksSection {
-    position: relative;
     z-index: 1;
-    padding-bottom: calc(32px + 32px);
-    /* 64px = pour que la section arrive au centre du logoContainer de la carvedSection
-    32px (taille de l'espace entre le haut de carvedSection et logoContainer 
-    32px (moitiée de la hauteur du logo container)
+    position: relative;
+    padding-bottom: calc(16px + 32px);
+    /* On crée un espace en dessous de thanksNessageContainer = 
+    16px = taille de l'espace entre les deux layouts
+    32px = padding 
     */
     border: 1px solid red;
-
-    background: linear-gradient(
-      45deg,
-      $color-slate-grey-6 0%,
-      $color-slate-grey-4 50%,
-      $color-slate-grey-2 80%
-    );
-    background-attachment: fixed;
-    background-size: cover;
+    /*------------------ Tablet -> Desktop ------------------*/
+    @media screen and (min-width: 768px) {
+      padding-bottom: calc(16px + 40px);
+      /*------------------ to Desktop ------------------*/
+      @media screen and (min-width: 1200px) {
+        padding-bottom: calc(16px + 64px);
+      }
+    }
 
     .contentContainer {
-      padding: 0 32px;
+      z-index: 2;
+      position: relative;
       display: flex;
       flex-direction: column;
-      border: 1px solid black;
+      align-items: center;
+      background: linear-gradient(
+        45deg,
+        $color-slate-grey-6 0%,
+        $color-slate-grey-4 50%,
+        $color-slate-grey-2 80%
+      );
+      background-attachment: fixed; /* Le dégradé reste fixe */
+      background-size: cover; /* Le dégradé couvre l'écran */
 
       .separator {
         width: 100%;
-        height: 4px;
+        height: 1px;
         background-color: black;
       }
 
       .thanksMessageContainer {
+        padding: 32px;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 16px;
-        padding: 32px 0;
+        text-align: center;
+        /*------------------ Tablet -> Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          padding: 40px;
+          /*------------------ to Desktop ------------------*/
+          @media screen and (min-width: 1200px) {
+            padding: 64px;
+          }
+        }
 
         .thanksMessage {
-          font-size: 21px;
+          font-size: 16px;
           font-weight: 600;
           text-transform: uppercase;
+        }
+
+        .signature {
+          font-family: 'brillantine';
+          font-size: 16px;
+        }
+      }
+    }
+
+    //----------- Layouts -----------//
+    .lowerLayoutWrapper {
+      position: absolute;
+      inset: 0;
+      filter: drop-shadow(0px 4px 8px rgba(28, 32, 36, 0.95));
+      .lowerLayout {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          $color-slate-grey-8 0%,
+          $color-slate-grey-6 100%
+        );
+        clip-path: polygon(
+          0% calc(0% + 32px),
+          100% calc(0% + 32px),
+          100% 100%,
+          50% calc(100% - 32px),
+          0% 100%
+        );
+        /*------------------ Tablet -> Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          clip-path: polygon(
+            0% calc(0% + 32px),
+            100% calc(0% + 32px),
+            100% 100%,
+            50% calc(100% - 40px),
+            0% 100%
+          );
+          /*------------------ to Desktop ------------------*/
+          @media screen and (min-width: 1200px) {
+            clip-path: polygon(
+              0% calc(0% + 32px),
+              100% calc(0% + 32px),
+              100% 100%,
+              50% calc(100% - 64px),
+              0% 100%
+            );
+          }
+        }
+      }
+    }
+    .upperLayoutWrapper {
+      position: absolute;
+      inset: 0;
+      filter: drop-shadow(0px 4px 8px rgba(28, 32, 36, 0.95));
+      .upperLayout {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          $color-slate-grey-6 0%,
+          $color-slate-grey-4 50%,
+          $color-slate-grey-2 80%
+        );
+        background-attachment: fixed; /* Le dégradé reste fixe */
+        background-size: cover; /* Le dégradé couvre l'écran */
+        clip-path: polygon(
+          0% calc(0% + 32px),
+          100% calc(0% + 32px),
+          100% calc(100% - 16px),
+          50% calc(100% - 32px - 16px),
+          0% calc(100% - 16px)
+        );
+        /*------------------ Tablet -> Desktop ------------------*/
+        @media screen and (min-width: 768px) {
+          clip-path: polygon(
+            0% calc(0% + 32px),
+            100% calc(0% + 32px),
+            100% calc(100% - 16px),
+            50% calc(100% - 40px - 16px),
+            0% calc(100% - 16px)
+          );
+          /*------------------ to Desktop ------------------*/
+          @media screen and (min-width: 1200px) {
+            clip-path: polygon(
+              0% calc(0% + 32px),
+              100% calc(0% + 32px),
+              100% calc(100% - 16px),
+              50% calc(100% - 64px - 16px),
+              0% calc(100% - 16px)
+            );
+          }
         }
       }
     }
@@ -178,28 +166,41 @@
 
   .carvedSection {
     position: relative;
-    top: -64px;
-    margin-bottom: -64px; // Annule l'espace superflu en bas du footer crée par la remontée de 64px de carvedSection
+    top: -32px; // On monte la section de (padding)
+    margin-bottom: -32px; // Pour annuler l'espace perdu en bas de la section apres l'avoir monté de 32px
     padding: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-    background-color: aquamarine;
-    border: 1px solid blue;
+    background: linear-gradient(
+      45deg,
+      $color-primary-dark 0%,
+      $color-primary 100%
+    );
+    /*------------------ Tablet -> Desktop ------------------*/
+    @media screen and (min-width: 768px) {
+      top: -40px;
+      margin-bottom: -40px;
+      padding: 40px;
+      /*------------------ To Desktop ------------------*/
+      @media screen and (min-width: 1200px) {
+        top: -64px;
+        margin-bottom: -64px;
+        padding: 64px;
+      }
+    }
 
     .logoContainer {
       width: 64px;
       aspect-ratio: 1/1;
-      border-radius: 50%;
       border: 1px solid black;
-    }
-
-    .rest {
-      text-align: center;
-      width: 100%;
-      height: 100px;
-      border: 1px solid black;
+      /*------------------ Tablet -> Desktop ------------------*/
+      @media screen and (min-width: 768px) {
+        width: 80px;
+        /*------------------ To Desktop ------------------*/
+        @media screen and (min-width: 1200px) {
+        }
+      }
     }
   }
 }
