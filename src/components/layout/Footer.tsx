@@ -11,7 +11,9 @@ export default function Footer() {
         <div className={styles.contentContainer}>
           <span className={styles.separator}></span>
           <div className={styles.thanksMessageContainer}>
-            <h3 className={styles.thanksMessage}>Merci de votre visite !</h3>
+            <h3 className={`${styles.thanksMessage} ${barlow.className}`}>
+              Merci de votre visite !
+            </h3>
             <p className={styles.signature}>S.Schramiak</p>
           </div>
         </div>
@@ -20,14 +22,21 @@ export default function Footer() {
         <div className={styles.lowerLayoutWrapper}>
           <div className={styles.lowerLayout}></div>
         </div>
-
         <div className={styles.upperLayoutWrapper}>
           <div className={styles.upperLayout}></div>
         </div>
       </section>
 
       <section className={styles.carvedSection}>
-        <div className={styles.logoContainer}></div>
+        <div className={styles.logoContainer}>
+          <Image
+            className={styles.image}
+            alt="Schramiak consulting logo"
+            src={logo}
+            width={64}
+            height={64}
+          ></Image>
+        </div>
       </section>
     </footer>
   );
