@@ -207,14 +207,12 @@
 
     .social {
       display: flex;
-      gap: 16px;
-      border: 1px solid red;
+      gap: 32px;
 
       .item {
         width: 32px;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        border: 1px solid orange;
       }
     }
   }

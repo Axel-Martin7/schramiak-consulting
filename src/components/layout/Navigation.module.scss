@@ -2,11 +2,7 @@
 @import '@/styles/mixins';
 
 .footerNav {
-  border: 1px solid black;
-
   .navList {
-    border: 1px solid red;
-
     .navItem {
       display: flex;
       justify-content: center;
@@ -14,21 +10,29 @@
       border-top: 1px solid black;
       border-image: linear-gradient(
         90deg,
-        rgba(198, 53, 117, 0),
-        #fdf5ea,
-        rgba(198, 53, 117, 0)
+        rgba(0, 176, 189, 0),
+        $color-teal-9,
+        rgba(0, 176, 189, 0)
       );
       border-image-slice: 1;
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 600;
+      color: $color-primary-dark-darker;
+      text-shadow: 0.25px -0.25px 0.5px $color-slate-grey-12,
+        -0.25px 0.25px 0.5px $color-primary-light;
+      &:hover {
+        color: $color-teal-5;
+        text-shadow: 0.25px -0.25px 0.5px $color-teal-1,
+          -1px 1px 2px $color-slate-grey-12;
+      }
       &:last-child {
         border-bottom: 1px solid black;
         border-image: linear-gradient(
           90deg,
-          rgba(198, 53, 117, 0),
-          #fdf5ea,
-          rgba(198, 53, 117, 0)
+          rgba(0, 176, 189, 0),
+          $color-teal-9,
+          rgba(0, 176, 189, 0)
         );
         border-image-slice: 1;
       }

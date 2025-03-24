@@ -102,11 +102,11 @@ export const SocialIcon: FC<SocialIconProps> = ({
     gradientElements = (
       <>
         <linearGradient id={gradientId} x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#d4f0f3" />
-          <stop offset="100%" stopColor="#8ed6de" />
+          <stop offset="0%" stopColor="#beeaef" />
+          <stop offset="100%" stopColor="#6bc7d0" />
         </linearGradient>
         <linearGradient id={hoverGradientId} x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#007782" />
+          <stop offset="0%" stopColor="#003e43" />
           <stop offset="100%" stopColor="#003e43" />
         </linearGradient>
       </>
