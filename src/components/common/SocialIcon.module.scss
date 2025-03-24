@@ -21,7 +21,7 @@
     }
   }
 
-  // *----------- Variante pour "about" -----------*
+  // *----------- Variante pour "contact" -----------*
   &.contact {
     position: relative;
     width: 80px;
@@ -72,15 +72,26 @@
         box-shadow: inset -2px 12px 11px -5px $color-teal-4,
           inset 1px -3px 11px 0 rgba(0, 0, 0, 0.4);
         .iconContainer {
-          filter: drop-shadow(-1px 1px 2px #f3f7f7);
+          filter: drop-shadow(-1px 1px 2px $color-teal-1);
         }
       }
     }
 
     &:hover.contact {
       .iconContainer {
-        filter: drop-shadow(-1px 1px 2px #003e43);
+        filter: drop-shadow(-1px 1px 2px $color-teal-12);
       }
+    }
+  }
+
+  // *----------- Variante pour "Footer" -----------*
+  &.footer {
+    width: 32px; // taille adaptée pour le Footer
+    height: 32px;
+    filter: drop-shadow(-2px 2px 2px $color-slate-grey-12);
+    &:hover {
+      filter: drop-shadow(-0.5px 0.5px 0.5px $color-teal-1)
+        drop-shadow(0.5px -0.5px 0.5px $color-slate-grey-12);
     }
   }
 }

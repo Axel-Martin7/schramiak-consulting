@@ -2,7 +2,7 @@ import React, { FC, useId } from 'react';
 import styles from './SocialIcon.module.scss';
 
 type SocialIconType = 'location' | 'email' | 'whatsapp' | 'linkedin';
-type SocialIconVariant = 'about' | 'contact' | 'default';
+type SocialIconVariant = 'about' | 'contact' | 'footer' | 'default';
 
 interface SocialIconProps {
   type: SocialIconType;
@@ -23,10 +23,10 @@ const linkedinPath = `M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8
 const locationPath = `M5 9.5C5 6.09371 8.00993 3 12 3C15.9901 3 19 6.09371 19 9.5C19 11.6449 17.6877 14.0406 15.9606 16.2611C14.5957 18.016 13.0773 19.5329 12 20.5944C10.9227 19.5329 9.40427 18.016 8.03935 16.2611C6.31229 14.0406 5 11.6449 5 9.5ZM12 12.5C13.3807 12.5 14.5 11.3807 14.5 10C14.5 8.61929 13.3807 7.5 12 7.5C10.6193 7.5 9.5 8.61929 9.5 10C9.5 11.3807 10.6193 12.5 12 12.5Z`;
 
 // Type Guard pour vérifier si varient est 'about' ou 'contact'
-const isAboutOrContact = (
+const isAboutOrContactOrFooter = (
   variant: SocialIconVariant
-): variant is 'about' | 'contact' => {
-  return variant === 'about' || variant === 'contact';
+): variant is 'about' | 'contact' | 'footer' => {
+  return variant === 'about' || variant === 'contact' || variant === 'footer';
 };
 
 export const SocialIcon: FC<SocialIconProps> = ({
@@ -63,6 +63,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
   let hoverFill = 'currentColor';
   let gradientElements: JSX.Element | null = null;
 
+  // *--------------- ABOUT ---------------*
   if (variant === 'about') {
     gradientElements = (
       <>
@@ -78,6 +79,8 @@ export const SocialIcon: FC<SocialIconProps> = ({
     );
     fillValue = `url(#${gradientId})`;
     hoverFill = `url(#${hoverGradientId})`;
+
+    // *--------------- CONTACT---------------*
   } else if (variant === 'contact') {
     gradientElements = (
       <>
@@ -88,6 +91,23 @@ export const SocialIcon: FC<SocialIconProps> = ({
         <linearGradient id={hoverGradientId} x1="1" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#f3f7f7" />
           <stop offset="100%" stopColor="#beeaef" />
+        </linearGradient>
+      </>
+    );
+    fillValue = `url(#${gradientId})`;
+    hoverFill = `url(#${hoverGradientId})`;
+
+    // *--------------- FOOTER --------------*
+  } else if (variant === 'footer') {
+    gradientElements = (
+      <>
+        <linearGradient id={gradientId} x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d4f0f3" />
+          <stop offset="100%" stopColor="#8ed6de" />
+        </linearGradient>
+        <linearGradient id={hoverGradientId} x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#007782" />
+          <stop offset="100%" stopColor="#003e43" />
         </linearGradient>
       </>
     );
@@ -117,7 +137,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
       aria-label={ariaLabel}
       className={linkClass}
       style={
-        isAboutOrContact(variant)
+        isAboutOrContactOrFooter(variant)
           ? ({
               '--fill': fillValue,
               '--hover-fill': hoverFill,
@@ -140,7 +160,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
         </div>
       ) : (
         <svg viewBox="0 0 24 24" className={svgClass}>
-          {isAboutOrContact(variant) && <defs>{gradientElements}</defs>}
+          {isAboutOrContactOrFooter(variant) && <defs>{gradientElements}</defs>}
           {/* On dessine le path avec fill via variable CSS */}
           <path d={d} fill="var(--fill)" />
         </svg>

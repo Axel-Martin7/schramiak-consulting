@@ -6,6 +6,7 @@ import logo2 from '../../../public/ssc-logo2.svg';
 import { barlow } from '@/styles/font';
 import Navigation from './Navigation';
 import Logo from '../common/Logo';
+import { SocialIcon } from '../common/SocialIcon';
 
 export default function Footer() {
   return (
@@ -30,29 +31,12 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className={styles.carvedSection}>
-        {/* <div className={styles.logoContainer}>
-          <Image
-            className={styles.logo2}
-            alt="Schramiak consulting logo"
-            src={logo2}
-            width={80}
-            height={80}
-          ></Image>
-
-          <small className={styles.logoCaption}>Consulting</small>
-        </div> */}
+      {/* <section className={styles.carvedSection}>
+      
         <Logo variant="footerLogo" />
 
         <div className={styles.navContainer}>
-          {/* <nav className={styles.nav}>
-            <div className={styles.item}>HOME</div>
-            <div className={styles.item}>ABOUT</div>
-            <div className={styles.item}>PARCOUR</div>
-            <div className={styles.item}>SERVICES</div>
-            <div className={styles.item}>REALISATIONS</div>
-            <div className={styles.item}>CONTACT</div>
-          </nav> */}
+        
 
           <div className={styles.navComponent}>
             <Navigation variant="footerNav" />
@@ -64,6 +48,47 @@ export default function Footer() {
             <div className={styles.item}></div>
             <div className={styles.item}></div>
           </div>
+        </div>
+
+        <p className={styles.small}>Developped by Axel Martin</p>
+      </section> */}
+
+      <section className={styles.carvedSection}>
+        <Logo variant="footerLogo" />
+
+        <Navigation variant="footerNav" />
+
+        {/* <div className={styles.social}>
+          <div className={styles.item}></div>
+          <div className={styles.item}></div>
+          <div className={styles.item}></div>
+          <div className={styles.item}></div>
+        </div> */}
+        <div className={styles.social}>
+          <SocialIcon
+            type="location"
+            href="https://example.com/location"
+            variant="footer" // nouvelle variante pour le Footer
+            ariaLabel="View location"
+          />
+          <SocialIcon
+            type="email"
+            href="mailto:contact@example.com"
+            variant="footer"
+            ariaLabel="Send an email"
+          />
+          <SocialIcon
+            type="whatsapp"
+            href="https://wa.me/123456789"
+            variant="footer"
+            ariaLabel="Chat on WhatsApp"
+          />
+          <SocialIcon
+            type="linkedin"
+            href="https://linkedin.com/company/your-company"
+            variant="footer"
+            ariaLabel="Visit LinkedIn"
+          />
         </div>
 
         <p className={styles.small}>Developped by Axel Martin</p>
