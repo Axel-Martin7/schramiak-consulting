@@ -142,3 +142,8 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
+a {
+  color: inherit; // Hérite de la couleur définie par le conteneur (.footerNav)
+  text-decoration: none; // Supprime le soulignement par défaut
+}
