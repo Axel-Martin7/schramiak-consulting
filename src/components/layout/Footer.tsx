@@ -1,8 +1,5 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-import Image from 'next/image';
-import logo from '../../../public/ssc-logo.svg';
-import logo2 from '../../../public/ssc-logo2.svg';
 import { barlow } from '@/styles/font';
 import Navigation from './Navigation';
 import Logo from '../common/Logo';
@@ -31,40 +28,12 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* <section className={styles.carvedSection}>
-      
-        <Logo variant="footerLogo" />
-
-        <div className={styles.navContainer}>
-        
-
-          <div className={styles.navComponent}>
-            <Navigation variant="footerNav" />
-          </div>
-
-          <div className={styles.social}>
-            <div className={styles.item}></div>
-            <div className={styles.item}></div>
-            <div className={styles.item}></div>
-            <div className={styles.item}></div>
-          </div>
-        </div>
-
-        <p className={styles.small}>Developped by Axel Martin</p>
-      </section> */}
-
       <section className={styles.carvedSection}>
         <Logo variant="footerLogo" />
 
         <Navigation variant="footerNav" />
 
-        {/* <div className={styles.social}>
-          <div className={styles.item}></div>
-          <div className={styles.item}></div>
-          <div className={styles.item}></div>
-          <div className={styles.item}></div>
-        </div> */}
-        <div className={styles.social}>
+        <div className={styles.socialItemsContainer}>
           <SocialIcon
             type="location"
             href="https://example.com/location"
@@ -91,7 +60,17 @@ export default function Footer() {
           />
         </div>
 
-        <p className={styles.small}>Developped by Axel Martin</p>
+        <small className={styles.credit}>
+          Développé par{' '}
+          <a
+            href="https://votresiteexemple.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.creditLink}
+          >
+            Axel Martin
+          </a>
+        </small>
       </section>
     </footer>
   );
