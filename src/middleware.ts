@@ -11,7 +11,7 @@ export default createMiddleware({
   // Liste de toutes les locales qui sont supportées
   locales,
   // Utilisé lorsqu'aucune locale ne correspond
-  defaultLocale: 'en',
+  defaultLocale: 'fr',
 });
 
 export const config = {
