@@ -7,14 +7,14 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
-  /*------------------ Tablet -> Laptop ------------------*/
+  /*------------------ Tablet -> Desktop ------------------*/
   @media screen and (min-width: 768px) {
-    padding: 100px 0 80px;
-    gap: 80px;
+    padding: 100px 0 96px;
+    gap: 96px;
     /*------------------ to Laptop ------------------*/
-    @media screen and (min-width: 1024px) {
-      padding: 100px 0 120px;
-      gap: 120px;
+    @media screen and (min-width: 1200px) {
+      padding: 100px 0 128px;
+      gap: 128px;
     }
   }
 
@@ -31,9 +31,13 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /*------------------ Tablet ------------------*/
+    /*------------------ Tablet -> Desktop ------------------*/
     @media screen and (min-width: 768px) {
-      width: calc(100% - 160px);
+      width: calc(100% - 96px);
+      /*------------------ to Desktop ------------------*/
+      @media screen and (min-width: 1200px) {
+        width: calc(100% - 128px);
+      }
     }
 
     .card {
@@ -43,18 +47,20 @@
       justify-content: space-between;
       gap: 24px;
       @include page-card-style;
-      /*------------------ Tablet -> Laptop ------------------*/
-      @media screen and (min-width: 768px) {
-        padding: 40px;
-        /*------------------ to Laptop ------------------*/
-        @media screen and (min-width: 1024px) {
-          width: calc(50% + 56px / 2 + 40px);
-          /* 80px = taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
-          40px = padding de .card
+      /*------------------ to Laptop ------------------*/
+      @media screen and (min-width: 1024px) {
+        width: calc(50% + 56px / 2 + 24px);
+        /*  taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
+          24px = padding de .card
           */
-          padding: 40px;
-          gap: 40px;
-          justify-content: flex-end;
+        padding: 24px;
+        gap: 24px;
+        justify-content: flex-end;
+        /*------------------ to Laptop ------------------*/
+        @media screen and (min-width: 1200px) {
+          width: calc(50% + 56px / 2 + 32px);
+          padding: 32px;
+          gap: 32px;
         }
       }
 
@@ -62,14 +68,6 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        /*------------------ Tablet -> Laptop ------------------*/
-        @media screen and (min-width: 768px) {
-          gap: 20px;
-          /*------------------ to Laptop ------------------*/
-          @media screen and (min-width: 1024px) {
-            gap: 24px;
-          }
-        }
 
         .titlesContainer {
           text-transform: uppercase;
@@ -117,7 +115,8 @@
               aspect-ratio: 1/1;
               border-radius: 50%;
               background-color: $color-primary;
-              box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2), -1px 1px 2px white,
+              box-shadow: 1px -1px 2px rgba(28, 32, 36, 0.2),
+                -1px 1px 2px $color-teal-1,
                 inset -1px 1px 2px rgba(28, 32, 36, 0.8);
             }
           }
@@ -126,7 +125,7 @@
 
       .cardDate {
         width: 56px;
-        height: 74px;
+        height: 72px;
         padding: 12px;
         display: flex;
         justify-content: center;
@@ -193,9 +192,9 @@
 
       /*------------------ Tablet -> Laptop ------------------*/
       @media screen and (min-width: 768px) {
-        right: 52px;
-        /* 52 = 24px + 28px - 8px 
-        40 = padding carte,
+        right: 36px;
+        /* 36 = 24px + 28px - 16px 
+        24= padding carte,
         28 = 56/2 (56= taille du post-it)
         16 = taille de la fleche
         */
