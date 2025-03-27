@@ -30,10 +30,11 @@
     gap: 64px;
     /*------------------ Tablet -> Desktop  ------------------*/
     @media screen and (min-width: 768px) {
-      width: calc(100% - 160px);
+      width: calc(100% - 96px);
       gap: 96px;
       /*------------------ to Desktop ------------------*/
       @media screen and (min-width: 1200px) {
+        width: calc(100% - 128px);
         gap: 128px;
       }
     }
@@ -88,7 +89,7 @@
           @include page-card-style;
           /*------------------ to Desktop ------------------*/
           @media screen and (min-width: 1200px) {
-            padding: 40px;
+            padding: 32px;
           }
         }
         .projectName {
@@ -107,7 +108,7 @@
           @include page-card-style;
           /*------------------ to Desktop ------------------*/
           @media screen and (min-width: 1200px) {
-            padding: 40px;
+            padding: 32px;
           }
         }
 
@@ -144,7 +145,7 @@
                 -1px 1px 2px rgba(28, 32, 36, 0.6);
               /*------------------ to Desktop ------------------*/
               @media screen and (min-width: 1200px) {
-                padding: 40px;
+                padding: 32px;
               }
             }
           }
@@ -173,7 +174,7 @@
             flex: 1;
             /*------------------ to Desktop ------------------*/
             @media screen and (min-width: 1200px) {
-              padding: 40px;
+              padding: 32px;
               gap: 24px;
             }
           }
