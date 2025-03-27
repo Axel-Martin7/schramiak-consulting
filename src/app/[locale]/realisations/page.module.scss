@@ -9,12 +9,12 @@
   gap: 64px;
   /*------------------ Tablet -> Desktop ------------------*/
   @media screen and (min-width: 768px) {
-    padding: 100px 0 80px;
-    gap: 80px;
+    padding: 100px 0 96px;
+    gap: 96px;
     /*------------------ to Desktop ------------------*/
     @media screen and (min-width: 1200px) {
-      padding: 100px 0 120px;
-      gap: 120px;
+      padding: 100px 0 128px;
+      gap: 128px;
     }
   }
 
@@ -31,10 +31,10 @@
     /*------------------ Tablet -> Desktop  ------------------*/
     @media screen and (min-width: 768px) {
       width: calc(100% - 160px);
-      gap: 80px;
+      gap: 96px;
       /*------------------ to Desktop ------------------*/
       @media screen and (min-width: 1200px) {
-        gap: 120px;
+        gap: 128px;
       }
     }
 
