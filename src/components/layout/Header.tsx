@@ -40,6 +40,15 @@ export default function Header() {
 
         <div className={styles.burgerMenu}></div>
 
+        <div className={styles.navigationContainer}>
+          <div className={styles.item}>About</div>
+          <div className={styles.item}>About</div>
+          <div className={styles.item}>About</div>
+          <div className={styles.item}>About</div>
+          <div className={styles.item}>About</div>
+          <div className={styles.item}>About</div>
+        </div>
+
         <div className={styles.switcherContainer}>
           <div className={styles.switcher}></div>
         </div>
