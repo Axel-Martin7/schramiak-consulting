@@ -79,23 +79,98 @@
 //   }
 // }
 
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
 .header {
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid black;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
 
-  .burgerContainer {
-    border: 1px solid red;
-    width: 96px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-  }
+  .contentContainer {
+    position: relative;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      45deg,
+      $color-slate-grey-2 0%,
+      $color-slate-grey-1 80%
+    );
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 5px;
+      transform: rotate(-2deg);
+      transform-origin: left bottom;
+      box-shadow: 0px 5px 10px $color-slate-grey-12;
+      /*------------------ Tablet -> Desktop ------------------*/
+      @media (min-width: 768px) {
+        transform: rotate(-1deg);
+        /*------------------ to Desktop ------------------*/
+        @media (min-width: 1280px) {
+          transform: rotate(-0.5deg);
+        }
+      }
+    }
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 6px;
+      transform: rotate(2deg);
+      transform-origin: right bottom;
+      box-shadow: 0px 5px 10px $color-slate-grey-12;
+      /*------------------ Tablet -> Desktop ------------------*/
+      @media (min-width: 768px) {
+        transform: rotate(1deg);
+        /*------------------ to Desktop ------------------*/
+        @media (min-width: 1200px) {
+          transform: rotate(0.5deg);
+        }
+      }
+    }
 
-  .switcherContainer {
-    width: 64px;
-    aspect-ratio: 1/1;
-    border: 1px solid black;
+    .logoContainer {
+      flex: 1;
+      border: 1px solid orange;
+
+      .logo {
+        border: 1px solid black;
+        width: 48px;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    .burgerMenu {
+      width: 64px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: 1px solid black;
+      /*------------------ Tablet ------------------*/
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    .switcherContainer {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      border: 1px solid orange;
+
+      .switcher {
+        border: 1px solid black;
+        width: 80px;
+        height: 16px;
+      }
+    }
   }
 }

@@ -1,6 +1,21 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+.headerLogo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  // filter: drop-shadow(-2px 2px 2px $color-slate-grey-12);
+
+  .logoCaption {
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4.3px;
+    // color: $color-teal-4;
+  }
+}
+
 .footerLogo {
   display: flex;
   flex-direction: column;
