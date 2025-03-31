@@ -8,37 +8,38 @@ import Logo from '../common/Logo';
 
 export default function Header() {
   return (
-    //  <header className={styles.header}>
-    //    <div className={styles.headerContentContainer}>
-    //      <section className={styles.logoBtnContainer}>
-    //        <Link href={'/'}>
-    //          <p>Logo Home</p>
-    //        </Link>
-    //      </section>
+    // <header className={styles.header}>
+    //   <div className={styles.contentContainer}>
+    //     <div className={styles.logoContainer}>
+    //       <Logo variant="headerLogo" />
+    //     </div>
 
-    //      {/* Burger Menu visible uniquement sur mobile */}
-    //      <section className={styles.burgerMenuMobile}>
-    //        <BurgerMenu />
-    //      </section>
+    //     <div className={styles.burgerMenu}></div>
 
-    //      {/* Navbar desktop visible uniquement sur les grands écrans */}
-    //      <section className={styles.navBarDesktop}>
-    //        <Navigation />
-    //      </section>
+    //     <div className={styles.navigationContainer}>
+    //       <div className={styles.item}>About</div>
+    //       <div className={styles.item}>About</div>
+    //       <div className={styles.item}>About</div>
+    //       <div className={styles.item}>About</div>
+    //       <div className={styles.item}>About</div>
+    //       <div className={styles.item}>About</div>
+    //     </div>
 
-    //      <section className={styles.languageSwitcherContainer}>
-    //        <LocaleSwitcher />
-    //      </section>
-    //    </div>
-    //  </header>
+    //     <div className={styles.switcherContainer}>
+    //       <div className={styles.switcher}></div>
+    //     </div>
+    //   </div>
+    // </header>
 
     <header className={styles.header}>
-      <div className={styles.contentContainer}>
+      <div className={styles.headerRibbon}>
         <div className={styles.logoContainer}>
-          <div className={styles.logo}></div>
+          <Logo variant="headerLogo" />
         </div>
 
-        <div className={styles.burgerMenu}></div>
+        <div className={styles.burgerContainer}>
+          <div className={styles.burger}></div>
+        </div>
 
         <div className={styles.navigationContainer}>
           <div className={styles.item}>About</div>

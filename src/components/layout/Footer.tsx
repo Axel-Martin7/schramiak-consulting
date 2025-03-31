@@ -29,7 +29,7 @@ export default function Footer() {
       </section>
 
       <section className={styles.carvedSection}>
-        <Logo variant="footerLogo" width={96} height={96} />
+        <Logo variant="footerLogo" />
 
         <div className={styles.navigationContainer}>
           <Navigation variant="footerNav" />

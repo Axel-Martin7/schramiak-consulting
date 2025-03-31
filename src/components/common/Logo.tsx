@@ -3,24 +3,20 @@ import styles from './Logo.module.scss';
 
 interface LogoProps {
   variant: 'footerLogo' | 'headerLogo';
-  width?: number;
-  height?: number;
 }
 
-export default function Logo({ variant, width = 64, height = 64 }: LogoProps) {
+export default function Logo({ variant }: LogoProps) {
   const id = useId(); // Hook pour générer un ID unique pour le dégradé de chaque instance
   const gradientId = `grad-${id}`;
   const gradientColors =
     variant === 'headerLogo'
-      ? { start: '#FF5733', end: '#C70039' } // couleurs pour le Header
+      ? { start: '#00b0bd', end: '#007782' } // couleurs pour le Header
       : { start: '#d4f0f3', end: '#8ed6de' }; // couleurs pour le Footer
 
   return (
     <div className={`${styles.logoContainer} ${styles[variant]}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
         viewBox="0 0 375 375"
         preserveAspectRatio="xMidYMid meet"
       >

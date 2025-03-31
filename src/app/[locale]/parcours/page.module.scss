@@ -12,7 +12,7 @@
     padding: 100px 0 96px;
     gap: 96px;
     /*------------------ to Laptop ------------------*/
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       padding: 100px 0 128px;
       gap: 128px;
     }
@@ -35,7 +35,7 @@
     @media screen and (min-width: 768px) {
       width: calc(100% - 96px);
       /*------------------ to Desktop ------------------*/
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1280px) {
         width: calc(100% - 128px);
       }
     }
@@ -47,7 +47,7 @@
       justify-content: space-between;
       gap: 24px;
       @include page-card-style;
-      /*------------------ to Laptop ------------------*/
+      /*------------------ Laptop -> Desktop ------------------*/
       @media screen and (min-width: 1024px) {
         width: calc(50% + 56px / 2 + 24px);
         /*  taille de .cardDate divisé par 2 pour que les dates soitenet parfaitement alignées verticaement
@@ -56,7 +56,7 @@
         padding: 24px;
         gap: 24px;
         justify-content: flex-end;
-        /*------------------ to Laptop ------------------*/
+        /*------------------ to Desktop ------------------*/
         @media screen and (min-width: 1200px) {
           width: calc(50% + 56px / 2 + 32px);
           padding: 32px;
@@ -189,7 +189,6 @@
       );
       box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
         inset -2px 2px 4px rgba(28, 32, 36, 0.8);
-
       /*------------------ Tablet -> Laptop ------------------*/
       @media screen and (min-width: 768px) {
         right: 36px;
