@@ -51,7 +51,7 @@ export default function Header() {
         </div>
 
         <div className={styles.switcherContainer}>
-          <div className={styles.switcher}></div>
+          <LocaleSwitcher />
         </div>
       </div>
     </header>
