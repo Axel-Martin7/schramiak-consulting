@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { Link } from '@/navigation';
-import Navigation from '../Navigation/Navigation';
-import BurgerMenu from '../Header/BurgerMenu/BurgerMenu';
-import LocaleSwitcher from '../Header/LocaleSwitcher/LocaleSwitcher';
+import LocaleSwitcher from '../common/LocaleSwitcher/LocaleSwitcher';
 import Logo from '../common/Logo';
+import BurgerMenu from '../common/BurgerMenu';
 
 export default function Header() {
   return (
@@ -38,7 +37,7 @@ export default function Header() {
         </div>
 
         <div className={styles.burgerContainer}>
-          <div className={styles.burger}></div>
+          <BurgerMenu />
         </div>
 
         <div className={styles.navigationContainer}>
