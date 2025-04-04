@@ -6,21 +6,91 @@
   height: 64px;
   padding: 8px;
   border-radius: 50%;
-  box-shadow: inset 0 0 2px rgba(28, 32, 36, 0.1),
-    inset -2px 2px 6px rgba(28, 32, 36, 0.3), 2px -2px 6px rgba(28, 32, 36, 0.1),
-    -2px 2px 4px white;
+  box-shadow: inset 0 0 2px rgba(28, 32, 36, 0.4),
+    inset -2px 2px 6px rgba(28, 32, 36, 0.6),
+    2px -2px 6px rgba(28, 32, 36, 0.15), -2px 2px 4px white;
 
   .burgerButton {
     width: 100%;
     height: 100%;
+    padding: 16px; // Zone interne de 32px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
     border-radius: inherit;
     background: linear-gradient(
       45deg,
-      $color-slate-grey-3 0%,
-      $color-slate-grey-2 100%
+      $color-slate-grey-2 0%,
+      $color-slate-grey-1 100%
     );
     box-shadow: 0 0 2px rgba(28, 32, 36, 0.2), inset -2px 2px 3px white,
-      inset 2px -2px 2px rgba(28, 32, 36, 0.15),
-      -2px 2px 6px rgba(28, 32, 36, 0.5);
+      inset 2px -2px 2px rgba(28, 32, 36, 0.2),
+      -2px 2px 6px rgba(28, 32, 36, 0.8);
+    cursor: pointer;
+    transition: background 0.5s, box-shadow 0.5s;
+
+    .burgerLinesContainer {
+      position: relative; // Nécessaire pour postionner les lignes en mode "open"
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      transition: transform 0.5s;
+
+      .line {
+        width: 100%;
+        height: 2px;
+        background-color: $color-slate-grey-8;
+        border-radius: 2px;
+        box-shadow: inset -0.25px 0.25px 0.5px rgba(28, 32, 36, 0.8),
+          inset 0.25px -0.25px 0.5px white;
+        transition: transform 0.5s ease, opacity 0.5s ease, width 0.5s ease;
+      }
+
+      &.open {
+        transform: rotate(180deg); // Rotation globale du conteneur
+        .line:nth-child(1) {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%) rotate(45deg);
+          width: 100%; // Limité à 32px (la zone interne)
+        }
+        .line:nth-child(2) {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+        .line:nth-child(3) {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%) rotate(-45deg);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //*---------- Effet pressé temporaire appliqué sur le bouton -----------*//
+  .pressed {
+    background: linear-gradient(
+      45deg,
+      $color-slate-grey-2 0%,
+      $color-slate-grey-3 100%
+    );
+    box-shadow: -2px 2px 6px rgba(28, 32, 36, 0.2),
+      inset 0 0 1px rgba(28, 32, 36, 0.6),
+      inset -2px 2px 3px rgba(28, 32, 36, 0.2), -2px 2px 3px white;
+  }
+
+  &:hover {
+    .burgerLinesContainer {
+      .line {
+        background-color: #00b0bd; // Remplacez #FF0000 par la couleur désirée
+        transition: background-color 0.5s ease; // Optionnel : pour animer la transition
+      }
+    }
   }
 }
