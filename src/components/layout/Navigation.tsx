@@ -30,7 +30,9 @@ export default function Navigation({ variant }: NavigationProps) {
         </li>
 
         <li className={styles.navItem}>
-          <Link href="/">Mes réalisations</Link>
+          <Link href={'/realisations'} title="Learn more about us">
+            Mes réalisations
+          </Link>
         </li>
 
         <li className={styles.navItem}>
