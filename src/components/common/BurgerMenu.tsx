@@ -44,6 +44,14 @@ export default function BurgerMenu() {
   };
 
   /*-------------------------------*
+  //* FERMETURE DU MENU LORS D'UN CLIC SUR UN LIEN
+  // Cette fonction sera transmise au composant Navigation
+  *-------------------------------*/
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  /*-------------------------------*
   //* RENDU DU COMPOSANT
   //- Bouton burger
   //- Panneau déroulant via un portal (uniquement coté client)
@@ -73,7 +81,10 @@ export default function BurgerMenu() {
           <div
             className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}
           >
-            <Navigation variant="headerMobileNav" />
+            <Navigation
+              variant="headerMobileNav"
+              onLinkClick={handleLinkClick}
+            />
 
             <div className={styles.socialContainer}>
               <div className={styles.item}></div>

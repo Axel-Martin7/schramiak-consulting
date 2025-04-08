@@ -4,9 +4,10 @@ import { Link } from '@/navigation';
 
 interface NavigationProps {
   variant: 'footerNav' | 'headerMobileNav' | 'headerNav';
+  onLinkClick?: () => void; // Exécute l'action de fermer le panneau déroulant du burger apres avoir cliqué sur un lien.
 }
 
-export default function Navigation({ variant }: NavigationProps) {
+export default function Navigation({ variant, onLinkClick }: NavigationProps) {
   return (
     <nav
       className={`${styles.navigation} ${styles[variant]}`}
@@ -14,7 +15,9 @@ export default function Navigation({ variant }: NavigationProps) {
     >
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/">Accueil</Link>
+          <Link href="/" title="Learn more about us" onClick={onLinkClick}>
+            Accueil
+          </Link>
         </li>
 
         <li className={styles.navItem}>
@@ -30,7 +33,11 @@ export default function Navigation({ variant }: NavigationProps) {
         </li>
 
         <li className={styles.navItem}>
-          <Link href={'/realisations'} title="Learn more about us">
+          <Link
+            href={'/realisations'}
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
             Mes réalisations
           </Link>
         </li>

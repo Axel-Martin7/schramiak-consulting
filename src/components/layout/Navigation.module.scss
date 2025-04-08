@@ -3,17 +3,14 @@
 
 //*------------ VARIANT POUR LA NAVIGATION MOBILE DANS LE HEADER ----------*
 .headerMobileNav {
-  border: 1px solid blue;
-
   .navList {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    border: 1px solid red;
 
     .navItem {
-      width: 50%;
+      width: clamp(150px, 50%, 50%);
       height: 56px;
       display: flex;
       justify-content: center;
