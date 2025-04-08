@@ -3,7 +3,7 @@ import styles from './Navigation.module.scss';
 import { Link } from '@/navigation';
 
 interface NavigationProps {
-  variant: 'footerNav' | 'headerNav';
+  variant: 'footerNav' | 'headerMobileNav' | 'headerNav';
 }
 
 export default function Navigation({ variant }: NavigationProps) {

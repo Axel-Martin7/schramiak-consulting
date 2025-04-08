@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './BurgerMenu.module.scss';
 import { createPortal } from 'react-dom';
+import Navigation from '../layout/Navigation';
 
 export default function BurgerMenu() {
   const [pressed, setPressed] = useState(false); //              Pour l'effet visuel "pressé" sur le bouton.
@@ -72,12 +73,14 @@ export default function BurgerMenu() {
           <div
             className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}
           >
-            <nav className={styles.mobileNav}>
-              <a href="#">Lien 1</a>
-              <a href="#">Lien 2</a>
-              <a href="#">Lien 3</a>
-              <a href="#">Lien 4</a>
-            </nav>
+            <Navigation variant="headerMobileNav" />
+
+            <div className={styles.socialContainer}>
+              <div className={styles.item}></div>
+              <div className={styles.item}></div>
+              <div className={styles.item}></div>
+              <div className={styles.item}></div>
+            </div>
           </div>,
           document.body
         )}

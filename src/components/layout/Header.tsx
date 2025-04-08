@@ -4,6 +4,8 @@ import LocaleSwitcher from '../common/LocaleSwitcher/LocaleSwitcher';
 import Logo from '../common/Logo';
 import BurgerMenu from '../common/BurgerMenu';
 
+import Navigation from '../layout/Navigation';
+
 export default function Header() {
   return (
     <header className={styles.header}>
@@ -17,12 +19,7 @@ export default function Header() {
         </div>
 
         <div className={styles.navigationContainer}>
-          <div className={styles.item}>About</div>
-          <div className={styles.item}>About</div>
-          <div className={styles.item}>About</div>
-          <div className={styles.item}>About</div>
-          <div className={styles.item}>About</div>
-          <div className={styles.item}>About</div>
+          <Navigation variant="headerNav" />
         </div>
 
         <div className={styles.switcherContainer}>

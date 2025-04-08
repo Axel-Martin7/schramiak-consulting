@@ -95,37 +95,48 @@
   }
 }
 
+//*---------- PANNEAU DEROULANT -------------*
 .dropdownPanel {
   z-index: 900; // Doit être inférieur au z-index du Header (1000)
   position: fixed;
-  top: 80px; // Ajustez cette valeur selon la hauteur effective de votre Header
+  top: 80px; // Taille du header
   left: 0;
   right: 0;
   bottom: 0;
-
-  transform: translateY(-100%);
   height: calc(100vh - 80px);
+  transform: translateY(-100%);
   transform-origin: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #fff;
 
   transition: transform 0.5s ease;
-  overflow: auto;
   overflow: hidden;
+  border: 1px solid black;
 
   &.open {
     transform: translateY(0);
   }
-}
 
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid red;
+  }
 
-  a {
-    margin: 8px 0;
-    text-decoration: none;
-    color: $color-slate-grey-12;
+  .socialContainer {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+
+    .item {
+      width: 32px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
   }
 }

@@ -1,6 +1,17 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+//*------------ VARIANT POUR LA NAVIGATION MOBILE DANS LE HEADER ----------*
+.headerMobileNav {
+  border: 1px solid orange;
+}
+
+//*------------ VARIANT POUR LA NAVIGATION DESKTOP DANS LE HEADER ----------*
+.headerNav {
+  border: 1px solid blue;
+}
+
+//*------------ VARIANT POUR LA NAVIGATION DANS LE FOOTER ----------*
 .footerNav {
   .navList {
     /*------------------ Tablet ------------------*/
