@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './BurgerMenu.module.scss';
 import { createPortal } from 'react-dom';
 import Navigation from '../layout/Navigation';
+import { SocialIcon } from './SocialIcon';
 
 export default function BurgerMenu() {
   const [pressed, setPressed] = useState(false); //              Pour l'effet visuel "pressé" sur le bouton.
@@ -87,10 +88,31 @@ export default function BurgerMenu() {
             />
 
             <div className={styles.socialContainer}>
-              <div className={styles.item}></div>
-              <div className={styles.item}></div>
-              <div className={styles.item}></div>
-              <div className={styles.item}></div>
+              <SocialIcon
+                type="linkedin"
+                href="https://linkedin.com/company/your-company"
+                variant="default"
+                ariaLabel="Visit LinkedIn"
+              />
+
+              <SocialIcon
+                type="location"
+                href="https://example.com/location"
+                variant="default"
+                ariaLabel="View location"
+              />
+              <SocialIcon
+                type="email"
+                href="mailto:contact@example.com"
+                variant="default"
+                ariaLabel="Send an email"
+              />
+              <SocialIcon
+                type="whatsapp"
+                href="https://wa.me/123456789"
+                variant="default"
+                ariaLabel="Chat on WhatsApp"
+              />
             </div>
           </div>,
           document.body

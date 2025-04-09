@@ -10,8 +10,10 @@
     gap: 16px;
 
     .navItem {
-      width: clamp(150px, 50%, 50%);
-      height: 56px;
+      width: 208px; /* 208 = 
+      4x 40px -> Taille de chaque bouton de socialMedia
+      + 16x3 = gap entre les boutons de socialMedia */
+      height: 48px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,13 +31,11 @@
       cursor: pointer;
       transition: all 0.2s ease;
       outline: none;
-
       // Cible les éléments internes pour leurs appliquer une transition transform.
       // Cela permet d'affeter uniquement le contenu
       > * {
         transition: transform 0.2s ease;
       }
-
       // État au survol : modification de la box-shadow et légère réduction de l'échelle du contenu
       &:hover:not([disabled]) {
         box-shadow: 0px 4px 3px 1px $color-slate-grey-1,
@@ -46,7 +46,6 @@
           transform: scale(0.975);
         }
       }
-
       // État actif (clic) : effet d'enfoncement renforcé et réduction plus marquée
       &:active:not([disabled]) {
         box-shadow: 0px 4px 3px 1px $color-slate-grey-1,
@@ -57,6 +56,10 @@
         > * {
           transform: scale(0.95);
         }
+      }
+      /*------------------ Mobile grand format ------------------*/
+      @media (min-width: 498px) {
+        width: 50%;
       }
     }
   }
