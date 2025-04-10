@@ -75,21 +75,6 @@
       }
     }
 
-    .burgerContainer {
-      // border: 1px solid red;
-      /*------------------ Tablet ------------------*/
-      @media screen and (min-width: 768px) {
-        display: none;
-      }
-
-      .burger {
-        width: 64px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        border: 1px solid black;
-      }
-    }
-
     .navigationContainer {
       display: none;
       /*------------------ Tablet -> Desktop ------------------*/

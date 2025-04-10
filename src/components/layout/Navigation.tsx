@@ -15,25 +15,52 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
     >
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/" title="Learn more about us" onClick={onLinkClick}>
+          <Link
+            className={styles.link}
+            href="/"
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
             Accueil
           </Link>
         </li>
 
         <li className={styles.navItem}>
-          <Link href="/">A propos</Link>
-        </li>
-
-        <li className={styles.navItem}>
-          <Link href="/">Mon Parcours</Link>
-        </li>
-
-        <li className={styles.navItem}>
-          <Link href="/">Mes services</Link>
+          <Link
+            className={styles.link}
+            href={'/realisations'}
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
+            A propos
+          </Link>
         </li>
 
         <li className={styles.navItem}>
           <Link
+            className={styles.link}
+            href={'/realisations'}
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
+            Mon Parcours
+          </Link>
+        </li>
+
+        <li className={styles.navItem}>
+          <Link
+            className={styles.link}
+            href={'/realisations'}
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
+            Mes services
+          </Link>
+        </li>
+
+        <li className={styles.navItem}>
+          <Link
+            className={styles.link}
             href={'/realisations'}
             title="Learn more about us"
             onClick={onLinkClick}
@@ -43,7 +70,14 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         </li>
 
         <li className={styles.navItem}>
-          <Link href="/">Contact</Link>
+          <Link
+            className={styles.link}
+            href={'/realisations'}
+            title="Learn more about us"
+            onClick={onLinkClick}
+          >
+            Contact
+          </Link>
         </li>
       </ul>
     </nav>

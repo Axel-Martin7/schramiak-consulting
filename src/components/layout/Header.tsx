@@ -14,9 +14,7 @@ export default function Header() {
           <Logo variant="headerLogo" />
         </div>
 
-        <div className={styles.burgerContainer}>
-          <BurgerMenu />
-        </div>
+        <BurgerMenu />
 
         <div className={styles.navigationContainer}>
           <Navigation variant="headerNav" />

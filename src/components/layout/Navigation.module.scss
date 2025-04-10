@@ -14,9 +14,6 @@
       4x 40px -> Taille de chaque bouton de socialMedia
       + 16x3 = gap entre les boutons de socialMedia */
       height: 48px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       border: 1px solid $color-slate-grey-9;
       border-radius: 32px;
       background-image: linear-gradient(
@@ -42,6 +39,7 @@
           0px 6px 8px $color-slate-grey-6, 0px -4px 4px $color-slate-grey-7,
           0px -6px 4px $color-slate-grey-2,
           inset 0px 0px 3px 3px $color-slate-grey-7;
+
         > * {
           transform: scale(0.975);
         }
@@ -60,6 +58,31 @@
       /*------------------ Mobile grand format ------------------*/
       @media (min-width: 498px) {
         width: 50%;
+      }
+
+      .link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-slate-grey-11;
+        text-shadow: 0.5px -0.5px 1px rgba(28, 32, 36, 0.2), -1px 1px 1px white;
+
+        &:hover {
+          font-weight: 600;
+          background: linear-gradient(
+            to top right,
+            $color-primary-dark 25%,
+            $color-primary 100%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-shadow: none;
+        }
       }
     }
   }

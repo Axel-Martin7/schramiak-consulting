@@ -1,72 +1,35 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './BurgerMenu.module.scss';
-import { createPortal } from 'react-dom';
+import ReactDOM from 'react-dom';
 import Navigation from '../layout/Navigation';
 import { SocialIcon } from './SocialIcon';
 
 export default function BurgerMenu() {
-  const [pressed, setPressed] = useState(false); //              Pour l'effet visuel "pressé" sur le bouton.
-  const [isOpen, setIsOpen] = useState(false); //                Pour savoir si le menu est ouvert-
-  const [isMounted, setIsMounted] = useState(false); //          Pour s'assurer que le code s'exécute coté client.
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State qui détermine si le menu est ouvert ou fermé.
 
-  /*-------------------------------*
-  //* EFFET POUR CONFIRMER LE MONTAGE COTE CLIENT
-  *-------------------------------*/
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  /*-------------------------------*
-  //* GESTION DU SCROLL GLOBAL 
-  // Désactive le scroll du body quand le menu est ouvert
-  *-------------------------------*/
-  useEffect(() => {
-    if (isOpen) {
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = originalOverflow;
-      };
-    }
-  }, [isOpen]);
-
-  /*-------------------------------*
-  //* GESTION DU CLIC SUR LE BOUTON DU MENU BURGER
-  // Applique un effet "pressé" et alterne l'état d'ouverture
-  *-------------------------------*/
-  const handleClick = () => {
-    setPressed(true);
-    setTimeout(() => {
-      setPressed(false);
-      setIsOpen((prev) => !prev);
-    }, 200);
+  /*--------------------------------------------------
+  //* FONCTION QUI OUVRE OU FERME LE PANNEAU EN INVERSANT L'ETAT ACTUEL
+  --------------------------------------------------*/
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
-  /*-------------------------------*
-  //* FERMETURE DU MENU LORS D'UN CLIC SUR UN LIEN
-  // Cette fonction sera transmise au composant Navigation
-  *-------------------------------*/
-  const handleLinkClick = () => {
-    setIsOpen(false);
+  /*--------------------------------------------------
+  //* FONCTION QUI FERME LE MENU APRES AVOIR CLIQUE SUR UN LIEN DE NAVIGATION
+  --------------------------------------------------*/
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
-  /*-------------------------------*
-  //* RENDU DU COMPOSANT
-  //- Bouton burger
-  //- Panneau déroulant via un portal (uniquement coté client)
-  *-------------------------------*/
   return (
     <>
       <div className={styles.burgerContainer}>
-        <button
-          className={`${styles.burgerButton} ${pressed ? styles.pressed : ''}`}
-          onClick={handleClick}
-        >
+        <button className={styles.burgerButton} onClick={toggleMenu}>
           <div
             className={`${styles.burgerLinesContainer} ${
-              isOpen ? styles.open : ''
+              isMenuOpen ? styles.open : ''
             }`}
           >
             <span className={styles.line}></span>
@@ -76,47 +39,56 @@ export default function BurgerMenu() {
         </button>
       </div>
 
-      {/*---------- Rendu du panneau déroulant via un portal ----------*/}
-      {isMounted &&
-        createPortal(
-          <div
-            className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}
-          >
-            <Navigation
-              variant="headerMobileNav"
-              onLinkClick={handleLinkClick}
-            />
-
-            <div className={styles.socialContainer}>
-              <SocialIcon
-                type="linkedin"
-                href="https://linkedin.com/company/your-company"
-                variant="default"
-                ariaLabel="Visit LinkedIn"
-              />
-
-              <SocialIcon
-                type="location"
-                href="https://example.com/location"
-                variant="default"
-                ariaLabel="View location"
-              />
-              <SocialIcon
-                type="email"
-                href="mailto:contact@example.com"
-                variant="default"
-                ariaLabel="Send an email"
-              />
-              <SocialIcon
-                type="whatsapp"
-                href="https://wa.me/123456789"
-                variant="default"
-                ariaLabel="Chat on WhatsApp"
-              />
-            </div>
-          </div>,
-          document.body
-        )}
+      {/*----------- RENDU DU PANNEAU DEROULANT VIA UN PORTAIL REACT ------------*/}
+      <DropdownPanel isOpen={isMenuOpen} onLinkClick={closeMenu} />
     </>
+  );
+}
+
+/*--------------------------------------------------
+  //* COMPOSANT DROPDOWNPANEL :
+  - Est rendu en dehors du Header grace a un portal (ReactDOM.createPortal)
+  - Contient le composant Navigation pour afficher les liens.
+  --------------------------------------------------*/
+interface DropdownPanelProps {
+  isOpen: boolean;
+  onLinkClick: () => void;
+}
+
+function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
+  return ReactDOM.createPortal(
+    <div className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}>
+      {/* Le composant Navigation recoit la prop onLinkClick qui ferme le panneau dès qu'un lien est cliqué */}
+      <Navigation variant="headerMobileNav" onLinkClick={onLinkClick} />
+
+      <div className={styles.socialContainer}>
+        <SocialIcon
+          type="linkedin"
+          href="https://linkedin.com/company/your-company"
+          variant="default"
+          ariaLabel="Visit LinkedIn"
+        />
+
+        <SocialIcon
+          type="location"
+          href="https://example.com/location"
+          variant="default"
+          ariaLabel="View location"
+        />
+        <SocialIcon
+          type="email"
+          href="mailto:contact@example.com"
+          variant="default"
+          ariaLabel="Send an email"
+        />
+        <SocialIcon
+          type="whatsapp"
+          href="https://wa.me/123456789"
+          variant="default"
+          ariaLabel="Chat on WhatsApp"
+        />
+      </div>
+    </div>,
+    document.body
   );
 }
