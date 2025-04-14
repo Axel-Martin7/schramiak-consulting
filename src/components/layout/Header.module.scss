@@ -16,6 +16,13 @@
       $color-slate-grey-2 0%,
       $color-slate-grey-1 100%
     );
+
+    background: linear-gradient(
+      45deg,
+      $color-slate-grey-3 0%,
+      $color-slate-grey-2 50%,
+      $color-slate-grey-1 80%
+    );
     &::before {
       content: '';
       z-index: -1;

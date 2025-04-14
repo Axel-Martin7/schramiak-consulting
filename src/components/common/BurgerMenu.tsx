@@ -7,7 +7,7 @@ import Navigation from '../layout/Navigation';
 import { SocialIcon } from './SocialIcon';
 
 export default function BurgerMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State qui détermine si le menu est ouvert ou fermé.
+  const [isMenuOpen, setIsMenuOpen] = useState(false); //           State qui détermine si le menu est ouvert ou fermé.
 
   /*--------------------------------------------------
   //* FONCTION QUI OUVRE OU FERME LE PANNEAU EN INVERSANT L'ETAT ACTUEL
