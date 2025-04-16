@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './BurgerMenu.module.scss';
 import ReactDOM from 'react-dom';
 import Navigation from '../layout/Navigation';
@@ -56,6 +56,16 @@ interface DropdownPanelProps {
 }
 
 function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // Rendu indentique initialement (serveur et client) : rien n'est affiché
+  }
+
   return ReactDOM.createPortal(
     <div className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}>
       {/* Le composant Navigation recoit la prop onLinkClick qui ferme le panneau dès qu'un lien est cliqué */}
