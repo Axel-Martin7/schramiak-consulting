@@ -1,0 +1,185 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+@font-face {
+  font-family: 'brillantine';
+  src: url('../../../../public/fonts/BriliantineScript.ttf') format('truetype');
+}
+
+.footer {
+  overflow: hidden;
+  border: 1px solid transparent;
+
+  .thanksSection {
+    z-index: 1;
+    position: relative;
+    padding-bottom: calc(16px + 32px);
+    /* On crée un espace en dessous de thanksNessageContainer =
+           16px = taille de l'espace entre les deux layouts
+           32px = padding
+           */
+
+    .contentContainer {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(
+        45deg,
+        $color-slate-grey-6 0%,
+        $color-slate-grey-4 50%,
+        $color-slate-grey-2 80%
+      );
+      background-attachment: fixed; /* Le dégradé reste fixe */
+      background-size: cover; /* Le dégradé couvre l'écran */
+
+      .separator {
+        height: 1px;
+        width: calc(100% - 64px);
+        border-bottom: 1px solid;
+        border-image: linear-gradient(
+          90deg,
+          rgba(0, 176, 189, 0),
+          rgba(28, 32, 36, 0.2),
+          rgba(0, 176, 189, 0)
+        );
+        border-image-slice: 1;
+        box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          width: 50%;
+        }
+      }
+
+      .thanksMessageContainer {
+        padding: 64px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          gap: 24px;
+        }
+
+        .thanksMessage {
+          font-size: 25px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: transparent;
+          background: $color-slate-grey-11;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .signature {
+          font-family: 'brillantine';
+          font-size: 25px;
+          letter-spacing: 2px;
+          color: $color-primary;
+          text-shadow: -1px 1px 1px $color-slate-grey-12,
+            1px -1px 1px $color-teal-1;
+        }
+      }
+    }
+
+    //----------- Layouts -----------//
+    .lowerLayoutWrapper {
+      position: absolute;
+      inset: 0;
+      filter: drop-shadow(0px 4px 8px rgba(28, 32, 36, 0.95));
+      .lowerLayout {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          $color-slate-grey-8 0%,
+          $color-slate-grey-6 100%
+        );
+        clip-path: polygon(
+          0% calc(0% + 32px),
+          100% calc(0% + 32px),
+          100% 100%,
+          50% calc(100% - 32px),
+          0% 100%
+        );
+      }
+    }
+    .upperLayoutWrapper {
+      position: absolute;
+      inset: 0;
+      filter: drop-shadow(0px 4px 8px rgba(28, 32, 36, 0.95));
+      .upperLayout {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          $color-slate-grey-6 0%,
+          $color-slate-grey-4 50%,
+          $color-slate-grey-2 80%
+        );
+        background-attachment: fixed; /* Le dégradé reste fixe */
+        background-size: cover; /* Le dégradé couvre l'écran */
+        clip-path: polygon(
+          0% calc(0% + 32px),
+          100% calc(0% + 32px),
+          100% calc(100% - 16px),
+          50% calc(100% - 32px - 16px),
+          0% calc(100% - 16px)
+        );
+      }
+    }
+  }
+
+  .carvedSection {
+    position: relative;
+    top: -32px; // On monte la section de (padding)
+    margin-bottom: -32px; // Pour annuler l'espace perdu en bas de la section apres l'avoir monté de 32px
+    padding: 64px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background: linear-gradient(
+      45deg,
+      $color-primary-dark 0%,
+      $color-primary 100%
+    );
+    /*------------------ Tablet ------------------*/
+    @media screen and (min-width: 768px) {
+      gap: 64px;
+    }
+
+    .navigationContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .socialItemsContainer {
+        display: flex;
+        gap: 32px;
+        /*------------------ Tablet ------------------*/
+        @media screen and (min-width: 768px) {
+          justify-content: center;
+        }
+      }
+    }
+
+    .credit {
+      font-size: 10px;
+      color: $color-slate-grey-12;
+      .creditLink {
+        font-weight: 600;
+        text-shadow: 0.25px -0.25px 0.5px $color-slate-grey-12,
+          -0.25px 0.25px 0.5px $color-primary-light;
+        &:hover {
+          color: $color-teal-5;
+          text-shadow: 0.25px -0.25px 0.5px $color-teal-1,
+            -1px 1px 2px $color-slate-grey-12;
+        }
+      }
+    }
+  }
+}

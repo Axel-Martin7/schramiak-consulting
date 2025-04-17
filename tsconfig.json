@@ -26,7 +26,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/common/LocaleSwitcher"
+    "src/components/layout/Header/LocaleSwitcher"
   ],
   "exclude": ["node_modules"]
 }

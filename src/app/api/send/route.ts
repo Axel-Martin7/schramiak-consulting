@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Resend } from 'resend';
-import { EmailTemplate } from '@/components/common/email-template';
+import { EmailTemplate } from '@/components/pages/Contact/email-template';
 
 // Initialisation de Resend avec le clé API depuis les variables d'environements
 const resend = new Resend(process.env.RESEND_API_KEY);

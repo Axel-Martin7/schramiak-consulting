@@ -11,8 +11,8 @@ import '@/styles/globals.scss';
 import { ReactNode } from 'react';
 import { locales } from '@/config';
 // import Header from '@/components/Header/Header';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header/Header';
+import Footer from '@/components/layout/Footer/Footer';
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
