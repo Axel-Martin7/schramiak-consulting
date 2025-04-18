@@ -19,29 +19,35 @@ export default function Home({ params: { locale } }: Props) {
   const t = useTranslations('HomePage');
 
   return (
+    // <main className={styles.main}>
+    //   <section className={styles.introductionSection}>
+    //     <Introduction />
+    //   </section>
+
+    //   <section className={styles.heroSection}>
+    //     <Hero />
+    //   </section>
+
+    //   <section className={styles.aboutv3Section}>
+    //     <About />
+    //   </section>
+
+    //   <section className={styles.servicesSection}>
+    //     <MyServices />
+    //   </section>
+
+    //   <section className={styles.realisationsSection}>
+    //     <Realisations />
+    //   </section>
+
+    //   <section className={styles.contactSection}>
+    //     <Contact />
+    //   </section>
+    // </main>
+
     <main className={styles.main}>
       <section className={styles.introductionSection}>
         <Introduction />
-      </section>
-
-      <section className={styles.heroSection}>
-        <Hero />
-      </section>
-
-      <section className={styles.aboutv3Section}>
-        <About />
-      </section>
-
-      <section className={styles.servicesSection}>
-        <MyServices />
-      </section>
-
-      <section className={styles.realisationsSection}>
-        <Realisations />
-      </section>
-
-      <section className={styles.contactSection}>
-        <Contact />
       </section>
     </main>
   );
