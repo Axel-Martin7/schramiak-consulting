@@ -14,6 +14,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
       aria-label="Navigation principale"
     >
       <ul className={styles.navList}>
+        {/*---------- HOME ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}
@@ -25,6 +26,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           </Link>
         </li>
 
+        {/*---------- ABOUT ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}
@@ -36,6 +38,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           </Link>
         </li>
 
+        {/*---------- PARCOURS ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}
@@ -47,6 +50,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           </Link>
         </li>
 
+        {/*---------- SERVICES ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}
@@ -58,6 +62,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           </Link>
         </li>
 
+        {/*---------- REALISATIONS ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}
@@ -69,6 +74,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           </Link>
         </li>
 
+        {/*---------- CONTACT ----------*/}
         <li className={styles.navItem}>
           <Link
             className={styles.link}

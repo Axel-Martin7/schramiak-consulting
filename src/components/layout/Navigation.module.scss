@@ -90,47 +90,13 @@
 }
 
 //*------------ VARIANT POUR LA NAVIGATION DESKTOP DANS LE HEADER ----------*
-// .headerNav {
-//   .navList {
-//     display: flex;
-
-//     .navItem {
-//       display: flex;
-//       justify-content: center;
-//       padding: 0 16px;
-//       border: none;
-//       border-right: 0.5px solid black;
-//       // border-image: linear-gradient(
-//       //   0deg,
-//       //   rgba(0, 176, 189, 0),
-//       //   $color-teal-4,
-//       //   rgba(0, 176, 189, 0)
-//       // );
-//       // border-image-slice: 1;
-//       text-transform: uppercase;
-//       font-size: 12px;
-//       font-weight: 600;
-//       color: $color-primary-dark-darker;
-//       text-shadow: 0.25px -0.25px 0.5px $color-slate-grey-12,
-//         -0.25px 0.25px 0.5px $color-primary-light;
-//       &:hover {
-//         color: $color-teal-5;
-//         text-shadow: 0.25px -0.25px 0.5px $color-teal-1,
-//           -1px 1px 2px $color-slate-grey-12;
-//       }
-//       &:last-child {
-//         border: none;
-//       }
-//     }
-//   }
-// }
 
 .headerNav {
   .navList {
     display: flex;
 
     .navItem {
-      padding: 0 16px;
+      padding: 0 8px;
       border-right: 0.5px solid $color-slate-grey-12;
       font-size: 12px;
       font-weight: 600;
@@ -149,6 +115,10 @@
       }
       &:last-child {
         border: none;
+      }
+      /*--------------- Laptop ---------------*/
+      @media screen and (min-width: 1024px) {
+        padding: 0 16px;
       }
     }
   }
