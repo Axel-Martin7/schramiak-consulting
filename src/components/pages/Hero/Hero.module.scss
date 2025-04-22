@@ -1,19 +1,218 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .heroRibbon {
+//   position: relative;
+//   padding: 40px 40px 0; // L'image a deja un espace naturel
+//   background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+//   &::before {
+//     content: '';
+//     z-index: -1;
+//     position: absolute;
+//     top: -10px;
+//     left: 0;
+//     width: 100%;
+//     height: 20px;
+//     border-radius: 50%;
+//     background: radial-gradient(
+//       ellipse at bottom,
+//       rgba(28, 32, 36, 0.6) 0%,
+//       rgba(28, 32, 36, 0.2) 50%,
+//       transparent 100%
+//     );
+//     filter: blur(5px);
+//   }
+//   &::after {
+//     content: '';
+//     z-index: -1;
+//     position: absolute;
+//     bottom: -10px;
+//     left: 0;
+//     width: 100%;
+//     height: 20px;
+//     border-radius: 50%;
+//     background: radial-gradient(
+//       ellipse at top,
+//       rgba(28, 32, 36, 0.6) 0%,
+//       rgba(28, 32, 36, 0.2) 50%,
+//       transparent 100%
+//     );
+//     filter: blur(5px);
+//   }
+//   /*------------------ Desktop------------------*/
+//   @media screen and (min-width: 768px) {
+//     width: 100%;
+//     height: 100%;
+//     padding: 0;
+//     background: white;
+//   }
+
+//   .skewedContainer {
+//     /*------------------ Desktop------------------*/
+//     @media screen and (min-width: 768px) {
+//       z-index: 1;
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       transform: skewX(10deg) translateX(-46%);
+//       background: linear-gradient(
+//         15deg,
+//         $color-slate-grey-5 0%,
+//         $color-slate-grey-1 100%
+//       );
+//       &::before {
+//         content: '';
+//         position: absolute;
+//         top: 0;
+//         right: -40px;
+//         width: 40px;
+//         height: 100%;
+//         background: radial-gradient(
+//           ellipse 70% 100% at 0% 50%,
+//           rgba(28, 32, 36, 0.4) 0%,
+//           rgba(28, 32, 36, 0.2) 25%,
+//           rgba(28, 32, 36, 0.05) 50%,
+//           rgba(28, 32, 36, 0.025) 70%,
+//           transparent 100%
+//         );
+//       }
+//     }
+//   }
+
+//   .heroContentContainer {
+//     position: relative;
+//     max-width: 1440px;
+//     /*------------------ Desktop------------------*/
+//     @media screen and (min-width: 768px) {
+//       width: 100%;
+//       height: 100%;
+//       margin: 0 auto;
+//       display: flex;
+//     }
+
+//     .informationsSection {
+//       /*------------------  Tablet to Desktop-----------------*/
+//       @media screen and (min-width: 768px) {
+//         z-index: 2;
+//         width: 50%;
+//         height: 100%;
+//         padding: 40px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         /*------------------ to desktop ------------------*/
+//         @media screen and (min-width: 1200px) {
+//           padding: 80px;
+//         }
+//       }
+
+//       .heroTitleContainer {
+//         font-size: clamp(30px, 6vw, 38px);
+//         text-transform: uppercase;
+//         color: $color-primary-dark-darker;
+//         .firstWord {
+//           display: flex;
+//           font-size: 1.5em;
+//           font-weight: 600;
+//           color: $color-primary;
+//           background: radial-gradient(
+//             ellipse farthest-corner at center center,
+//             $color-primary 0%,
+//             $color-primary-dark 68%,
+//             $color-primary-dark-darker 100%
+//           );
+//           background-clip: text;
+//           -webkit-background-clip: text;
+//           -webkit-text-fill-color: transparent;
+//         }
+//         .smallWord {
+//           font-size: 0.8em;
+//         }
+//         .highlightWords {
+//           font-weight: 600;
+//           background: radial-gradient(
+//             ellipse farthest-corner at right center,
+//             $color-primary 0%,
+//             $color-primary-dark 68%,
+//             $color-primary-dark-darker 100%
+//           );
+//           background-clip: text;
+//           -webkit-background-clip: text;
+//           -webkit-text-fill-color: transparent;
+//         }
+//       }
+
+//       .description {
+//         padding: 40px 0;
+//         font-size: 18px;
+//       }
+
+//       .buttonsContainer {
+//         display: flex;
+//         gap: 20px;
+//         flex-direction: column;
+//         /*------------------  Desktop-----------------*/
+//         @media screen and (min-width: 768px) {
+//           flex-direction: row;
+//           justify-content: space-between;
+//           flex-wrap: wrap;
+//         }
+
+//         .fullWidthButton {
+//           width: 100%; // Forcer la largeur à 100%
+//           /*------------------  Desktop-----------------*/
+//           @media screen and (min-width: 768px) {
+//             width: 220px; // Rétablit la largeur fixe en desktop
+//           }
+//         }
+//       }
+//     }
+
+//     .backgroundImageSection {
+//       display: flex;
+//       justify-content: center;
+//       /*------------------ Desktop------------------*/
+//       @media screen and (min-width: 768px) {
+//         width: 50%;
+//         height: 100%;
+//       }
+
+//       .imageContainer {
+//         position: relative;
+//         width: 300px;
+//         height: 400px;
+//         min-width: 280px;
+//         mix-blend-mode: multiply;
+//         /*------------------ Desktop------------------*/
+//         @media screen and (min-width: 768px) {
+//           width: 100%;
+//           height: 100%;
+//           mix-blend-mode: normal;
+//         }
+//         .image {
+//           object-fit: contain;
+//         }
+//       }
+//     }
+//   }
+// }
+
 .heroRibbon {
   position: relative;
-  padding: 40px 40px 0; // L'image a deja un espace naturel
+  padding: 32px;
   background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+  height: 400px;
   &::before {
     content: '';
     z-index: -1;
     position: absolute;
-    top: -10px;
+    top: -4px;
     left: 0;
     width: 100%;
-    height: 20px;
+    height: 8px;
     border-radius: 50%;
     background: radial-gradient(
       ellipse at bottom,
@@ -21,16 +220,16 @@
       rgba(28, 32, 36, 0.2) 50%,
       transparent 100%
     );
-    filter: blur(5px);
+    filter: blur(4px);
   }
   &::after {
     content: '';
     z-index: -1;
     position: absolute;
-    bottom: -10px;
+    bottom: -4px;
     left: 0;
     width: 100%;
-    height: 20px;
+    height: 8px;
     border-radius: 50%;
     background: radial-gradient(
       ellipse at top,
@@ -38,82 +237,27 @@
       rgba(28, 32, 36, 0.2) 50%,
       transparent 100%
     );
-    filter: blur(5px);
-  }
-  /*------------------ Desktop------------------*/
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    background: white;
+    filter: blur(4px);
   }
 
   .skewedContainer {
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      z-index: 1;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transform: skewX(10deg) translateX(-46%);
-      background: linear-gradient(
-        15deg,
-        $color-slate-grey-5 0%,
-        $color-slate-grey-1 100%
-      );
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -40px;
-        width: 40px;
-        height: 100%;
-        background: radial-gradient(
-          ellipse 70% 100% at 0% 50%,
-          rgba(28, 32, 36, 0.4) 0%,
-          rgba(28, 32, 36, 0.2) 25%,
-          rgba(28, 32, 36, 0.05) 50%,
-          rgba(28, 32, 36, 0.025) 70%,
-          transparent 100%
-        );
-      }
-    }
   }
 
   .heroContentContainer {
-    position: relative;
-    max-width: 1440px;
-    /*------------------ Desktop------------------*/
-    @media screen and (min-width: 768px) {
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-    }
+    // position: relative;
+    border: 1px solid black;
 
     .informationsSection {
-      /*------------------  Tablet to Desktop-----------------*/
-      @media screen and (min-width: 768px) {
-        z-index: 2;
-        width: 50%;
-        height: 100%;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /*------------------ to desktop ------------------*/
-        @media screen and (min-width: 1200px) {
-          padding: 80px;
-        }
-      }
+      border: 1px solid red;
 
       .heroTitleContainer {
-        font-size: clamp(30px, 6vw, 38px);
+        font-size: 30px;
         text-transform: uppercase;
         color: $color-primary-dark-darker;
+
         .firstWord {
           display: flex;
-          font-size: 1.5em;
+          font-size: 62px;
           font-weight: 600;
           color: $color-primary;
           background: radial-gradient(
@@ -125,11 +269,10 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-        }
-        .smallWord {
-          font-size: 0.8em;
+          filter: drop-shadow(-1px 1px 0px $color-primary-dark-darker);
         }
         .highlightWords {
+          font-size: 36px;
           font-weight: 600;
           background: radial-gradient(
             ellipse farthest-corner at right center,
@@ -140,60 +283,20 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          filter: drop-shadow(-0.5px 0.5px 0px $color-primary-dark-darker);
         }
       }
 
       .description {
-        padding: 40px 0;
-        font-size: 18px;
-      }
+        padding: 32px 0;
 
-      .buttonsContainer {
-        display: flex;
-        gap: 20px;
-        flex-direction: column;
-        /*------------------  Desktop-----------------*/
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
-
-        .fullWidthButton {
-          width: 100%; // Forcer la largeur à 100%
-          /*------------------  Desktop-----------------*/
-          @media screen and (min-width: 768px) {
-            width: 220px; // Rétablit la largeur fixe en desktop
-          }
-        }
+        @include paragraphe-text-style;
+        font-size: 14px;
       }
     }
 
     .backgroundImageSection {
-      display: flex;
-      justify-content: center;
-      /*------------------ Desktop------------------*/
-      @media screen and (min-width: 768px) {
-        width: 50%;
-        height: 100%;
-      }
-
-      .imageContainer {
-        position: relative;
-        width: 300px;
-        height: 400px;
-        min-width: 280px;
-        mix-blend-mode: multiply;
-        /*------------------ Desktop------------------*/
-        @media screen and (min-width: 768px) {
-          width: 100%;
-          height: 100%;
-          mix-blend-mode: normal;
-        }
-        .image {
-          object-fit: contain;
-        }
-      }
+      border: 1px solid red;
     }
   }
 }

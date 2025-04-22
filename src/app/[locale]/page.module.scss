@@ -113,9 +113,15 @@
   .introductionSection {
     height: calc(100svh - 80px); // 80px = taille du Header
     padding: 32px;
+    border: 1px solid blue;
     /*--------------- Tablet ---------------*/
     @media screen and (min-width: 768px) {
       padding: 0;
     }
+  }
+
+  .heroSection {
+    padding: 32px 0;
+    border: 1px solid blue;
   }
 }
