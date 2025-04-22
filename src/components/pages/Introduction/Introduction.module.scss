@@ -67,6 +67,8 @@
         align-items: center;
 
         .firstName {
+          display: inline-block;
+          margin-right: 2px;
           font-size: 14px;
           font-weight: 500;
           letter-spacing: 6px;

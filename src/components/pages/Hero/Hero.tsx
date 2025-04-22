@@ -4,6 +4,7 @@ import Image from 'next/image';
 import ampoule from '../../../../public/ampoule.jpg';
 import { barlow } from '@/styles/font';
 import Button from '../../common/Button';
+import CtaButton from '@/components/common/CtaButton';
 
 export default function Hero() {
   return (
@@ -77,6 +78,24 @@ export default function Hero() {
             aliquid eum molestias distinctio quos nemo perspiciatis assumenda
             temporibus! Labore, quos repellendus!
           </p>
+
+          <div className={styles.buttonsContainer}>
+            <CtaButton
+              href="/#services"
+              variant="secondary"
+              aria-label="Découvrez mes services"
+            >
+              Découvrez mes services
+            </CtaButton>
+
+            <CtaButton
+              href="/#contact"
+              variant="primary"
+              aria-label="Obtenez un audit gratuit"
+            >
+              Obtenez un audit gratuit
+            </CtaButton>
+          </div>
         </section>
 
         <section className={styles.backgroundImageSection}></section>

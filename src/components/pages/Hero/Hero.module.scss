@@ -204,7 +204,6 @@
   background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 
-  height: 400px;
   &::before {
     content: '';
     z-index: -1;
@@ -251,13 +250,13 @@
       border: 1px solid red;
 
       .heroTitleContainer {
-        font-size: 30px;
+        font-size: 28px;
         text-transform: uppercase;
         color: $color-primary-dark-darker;
 
         .firstWord {
           display: flex;
-          font-size: 62px;
+          font-size: 52px;
           font-weight: 600;
           color: $color-primary;
           background: radial-gradient(
@@ -269,7 +268,6 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          filter: drop-shadow(-1px 1px 0px $color-primary-dark-darker);
         }
         .highlightWords {
           font-size: 36px;
@@ -283,15 +281,19 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          filter: drop-shadow(-0.5px 0.5px 0px $color-primary-dark-darker);
         }
       }
 
       .description {
         padding: 32px 0;
-
         @include paragraphe-text-style;
-        font-size: 14px;
+      }
+
+      .buttonsContainer {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        border: 1px solid orange;
       }
     }
 
