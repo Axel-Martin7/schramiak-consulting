@@ -40,7 +40,7 @@
 
   position: relative;
   width: 100%;
-  height: 64px;
+  height: 56px;
   border-radius: 16px;
   font-size: 14px;
   border: 0;
@@ -48,8 +48,8 @@
   background: transparent;
   cursor: pointer;
   /*--------------- Tablet ---------------*/
-  @media screen and (min-width: 768px) {
-    width: 220px;
+  @media screen and (min-width: 1098px) {
+    width: 224px;
   }
   // ----------- Désactivation du bouton/lien:
   &.disabled {
@@ -113,8 +113,8 @@
         content: '';
         position: absolute;
         inset: 2px;
-        width: 120px;
-        height: 300px;
+        width: 124px;
+        height: 490px;
         margin: auto;
         background: linear-gradient(
           to right,
@@ -124,6 +124,10 @@
         );
         animation: spin 3s linear infinite;
         animation-play-state: paused;
+        /*--------------- Tablet ---------------*/
+        @media screen and (min-width: 1098px) {
+          height: 300px;
+        }
       }
     }
 
