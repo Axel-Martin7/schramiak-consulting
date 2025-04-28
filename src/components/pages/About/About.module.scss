@@ -1,439 +1,890 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .aboutContainer {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 768px) {
+//     height: 100%;
+//     max-width: 1440px;
+//   }
+
+//   .sectionTitle {
+//     padding: 0 20px;
+//     @include home-title-section;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 0;
+//     }
+//   }
+
+//   .aboutCardFrame {
+//     /*------------------ Tablet to Laptop------------------*/
+//     @media screen and (min-width: 768px) {
+//       height: 100%;
+//       /*------------------ Laptop ------------------*/
+//       @media screen and (min-width: 1024px) {
+//         position: relative;
+//         padding: 15px;
+//         border-radius: 20px;
+//         background: linear-gradient(
+//           45deg,
+//           $color-slate-grey-6 0%,
+//           $color-slate-grey-2 80%
+//         );
+//         box-shadow: -50px 25px 100px -20px rgba(28, 32, 36, 0.4),
+//           -2px 2px 8px rgba(28, 32, 36, 0.2),
+//           0px 8px 6px -6px rgba(28, 32, 36, 0.4),
+//           inset -3.75px 3.75px 7.5px white,
+//           inset 3.75px -3.75px 7.5px rgba(28, 32, 36, 0.4);
+//         // *--------- Ombre portée (gauche) de la carte :
+//         &::before {
+//           content: '';
+//           z-index: -1;
+//           position: absolute;
+//           top: -2px;
+//           left: -95%;
+//           width: 100%;
+//           height: 100%;
+//           border-radius: inherit;
+//           background: linear-gradient(
+//             -26deg,
+//             rgba(28, 32, 36, 0.1) 25%,
+//             transparent 51%
+//           );
+//           filter: blur(5px);
+//         }
+//         // *--------- Ombre eliptique (dessous) de la carte :
+//         &::after {
+//           content: '';
+//           z-index: -1;
+//           position: absolute;
+//           bottom: -10px;
+//           left: -5px;
+//           width: 100%;
+//           height: 20px;
+//           border-radius: 50%;
+//           background: linear-gradient(
+//             0deg,
+//             transparent 0%,
+//             rgba(28, 32, 36, 0.8) 100%
+//           );
+//           filter: blur(2px);
+//         }
+//       }
+//     }
+
+//     .aboutCard {
+//       /*------------------ Tablet to Laptop------------------*/
+//       @media screen and (min-width: 768px) {
+//         display: flex;
+//         gap: 40px;
+//         height: 100%;
+//         /*------------------ Laptop ------------------*/
+//         @media screen and (min-width: 1024px) {
+//           position: relative;
+//           gap: 0;
+//           border-radius: 10px;
+//           box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
+//             inset -50px 50px 100px rgba(28, 32, 36, 0.05),
+//             inset 50px -50px 100px rgba(255, 255, 255, 0.4);
+//         }
+//       }
+//       //*------------ Colonne de gauche : IMG + Socials :
+//       .leftColumn {
+//         /*------------------ Tablet to Laptop------------------*/
+//         @media screen and (min-width: 768px) {
+//           width: 50%;
+//           height: 100%;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: space-between;
+//           /*------------------ Laptop ------------------*/
+//           @media screen and (min-width: 1024px) {
+//             display: block;
+//             gap: 0;
+//             width: 50%;
+//           }
+//         }
+//         .imageSection {
+//           padding: 40px 0;
+//           display: flex;
+//           justify-content: center;
+//           /*------------------ Laptop to desktop ------------------*/
+//           @media screen and (min-width: 1024px) {
+//             height: 100%;
+//             margin-top: 80px;
+//             padding: 0 40px;
+//             /*------------------ to desktop ------------------*/
+//             @media screen and (min-width: 1200px) {
+//               padding: 0 80px;
+//             }
+//           }
+
+//           .imageFrame {
+//             position: relative;
+//             width: 100%;
+//             height: 400px;
+//             max-width: 300px;
+//             padding: 15px;
+//             border-radius: 20px;
+//             background: linear-gradient(
+//               45deg,
+//               $color-slate-grey-6 0%,
+//               $color-slate-grey-2 80%
+//             );
+//             box-shadow: -25px 12.5px 50px rgba(28, 32, 36, 0.4),
+//               -2px 2px 8px rgba(28, 32, 36, 0.2),
+//               0px 8px 6px -6px rgba(28, 32, 36, 0.4),
+//               inset -3.75px 3.75px 7.5px white,
+//               inset 3.75px -3.75px 7.5px rgba(28, 32, 36, 0.4);
+//             // *--------- Ombre portée (gauche) de la carte :
+//             &::before {
+//               content: '';
+//               z-index: -1;
+//               position: absolute;
+//               top: -2px;
+//               left: -95%;
+//               width: 100%;
+//               height: 100%;
+//               border-radius: inherit;
+//               background: linear-gradient(
+//                 -26deg,
+//                 rgba(28, 32, 36, 0.1) 25%,
+//                 transparent 51%
+//               );
+//               filter: blur(5px);
+//             }
+//             // *--------- Ombre eliptique (dessous) de la carte :
+//             &::after {
+//               content: '';
+//               z-index: -1;
+//               position: absolute;
+//               bottom: -7.5px;
+//               left: -7.5px;
+//               width: 100%;
+//               height: 15px;
+//               border-radius: 50%;
+//               background: linear-gradient(
+//                 0deg,
+//                 transparent 0%,
+//                 rgba(28, 32, 36, 0.8) 80%
+//               );
+//               filter: blur(2px);
+//             }
+//             /*------------------ Tablet to Laptop------------------*/
+//             @media screen and (min-width: 768px) {
+//               height: 550px;
+//               max-width: none;
+//               /*------------------ to Laptop ------------------*/
+//               @media screen and (min-width: 1024px) {
+//                 height: 100%;
+//                 max-width: none;
+//                 min-width: 350px;
+//               }
+//             }
+
+//             .imageContainer {
+//               position: relative;
+//               width: 100%;
+//               height: 100%;
+//               border-radius: 10px;
+//               box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
+//                 inset -50px 50px 100px rgba(28, 32, 36, 0.05),
+//                 inset 50px -50px 100px rgba(255, 255, 255, 0.2);
+
+//               .image {
+//                 height: 130% !important;
+//                 top: -30% !important;
+//                 object-fit: cover;
+//                 border-radius: inherit;
+//                 /*------------------ Tablet ------------------*/
+//                 @media screen and (min-width: 768px) {
+//                   height: 120% !important;
+//                   top: -20% !important;
+//                 }
+//               }
+//             }
+
+//             // *----------- Reflet de la carte de l'image ------------*
+//             .imageFrameReflect {
+//               z-index: -1;
+//               position: absolute;
+//               top: 100%;
+//               left: 0;
+//               width: 100%;
+//               height: 80px;
+//               padding: 0px 15px 15px;
+//               transform: scaleY(-1);
+//               border-radius: 0 0 20px 20px;
+//               background-color: white;
+//               opacity: 0.8;
+//               mask-image: linear-gradient(
+//                 to top,
+//                 rgba(255, 255, 255, 0.4) 0%,
+//                 rgba(255, 255, 255, 0.05) 50%,
+//                 rgba(255, 255, 255, 0) 100%
+//               );
+//               -webkit-mask-image: linear-gradient(
+//                 to top,
+//                 rgba(255, 255, 255, 0.4) 0%,
+//                 rgba(255, 255, 255, 0.05) 50%,
+//                 rgba(255, 255, 255, 0) 100%
+//               );
+//               filter: blur(3px);
+
+//               .imageReflect {
+//                 position: relative;
+//                 width: 100%;
+//                 height: 100%;
+//                 border-radius: 0 0 10px 10px;
+//                 opacity: 0.6;
+
+//                 .image {
+//                   object-fit: cover;
+//                   object-position: 50% 100%;
+//                   border-radius: inherit;
+//                 }
+//               }
+//             }
+//           }
+//         }
+
+//         .socialSection {
+//           display: flex;
+//           justify-content: center;
+//           gap: 40px;
+//           /*------------------ Laptop ------------------*/
+//           @media screen and (min-width: 1024px) {
+//             position: absolute;
+//             bottom: 20px;
+//             right: 20px;
+//             flex-direction: column;
+//             gap: 15px;
+//           }
+
+//           .item {
+//             width: 40px;
+//             aspect-ratio: 1/1;
+//             filter: drop-shadow(-1px 1px 0.5px $color-primary-dark-darker)
+//               drop-shadow(1px -1px 0.5px $color-teal-1);
+//             /*------------------ Laptop ------------------*/
+//             @media screen and (min-width: 1024px) {
+//               width: 25px;
+//               filter: drop-shadow(0.5px -0.5px 0px rgba(28, 32, 36, 0.4))
+//                 drop-shadow(-0.5px 0.5px 0px white);
+//             }
+//           }
+//         }
+//       }
+
+//       //*------------ Colonne de droite : Quote + Separator + infos :
+//       .rightColumn {
+//         /*------------------ Tablet to Laptop------------------*/
+//         @media screen and (min-width: 768px) {
+//           width: 50%;
+//           height: 100%;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 40px;
+//           /*------------------ Laptop ------------------*/
+//           @media screen and (min-width: 1024px) {
+//             width: 50%;
+//             justify-content: center;
+//             gap: 0;
+//           }
+//         }
+//         .quoteSection {
+//           padding: 40px;
+//           font-size: 14px;
+//           text-align: center;
+//           font-weight: 600;
+//           line-height: 20px;
+//           color: $color-slate-grey-12;
+//           /*------------------ Tablet to Laptop to Desktop------------------*/
+//           @media screen and (min-width: 768px) {
+//             padding: 0px;
+//             /*------------------ to Laptop ------------------*/
+//             @media screen and (min-width: 1024px) {
+//               padding: 40px 40px 40px 0;
+//               /*------------------ to Desktop ------------------*/
+//               @media screen and (min-width: 1200px) {
+//                 padding: 40px 80px 40px 0;
+//               }
+//             }
+//           }
+//         }
+
+//         .separatorSection {
+//           width: 50%;
+//           height: 15px;
+//           margin: 0 auto;
+//           border-radius: 20px;
+//           background: linear-gradient(45deg, #007782 0%, #00b0bd 100%);
+//           box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
+//             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
+//           /*------------------ Tablet ------------------*/
+//           @media screen and (min-width: 768px) {
+//             margin: 0;
+//           }
+//         }
+
+//         .presentationSection {
+//           margin: 40px 0;
+//           padding: 20px;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 40px;
+//           border-radius: 20px;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset 2px -2px 4px rgba(255, 255, 255, 0.4),
+//             inset -2px 2px 4px rgba(28, 32, 36, 0.6);
+//           /*------------------ Tablet to Laptop to Desktop------------------*/
+//           @media screen and (min-width: 768px) {
+//             margin: 0;
+//             padding: 0;
+//             box-shadow: none;
+//             /*------------------ to Laptop------------------*/
+//             @media screen and (min-width: 1024px) {
+//               margin: 40px 0;
+//               padding: 0px 40px 0 0;
+//               /*------------------ to desktop ------------------*/
+//               @media screen and (min-width: 1200px) {
+//                 padding: 0px 80px 0 0;
+//               }
+//             }
+//           }
+
+//           .presentationTitles {
+//             .name {
+//               padding-bottom: 5px;
+//               font-size: 24px;
+//               font-weight: 700;
+//               text-transform: uppercase;
+//               background: radial-gradient(
+//                 ellipse farthest-corner at right center,
+//                 $color-primary 0%,
+//                 $color-primary-dark 68%,
+//                 $color-primary-dark-darker 100%
+//               );
+//               background-clip: text;
+//               -webkit-background-clip: text;
+//               -webkit-text-fill-color: transparent;
+//               .small {
+//                 font-weight: 400;
+//               }
+//             }
+//             .role {
+//               font-size: 12px;
+//               text-transform: uppercase;
+//               letter-spacing: 2px;
+//               color: $color-primary-dark-darker;
+//             }
+//           }
+
+//           .descriptionsContainer {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 20px;
+//             font-size: 14px;
+//             color: $color-slate-grey-12;
+//           }
+
+//           .buttonContainer {
+//             display: flex;
+//             justify-content: center;
+//           }
+//         }
+//       }
+//     }
+
+//     // *----------- Reflet de la carte ------------*
+//     .cardFrameReflect {
+//       /*------------------ Laptop ------------------*/
+//       @media screen and (min-width: 1024px) {
+//         z-index: -1;
+//         position: absolute;
+//         bottom: -80px;
+//         left: 0%;
+//         width: 100%;
+//         height: 80px;
+//         padding: 15px 15px 0;
+//         border-radius: 20px 20px 0 0;
+//         background-color: white;
+//         opacity: 0.8;
+//         mask-image: linear-gradient(
+//           to bottom,
+//           rgba(255, 255, 255, 0.8) 0%,
+//           rgba(255, 255, 255, 0.4) 50%,
+//           rgba(255, 255, 255, 0) 100%
+//         );
+//         -webkit-mask-image: linear-gradient(
+//           to bottom,
+//           rgba(255, 255, 255, 0.8) 0%,
+//           rgba(255, 255, 255, 0.4) 50%,
+//           rgba(255, 255, 255, 0) 100%
+//         );
+//         filter: blur(5px);
+
+//         .cardReflect {
+//           width: 100%;
+//           height: 100%;
+//           border-radius: 10px 10px 0 0;
+//           background-color: $color-slate-grey-2;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// -----------------------------------------------------------------------
+
+// .aboutContainer {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   border: 1px solid red;
+
+//   .cardFrame {
+//     padding: 8px;
+//     border-radius: 16px;
+//     border: 1px solid black;
+//     height: 600px;
+
+//     .card {
+//       position: relative;
+//       height: 100%;
+//       display: grid;
+//       gap: 32px;
+//       grid-template-columns: repeat(12, 1fr);
+//       border-radius: 8px;
+//       border: 1px solid black;
+
+//       .leftColumn {
+//         grid-column: 1 / span 5;
+//         border: 1px solid red;
+
+//         .imageCardFrame {
+//           position: relative;
+//           top: 64px;
+//           left: 64px;
+//           width: calc(
+//             100% - 96px
+//           ); // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+//           height: calc(100% + 8px); // 8px = taille de cardFrame
+//           padding: 8px;
+//           border-radius: 16px;
+//           border: 1px solid black;
+
+//           .imageCard {
+//             position: relative;
+//             height: 100%;
+//             border-radius: 8px;
+//             border: 1px solid black;
+
+//             .image {
+//               object-fit: cover;
+//               border-radius: inherit;
+//               height: calc(
+//                 100% + 96px
+//               ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+//               top: -96px !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+//             }
+//           }
+//         }
+//       }
+
+//       .rightColumn {
+//         padding: 32px;
+//         grid-column: 6 / span 7;
+//         display: flex;
+//         flex-direction: column;
+//         gap: 32px;
+//         border: 1px solid red;
+
+//         .quote {
+//           font-size: 16px;
+//         }
+
+//         .separator {
+//           width: 50%;
+//           height: 8px;
+//           background-color: black;
+//         }
+
+//         .presentationSection {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 16px;
+//           border: 1px solid orange;
+
+//           .presentationTitles {
+//             .name {
+//               font-size: 25px;
+//               text-transform: uppercase;
+//               font-weight: 600;
+//               .small {
+//                 font-weight: 400;
+//               }
+//             }
+
+//             .role {
+//               font-size: 14px;
+//               text-transform: uppercase;
+//               letter-spacing: 2px;
+//             }
+//           }
+
+//           .descriptionsContainer {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 16px;
+//             font-size: 14px;
+//             line-height: 1.43;
+//           }
+
+//           .button {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             width: 260px;
+//             height: 32px;
+//             border-radius: 16px;
+//             border: 1px solid black;
+//             margin: 0 auto;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// -----------------------------------------------------
+
+// .aboutContainer {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 64px;
+//   border: 1px solid red;
+//   /*--------------- Tablet -> Desktop ---------------*/
+//   @media screen and (min-width: 768px) {
+//     gap: 48px;
+//     /*--------------- to Desktop ---------------*/
+//     @media screen and (min-width: 1280px) {
+//       max-width: 1280px;
+//       margin: 0 auto;
+//       gap: 64px;
+//     }
+//   }
+
+//   .sectionTitle {
+//     @include section-title;
+//   }
+
+//   .cardFrame {
+//     border: 1px solid black;
+//     /*--------------- Laptop ---------------*/
+//     @media screen and (min-width: 1024px) {
+//       padding: 8px;
+//       border-radius: 16px;
+//     }
+
+//     .card {
+//       /*--------------- Tablet -> Laptop -> Desktop ---------------*/
+//       @media screen and (min-width: 768px) {
+//         position: relative;
+//         height: 100%;
+//         display: grid;
+//         grid-template-columns: repeat(12, 1fr);
+//         gap: 24px;
+//         /*--------------- to Laptop ---------------*/
+//         @media screen and (min-width: 1024px) {
+//           border-radius: 8px;
+//           border: 1px solid black;
+//           /*--------------- to Desktop ---------------*/
+//           @media screen and (min-width: 1280px) {
+//             gap: 32px;
+//           }
+//         }
+//       }
+
+//       .leftColumn {
+//         /*--------------- Tablet ---------------*/
+//         @media screen and (min-width: 768px) {
+//           grid-column: 1 / span 4;
+//           border: 1px solid red;
+//           /*--------------- to Laptop ---------------*/
+//           @media screen and (min-width: 1024px) {
+//             grid-column: 1 / span 5;
+//           }
+//         }
+
+//         .imageCardFrame {
+//           border: 1px solid black;
+//           width: 100%;
+//           height: 420px;
+//           max-width: 320px;
+//           margin: 0 auto;
+//           padding: 8px;
+//           border-radius: 16px;
+//           /*--------------- Tablet -> Laptop -> Desktop ---------------*/
+//           @media screen and (min-width: 768px) {
+//             height: 100%;
+//             max-width: none;
+//             margin: 0;
+//             /*--------------- to Laptop ---------------*/
+//             @media screen and (min-width: 1024px) {
+//               position: relative;
+//               top: 48px;
+//               left: 48px;
+//               width: calc(
+//                 100% - 72px
+//               ); // 72px = 48px (taille padding) + 24px (taille margin de la grid)
+//               height: calc(100% + 8px); // 8px = taille de cardFrame
+//               /*--------------- to Desktop ---------------*/
+//               @media screen and (min-width: 1280px) {
+//                 top: 64px;
+//                 left: 64px;
+//                 width: calc(
+//                   100% - 96px
+//                 ); // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+//               }
+//             }
+//           }
+
+//           .imageCard {
+//             position: relative;
+//             height: 100%;
+//             border-radius: 8px;
+//             border: 1px solid black;
+//           }
+//         }
+
+//         .socialContainer {
+//           padding: 32px;
+//           display: flex;
+//           justify-content: center;
+//           gap: 16px;
+//           border: 1px solid orange;
+//           /*--------------- Laptop ---------------*/
+//           @media screen and (min-width: 1024px) {
+//             display: none;
+//           }
+
+//           .item {
+//             width: 40px;
+//             aspect-ratio: 1/1;
+
+//             border-radius: 50%;
+//             border: 1px solid black;
+//           }
+//         }
+//       }
+
+//       .rightColumn {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 32px;
+//         /*--------------- Tablet ---------------*/
+//         @media screen and (min-width: 768px) {
+//           grid-column: 5 / span 8;
+//           border: 1px solid red;
+//           /*--------------- to Laptop ---------------*/
+//           @media screen and (min-width: 1024px) {
+//             grid-column: 6 / span 7;
+//           }
+//         }
+
+//         .quote {
+//           padding: 16px;
+//           border: 1px solid black;
+//           border-radius: 16px;
+//           text-align: center;
+//           line-height: 1.5;
+//         }
+
+//         .separator {
+//           width: 50%;
+//           height: 4px;
+//           background-color: black;
+//         }
+
+//         .presentationContainer {
+//           width: 100%;
+//           padding: 16px;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 32px;
+//           border-radius: 16px;
+//           border: 1px solid black;
+
+//           .presentationTitles {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 8px;
+//             .name {
+//               font-size: 24px;
+//               font-weight: 600;
+//               text-transform: uppercase;
+//               .small {
+//                 font-weight: 400;
+//               }
+//             }
+
+//             .role {
+//               font-size: 14px;
+//               text-transform: uppercase;
+//               letter-spacing: 2px;
+//             }
+//           }
+
+//           .descriptionsContainer {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 16px;
+//             @include paragraphe-text-style;
+//           }
+
+//           .button {
+//             width: 220px;
+//             height: 48px;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             border-radius: 32px;
+//             border: 1px solid black;
+//             font-size: 14px;
+//             margin: 0 auto;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 .aboutContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  /*------------------ Tablet ------------------*/
+  gap: 64px;
+  border: 1px solid red;
+  /*--------------- Tablet ---------------*/
   @media screen and (min-width: 768px) {
-    height: 100%;
-    max-width: 1440px;
+    gap: 48px;
   }
 
   .sectionTitle {
-    padding: 0 20px;
-    @include home-title-section;
-    /*------------------ Tablet ------------------*/
-    @media screen and (min-width: 768px) {
-      padding: 0;
-    }
+    @include section-title;
   }
 
-  .aboutCardFrame {
-    /*------------------ Tablet to Laptop------------------*/
-    @media screen and (min-width: 768px) {
-      height: 100%;
-      /*------------------ Laptop ------------------*/
-      @media screen and (min-width: 1024px) {
-        position: relative;
-        padding: 15px;
-        border-radius: 20px;
-        background: linear-gradient(
-          45deg,
-          $color-slate-grey-6 0%,
-          $color-slate-grey-2 80%
-        );
-        box-shadow: -50px 25px 100px -20px rgba(28, 32, 36, 0.4),
-          -2px 2px 8px rgba(28, 32, 36, 0.2),
-          0px 8px 6px -6px rgba(28, 32, 36, 0.4),
-          inset -3.75px 3.75px 7.5px white,
-          inset 3.75px -3.75px 7.5px rgba(28, 32, 36, 0.4);
-        // *--------- Ombre portée (gauche) de la carte :
-        &::before {
-          content: '';
-          z-index: -1;
-          position: absolute;
-          top: -2px;
-          left: -95%;
-          width: 100%;
-          height: 100%;
-          border-radius: inherit;
-          background: linear-gradient(
-            -26deg,
-            rgba(28, 32, 36, 0.1) 25%,
-            transparent 51%
-          );
-          filter: blur(5px);
-        }
-        // *--------- Ombre eliptique (dessous) de la carte :
-        &::after {
-          content: '';
-          z-index: -1;
-          position: absolute;
-          bottom: -10px;
-          left: -5px;
-          width: 100%;
-          height: 20px;
-          border-radius: 50%;
-          background: linear-gradient(
-            0deg,
-            transparent 0%,
-            rgba(28, 32, 36, 0.8) 100%
-          );
-          filter: blur(2px);
-        }
-      }
-    }
-
-    .aboutCard {
-      /*------------------ Tablet to Laptop------------------*/
-      @media screen and (min-width: 768px) {
-        display: flex;
-        gap: 40px;
-        height: 100%;
-        /*------------------ Laptop ------------------*/
-        @media screen and (min-width: 1024px) {
-          position: relative;
-          gap: 0;
-          border-radius: 10px;
-          box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
-            inset -50px 50px 100px rgba(28, 32, 36, 0.05),
-            inset 50px -50px 100px rgba(255, 255, 255, 0.4);
-        }
-      }
-      //*------------ Colonne de gauche : IMG + Socials :
+  .cardFrame {
+    .card {
       .leftColumn {
-        /*------------------ Tablet to Laptop------------------*/
-        @media screen and (min-width: 768px) {
-          width: 50%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          /*------------------ Laptop ------------------*/
-          @media screen and (min-width: 1024px) {
-            display: block;
-            gap: 0;
-            width: 50%;
-          }
-        }
-        .imageSection {
-          padding: 40px 0;
-          display: flex;
-          justify-content: center;
-          /*------------------ Laptop to desktop ------------------*/
-          @media screen and (min-width: 1024px) {
-            height: 100%;
-            margin-top: 80px;
-            padding: 0 40px;
-            /*------------------ to desktop ------------------*/
-            @media screen and (min-width: 1200px) {
-              padding: 0 80px;
-            }
-          }
+        .imageCardFrame {
+          height: 420px;
+          max-width: 320px;
+          margin: 0 auto;
+          padding: 8px;
+          border-radius: 16px;
+          border: 1px solid black;
 
-          .imageFrame {
+          .imageCard {
             position: relative;
-            width: 100%;
-            height: 400px;
-            max-width: 300px;
-            padding: 15px;
-            border-radius: 20px;
-            background: linear-gradient(
-              45deg,
-              $color-slate-grey-6 0%,
-              $color-slate-grey-2 80%
-            );
-            box-shadow: -25px 12.5px 50px rgba(28, 32, 36, 0.4),
-              -2px 2px 8px rgba(28, 32, 36, 0.2),
-              0px 8px 6px -6px rgba(28, 32, 36, 0.4),
-              inset -3.75px 3.75px 7.5px white,
-              inset 3.75px -3.75px 7.5px rgba(28, 32, 36, 0.4);
-            // *--------- Ombre portée (gauche) de la carte :
-            &::before {
-              content: '';
-              z-index: -1;
-              position: absolute;
-              top: -2px;
-              left: -95%;
-              width: 100%;
-              height: 100%;
-              border-radius: inherit;
-              background: linear-gradient(
-                -26deg,
-                rgba(28, 32, 36, 0.1) 25%,
-                transparent 51%
-              );
-              filter: blur(5px);
-            }
-            // *--------- Ombre eliptique (dessous) de la carte :
-            &::after {
-              content: '';
-              z-index: -1;
-              position: absolute;
-              bottom: -7.5px;
-              left: -7.5px;
-              width: 100%;
-              height: 15px;
-              border-radius: 50%;
-              background: linear-gradient(
-                0deg,
-                transparent 0%,
-                rgba(28, 32, 36, 0.8) 80%
-              );
-              filter: blur(2px);
-            }
-            /*------------------ Tablet to Laptop------------------*/
-            @media screen and (min-width: 768px) {
-              height: 550px;
-              max-width: none;
-              /*------------------ to Laptop ------------------*/
-              @media screen and (min-width: 1024px) {
-                height: 100%;
-                max-width: none;
-                min-width: 350px;
-              }
-            }
-
-            .imageContainer {
-              position: relative;
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
-                inset -50px 50px 100px rgba(28, 32, 36, 0.05),
-                inset 50px -50px 100px rgba(255, 255, 255, 0.2);
-
-              .image {
-                height: 130% !important;
-                top: -30% !important;
-                object-fit: cover;
-                border-radius: inherit;
-                /*------------------ Tablet ------------------*/
-                @media screen and (min-width: 768px) {
-                  height: 120% !important;
-                  top: -20% !important;
-                }
-              }
-            }
-
-            // *----------- Reflet de la carte de l'image ------------*
-            .imageFrameReflect {
-              z-index: -1;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              width: 100%;
-              height: 80px;
-              padding: 0px 15px 15px;
-              transform: scaleY(-1);
-              border-radius: 0 0 20px 20px;
-              background-color: white;
-              opacity: 0.8;
-              mask-image: linear-gradient(
-                to top,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.05) 50%,
-                rgba(255, 255, 255, 0) 100%
-              );
-              -webkit-mask-image: linear-gradient(
-                to top,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.05) 50%,
-                rgba(255, 255, 255, 0) 100%
-              );
-              filter: blur(3px);
-
-              .imageReflect {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                border-radius: 0 0 10px 10px;
-                opacity: 0.6;
-
-                .image {
-                  object-fit: cover;
-                  object-position: 50% 100%;
-                  border-radius: inherit;
-                }
-              }
-            }
+            height: 100%;
+            border-radius: 8px;
+            border: 1px solid black;
           }
         }
 
-        .socialSection {
+        .socialContainer {
+          padding: 32px;
           display: flex;
           justify-content: center;
-          gap: 40px;
-          /*------------------ Laptop ------------------*/
-          @media screen and (min-width: 1024px) {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            flex-direction: column;
-            gap: 15px;
-          }
+          gap: 16px;
+          border: 1px solid orange;
 
           .item {
             width: 40px;
             aspect-ratio: 1/1;
-            filter: drop-shadow(-1px 1px 0.5px $color-primary-dark-darker)
-              drop-shadow(1px -1px 0.5px $color-teal-1);
-            /*------------------ Laptop ------------------*/
-            @media screen and (min-width: 1024px) {
-              width: 25px;
-              filter: drop-shadow(0.5px -0.5px 0px rgba(28, 32, 36, 0.4))
-                drop-shadow(-0.5px 0.5px 0px white);
-            }
+            border-radius: 50%;
+            border: 1px solid black;
           }
         }
       }
 
-      //*------------ Colonne de droite : Quote + Separator + infos :
       .rightColumn {
-        /*------------------ Tablet to Laptop------------------*/
-        @media screen and (min-width: 768px) {
-          width: 50%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
-          /*------------------ Laptop ------------------*/
-          @media screen and (min-width: 1024px) {
-            width: 50%;
-            justify-content: center;
-            gap: 0;
-          }
-        }
-        .quoteSection {
-          padding: 40px;
-          font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        border: 1px solid red;
+
+        .quote {
+          padding: 16px;
+          border-radius: 16px;
           text-align: center;
-          font-weight: 600;
-          line-height: 20px;
-          color: $color-slate-grey-12;
-          /*------------------ Tablet to Laptop to Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            padding: 0px;
-            /*------------------ to Laptop ------------------*/
-            @media screen and (min-width: 1024px) {
-              padding: 40px 40px 40px 0;
-              /*------------------ to Desktop ------------------*/
-              @media screen and (min-width: 1200px) {
-                padding: 40px 80px 40px 0;
-              }
-            }
-          }
+          line-height: 1.5;
+          color: $color-primary-dark-darker;
+          border: 1px solid black;
         }
 
-        .separatorSection {
+        .separator {
           width: 50%;
-          height: 15px;
-          margin: 0 auto;
-          border-radius: 20px;
-          background: linear-gradient(45deg, #007782 0%, #00b0bd 100%);
-          box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
-            inset -2px 2px 4px rgba(28, 32, 36, 0.8);
-          /*------------------ Tablet ------------------*/
-          @media screen and (min-width: 768px) {
-            margin: 0;
-          }
+          height: 4px;
+          border-radius: 16px;
+          background-color: black;
         }
 
-        .presentationSection {
-          margin: 40px 0;
-          padding: 20px;
+        .presentationContainer {
+          padding: 16px;
           display: flex;
           flex-direction: column;
-          gap: 40px;
-          border-radius: 20px;
-          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-            inset 2px -2px 4px rgba(255, 255, 255, 0.4),
-            inset -2px 2px 4px rgba(28, 32, 36, 0.6);
-          /*------------------ Tablet to Laptop to Desktop------------------*/
-          @media screen and (min-width: 768px) {
-            margin: 0;
-            padding: 0;
-            box-shadow: none;
-            /*------------------ to Laptop------------------*/
-            @media screen and (min-width: 1024px) {
-              margin: 40px 0;
-              padding: 0px 40px 0 0;
-              /*------------------ to desktop ------------------*/
-              @media screen and (min-width: 1200px) {
-                padding: 0px 80px 0 0;
-              }
-            }
-          }
+          gap: 32px;
+          border-radius: 16px;
+          border: 1px solid black;
 
           .presentationTitles {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
             .name {
-              padding-bottom: 5px;
               font-size: 24px;
-              font-weight: 700;
+              font-weight: 600;
               text-transform: uppercase;
-              background: radial-gradient(
-                ellipse farthest-corner at right center,
-                $color-primary 0%,
-                $color-primary-dark 68%,
-                $color-primary-dark-darker 100%
-              );
-              background-clip: text;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
+
               .small {
                 font-weight: 400;
               }
             }
+
             .role {
               font-size: 12px;
               text-transform: uppercase;
               letter-spacing: 2px;
-              color: $color-primary-dark-darker;
             }
           }
 
           .descriptionsContainer {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            font-size: 14px;
-            color: $color-slate-grey-12;
+            gap: 16px;
+            @include paragraphe-text-style;
           }
 
-          .buttonContainer {
+          .button {
+            width: 220px;
+            height: 48px;
             display: flex;
+            align-items: center;
             justify-content: center;
+            border-radius: 32px;
+            border: 1px solid black;
+            font-size: 14px;
+            margin: 0 auto;
           }
-        }
-      }
-    }
-
-    // *----------- Reflet de la carte ------------*
-    .cardFrameReflect {
-      /*------------------ Laptop ------------------*/
-      @media screen and (min-width: 1024px) {
-        z-index: -1;
-        position: absolute;
-        bottom: -80px;
-        left: 0%;
-        width: 100%;
-        height: 80px;
-        padding: 15px 15px 0;
-        border-radius: 20px 20px 0 0;
-        background-color: white;
-        opacity: 0.8;
-        mask-image: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.8) 0%,
-          rgba(255, 255, 255, 0.4) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.8) 0%,
-          rgba(255, 255, 255, 0.4) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        filter: blur(5px);
-
-        .cardReflect {
-          width: 100%;
-          height: 100%;
-          border-radius: 10px 10px 0 0;
-          background-color: $color-slate-grey-2;
         }
       }
     }
