@@ -772,9 +772,15 @@
   flex-direction: column;
   gap: 64px;
   border: 1px solid red;
-  /*--------------- Tablet ---------------*/
+  /*--------------- Tablet -> Desktop ---------------*/
   @media screen and (min-width: 768px) {
     gap: 48px;
+    /*--------------- to Desktop ---------------*/
+    @media screen and (min-width: 1280px) {
+      max-width: 1280px;
+      margin: 0 auto;
+      gap: 32px;
+    }
   }
 
   .sectionTitle {
@@ -782,19 +788,36 @@
   }
 
   .cardFrame {
+    /*--------------- Desktop ---------------*/
+    @media screen and (min-width: 1280px) {
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid black;
+    }
     .card {
-      /*--------------- Tablet ---------------*/
+      /*--------------- Tablet -> Desktop ---------------*/
       @media screen and (min-width: 768px) {
         position: relative;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         gap: 24px;
+        /*--------------- to Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          border-radius: 8px;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 32px;
+          border: 1px solid black;
+        }
       }
       .leftColumn {
-        /*--------------- Tablet ---------------*/
+        /*--------------- Tablet -> Desktop ---------------*/
         @media screen and (min-width: 768px) {
           grid-column: 1 / span 3;
           border: 1px solid red;
+          /*--------------- to Desktop ---------------*/
+          @media screen and (min-width: 1280px) {
+            grid-column: 1 / span 5;
+          }
         }
         .imageCardFrame {
           height: 420px;
@@ -803,10 +826,20 @@
           padding: 8px;
           border-radius: 16px;
           border: 1px solid black;
-          /*--------------- Tablet ---------------*/
+          /*--------------- Tablet -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             max-width: none;
             margin: 0;
+            /*--------------- to Desktop ---------------*/
+            @media screen and (min-width: 1280px) {
+              position: relative;
+              top: 64px;
+              left: 64px;
+              width: calc(
+                100% - 96px
+              ); // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+              height: calc(100% + 8px); // 8px = taille de cardFrame
+            }
           }
 
           .imageCard {
@@ -822,12 +855,19 @@
                 100% + 96px
               ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
               top: -96px !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
-              /*--------------- Tablet ---------------*/
+              /*--------------- Tablet -> Desktop ---------------*/
               @media screen and (min-width: 768px) {
                 height: calc(
                   100% + 72px
                 ) !important; // 72px = 48px (taille padding) + 24px (taille margin de la grid)
                 top: -72px !important;
+                /*--------------- to Desktop ---------------*/
+                @media screen and (min-width: 1280px) {
+                  height: calc(
+                    100% + 96px
+                  ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+                  top: -96px !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+                }
               }
             }
           }
@@ -838,9 +878,16 @@
           display: flex;
           justify-content: center;
           gap: 16px;
-          /*--------------- Tablet ---------------*/
+          /*--------------- Tablet -> to Desktop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 24px 0;
+            /*--------------- to Desktop ---------------*/
+            @media screen and (min-width: 1280px) {
+              position: absolute;
+              right: 32px;
+              bottom: 8px;
+              flex-direction: column;
+            }
           }
 
           .item {
@@ -848,6 +895,10 @@
             aspect-ratio: 1/1;
             border-radius: 50%;
             border: 1px solid black;
+            /*--------------- Desktop ---------------*/
+            @media screen and (min-width: 1280px) {
+              width: 32px;
+            }
           }
         }
       }
@@ -860,9 +911,15 @@
         /*--------------- Tablet ---------------*/
         @media screen and (min-width: 768px) {
           grid-column: 4 / span 5;
-          border: 1px solid red;
           align-items: baseline;
           gap: 24px;
+          border: 1px solid red;
+          /*--------------- to Desktop ---------------*/
+          @media screen and (min-width: 1280px) {
+            padding: 32px 32px 32px 0;
+            grid-column: 6 / span 7;
+            gap: 32px;
+          }
         }
 
         .quote {
@@ -887,11 +944,14 @@
           flex-direction: column;
           gap: 32px;
           border-radius: 16px;
-
-          /*--------------- Tablet ---------------*/
+          /*--------------- Tablet -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 0;
             gap: 24px;
+            /*--------------- to Desktop ---------------*/
+            @media screen and (min-width: 1280px) {
+              padding-right: 64px;
+            }
           }
 
           .presentationTitles {
