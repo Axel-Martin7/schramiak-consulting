@@ -771,7 +771,6 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
-  border: 1px solid red;
   /*--------------- Tablet -> Desktop ---------------*/
   @media screen and (min-width: 768px) {
     gap: 48px;
@@ -788,34 +787,36 @@
   }
 
   .cardFrame {
-    /*--------------- Desktop ---------------*/
-    @media screen and (min-width: 1280px) {
+    /*--------------- Laptop ---------------*/
+    @media screen and (min-width: 1080px) {
       padding: 8px;
       border-radius: 16px;
       border: 1px solid black;
     }
     .card {
-      /*--------------- Tablet -> Desktop ---------------*/
+      /*--------------- Tablet -> Laptop -> Desktop ---------------*/
       @media screen and (min-width: 768px) {
         position: relative;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         gap: 24px;
-        /*--------------- to Desktop ---------------*/
-        @media screen and (min-width: 1280px) {
+        /*--------------- to Laptop ---------------*/
+        @media screen and (min-width: 1080px) {
           border-radius: 8px;
           grid-template-columns: repeat(12, 1fr);
-          gap: 32px;
           border: 1px solid black;
+          /*--------------- to Desktop ---------------*/
+          @media screen and (min-width: 1280px) {
+            gap: 32px;
+          }
         }
       }
       .leftColumn {
-        /*--------------- Tablet -> Desktop ---------------*/
+        /*--------------- Tablet -> Laptop ---------------*/
         @media screen and (min-width: 768px) {
           grid-column: 1 / span 3;
-          border: 1px solid red;
-          /*--------------- to Desktop ---------------*/
-          @media screen and (min-width: 1280px) {
+          /*--------------- to Laptop ---------------*/
+          @media screen and (min-width: 1080px) {
             grid-column: 1 / span 5;
           }
         }
@@ -826,19 +827,27 @@
           padding: 8px;
           border-radius: 16px;
           border: 1px solid black;
-          /*--------------- Tablet -> Desktop ---------------*/
+          /*--------------- Tablet -> Laptop -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             max-width: none;
             margin: 0;
-            /*--------------- to Desktop ---------------*/
-            @media screen and (min-width: 1280px) {
+            /*--------------- to Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
               position: relative;
-              top: 64px;
-              left: 64px;
+              top: 48px;
+              left: 48px;
               width: calc(
-                100% - 96px
-              ); // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+                100% - 72px
+              ); // 72px = 48px (taille padding) + 24px (taille margin de la grid)
               height: calc(100% + 8px); // 8px = taille de cardFrame
+              /*--------------- to Desktop ---------------*/
+              @media screen and (min-width: 1280px) {
+                top: 64px;
+                left: 64px;
+                width: calc(
+                  100% - 96px
+                ); // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+              }
             }
           }
 
@@ -855,14 +864,14 @@
                 100% + 96px
               ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
               top: -96px !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
-              /*--------------- Tablet -> Desktop ---------------*/
+              /*--------------- Tablet -> Laptop ---------------*/
               @media screen and (min-width: 768px) {
                 height: calc(
                   100% + 72px
                 ) !important; // 72px = 48px (taille padding) + 24px (taille margin de la grid)
                 top: -72px !important;
-                /*--------------- to Desktop ---------------*/
-                @media screen and (min-width: 1280px) {
+                /*--------------- to Laptop ---------------*/
+                @media screen and (min-width: 1080px) {
                   height: calc(
                     100% + 96px
                   ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
@@ -878,15 +887,20 @@
           display: flex;
           justify-content: center;
           gap: 16px;
-          /*--------------- Tablet -> to Desktop ---------------*/
+          /*--------------- Tablet -> Laptop -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 24px 0;
-            /*--------------- to Desktop ---------------*/
-            @media screen and (min-width: 1280px) {
+            /*--------------- to Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
               position: absolute;
-              right: 32px;
-              bottom: 8px;
+              right: 24px;
+              bottom: 0px;
               flex-direction: column;
+              /*--------------- to Desktop ---------------*/
+              @media screen and (min-width: 1280px) {
+                right: 32px;
+                bottom: 8px;
+              }
             }
           }
 
@@ -895,8 +909,8 @@
             aspect-ratio: 1/1;
             border-radius: 50%;
             border: 1px solid black;
-            /*--------------- Desktop ---------------*/
-            @media screen and (min-width: 1280px) {
+            /*--------------- Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
               width: 32px;
             }
           }
@@ -908,17 +922,20 @@
         flex-direction: column;
         align-items: center;
         gap: 32px;
-        /*--------------- Tablet ---------------*/
+        /*--------------- Tablet -> Laptop -> Desktop ---------------*/
         @media screen and (min-width: 768px) {
           grid-column: 4 / span 5;
           align-items: baseline;
           gap: 24px;
-          border: 1px solid red;
-          /*--------------- to Desktop ---------------*/
-          @media screen and (min-width: 1280px) {
-            padding: 32px 32px 32px 0;
+          /*--------------- to Laptop ---------------*/
+          @media screen and (min-width: 1080px) {
+            padding: 24px 24px 24px 0;
             grid-column: 6 / span 7;
-            gap: 32px;
+            /*--------------- to Desktop ---------------*/
+            @media screen and (min-width: 1280px) {
+              padding: 32px 32px 32px 0;
+              gap: 32px;
+            }
           }
         }
 
@@ -944,13 +961,17 @@
           flex-direction: column;
           gap: 32px;
           border-radius: 16px;
-          /*--------------- Tablet -> Desktop ---------------*/
+          /*--------------- Tablet -> Laptop -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 0;
             gap: 24px;
-            /*--------------- to Desktop ---------------*/
-            @media screen and (min-width: 1280px) {
-              padding-right: 64px;
+            /*--------------- to Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
+              padding-right: 48px;
+              /*--------------- to Desktop ---------------*/
+              @media screen and (min-width: 1280px) {
+                padding-right: 64px;
+              }
             }
           }
 
