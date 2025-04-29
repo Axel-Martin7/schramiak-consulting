@@ -143,7 +143,17 @@ export default function About() {
         <div className={styles.card}>
           <div className={styles.leftColumn}>
             <div className={styles.imageCardFrame}>
-              <div className={styles.imageCard}></div>
+              <div className={styles.imageCard}>
+                <Image
+                  className={styles.image}
+                  alt="photo de Steven Schramiak"
+                  src={steven}
+                  placeholder="blur"
+                  quality={100}
+                  fill
+                  sizes="100vw"
+                />
+              </div>
             </div>
 
             <div className={styles.socialContainer}>

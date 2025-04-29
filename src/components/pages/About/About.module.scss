@@ -765,6 +765,8 @@
 //   }
 // }
 
+//
+
 .aboutContainer {
   display: flex;
   flex-direction: column;
@@ -783,7 +785,7 @@
     .card {
       /*--------------- Tablet ---------------*/
       @media screen and (min-width: 768px) {
-        border: 1px solid blue;
+        position: relative;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         gap: 24px;
@@ -804,6 +806,7 @@
           /*--------------- Tablet ---------------*/
           @media screen and (min-width: 768px) {
             max-width: none;
+            margin: 0;
           }
 
           .imageCard {
@@ -811,6 +814,22 @@
             height: 100%;
             border-radius: 8px;
             border: 1px solid black;
+
+            .image {
+              object-fit: cover;
+              border-radius: inherit;
+              height: calc(
+                100% + 96px
+              ) !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+              top: -96px !important; // 96px = 64px (taille padding) + 32px (taille margin de la grid)
+              /*--------------- Tablet ---------------*/
+              @media screen and (min-width: 768px) {
+                height: calc(
+                  100% + 72px
+                ) !important; // 72px = 48px (taille padding) + 24px (taille margin de la grid)
+                top: -72px !important;
+              }
+            }
           }
         }
 
@@ -819,10 +838,9 @@
           display: flex;
           justify-content: center;
           gap: 16px;
-          border: 1px solid orange;
           /*--------------- Tablet ---------------*/
           @media screen and (min-width: 768px) {
-            padding: 24px;
+            padding: 24px 0;
           }
 
           .item {
@@ -839,13 +857,12 @@
         flex-direction: column;
         align-items: center;
         gap: 32px;
-        border: 1px solid red;
         /*--------------- Tablet ---------------*/
         @media screen and (min-width: 768px) {
           grid-column: 4 / span 5;
+          border: 1px solid red;
           align-items: baseline;
           gap: 24px;
-          border: 1px solid red;
         }
 
         .quote {
@@ -855,10 +872,6 @@
           line-height: 1.5;
           color: $color-primary-dark-darker;
           border: 1px solid black;
-          /*--------------- Tablet ---------------*/
-          @media screen and (min-width: 768px) {
-            padding: 24px;
-          }
         }
 
         .separator {
@@ -874,7 +887,7 @@
           flex-direction: column;
           gap: 32px;
           border-radius: 16px;
-          border: 1px solid black;
+
           /*--------------- Tablet ---------------*/
           @media screen and (min-width: 768px) {
             padding: 0;
