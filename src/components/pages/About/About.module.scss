@@ -781,7 +781,19 @@
 
   .cardFrame {
     .card {
+      /*--------------- Tablet ---------------*/
+      @media screen and (min-width: 768px) {
+        border: 1px solid blue;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 24px;
+      }
       .leftColumn {
+        /*--------------- Tablet ---------------*/
+        @media screen and (min-width: 768px) {
+          grid-column: 1 / span 3;
+          border: 1px solid red;
+        }
         .imageCardFrame {
           height: 420px;
           max-width: 320px;
@@ -789,6 +801,10 @@
           padding: 8px;
           border-radius: 16px;
           border: 1px solid black;
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            max-width: none;
+          }
 
           .imageCard {
             position: relative;
@@ -804,6 +820,10 @@
           justify-content: center;
           gap: 16px;
           border: 1px solid orange;
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            padding: 24px;
+          }
 
           .item {
             width: 40px;
@@ -820,6 +840,13 @@
         align-items: center;
         gap: 32px;
         border: 1px solid red;
+        /*--------------- Tablet ---------------*/
+        @media screen and (min-width: 768px) {
+          grid-column: 4 / span 5;
+          align-items: baseline;
+          gap: 24px;
+          border: 1px solid red;
+        }
 
         .quote {
           padding: 16px;
@@ -828,6 +855,10 @@
           line-height: 1.5;
           color: $color-primary-dark-darker;
           border: 1px solid black;
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            padding: 24px;
+          }
         }
 
         .separator {
@@ -844,6 +875,11 @@
           gap: 32px;
           border-radius: 16px;
           border: 1px solid black;
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            padding: 0;
+            gap: 24px;
+          }
 
           .presentationTitles {
             display: flex;
@@ -884,6 +920,10 @@
             border: 1px solid black;
             font-size: 14px;
             margin: 0 auto;
+            /*--------------- Tablet ---------------*/
+            @media screen and (min-width: 768px) {
+              margin-top: 8px;
+            }
           }
         }
       }
