@@ -958,7 +958,7 @@
         }
 
         .presentationContainer {
-          padding: 16px;
+          padding: 32px 16px;
           display: flex;
           flex-direction: column;
           gap: 24px;
@@ -1009,8 +1009,9 @@
           .button {
             width: 220px;
             height: 48px;
-            margin-top: 8px; // Le gap entre le titre et la description est de 24px. On ajoute 8 pour faire 32
+
             margin: 0 auto;
+            margin-top: 8px; // Le gap entre le titre et la description est de 24px. On ajoute 8 pour faire 32
             border: 1px solid $color-slate-grey-9;
             border-radius: 32px;
             background-image: linear-gradient(
