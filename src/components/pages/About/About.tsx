@@ -359,7 +359,7 @@ export default function About() {
               {/* ---------- Reflet de la carte de l'image ---------- */}
               <div className={styles.imageCardFrameReflect}>
                 <div className={styles.imageCardReflect}>
-                  {/* <Image
+                  <Image
                     className={styles.image}
                     alt="photo de Steven Schramiak"
                     src={steven}
@@ -367,7 +367,7 @@ export default function About() {
                     quality={100}
                     fill
                     sizes="100vw"
-                  /> */}
+                  />
                 </div>
               </div>
             </div>
