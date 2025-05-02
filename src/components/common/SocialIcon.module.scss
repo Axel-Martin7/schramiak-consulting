@@ -14,53 +14,44 @@
 }
 
 //*---------- VARIANT : DEFAULT ----------*
+//---------- Style pour les items pour le reste du site :
 .item {
-  width: 40px;
-  aspect-ratio: 1/1;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $color-slate-grey-9;
-  border-radius: 50%;
-  background-image: linear-gradient(
-    to top,
-    $color-slate-grey-6 0%,
-    white 80%,
-    $color-slate-grey-2 100%
-  );
-  box-shadow: 0px 4px 3px 1px $color-slate-grey-1,
-    0px 6px 8px $color-slate-grey-6, 0px -4px 4px $color-slate-grey-7,
-    0px -6px 4px $color-slate-grey-2, inset 0px 0px 3px $color-slate-grey-7;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  outline: none;
-  // Cible les éléments internes pour leurs appliquer une transition transform.
-  // Cela permet d'affeter uniquement le contenu
-  > * {
-    transition: transform 0.2s ease;
-  }
-  // État au survol : modification de la box-shadow et légère réduction de l'échelle du contenu
-  &:hover:not([disabled]) {
-    box-shadow: 0px 4px 3px 1px $color-slate-grey-1,
-      0px 6px 8px $color-slate-grey-6, 0px -4px 4px $color-slate-grey-7,
+  @include social-icon-default-variant;
+}
+
+//---------- Style pour les items dans le panneau déroulant :
+.itemOnPanel {
+  @include social-icon-default-variant(
+    $bg:
+      linear-gradient(
+        to top,
+        $color-slate-grey-6 0%,
+        $color-slate-grey-1 80%,
+        $color-slate-grey-2 100%
+      ),
+    $shadow: (
+      0px 4px 3px 1px $color-slate-grey-1,
+      0px 6px 8px $color-slate-grey-6,
+      0px -4px 4px $color-slate-grey-7,
       0px -6px 4px $color-slate-grey-2,
-      inset 0px 0px 3px 3px $color-slate-grey-7;
-    > * {
-      transform: scale(0.975);
-    }
-  }
-  // État actif (clic) : effet d'enfoncement renforcé et réduction plus marquée
-  &:active:not([disabled]) {
-    box-shadow: 0px 4px 3px 1px $color-slate-grey-1,
-      0px 6px 8px $color-slate-grey-6, 0px -4px 4px $color-slate-grey-7,
+      inset 0px 0px 3px $color-slate-grey-7,
+    ),
+    $hover-shadow: (
+      0px 4px 3px 1px $color-slate-grey-1,
+      0px 6px 8px $color-slate-grey-6,
+      0px -4px 4px $color-slate-grey-7,
+      0px -6px 4px $color-slate-grey-2,
+      inset 0px 0px 3px 3px $color-slate-grey-7,
+    ),
+    $active-shadow: (
+      0px 4px 3px 1px $color-slate-grey-1,
+      0px 6px 8px $color-slate-grey-6,
+      0px -4px 4px $color-slate-grey-7,
       0px -6px 4px $color-slate-grey-2,
       inset 0px 0px 5px 3px $color-slate-grey-8,
-      inset 0px 0px 30px $color-slate-grey-7;
-    > * {
-      transform: scale(0.95);
-    }
-  }
+      inset 0px 0px 30px $color-slate-grey-7,
+    )
+  );
 }
 
 //*---------- VARIANT : CONTACT ----------*

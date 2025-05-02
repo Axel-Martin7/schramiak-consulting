@@ -5,6 +5,7 @@ import styles from './BurgerMenu.module.scss';
 import ReactDOM from 'react-dom';
 import Navigation from '../Navigation';
 import { SocialIcon } from '../../common/SocialIcon';
+import iconStyles from '@/components/common/SocialIcon.module.scss';
 
 export default function BurgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); //           State qui détermine si le menu est ouvert ou fermé.
@@ -77,6 +78,7 @@ function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
           href="https://linkedin.com/company/your-company"
           variant="default"
           ariaLabel="Visit LinkedIn"
+          className={iconStyles.itemOnPanel}
         />
 
         <SocialIcon
@@ -84,18 +86,21 @@ function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
           href="https://example.com/location"
           variant="default"
           ariaLabel="View location"
+          className={iconStyles.itemOnPanel}
         />
         <SocialIcon
           type="email"
           href="mailto:contact@example.com"
           variant="default"
           ariaLabel="Send an email"
+          className={iconStyles.itemOnPanel}
         />
         <SocialIcon
           type="whatsapp"
           href="https://wa.me/123456789"
           variant="default"
           ariaLabel="Chat on WhatsApp"
+          className={iconStyles.itemOnPanel}
         />
       </div>
     </div>,

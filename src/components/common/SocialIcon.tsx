@@ -83,7 +83,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
       <>
         <linearGradient id={gradientId} x1="1" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#60646c" />
-          <stop offset="100%" stopColor="#b9bbc6" />
+          <stop offset="100%" stopColor="#A2A4AF" />
         </linearGradient>
         <linearGradient id={hoverGradientId} x1="1" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#007782" />
@@ -134,11 +134,8 @@ export const SocialIcon: FC<SocialIconProps> = ({
    - **svgClass** : classe appliquée sur le SVG, combinant le style de base et toute classe additionnelle.
    - **linkClass** : classe appliquée sur le lien <a>, incluant le style de base et celui correspondant à la variante.
    */
-  const svgClass = [styles.icon, className || ''].filter(Boolean).join(' ');
-  const linkClass = [styles.link, variant ? styles[variant] : '']
-    .filter(Boolean)
-    .join(' ');
-
+  const svgClass = styles.icon;
+  const linkClass = [styles.link, styles[variant]].filter(Boolean).join(' ');
   //--------------------- Rendu du composant SocialIcon :
   return (
     <a
@@ -168,7 +165,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
         </div>
       ) : variant === 'default' ? (
         // Structure spécifique pour 'default'
-        <div className={styles.item}>
+        <div className={[styles.item, className].filter(Boolean).join(' ')}>
           <svg viewBox="0 0 24 24" className={svgClass}>
             <defs>{gradientElements}</defs>
             <path d={d} fill="var(--fill)" />

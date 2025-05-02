@@ -19,7 +19,7 @@
   }
 
   .pageHeader {
-    @include page-header;
+    @include header-page;
   }
 
   .cardsSection {
@@ -46,7 +46,7 @@
       display: flex;
       justify-content: space-between;
       gap: 24px;
-      @include page-card-style;
+      @include card-page;
       /*------------------ Laptop -> Desktop ------------------*/
       @media screen and (min-width: 1024px) {
         width: calc(50% + 56px / 2 + 24px);
@@ -76,7 +76,7 @@
             margin-bottom: 4px;
             font-size: 20px;
             font-weight: 700;
-            @include sub-titles-style;
+            @include sub-titles-page;
             word-break: break-word;
 
             .strong {
@@ -107,7 +107,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            @include paragraphe-text-style;
+            @include text-style;
 
             .bubble {
               width: 8px;

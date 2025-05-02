@@ -9,30 +9,121 @@
   text-shadow: -2px 4px 2px rgba(255, 255, 255, 0.3);
 }
 
-// @mixin home-title-section {
-//   display: flex;
-//   align-items: center;
-//   .title {
-//     padding-right: 20px;
-//     font-size: 32px;
-//     font-weight: 600;
-//     text-transform: uppercase;
-//     @include font-style-carved;
-//     /*------------------ Laptop ------------------*/
-//     @media screen and (min-width: 768px) {
-//       padding-right: 40px;
-//     }
-//   }
-//   .titleSeparator {
-//     height: 10px;
-//     background-color: #f0f0f0;
-//     flex-grow: 1; /* S'étend pour remplir l'espace disponible */
-//     box-shadow: inset -2px 2px 2px #cecece, inset 2px -2px 2px #fcfcfc;
-//     border-radius: 20px;
-//   }
-// }
+//! ----------------------------------------------------------------------- NOUVEAUX :
 
-@mixin page-header {
+//*-------------------- GLOBAL --------------------*
+//---------- Texte global :
+@mixin text-style {
+  font-size: 14px;
+  line-height: 1.43;
+  color: $color-slate-grey-12;
+  // color: $color-primary-dark-darker;
+}
+
+//---------- Encapsule le style du variant 'default' et ses états pour les différences entre la home et le panneau déroulant
+@mixin social-icon-default-variant(
+  $bg:
+    linear-gradient(
+      to top,
+      $color-slate-grey-7 0%,
+      $color-slate-grey-2 80%,
+      $color-slate-grey-3 100%
+    ),
+  $shadow: (
+    0px 4px 3px 1px $color-slate-grey-3,
+    0px 6px 8px $color-slate-grey-7,
+    0px -4px 4px $color-slate-grey-8,
+    0px -6px 4px $color-slate-grey-3,
+    inset 0px 0px 3px $color-slate-grey-8,
+  ),
+  $hover-shadow: (
+    0px 4px 3px 1px $color-slate-grey-3,
+    0px 6px 8px $color-slate-grey-7,
+    0px -4px 4px $color-slate-grey-8,
+    0px -6px 4px $color-slate-grey-3,
+    inset 0px 0px 3px 3px $color-slate-grey-8,
+  ),
+  $active-shadow: (
+    0px 4px 3px 1px $color-slate-grey-3,
+    0px 6px 8px $color-slate-grey-7,
+    0px -4px 4px $color-slate-grey-8,
+    0px -6px 4px $color-slate-grey-3,
+    inset 0px 0px 5px 3px $color-slate-grey-9,
+    inset 0px 0px 30px $color-slate-grey-8,
+  )
+) {
+  width: 48px;
+  aspect-ratio: 1/1;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-slate-grey-9;
+  border-radius: 50%;
+  background-image: $bg;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  // Cible les éléments internes pour leurs appliquer une transition transform.
+  // Cela permet d'affeter uniquement le contenu
+  > * {
+    transition: transform 0.2s ease;
+  }
+  // État au survol : modification de la box-shadow et légère réduction de l'échelle du contenu
+  &:hover:not([disabled]) {
+    box-shadow: $hover-shadow;
+    > * {
+      transform: scale(0.975);
+    }
+  }
+  // État actif (clic) : effet d'enfoncement renforcé et réduction plus marquée
+  &:active:not([disabled]) {
+    box-shadow: $active-shadow;
+    > * {
+      transform: scale(0.95);
+    }
+  }
+}
+
+//*-------------------- HOME --------------------*
+//---------- Titre des sections dans la home :
+@mixin section-title-home {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /*--------------- Tablet ---------------*/
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+    /*--------------- Tablet ---------------*/
+    @media screen and (min-width: 1280px) {
+      gap: 32px;
+    }
+  }
+  .title {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: transparent;
+    background: $color-primary-dark;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: -2px 2px 2px rgba(255, 255, 255, 0.45);
+  }
+
+  .titleSeparator {
+    height: 8px;
+    flex-grow: 1; // S'étend pour remplir l'espace disponible
+    border-radius: 16px;
+    background-color: $color-slate-grey-3;
+    box-shadow: inset 0px 2px 4px rgba(28, 32, 36, 0.2), inset 0 -2px 4px white;
+  }
+}
+
+//*-------------------- OTHER PAGES --------------------*
+//---------- Header des pages :
+@mixin header-page {
   position: relative;
   width: 100%;
   padding: 48px 0;
@@ -145,10 +236,8 @@
   }
 }
 
-//*----------- TITRES ----------*
-
-// Sous-titres (h3) :
-@mixin sub-titles-style {
+//---------- Sous-titres (H3) dans les pages :
+@mixin sub-titles-page {
   background: radial-gradient(
     ellipse farthest-corner at right center,
     $color-primary 0%,
@@ -160,17 +249,8 @@
   -webkit-text-fill-color: transparent;
 }
 
-//*----------- TEXTES ----------*
-// Texte global :
-@mixin paragraphe-text-style {
-  font-size: 14px;
-  line-height: 1.43;
-  color: $color-slate-grey-12;
-  // color: $color-primary-dark-darker;
-}
-
-//*----------- CARDS ----------*
-@mixin page-card-style {
+//---------- Styles des cartes dans les pages :
+@mixin card-page {
   border-radius: 16px;
   background: linear-gradient(
     45deg,
@@ -180,39 +260,4 @@
   box-shadow: -2px 2px 4px rgba(28, 32, 36, 0.4),
     -8px 8px 14px 4px rgba(28, 32, 36, 0.25),
     inset 3px -3px rgba(28, 32, 36, 0.2);
-}
-
-//! ----------------------------------------------------------------------- NOUVEAUX :
-
-@mixin section-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  /*--------------- Tablet ---------------*/
-  @media screen and (min-width: 768px) {
-    gap: 24px;
-    /*--------------- Tablet ---------------*/
-    @media screen and (min-width: 1280px) {
-      gap: 32px;
-    }
-  }
-  .title {
-    font-size: 28px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: transparent;
-    background: $color-primary-dark;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    text-shadow: -2px 2px 2px rgba(255, 255, 255, 0.45);
-  }
-
-  .titleSeparator {
-    height: 8px;
-    flex-grow: 1; // S'étend pour remplir l'espace disponible
-    border-radius: 16px;
-    background-color: $color-slate-grey-3;
-    box-shadow: inset 0px 2px 4px rgba(28, 32, 36, 0.2), inset 0 -2px 4px white;
-  }
 }
