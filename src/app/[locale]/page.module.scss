@@ -130,14 +130,19 @@
   }
 
   .aboutSection {
+    // contain: paint;
     padding: 32px;
     border: 1px solid blue;
-    /*--------------- Tablet -> Desktop ---------------*/
+    /*--------------- Tablet -> Laptop -> Desktop ---------------*/
     @media screen and (min-width: 768px) {
       padding: 96px 48px 48px;
-      /*--------------- to Desktop ---------------*/
-      @media screen and (min-width: 1280px) {
-        padding: 128px 64px 128px;
+      /*--------------- to Laptop ---------------*/
+      @media screen and (min-width: 1080px) {
+        padding: 96px 48px 96px;
+        /*--------------- to Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          padding: 128px 64px 128px;
+        }
       }
     }
   }
