@@ -1271,14 +1271,10 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  /*--------------- Tablet -> Tablet L ---------------*/
-  @media screen and (min-width: 768px) {
-    gap: 48px;
-    /*--------------- to Tablet L ---------------*/
-    @media screen and (min-width: 834px) {
-      gap: 24px;
-    }
+  gap: 48px;
+  /*--------------- Tablet L ---------------*/
+  @media screen and (min-width: 834px) {
+    gap: 24px;
   }
 
   .sectionTitle {
@@ -1286,20 +1282,74 @@
   }
 
   .cardFrame {
+    /*--------------- Laptop ---------------*/
+    @media screen and (min-width: 1080px) {
+      position: relative;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid black;
+      // *--------- Ombre portée (gauche) de la carte :
+      &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0px;
+        left: -95%;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(
+          -26deg,
+          rgba(28, 32, 36, 0.1) 25%,
+          transparent 51%
+        );
+        filter: blur(5px);
+      }
+      // *--------- Ombre eliptique (dessous) de la carte :
+      &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        bottom: -8px;
+        left: -4px;
+        width: 100%;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(
+          0deg,
+          transparent 0%,
+          rgba(28, 32, 36, 0.8) 80%
+        );
+        filter: blur(2px);
+      }
+    }
     .card {
-      /*--------------- Tablet L ---------------*/
+      /*--------------- Tablet L -> Laptop ---------------*/
       @media screen and (min-width: 834px) {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         gap: 32px;
+        /*--------------- to Laptop ---------------*/
+        @media screen and (min-width: 1080px) {
+          position: relative;
+          grid-template-columns: repeat(12, 1fr);
+          gap: 24px;
+          border: 1px solid black;
+        }
       }
       .leftColumn {
-        /*--------------- Tablet L ---------------*/
+        /*--------------- Tablet L -> Laptop ---------------*/
         @media screen and (min-width: 834px) {
           padding: 24px 0 0 0;
           grid-column: 1 / span 3;
-          border: 1px solid red;
+          /*--------------- to Laptop ---------------*/
+          @media screen and (min-width: 1080px) {
+            grid-column: 1 / span 5;
+            padding: 24px 0 0 24px;
+            border: 1px solid red;
+          }
         }
+
         .imageCardFrame {
           position: relative;
           height: 420px;
@@ -1357,12 +1407,19 @@
             );
             filter: blur(2px);
           }
-          /*--------------- Tablet L ---------------*/
+          /*--------------- Tablet L -> Laptop ---------------*/
           @media screen and (min-width: 834px) {
             max-width: none;
             height: calc(
-              100% - 32px - 48px
+              100% - 24px - 48px
             ); // 32px = padding entre bouton et reste du contenu, 48px = taille du bouton
+            /*--------------- to Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
+              top: 24px;
+              height: calc(
+                100% + 24px + 16px
+              ); // 24px = padding, 16px = taille bordure
+            }
           }
 
           .imageCard {
@@ -1405,7 +1462,7 @@
             border: 1px solid orange;
             /*--------------- Tablet L ---------------*/
             @media screen and (min-width: 834px) {
-              height: calc(32px + 48px + 48px + 48px);
+              height: calc(24px + 48px + 48px + 48px);
               /* 32px = padding entre carte et social,
            48px = taille des boutons,
            48px = espace restant avant la fin de la section (padding)
@@ -1430,7 +1487,7 @@
 
         .socialContainer {
           position: relative;
-          padding: 32px;
+          padding: 24px;
           display: flex;
           justify-content: center;
           gap: 16px;
@@ -1446,6 +1503,19 @@
             border-radius: 16px;
             box-shadow: inset 0px 1px 1px rgba(28, 32, 36, 0.1),
               inset 0 -1px 1px white;
+            /*--------------- Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
+              display: none;
+            }
+          }
+          /*--------------- Laptop ---------------*/
+          @media screen and (min-width: 1080px) {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            padding: 24px;
+            flex-direction: column;
+            gap: 8px;
           }
         }
       }
@@ -1455,25 +1525,37 @@
         flex-direction: column;
         align-items: center;
         gap: 32px;
-        /*--------------- Tablet L ---------------*/
+        /*--------------- Tablet L -> Laptop ---------------*/
         @media screen and (min-width: 834px) {
           grid-column: 4 / span 5;
-          border: 1px solid red;
+          gap: 24px;
+          /*--------------- to Laptop ---------------*/
+          @media screen and (min-width: 1080px) {
+            padding: 32px 24px 32px 0;
+            grid-column: 6 / span 7;
+            align-items: baseline;
+            gap: 32px;
+            border: 1px solid red;
+          }
         }
 
         .quote {
-          padding: 16px 32px;
+          padding: 0px 32px;
           text-align: center;
           font-size: 14px;
           line-height: 1.43;
           font-weight: 600;
           color: $color-primary-dark-darker;
-          /*--------------- Tablet -> Tablet L ---------------*/
+          /*--------------- Tablet -> Tablet L -> Laptop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 0 96px;
             /*--------------- to Tablet L  ---------------*/
             @media screen and (min-width: 834px) {
               padding: 0 16px;
+              /*--------------- to Laptop ---------------*/
+              @media screen and (min-width: 1080px) {
+                padding: 0 48px;
+              }
             }
           }
         }
@@ -1485,6 +1567,14 @@
           background: linear-gradient(45deg, #007782 0%, #00b0bd 100%);
           box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
+          /*--------------- Tablet L -> Laptop ---------------*/
+          @media screen and (min-width: 834px) {
+            width: 100%;
+            /*--------------- to Laptop ---------------*/
+            @media screen and (min-width: 1080px) {
+              width: 50%;
+            }
+          }
         }
 
         .presentationContainer {
@@ -1496,13 +1586,17 @@
           box-shadow: inset -2px 2px 4px rgba(28, 32, 36, 0.4),
             inset 2px -2px 4px rgba(255, 255, 255, 0.8),
             2px -2px 4px rgba(28, 32, 36, 0.05);
-          /*--------------- Tablet -> Tablet L ---------------*/
+          /*--------------- Tablet -> Tablet L -> Laptop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 32px;
             /*--------------- Tablet ---------------*/
             @media screen and (min-width: 834px) {
               padding: 0;
               box-shadow: none;
+              /*--------------- to Laptop ---------------*/
+              @media screen and (min-width: 1080px) {
+                padding-right: 48px;
+              }
             }
           }
 
