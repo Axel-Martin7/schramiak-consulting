@@ -63,13 +63,17 @@
         }
       }
     }
-    /*------------------ Tablet -> Desktop ------------------*/
+    /*------------------ Tablet -> Laptop -> Desktop ------------------*/
     @media screen and (min-width: 768px) {
-      padding: 16px 24px;
+      padding: 8px 24px;
       /*------------------ to Desktop ------------------*/
-      @media screen and (min-width: 1280px) {
-        padding: 16px 32px;
-        gap: 32px;
+      @media screen and (min-width: 1024px) {
+        padding: 16px 24px;
+        /*------------------ to Desktop ------------------*/
+        @media screen and (min-width: 1280px) {
+          padding: 16px 32px;
+          gap: 32px;
+        }
       }
     }
 
@@ -84,8 +88,8 @@
 
     .navigationContainer {
       display: none;
-      /*------------------ Tablet -> Desktop ------------------*/
-      @media screen and (min-width: 768px) {
+      /*------------------ Laptop -> Desktop ------------------*/
+      @media screen and (min-width: 1024px) {
         display: flex;
         gap: 16px;
 

@@ -1,106 +1,271 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .servicesContainer {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 868px) {
+//     max-width: 1440px;
+//     height: 100%;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: auto auto 1fr;
+//     gap: 0;
+//   }
+
+//   .sectionTitle {
+//     padding: 0 40px;
+//     @include section-title-home;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 868px) {
+//       padding: 0 0 40px;
+//       grid-column: 1 / -1; // Span sur 2 colonnes
+//       grid-row: 1; // 1ere ligne
+//     }
+//   }
+
+//   .sectionDescriptions {
+//     padding: 0 40px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//     font-size: 14px;
+//     color: $color-slate-grey-12;
+//     /*------------------ Tablet to Laptop to Desktop ------------------*/
+//     @media screen and (min-width: 868px) {
+//       width: 100%;
+//       padding: 40px;
+//       grid-column: 1 / -1; // Span sur 2 colonnes
+//       grid-row: 2; // 2e ligne
+//       border-radius: 20px;
+//       box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//         inset 4px -4px 8px rgba(255, 255, 255, 0.4),
+//         inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+//       /*------------------ to Laptop ------------------*/
+//       @media screen and (min-width: 1024px) {
+//         width: 50%;
+//         margin: 0 auto;
+//         /*------------------ to Desktop ------------------*/
+//         @media screen and (min-width: 1200px) {
+//           margin: 0;
+//           width: 100%;
+//           grid-column: 1 / 2; // Colonne 1
+//         }
+//       }
+//     }
+
+//     .highlight {
+//       font-weight: 600;
+//     }
+//   }
+
+//   .decorativePyramidContainer {
+//     display: flex;
+//     justify-content: center;
+//     /*------------------ Tablet to Desktop------------------*/
+//     @media screen and (min-width: 868px) {
+//       padding: 40px 0 0;
+//       grid-column: 2 / 3;
+//       grid-row: 3 / 4;
+//       /*------------------ to Desktop ------------------*/
+//       @media screen and (min-width: 1200px) {
+//         padding: 0;
+//         grid-row: 2 / 4;
+//       }
+//     }
+//   }
+
+//   .servicesListContainer {
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 868px) {
+//       padding: 40px 0 0;
+//       grid-column: 1 / 2;
+//       grid-row: 3; // 3e ligne en 1fr => occupe l’espace restant vertical
+//     }
+
+//     .service1,
+//     .service2,
+//     .service3,
+//     .service4 {
+//       position: relative; // Création du contexte d'empilement parent
+
+//       .contentWrapper {
+//         z-index: 2; // => Au dessus du pseudo-élément interne
+//         position: relative; // Création du sous-contexte d'empilement
+//         width: 100%;
+//         height: 100%;
+//         padding: 20px 40px;
+//         display: flex;
+//         align-items: center;
+//         gap: 20px;
+//         background: linear-gradient(
+//             90deg,
+//             transparent 0%,
+//             $color-slate-grey-5 10%,
+//             $color-slate-grey-1 50%,
+//             $color-slate-grey-5 90%,
+//             transparent 100%
+//           ),
+//           linear-gradient(
+//             45deg,
+//             $color-slate-grey-6 0%,
+//             $color-slate-grey-4 50%,
+//             $color-slate-grey-2 80%
+//           );
+//         background-attachment: scroll, fixed;
+//         background-size: cover;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         /*------------------ Tablet ------------------*/
+//         @media screen and (min-width: 868px) {
+//           gap: 40px;
+//         }
+
+//         .bubble1,
+//         .bubble2,
+//         .bubble3,
+//         .bubble4 {
+//           width: 20px;
+//           height: 20px;
+//           aspect-ratio: 1/1;
+//           border-radius: 50%;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
+//           /*------------------ Tablet ------------------*/
+//           @media screen and (min-width: 868px) {
+//             width: 30px;
+//             height: 30px;
+//             box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//               inset -3px 3px 6px rgba(28, 32, 36, 0.8);
+//           }
+//         }
+
+//         .servicesInformationsContainer {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 10px;
+
+//           .serviceTitle {
+//             padding: 1px;
+//             font-weight: 700;
+//             text-transform: uppercase;
+//             background: radial-gradient(
+//               ellipse farthest-corner at right center,
+//               $color-primary 0%,
+//               $color-primary-dark 68%,
+//               $color-primary-dark-darker 100%
+//             );
+//             background-clip: text;
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+//           }
+//           /*------------------ Tablet ------------------*/
+//           @media screen and (min-width: 868px) {
+//             font-size: 18px;
+//           }
+
+//           .serviceDescription {
+//             padding-right: 40px;
+//             font-size: 14px;
+//             color: $color-slate-grey-12;
+//           }
+//         }
+//       }
+
+//       // *---------- Ombre éliptique (dessous) :
+//       &::after {
+//         content: '';
+//         z-index: 1; // => Derriere .contentWrapper (sous-contexte) mais devant .service2 (contexte parent)
+//         position: absolute;
+//         bottom: 0;
+//         left: 2.5%;
+//         width: 95%;
+//         height: 50px;
+//         border-radius: 125px / 12px; // rayon horizontale / rayon vertical
+//         box-shadow: 0px 4px 8px rgba(28, 32, 36, 0.8);
+//       }
+//     }
+
+//     .service1 {
+//       z-index: 4; // => Au dessus de .service2 dans le parent
+//       box-shadow: 0px -15px 30px -30px rgba(28, 32, 36, 0.6);
+//       .bubble1 {
+//         background-color: $color-teal-6;
+//       }
+//     }
+//     .service2 {
+//       z-index: 3; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble2 {
+//         background-color: $color-teal-9;
+//       }
+//     }
+//     .service3 {
+//       z-index: 2; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble3 {
+//         background-color: $color-teal-11;
+//       }
+//     }
+//     .service4 {
+//       z-index: 1; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble4 {
+//         background-color: $color-teal-12;
+//       }
+//     }
+//   }
+// }
+
 .servicesContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  /*------------------ Tablet ------------------*/
-  @media screen and (min-width: 868px) {
-    max-width: 1440px;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr;
-    gap: 0;
-  }
-
   .sectionTitle {
-    padding: 0 40px;
-    @include section-title;
-    /*------------------ Tablet ------------------*/
-    @media screen and (min-width: 868px) {
-      padding: 0 0 40px;
-      grid-column: 1 / -1; // Span sur 2 colonnes
-      grid-row: 1; // 1ere ligne
-    }
+    padding: 32px;
+    @include section-title-home;
   }
 
-  .sectionDescriptions {
-    padding: 0 40px;
+  .sectionDescription {
+    padding: 0 32px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-size: 14px;
-    color: $color-slate-grey-12;
-    /*------------------ Tablet to Laptop to Desktop ------------------*/
-    @media screen and (min-width: 868px) {
-      width: 100%;
-      padding: 40px;
-      grid-column: 1 / -1; // Span sur 2 colonnes
-      grid-row: 2; // 2e ligne
-      border-radius: 20px;
-      box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-        inset 4px -4px 8px rgba(255, 255, 255, 0.4),
-        inset -4px 4px 8px rgba(28, 32, 36, 0.6);
-      /*------------------ to Laptop ------------------*/
-      @media screen and (min-width: 1024px) {
-        width: 50%;
-        margin: 0 auto;
-        /*------------------ to Desktop ------------------*/
-        @media screen and (min-width: 1200px) {
-          margin: 0;
-          width: 100%;
-          grid-column: 1 / 2; // Colonne 1
-        }
-      }
+    gap: 16px;
+
+    .description {
+      @include text-style;
     }
 
-    .highlight {
-      font-weight: 600;
+    .emphasis {
+      @include text-emphasis;
     }
   }
 
-  .decorativePyramidContainer {
-    display: flex;
-    justify-content: center;
-    /*------------------ Tablet to Desktop------------------*/
-    @media screen and (min-width: 868px) {
-      padding: 40px 0 0;
-      grid-column: 2 / 3;
-      grid-row: 3 / 4;
-      /*------------------ to Desktop ------------------*/
-      @media screen and (min-width: 1200px) {
-        padding: 0;
-        grid-row: 2 / 4;
-      }
-    }
-  }
-
-  .servicesListContainer {
-    /*------------------ Tablet ------------------*/
-    @media screen and (min-width: 868px) {
-      padding: 40px 0 0;
-      grid-column: 1 / 2;
-      grid-row: 3; // 3e ligne en 1fr => occupe l’espace restant vertical
-    }
+  .servicesList {
+    padding: 32px 0;
 
     .service1,
     .service2,
     .service3,
     .service4 {
       position: relative; // Création du contexte d'empilement parent
+      // *---------- Ombre éliptique (dessous) :
+      &::after {
+        content: '';
+        z-index: 1; // => Derriere .contentWrapper (sous-contexte) mais devant .service2 (contexte parent)
+        position: absolute;
+        bottom: 0;
+        left: 2.5%;
+        width: 95%;
+        height: 48px;
+        border-radius: 128px / 16px; // rayon horizontale / rayon vertical
+        box-shadow: 0px 4px 8px rgba(28, 32, 36, 0.6);
+      }
 
       .contentWrapper {
         z-index: 2; // => Au dessus du pseudo-élément interne
         position: relative; // Création du sous-contexte d'empilement
-        width: 100%;
-        height: 100%;
-        padding: 20px 40px;
+        padding: 24px 32px;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
         background: linear-gradient(
             90deg,
             transparent 0%,
@@ -119,79 +284,43 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        /*------------------ Tablet ------------------*/
-        @media screen and (min-width: 868px) {
-          gap: 40px;
-        }
 
         .bubble1,
         .bubble2,
         .bubble3,
         .bubble4 {
-          width: 20px;
-          height: 20px;
+          width: 16px;
+          min-width: 16px;
           aspect-ratio: 1/1;
           border-radius: 50%;
           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
-          /*------------------ Tablet ------------------*/
-          @media screen and (min-width: 868px) {
-            width: 30px;
-            height: 30px;
-            box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-              inset -3px 3px 6px rgba(28, 32, 36, 0.8);
-          }
         }
 
-        .servicesInformationsContainer {
+        .serviceInformationContainer {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 12px;
 
           .serviceTitle {
-            padding: 1px;
+            font-size: 16px;
             font-weight: 700;
             text-transform: uppercase;
-            background: radial-gradient(
-              ellipse farthest-corner at right center,
-              $color-primary 0%,
-              $color-primary-dark 68%,
-              $color-primary-dark-darker 100%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-          /*------------------ Tablet ------------------*/
-          @media screen and (min-width: 868px) {
-            font-size: 18px;
+            line-height: 1.4;
+            @include sub-titles-style;
           }
 
           .serviceDescription {
-            padding-right: 40px;
-            font-size: 14px;
-            color: $color-slate-grey-12;
+            @include text-emphasis;
+            font-weight: 500;
           }
         }
-      }
-
-      // *---------- Ombre éliptique (dessous) :
-      &::after {
-        content: '';
-        z-index: 1; // => Derriere .contentWrapper (sous-contexte) mais devant .service2 (contexte parent)
-        position: absolute;
-        bottom: 0;
-        left: 2.5%;
-        width: 95%;
-        height: 50px;
-        border-radius: 125px / 12px; // rayon horizontale / rayon vertical
-        box-shadow: 0px 4px 8px rgba(28, 32, 36, 0.8);
       }
     }
 
     .service1 {
       z-index: 4; // => Au dessus de .service2 dans le parent
-      box-shadow: 0px -15px 30px -30px rgba(28, 32, 36, 0.6);
+      box-shadow: 0px -12px 24px -24px rgba(28, 32, 36, 0.6);
       .bubble1 {
         background-color: $color-teal-6;
       }

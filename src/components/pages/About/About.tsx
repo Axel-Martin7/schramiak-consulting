@@ -10,7 +10,7 @@ export default function About() {
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.sectionTitle}>
-        <h2 className={`${styles.title} ${barlow.className}`}>About me</h2>
+        <h3 className={`${styles.title} ${barlow.className}`}>About me</h3>
         <div className={styles.titleSeparator}></div>
       </div>
 

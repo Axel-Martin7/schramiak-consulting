@@ -20,6 +20,27 @@
   // color: $color-primary-dark-darker;
 }
 
+//---------- Texte d'emphase & quote :
+@mixin text-emphasis {
+  font-size: 14px;
+  line-height: 1.43;
+  font-weight: 600;
+  color: $color-primary-dark-darker;
+}
+
+//---------- styles des sous-titres (gradient) :
+@mixin sub-titles-style {
+  background: radial-gradient(
+    ellipse farthest-corner at right center,
+    $color-primary 0%,
+    $color-primary-dark 68%,
+    $color-primary-dark-darker 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 //---------- Styles des boutons avec variables pour différencier la version du panneau déroulant et du reste du site
 @mixin button-global(
   $width: 220px,
@@ -348,19 +369,6 @@
       background-color: $color-teal-6;
     }
   }
-}
-
-//---------- Sous-titres (H3) dans les pages :
-@mixin sub-titles-page {
-  background: radial-gradient(
-    ellipse farthest-corner at right center,
-    $color-primary 0%,
-    $color-primary-dark 68%,
-    $color-primary-dark-darker 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 //---------- Styles des cartes dans les pages :

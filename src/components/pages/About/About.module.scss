@@ -144,7 +144,7 @@
             padding: 24px 0 0 24px;
             /*--------------- to Desktop ---------------*/
             @media screen and (min-width: 1280px) {
-              padding: 0px 0 0 32px;
+              padding: 0px 8px 0 40px;
             }
           }
         }
@@ -177,8 +177,8 @@
             z-index: -1;
             position: absolute;
             top: 0px;
-            left: -95%;
-            width: 100%;
+            left: -200%;
+            width: 200%;
             height: 100%;
             border-radius: inherit;
             background: linear-gradient(
@@ -343,12 +343,12 @@
         /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
         @media screen and (min-width: 834px) {
           grid-column: 4 / span 5;
+          align-items: baseline;
           gap: 24px;
           /*--------------- to Laptop ---------------*/
           @media screen and (min-width: 1080px) {
             padding: 32px 24px 32px 0;
             grid-column: 6 / span 7;
-            align-items: baseline;
             gap: 32px;
             /*--------------- to Desktop ---------------*/
             @media screen and (min-width: 1280px) {
@@ -361,10 +361,7 @@
         .quote {
           padding: 0px 32px;
           text-align: center;
-          font-size: 14px;
-          line-height: 1.43;
-          font-weight: 600;
-          color: $color-primary-dark-darker;
+          @include text-emphasis;
           /*--------------- Tablet -> Tablet L -> Laptop -> Desktop ---------------*/
           @media screen and (min-width: 768px) {
             padding: 0 96px;
@@ -390,14 +387,6 @@
           background: linear-gradient(45deg, #007782 0%, #00b0bd 100%);
           box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.2), -2px 2px 4px white,
             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
-          /*--------------- Tablet L -> Laptop ---------------*/
-          @media screen and (min-width: 834px) {
-            width: 100%;
-            /*--------------- to Laptop ---------------*/
-            @media screen and (min-width: 1080px) {
-              width: 50%;
-            }
-          }
         }
 
         .presentationContainer {
