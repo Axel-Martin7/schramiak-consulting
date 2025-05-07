@@ -217,9 +217,195 @@
 //   }
 // }
 
+//*---------------------------------------------------------------------------
+
+// .servicesContainer {
+//   /*--------------- Desktop ---------------*/
+//   @media screen and (min-width: 768px) {
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     display: grid;
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-template-rows: auto min-content 1fr;
+//     gap: 32px;
+//     border: 1px solid red;
+//   }
+//   .sectionTitle {
+//     padding: 32px;
+//     @include section-title-home;
+//     /*--------------- Desktop ---------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 0;
+//       grid-column: 1 / span 12;
+//       border: 1px solid black;
+//     }
+//   }
+
+//   .sectionDescription {
+//     padding: 0 32px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 16px;
+//     /*--------------- Desktop ---------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 32px;
+//       grid-column: 1 / span 5;
+//       grid-row: 2;
+//       gap: 8px;
+//       @include card-style;
+//     }
+
+//     .description {
+//       @include text-style;
+//     }
+
+//     .emphasis {
+//       @include text-emphasis;
+//     }
+//   }
+
+//   .servicesList {
+//     padding: 32px 0;
+//     /*--------------- Desktop ---------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 96px 0;
+//       grid-column: 6 / span 7;
+//       grid-row: 2 / span 2;
+//       border: 1px solid black;
+//     }
+
+//     .service1,
+//     .service2,
+//     .service3,
+//     .service4 {
+//       position: relative; // Création du contexte d'empilement parent
+//       // *---------- Ombre éliptique (dessous) :
+//       &::after {
+//         content: '';
+//         z-index: 1; // => Derriere .contentWrapper (sous-contexte) mais devant .service2 (contexte parent)
+//         position: absolute;
+//         bottom: 0;
+//         left: 2.5%;
+//         width: 95%;
+//         height: 48px;
+//         border-radius: 128px / 16px; // rayon horizontale / rayon vertical
+//         box-shadow: 0px 4px 8px rgba(28, 32, 36, 0.6);
+//       }
+
+//       .contentWrapper {
+//         z-index: 2; // => Au dessus du pseudo-élément interne
+//         position: relative; // Création du sous-contexte d'empilement
+//         padding: 24px 32px;
+//         display: flex;
+//         align-items: center;
+//         gap: 24px;
+//         background: linear-gradient(
+//             90deg,
+//             transparent 0%,
+//             $color-slate-grey-5 10%,
+//             $color-slate-grey-1 50%,
+//             $color-slate-grey-5 90%,
+//             transparent 100%
+//           ),
+//           linear-gradient(
+//             45deg,
+//             $color-slate-grey-6 0%,
+//             $color-slate-grey-4 50%,
+//             $color-slate-grey-2 80%
+//           );
+//         background-attachment: scroll, fixed;
+//         background-size: cover;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         /*--------------- Desktop ---------------*/
+//         @media screen and (min-width: 768px) {
+//           padding: 32px;
+//         }
+
+//         .bubble1,
+//         .bubble2,
+//         .bubble3,
+//         .bubble4 {
+//           width: 16px;
+//           min-width: 16px;
+//           aspect-ratio: 1/1;
+//           border-radius: 50%;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset -2px 2px 4px rgba(28, 32, 36, 0.8);
+//         }
+
+//         .serviceInformationContainer {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 8px;
+
+//           .serviceTitle {
+//             font-size: 16px;
+//             font-weight: 700;
+//             text-transform: uppercase;
+//             line-height: 1.4;
+//             @include sub-titles-style;
+//             /*--------------- Desktop ---------------*/
+//             @media screen and (min-width: 768px) {
+//               font-size: 20px;
+//               font-weight: 600;
+//             }
+//           }
+
+//           .serviceDescription {
+//             @include text-emphasis;
+//             font-weight: 500;
+//             /*--------------- Desktop ---------------*/
+//             @media screen and (min-width: 768px) {
+//               font-weight: 600;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .service1 {
+//       z-index: 4; // => Au dessus de .service2 dans le parent
+//       box-shadow: 0px -12px 24px -24px rgba(28, 32, 36, 0.6);
+//       .bubble1 {
+//         background-color: $color-teal-6;
+//       }
+//     }
+//     .service2 {
+//       z-index: 3; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble2 {
+//         background-color: $color-teal-9;
+//       }
+//     }
+//     .service3 {
+//       z-index: 2; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble3 {
+//         background-color: $color-teal-11;
+//       }
+//     }
+//     .service4 {
+//       z-index: 1; // => Au dessus de .service3 dans le parent et en dessous de .service1
+//       .bubble4 {
+//         background-color: $color-teal-12;
+//       }
+//     }
+//   }
+
+//   .decorativePyramidContainer {
+//     /*--------------- Desktop ---------------*/
+//     @media screen and (min-width: 768px) {
+//       border: 1px solid black;
+//       grid-column: 1 / span 5;
+//       grid-row: 3;
+//     }
+//   }
+// }
+
 .servicesContainer {
+  border: 1px solid red;
+
   .sectionTitle {
-    padding: 32px;
+    padding: 0 32px 32px;
     @include section-title-home;
   }
 
@@ -300,7 +486,7 @@
         .serviceInformationContainer {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 8px;
 
           .serviceTitle {
             font-size: 16px;
@@ -308,6 +494,19 @@
             text-transform: uppercase;
             line-height: 1.4;
             @include sub-titles-style;
+
+            .small {
+              font-size: 14px;
+              font-weight: 500;
+              /* On supprime le gradient */
+              background: none;
+              background-image: none;
+              /* On remet le clip en mode normal */
+              background-clip: border-box;
+              -webkit-background-clip: border-box;
+              color: $color-primary-dark-darker;
+              -webkit-text-fill-color: $color-primary-dark-darker;
+            }
           }
 
           .serviceDescription {
@@ -343,5 +542,8 @@
         background-color: $color-teal-12;
       }
     }
+  }
+
+  .decorativePyramidContainer {
   }
 }

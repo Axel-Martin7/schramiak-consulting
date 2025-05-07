@@ -46,7 +46,7 @@
       display: flex;
       justify-content: space-between;
       gap: 24px;
-      @include card-page;
+      @include card-style;
       /*------------------ Laptop -> Desktop ------------------*/
       @media screen and (min-width: 1024px) {
         width: calc(50% + 56px / 2 + 24px);
