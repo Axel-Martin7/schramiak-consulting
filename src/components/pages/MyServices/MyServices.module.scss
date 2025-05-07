@@ -402,11 +402,27 @@
 // }
 
 .servicesContainer {
-  border: 1px solid red;
+  /*--------------- Tablet L ---------------*/
+  @media screen and (min-width: 834px) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto min-content 1fr;
+    gap: 24px;
+    border: 1px solid red;
+  }
 
   .sectionTitle {
     padding: 0 32px 32px;
     @include section-title-home;
+    /*--------------- Tablet -> Tablet L ---------------*/
+    @media screen and (min-width: 768px) {
+      padding: 0 0 32px;
+      /*--------------- Tablet L ---------------*/
+      @media screen and (min-width: 834px) {
+        padding: 0;
+        grid-column: 1 / span 8;
+      }
+    }
   }
 
   .sectionDescription {
@@ -414,6 +430,18 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    /*--------------- Tablet -> Tablet L ---------------*/
+    @media screen and (min-width: 768px) {
+      padding: 32px;
+      @include card-style;
+      /*--------------- Tablet L ---------------*/
+      @media screen and (min-width: 834px) {
+        padding: 24px;
+        grid-column: 1 / span 4;
+        grid-row: 2;
+        gap: 8px;
+      }
+    }
 
     .description {
       @include text-style;
@@ -426,6 +454,15 @@
 
   .servicesList {
     padding: 32px 0;
+    /*--------------- Tablet L ---------------*/
+    @media screen and (min-width: 834px) {
+      padding: 0;
+      grid-column: 5 / span 4;
+      grid-row: 2 / span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .service1,
     .service2,
@@ -545,5 +582,10 @@
   }
 
   .decorativePyramidContainer {
+    /*--------------- Tablet L ---------------*/
+    @media screen and (min-width: 834px) {
+      grid-column: 1 / span 4;
+      grid-row: 3;
+    }
   }
 }
