@@ -5,69 +5,128 @@ import Button from '../../common/Button';
 
 export default function Realisations() {
   return (
+    // <div className={styles.realisationsContainer}>
+    //   <div className={styles.sectionTitle}>
+    //     <h2 className={`${styles.title} ${barlow.className}`}>
+    //       Mes réalisations
+    //     </h2>
+    //     <div className={styles.titleSeparator}></div>
+    //   </div>
+
+    //   <div className={styles.shapesContainer}>
+    //     <div className={styles.object}>
+    //       <div className={styles.coloredHalfCircle}></div>
+
+    //       <div className={styles.circleContent}></div>
+
+    //       {/*---------- Effet mirroir de reflection --------- */}
+    //       <div className={styles.objectReflection}>
+    //         <div className={styles.circleContentReflection}></div>
+    //       </div>
+    //     </div>
+
+    //     <div className={styles.object}>
+    //       <div className={styles.coloredHalfCircle}></div>
+
+    //       <div className={styles.circleContent}></div>
+
+    //       {/*---------- Effet mirroir de reflection --------- */}
+    //       <div className={styles.objectReflection}>
+    //         <div className={styles.circleContentReflection}></div>
+    //       </div>
+    //     </div>
+
+    //     <div className={styles.object}>
+    //       <div className={styles.coloredHalfCircle}></div>
+
+    //       <div className={styles.circleContent}></div>
+
+    //       {/*---------- Effet mirroir de reflection --------- */}
+    //       <div className={styles.objectReflection}>
+    //         <div className={styles.circleContentReflection}></div>
+    //       </div>
+    //     </div>
+
+    //     <div className={styles.object}>
+    //       <div className={styles.coloredHalfCircle}></div>
+
+    //       <div className={styles.circleContent}></div>
+
+    //       {/*---------- Effet mirroir de reflection --------- */}
+    //       <div className={styles.objectReflection}>
+    //         <div className={styles.circleContentReflection}></div>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   <div className={styles.descriptionContainer}>
+    //     <p className={styles.description}>
+    //       Chaque projet réalisé témoigne de mon engagement à fournir des
+    //       solutions financière sur mesure. Explorez en détail mes missions, les
+    //       objectifs atteints et les résultats obtenus pour mes clients en
+    //       cliquant sur le bouton ci-dessous.
+    //     </p>
+
+    //     <Button variant="secondary">Explorez mes réalisations </Button>
+    //   </div>
+    // </div>
+
     <div className={styles.realisationsContainer}>
       <div className={styles.sectionTitle}>
-        <h2 className={`${styles.title} ${barlow.className}`}>
+        <h3 className={`${styles.title} ${barlow.className}`}>
           Mes réalisations
-        </h2>
+        </h3>
         <div className={styles.titleSeparator}></div>
       </div>
 
       <div className={styles.shapesContainer}>
+        {/*---------- Object 1 ----------*/}
         <div className={styles.object}>
           <div className={styles.coloredHalfCircle}></div>
 
-          <div className={styles.circleContent}></div>
+          <div className={styles.contentCircle}></div>
 
           {/*---------- Effet mirroir de reflection --------- */}
           <div className={styles.objectReflection}>
-            <div className={styles.circleContentReflection}></div>
+            <div className={styles.contentCircleReflection}></div>
           </div>
         </div>
 
+        {/*---------- Object 2 ----------*/}
         <div className={styles.object}>
           <div className={styles.coloredHalfCircle}></div>
 
-          <div className={styles.circleContent}></div>
+          <div className={styles.contentCircle}></div>
 
           {/*---------- Effet mirroir de reflection --------- */}
           <div className={styles.objectReflection}>
-            <div className={styles.circleContentReflection}></div>
+            <div className={styles.contentCircleReflection}></div>
           </div>
         </div>
 
+        {/*---------- Object 3 ----------*/}
         <div className={styles.object}>
           <div className={styles.coloredHalfCircle}></div>
 
-          <div className={styles.circleContent}></div>
+          <div className={styles.contentCircle}></div>
 
           {/*---------- Effet mirroir de reflection --------- */}
           <div className={styles.objectReflection}>
-            <div className={styles.circleContentReflection}></div>
+            <div className={styles.contentCircleReflection}></div>
           </div>
         </div>
 
+        {/*---------- Object 4 ----------*/}
         <div className={styles.object}>
           <div className={styles.coloredHalfCircle}></div>
 
-          <div className={styles.circleContent}></div>
+          <div className={styles.contentCircle}></div>
 
           {/*---------- Effet mirroir de reflection --------- */}
           <div className={styles.objectReflection}>
-            <div className={styles.circleContentReflection}></div>
+            <div className={styles.contentCircleReflection}></div>
           </div>
         </div>
-      </div>
-
-      <div className={styles.descriptionContainer}>
-        <p className={styles.description}>
-          Chaque projet réalisé témoigne de mon engagement à fournir des
-          solutions financière sur mesure. Explorez en détail mes missions, les
-          objectifs atteints et les résultats obtenus pour mes clients en
-          cliquant sur le bouton ci-dessous.
-        </p>
-
-        <Button variant="secondary">Explorez mes réalisations </Button>
       </div>
     </div>
   );

@@ -76,6 +76,7 @@
 
   .servicesList {
     padding: 32px 0;
+    overflow-x: hidden; // cache l'ombre superflue en haut du premier service qui dépasse horizontalement
     /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
     @media screen and (min-width: 834px) {
       padding: 0;
@@ -100,6 +101,7 @@
     .service3,
     .service4 {
       position: relative; // Création du contexte d'empilement parent
+
       // *---------- Ombre éliptique (dessous) :
       &::after {
         content: '';
@@ -120,12 +122,12 @@
         display: flex;
         align-items: center;
         gap: 24px;
-        background: linear-gradient(
+        background-image: linear-gradient(
             90deg,
             transparent 0%,
-            $color-slate-grey-5 10%,
+            $color-slate-grey-5 20%,
             $color-slate-grey-1 50%,
-            $color-slate-grey-5 90%,
+            $color-slate-grey-4 80%,
             transparent 100%
           ),
           linear-gradient(
@@ -135,9 +137,10 @@
             $color-slate-grey-2 80%
           );
         background-attachment: scroll, fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: 100% 100%, cover;
+        background-repeat: no-repeat, no-repeat;
+        background-position: center, center;
+
         /*--------------- Desktop ---------------*/
         @media screen and (min-width: 1280px) {
           padding: 32px;

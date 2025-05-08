@@ -1,45 +1,243 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .realisationsContainer {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 768px) {
+//     height: 100%;
+//     max-width: 1440px;
+//   }
+
+//   .sectionTitle {
+//     @include section-title-home;
+//   }
+
+//   .shapesContainer {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     gap: 20px;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 768px) {
+//       flex-wrap: nowrap;
+//       gap: 40px;
+//     }
+
+//     .object {
+//       position: relative;
+//       width: 100%;
+//       max-width: 200px;
+//       min-width: 180px;
+//       aspect-ratio: 1/1;
+//       transform: translateY(-10%);
+//       border-radius: 50%;
+//       /*------------------ Tablet ------------------*/
+//       @media screen and (min-width: 768px) {
+//         width: 250px;
+//         max-width: none;
+//         min-width: auto;
+//       }
+
+//       .coloredHalfCircle {
+//         z-index: 1;
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 50%;
+//         border-radius: 0 0 50% 50% / 0 0 100% 100%;
+//         /*
+//     border-radius en syntaxe étendue : "0 0 50% 50% / 0 0 100% 100%"
+//     => top-left corner  : 0  /  0
+//        top-right corner : 0  /  0
+//        bottom-right     : 50% / 100%
+//        bottom-left      : 50% / 100%
+
+//     Concrètement, pour un bloc de 100% × 50%, ça forme la moitié d'un vrai cercle.
+//    */
+//         background: linear-gradient(
+//           45deg,
+//           $color-primary-dark 0%,
+//           $color-primary 75%
+//         );
+//         box-shadow: inset 2px -2px 0px rgba(28, 32, 36, 0.2),
+//           inset -2px 2px 0px rgba(255, 255, 255, 0.7);
+//       }
+
+//       .circleContent {
+//         z-index: 2;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         width: 80%;
+//         aspect-ratio: 1/1;
+//         border-radius: inherit;
+//         background: linear-gradient(
+//           15deg,
+//           $color-slate-grey-1 0%,
+//           $color-slate-grey-5 100%
+//         );
+//         box-shadow: -10px 10px 15px rgba(28, 32, 36, 0.6),
+//           -2px 2px 8px rgba(28, 32, 36, 0.4),
+//           inset 2px -2px 0px rgba(28, 32, 36, 0.2), inset -2px 2px 0px white;
+//       }
+
+//       // *---------- Effet mirroir / Reflet de l'objet ----------*
+//       .objectReflection {
+//         position: absolute;
+//         bottom: -50%;
+//         left: 0;
+//         transform: scaleY(-1); // on le retourne verticalement
+//         width: 100%;
+//         height: 50%;
+//         border-radius: 0 0 50% 50% / 0 0 100% 100%;
+//         background: linear-gradient(
+//           45deg,
+//           $color-primary-dark 0%,
+//           $color-primary 75%
+//         );
+//         opacity: 0.1;
+//         -webkit-mask-image: linear-gradient(
+//           to top,
+//           rgb(255, 0, 0) 0%,
+//           rgba(255, 0, 0, 0) 100%
+//         );
+//         mask-image: linear-gradient(
+//           to top,
+//           rgb(255, 0, 0) 0%,
+//           rgba(255, 0, 0, 0.2) 50%,
+//           rgba(255, 0, 0, 0) 100%
+//         );
+
+//         .circleContentReflection {
+//           position: absolute;
+//           left: 50%;
+//           transform: translate(-50%, -50%);
+//           width: 80%;
+//           aspect-ratio: 1/1;
+//           border-radius: 50%;
+//           background-color: $color-slate-grey-1;
+//         }
+//       }
+
+//       // *---------- Ombre éliptique sous l'objet ----------*
+//       &::after {
+//         content: '';
+//         position: absolute;
+//         left: 50%;
+//         bottom: -7.5%;
+//         transform: translateX(-50%);
+//         width: 100%;
+//         height: 15%;
+//         background: radial-gradient(
+//           ellipse at center,
+//           rgba(28, 32, 36, 0.8) 10%,
+//           rgba(28, 32, 36, 0.6) 25%,
+//           rgba(28, 32, 36, 0.2) 50%,
+//           rgba(0, 0, 0, 0) 70%
+//         );
+//         filter: blur(5px);
+//       }
+//     }
+//   }
+
+//   .descriptionContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 40px;
+//     text-align: center;
+//     font-size: 14px;
+//     color: $color-slate-grey-12;
+//     /*------------------ Tablet to Desktop ------------------*/
+//     @media screen and (min-width: 768px) {
+//       width: 50%;
+//       margin: 0 auto;
+//       /*------------------ to Desktop ------------------*/
+//       @media screen and (min-width: 1200px) {
+//         width: 30%;
+//       }
+//     }
+//   }
+// }
+
 .realisationsContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  /*------------------ Tablet ------------------*/
+  gap: 32px;
+  /*--------------- Tablet -> Desktop ---------------*/
   @media screen and (min-width: 768px) {
-    height: 100%;
-    max-width: 1440px;
+    gap: 24px;
+    /*--------------- to Desktop ---------------*/
+    @media screen and (min-width: 1280px) {
+      max-width: 1280px;
+      margin: 0 auto;
+      gap: 32px;
+    }
   }
 
   .sectionTitle {
-    @include section-title;
+    @include section-title-home;
   }
 
   .shapesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    /*------------------ Tablet ------------------*/
+    container-type: inline-size;
+    container-name: shapes;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    /*--------------- Centrage mobile 3+1 ---------------*/
+    // 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
+    @container shapes (min-width: calc(150px * 3 + 16px * 2))
+   and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
+      // 2) On centre le 4ᵉ cercle sur la 2ᵉ colonne
+      .object:last-child {
+        grid-column: 2;
+      }
+    }
+    /*--------------- Tablet -> Desktop ---------------*/
     @media screen and (min-width: 768px) {
-      flex-wrap: nowrap;
-      gap: 40px;
+      gap: 24px;
+      /*--------------- Centrage tablette 3+1 (gap=24px) ---------------*/
+      @container shapes (min-width: calc(150px * 3 + 24px * 2))
+    and (max-width: calc(150px * 4 + 24px * 3 - 1px)) {
+        // 2) On centre le 4ᵉ cercle sur la 2ᵉ colonne
+        .object:last-child {
+          grid-column: 2;
+        }
+      }
+      /*--------------- to Desktop ---------------*/
+      @media screen and (min-width: 1280px) {
+        gap: 32px;
+      }
     }
 
     .object {
       position: relative;
-      width: 100%;
-      max-width: 200px;
-      min-width: 180px;
       aspect-ratio: 1/1;
-      transform: translateY(-10%);
       border-radius: 50%;
-      /*------------------ Tablet ------------------*/
-      @media screen and (min-width: 768px) {
-        width: 250px;
-        max-width: none;
-        min-width: auto;
+      // *---------- Ombre éliptique sous l'objet ----------*
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -7.5%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 15%;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(28, 32, 36, 0.7) 10%,
+          rgba(28, 32, 36, 0.4) 25%,
+          rgba(28, 32, 36, 0.1) 50%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        filter: blur(5px);
       }
 
       .coloredHalfCircle {
@@ -51,14 +249,13 @@
         height: 50%;
         border-radius: 0 0 50% 50% / 0 0 100% 100%;
         /*
-    border-radius en syntaxe étendue : "0 0 50% 50% / 0 0 100% 100%"
-    => top-left corner  : 0  /  0
-       top-right corner : 0  /  0
-       bottom-right     : 50% / 100%
-       bottom-left      : 50% / 100%
-   
-    Concrètement, pour un bloc de 100% × 50%, ça forme la moitié d'un vrai cercle.
-   */
+             border-radius en syntaxe étendue : "0 0 50% 50% / 0 0 100% 100%"
+             => top-left corner  : 0  /  0
+                top-right corner : 0  /  0
+                bottom-right     : 50% / 100%
+                bottom-left      : 50% / 100%
+             Concrètement, pour un bloc de 100% × 50%, ça forme la moitié d'un vrai cercle.
+            */
         background: linear-gradient(
           45deg,
           $color-primary-dark 0%,
@@ -68,7 +265,7 @@
           inset -2px 2px 0px rgba(255, 255, 255, 0.7);
       }
 
-      .circleContent {
+      .contentCircle {
         z-index: 2;
         position: absolute;
         top: 50%;
@@ -82,9 +279,9 @@
           $color-slate-grey-1 0%,
           $color-slate-grey-5 100%
         );
-        box-shadow: -10px 10px 15px rgba(28, 32, 36, 0.6),
-          -2px 2px 8px rgba(28, 32, 36, 0.4),
-          inset 2px -2px 0px rgba(28, 32, 36, 0.2), inset -2px 2px 0px white;
+        // box-shadow: -10px 10px 15px rgba(28, 32, 36, 0.6),
+        // -2px 2px 8px rgba(28, 32, 36, 0.4),
+        // inset 2px -2px 0px rgba(28, 32, 36, 0.2), inset -2px 2px 0px white;
       }
 
       // *---------- Effet mirroir / Reflet de l'objet ----------*
@@ -114,7 +311,7 @@
           rgba(255, 0, 0, 0) 100%
         );
 
-        .circleContentReflection {
+        .contentCircleReflection {
           position: absolute;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -123,44 +320,6 @@
           border-radius: 50%;
           background-color: $color-slate-grey-1;
         }
-      }
-
-      // *---------- Ombre éliptique sous l'objet ----------*
-      &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: -7.5%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 15%;
-        background: radial-gradient(
-          ellipse at center,
-          rgba(28, 32, 36, 0.8) 10%,
-          rgba(28, 32, 36, 0.6) 25%,
-          rgba(28, 32, 36, 0.2) 50%,
-          rgba(0, 0, 0, 0) 70%
-        );
-        filter: blur(5px);
-      }
-    }
-  }
-
-  .descriptionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    text-align: center;
-    font-size: 14px;
-    color: $color-slate-grey-12;
-    /*------------------ Tablet to Desktop ------------------*/
-    @media screen and (min-width: 768px) {
-      width: 50%;
-      margin: 0 auto;
-      /*------------------ to Desktop ------------------*/
-      @media screen and (min-width: 1200px) {
-        width: 30%;
       }
     }
   }

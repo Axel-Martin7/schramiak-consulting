@@ -61,6 +61,10 @@ export default function Home({ params: { locale } }: Props) {
       <section className={styles.servicesSection}>
         <MyServices />
       </section>
+
+      <section className={styles.realisationsSection}>
+        <Realisations />
+      </section>
     </main>
   );
 }

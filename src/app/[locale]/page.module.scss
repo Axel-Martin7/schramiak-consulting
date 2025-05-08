@@ -160,4 +160,17 @@
       }
     }
   }
+
+  .realisationsSection {
+    padding: 32px;
+    border: 1px solid blue;
+    /*--------------- Tablet -> Desktop ---------------*/
+    @media screen and (min-width: 768px) {
+      padding: 48px;
+      /*--------------- to Desktop ---------------*/
+      @media screen and (min-width: 1280px) {
+        padding: 64px;
+      }
+    }
+  }
 }
