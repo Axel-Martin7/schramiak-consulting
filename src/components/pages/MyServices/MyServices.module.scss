@@ -402,16 +402,22 @@
 // }
 
 .servicesContainer {
-  /*--------------- Tablet L ---------------*/
+  /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
   @media screen and (min-width: 834px) {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: auto min-content 1fr;
     gap: 24px;
-    border: 1px solid red;
     /*--------------- to Laptop ---------------*/
     @media screen and (min-width: 1024px) {
       grid-template-columns: repeat(12, 1fr);
+      /*--------------- to Desktop ---------------*/
+      @media screen and (min-width: 1280px) {
+        max-width: 1280px;
+        margin: 0 auto;
+        gap: 32px;
+        border: 1px solid red;
+      }
     }
   }
 
@@ -421,7 +427,7 @@
     /*--------------- Tablet -> Tablet L -> Laptop ---------------*/
     @media screen and (min-width: 768px) {
       padding: 0 0 32px;
-      /*--------------- to ablet L ---------------*/
+      /*--------------- to Tablet L ---------------*/
       @media screen and (min-width: 834px) {
         padding: 0;
         grid-column: 1 / span 8;
@@ -438,7 +444,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /*--------------- Tablet -> Tablet L -> Laptop ---------------*/
+    /*--------------- Tablet -> Tablet L -> Laptop -> Desktop ---------------*/
     @media screen and (min-width: 768px) {
       padding: 32px;
       @include card-style;
@@ -451,6 +457,11 @@
         /*--------------- to Laptop ---------------*/
         @media screen and (min-width: 1024px) {
           grid-column: 1 / span 6;
+          /*--------------- to Desktop ---------------*/
+          @media screen and (min-width: 1280px) {
+            padding: 32px;
+            grid-column: 1 / span 5;
+          }
         }
       }
     }
@@ -477,6 +488,11 @@
       /*--------------- to Laptop ---------------*/
       @media screen and (min-width: 1024px) {
         grid-column: 7 / span 6;
+        /*--------------- to Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          padding: 96px 0; // 64px + 32px;
+          grid-column: 6 / span 7;
+        }
       }
     }
 
@@ -523,6 +539,11 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        /*--------------- Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          padding: 32px;
+          gap: 32px;
+        }
 
         .bubble1,
         .bubble2,
@@ -610,13 +631,17 @@
   }
 
   .decorativePyramidContainer {
-    /*--------------- Tablet L ---------------*/
+    /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
     @media screen and (min-width: 834px) {
       grid-column: 1 / span 4;
       grid-row: 3;
       /*--------------- to Laptop ---------------*/
       @media screen and (min-width: 1024px) {
         grid-column: 1 / span 6;
+        /*--------------- to Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          grid-column: 1 / span 5;
+        }
       }
     }
   }

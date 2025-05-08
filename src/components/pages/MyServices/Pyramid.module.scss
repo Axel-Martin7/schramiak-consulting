@@ -5,7 +5,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-
   aspect-ratio: 1/1;
   min-width: 280px;
   max-width: 440px;
@@ -22,21 +21,11 @@
     @media screen and (min-width: 1280px) {
       max-width: none;
       aspect-ratio: auto;
-      // height: calc(100% + 32px + 16px);
-      // top: -48px;
+      height: calc(100% + 32px + 16px);
+      top: -48px;
       margin: 0;
     }
   }
-
-  // .repere {
-  //   z-index: 1;
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   transform: rotate(180deg);
-  //   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-  //   left: -10%;
-  // }
 
   //*------------------- Etages & Plafonds -------------------*
   .base {
@@ -70,24 +59,24 @@
     }
 
     .firstFloor {
-      background-color: #beeaef;
+      background-color: $color-teal-4;
     }
     .secondFloor {
       top: 20%;
-      background-color: #8ed6de;
+      background-color: $color-teal-6;
     }
     .thirdFloor {
       top: 40%;
-      background-color: #00b0bd;
+      background-color: $color-teal-9;
     }
     .fourthFloor {
       top: 60%;
-      background-color: #007782;
+      background-color: $color-teal-11;
     }
     .hatFloor {
       top: 80%;
       clip-path: polygon(0% 40%, 0% 30%, 50% 0%, 100% 30%, 100% 40%);
-      background-color: #003e43;
+      background-color: $color-teal-12;
     }
 
     //*------------- Plafonds -------------*
@@ -102,7 +91,7 @@
 
     .firstFloorCeiling {
       clip-path: polygon(15.2% 30.8%, 50% 10%, 85% 30.8%);
-      background-color: #beeaef;
+      background-color: $color-teal-4;
       &::before {
         content: '';
         position: absolute;
@@ -119,7 +108,7 @@
     }
     .secondFloorCeiling {
       clip-path: polygon(22% 46.1%, 50% 30%, 78% 46.1%);
-      background-color: #8ed6de;
+      background-color: $color-teal-6;
       &::before {
         content: '';
         position: absolute;
@@ -137,7 +126,7 @@
     }
     .thirdFloorCeiling {
       clip-path: polygon(26% 61.5%, 50% 50%, 70% 61.5%);
-      background-color: #00b0bd;
+      background-color: $color-teal-9;
       &::before {
         content: '';
         position: absolute;
@@ -155,7 +144,7 @@
     }
     .fourthFloorCeiling {
       clip-path: polygon(35% 77%, 50% 70%, 65% 77%);
-      background-color: #007782;
+      background-color: $color-teal-11;
       &::before {
         content: '';
         position: absolute;
