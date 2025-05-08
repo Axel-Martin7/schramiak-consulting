@@ -10,13 +10,22 @@
   min-width: 280px;
   max-width: 440px;
   margin: 0 auto;
-  /*------------------ Tablet ------------------*/
-  @media screen and (min-width: 1280px) {
-    max-width: none;
-    aspect-ratio: auto;
-    // height: calc(100% + 32px + 16px);
-    // top: -48px;
-    margin: 0;
+  /*--------------- Laptop ---------------*/
+  @media screen and (min-width: 1024px) {
+    height: calc(100% + 24px + 12px);
+    /* 40px = 
+         24px = Padding globale
+         + 12px = moitiée de padding de carte serviceDescription pour que la pointe de la pyramide arrive au milieu du padding
+           */
+    top: -40px; // Resultat de la height calculée au dessus
+    /*------------------ Tablet ------------------*/
+    @media screen and (min-width: 1280px) {
+      max-width: none;
+      aspect-ratio: auto;
+      // height: calc(100% + 32px + 16px);
+      // top: -48px;
+      margin: 0;
+    }
   }
 
   // .repere {
