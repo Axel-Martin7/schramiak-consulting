@@ -24,10 +24,10 @@ interface CustomCSSProperties extends React.CSSProperties {
 export default function StatsCounter() {
   //--------------------- Données à afficher dans chaque cercle :
   const stats: StatItem[] = [
-    { count: 10, suffix: '+', label: "d'années d'expérience" },
-    { count: 12, suffix: '+', label: 'projets accompagnés' },
-    { count: 5, suffix: '+', label: 'entreprises créées' },
-    { count: 100, suffix: '%', label: 'de clients satisfaits' },
+    { count: 10, suffix: '+', label: "D'années d'expérience" },
+    { count: 12, suffix: '+', label: 'Projets accompagnés' },
+    { count: 5, suffix: '+', label: 'Entreprises créées' },
+    { count: 100, suffix: '%', label: 'De clients satisfaits' },
   ];
 
   //--------------------- Référence vers le container des cercles :
@@ -51,7 +51,7 @@ export default function StatsCounter() {
           }
         });
       },
-      { threshold: 0.5 } //                                           50% visible pour déclencher
+      { threshold: 0.25 } //                                           50% visible pour déclencher
     );
 
     io.observe(element);

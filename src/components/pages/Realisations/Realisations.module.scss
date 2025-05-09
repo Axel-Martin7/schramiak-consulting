@@ -135,6 +135,8 @@
       }
 
       .contentCircle {
+        container-type: size;
+        container-name: circle;
         z-index: 2;
         position: absolute;
         top: 50%;
@@ -162,9 +164,9 @@
       }
 
       .number {
-        font-size: 2rem;
+        font-size: 40px;
         font-weight: 700;
-        line-height: 1;
+
         //----- on affiche la variable et son suffixe :
         &::before {
           content: counter(stat) attr(data-suffix);
@@ -173,9 +175,47 @@
       }
 
       .text {
-        margin-top: 0.25rem;
-        font-size: 0.875rem;
         text-align: center;
+        line-height: 1.2;
+        font-weight: 500;
+        color: $color-primary-dark-darker;
+      }
+      // 2) Pour chaque “tranche” de largeur de cercle, on règle taille du nombre & description :
+      @container circle (min-width: 120px) and (max-width: 167px) {
+        .contentCircle {
+          .number {
+            font-size: 28px;
+          }
+          .text {
+            width: 65%;
+            margin-top: 8px;
+            font-size: 12px;
+          }
+        }
+      }
+      @container circle (min-width: 167px) and (max-width: 217px) {
+        .contentCircle {
+          .number {
+            font-size: 36px;
+          }
+          .text {
+            width: 55%;
+            margin-top: 8px;
+            font-size: 14px;
+          }
+        }
+      }
+      @container circle (min-width: 217px) {
+        .contentCircle {
+          .number {
+            font-size: 40px;
+          }
+          .text {
+            width: 55%;
+            margin-top: 16px;
+            font-size: 14px;
+          }
+        }
       }
 
       // *---------- Effet mirroir / Reflet de l'objet ----------*
