@@ -65,6 +65,10 @@ export default function Home({ params: { locale } }: Props) {
       <section className={styles.realisationsSection}>
         <Realisations />
       </section>
+
+      <section className={styles.contactSection}>
+        <Contact />
+      </section>
     </main>
   );
 }

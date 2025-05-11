@@ -236,6 +236,44 @@
 }
 
 //*-------------------- HOME --------------------*
+//---------- Titre CTA hero & contact :
+@mixin cta-title-style {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: $color-primary-dark-darker;
+  .firstWord {
+    display: flex;
+    font-size: 60px;
+    font-weight: 600;
+    color: $color-primary;
+    background: radial-gradient(
+      ellipse farthest-corner at center center,
+      $color-primary 0%,
+      $color-primary-dark 68%,
+      $color-primary-dark-darker 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .highlightWords {
+    font-size: 36px;
+    font-weight: 600;
+    background: radial-gradient(
+      ellipse farthest-corner at right center,
+      $color-primary 0%,
+      $color-primary-dark 68%,
+      $color-primary-dark-darker 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .newLine {
+    display: block;
+  }
+}
+
 //---------- Titre des sections dans la home :
 @mixin section-title-home {
   display: flex;
@@ -267,6 +305,47 @@
     border-radius: 16px;
     background-color: $color-slate-grey-3;
     box-shadow: inset 0px 2px 4px rgba(28, 32, 36, 0.2), inset 0 -2px 4px white;
+  }
+}
+
+//---------- Styles des rubans de CTO :
+@mixin ribbon-style {
+  position: relative;
+  background: linear-gradient(22deg, white 0%, $color-slate-grey-2 50%);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at bottom,
+      rgba(28, 32, 36, 0.6) 0%,
+      rgba(28, 32, 36, 0.2) 50%,
+      transparent 100%
+    );
+    filter: blur(4px);
+  }
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at top,
+      rgba(28, 32, 36, 0.6) 0%,
+      rgba(28, 32, 36, 0.2) 50%,
+      transparent 100%
+    );
+    filter: blur(4px);
   }
 }
 

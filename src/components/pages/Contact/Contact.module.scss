@@ -1,201 +1,418 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .contactContainer {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   /*------------------ Tablet ------------------*/
+//   @media screen and (min-width: 768px) {
+//     height: 100%;
+//     max-width: 1440px;
+//   }
+//   .sectionTitle {
+//     padding: 0 20px;
+//     @include section-title-home;
+//     /*------------------ Tablet ------------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 0;
+//     }
+//   }
+
+//   .contactWrapper {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 40px;
+//     /*------------------ Laptop to Desktop ------------------*/
+//     @media screen and (min-width: 1062px) {
+//       flex-direction: row;
+//       /*------------------ to Desktop ------------------*/
+//       @media screen and (min-width: 1200px) {
+//         gap: 80px;
+//       }
+//     }
+
+//     .contactInformationsSection {
+//       padding: 20px;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 40px;
+//       border-radius: 20px;
+//       box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//         inset 2px -2px 4px rgba(255, 255, 255, 0.4),
+//         inset -2px 2px 4px rgba(28, 32, 36, 0.6);
+//       /*------------------ Tablet to Laptop ------------------*/
+//       @media screen and (min-width: 768px) {
+//         padding: 0;
+//         flex-direction: row;
+//         box-shadow: none;
+//         /*------------------ to Laptop ------------------*/
+//         @media screen and (min-width: 1062px) {
+//           width: 50%;
+//           padding: 40px;
+//           flex-direction: column;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset 4px -4px 8px rgba(255, 255, 255, 0.4),
+//             inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+//         }
+//       }
+
+//       .informationsHeader {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 40px;
+//         /*------------------ Tablet to Laptop ------------------*/
+//         @media screen and (min-width: 768px) {
+//           width: 50%;
+//           padding: 40px;
+//           justify-content: center;
+//           border-radius: 20px;
+//           box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
+//             inset 4px -4px 8px rgba(255, 255, 255, 0.4),
+//             inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+//           /*------------------ to Laptop ------------------*/
+//           @media screen and (min-width: 1062px) {
+//             width: 100%;
+//             padding: 0;
+//             box-shadow: none;
+//           }
+//         }
+
+//         .ctoTitle {
+//           text-transform: uppercase;
+//           font-size: 38px;
+
+//           .firstWord {
+//             display: block;
+//             font-size: 1.5em;
+//             font-weight: 600;
+//             color: #00b0bd;
+//             background: radial-gradient(
+//               ellipse farthest-corner at center center,
+//               $color-primary 0%,
+//               $color-primary-dark 68%,
+//               $color-primary-dark-darker 100%
+//             );
+//             background-clip: text;
+//             -webkit-background-clip: text;
+//             -webkit-text-fill-color: transparent;
+//           }
+
+//           .line {
+//             display: block;
+//             .highlight {
+//               font-weight: 600;
+//               background: radial-gradient(
+//                 ellipse farthest-corner at right center,
+//                 $color-primary 0%,
+//                 $color-primary-dark 68%,
+//                 $color-primary-dark-darker 100%
+//               );
+//               background-clip: text;
+//               -webkit-background-clip: text;
+//               -webkit-text-fill-color: transparent;
+//             }
+//             .small {
+//               font-size: 0.8em;
+//             }
+//           }
+//         }
+
+//         .description {
+//           font-size: 14px;
+//           color: $color-slate-grey-12;
+//         }
+//       }
+
+//       .socialList {
+//         display: flex;
+//         flex-wrap: wrap;
+//         align-items: stretch; // Force les éléments à avoir la meme hauteur
+//         gap: 20px;
+//         /*------------------ Tablet to Laptop to Desktop ------------------*/
+//         @media screen and (min-width: 768px) {
+//           width: 50%;
+//           align-items: center;
+//           /*------------------ to Laptop ------------------*/
+//           @media screen and (min-width: 1062px) {
+//             width: 100%;
+//             /*------------------ to Desktop ------------------*/
+//             @media screen and (min-width: 1200px) {
+//               flex-direction: column;
+//             }
+//           }
+//         }
+
+//         .item {
+//           display: flex;
+//           flex-direction: column;
+//           align-items: center;
+//           flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
+//           gap: 20px;
+//           /*------------------ Desktop ------------------*/
+//           @media screen and (min-width: 1200px) {
+//             flex: none;
+//           }
+
+//           .contactInfoLink {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             gap: 5px;
+//             text-decoration: none;
+
+//             .contactLabel {
+//               font-size: 14px;
+//               font-weight: 600;
+//               text-transform: uppercase;
+//               letter-spacing: 2px;
+//               color: $color-primary-dark-darker;
+//             }
+//             .separator {
+//               display: inline-block; /* Permet l'application de width et height */
+//               width: 50%;
+//               height: 1px;
+//               border-bottom: 1px solid;
+//               border-image: linear-gradient(
+//                 90deg,
+//                 rgba(0, 176, 189, 0),
+//                 $color-primary-dark,
+//                 rgba(0, 176, 189, 0)
+//               );
+//               border-image-slice: 1;
+//             }
+//             .contactAdress {
+//               font-size: 12px;
+//               color: $color-slate-grey-12;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .contactFormSection {
+//       /*------------------ to Laptop ------------------*/
+//       @media screen and (min-width: 1062px) {
+//         width: 50%;
+//       }
+//     }
+//   }
+// }
+
+//*-----------------------------------------------------------
+
+// .contactContainer {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 32px;
+//   border: 1px solid red;
+//   /*--------------- Tablet ---------------*/
+//   @media screen and (min-width: 768px) {
+//     gap: 24px;
+//   }
+
+//   .sectionTitle {
+//     padding: 0 32px;
+//     @include section-title-home;
+//     /*--------------- Tablet ---------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 0 48px;
+//     }
+//   }
+
+//   .ribbon {
+//     @include ribbon-style;
+//     background: linear-gradient(
+//       15deg,
+//       $color-slate-grey-5 0%,
+//       $color-slate-grey-1 100%
+//     );
+//     height: 200px;
+//   }
+
+//   .contentWrapper {
+//     padding: 0 32px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 32px;
+//     border: 1px solid orange;
+//     /*--------------- Tablet -> Tablet L ---------------*/
+//     @media screen and (min-width: 768px) {
+//       padding: 0 48px;
+//       gap: 24px;
+//       /*--------------- to Tablet L ---------------*/
+//       @media screen and (min-width: 834px) {
+//         display: grid;
+//         grid-template-columns: repeat(8, 1fr);
+//         grid-template-rows: auto auto;
+//       }
+//     }
+
+//     .description {
+//       @include text-style;
+//       border: 1px solid black;
+//       /*--------------- Tablet L ---------------*/
+//       @media screen and (min-width: 834px) {
+//         grid-column: 1 / span 4;
+//         grid-row: 1;
+//       }
+//     }
+
+//     .socialContainer {
+//       container-type: inline-size;
+//       container-name: social;
+//       display: grid;
+//       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//       gap: 16px;
+//       border: 1px solid black;
+//       //---------- Centrage mobile 3+1
+//       @container social (min-width: calc(150px * 3 + 16px * 2))
+//         and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
+//         /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
+//            2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
+//         .item:last-child {
+//           grid-column: 2;
+//         }
+//       }
+//       /*--------------- Tablet ---------------*/
+//       @media screen and (min-width: 768px) {
+//         gap: 24px;
+//         //---------- Centrage tablet 3+1
+//         @container social (min-width: calc(150px * 3 + 24px * 2))
+//         and (max-width: calc(150px * 4 + 24px * 3 - 1px)) {
+//           /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
+//            2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
+//           .item:last-child {
+//             grid-column: 2;
+//           }
+//         }
+//         /*--------------- Tablet L ---------------*/
+//         @media screen and (min-width: 834px) {
+//           grid-column: 1 / span 4;
+//           grid-row: 2;
+//         }
+//       }
+
+//       .item {
+//         border: 1px solid black;
+//         height: 100px;
+//       }
+//     }
+
+//     .formContainer {
+//       border: 1px solid black;
+//       height: 600px;
+//       /*--------------- Tablet L ---------------*/
+//       @media screen and (min-width: 834px) {
+//         grid-column: 5 / span 4;
+//         grid-row: 1 / span 2;
+//       }
+//     }
+//   }
+// }
+
 .contactContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  /*------------------ Tablet ------------------*/
-  @media screen and (min-width: 768px) {
-    height: 100%;
-    max-width: 1440px;
-  }
+  gap: 32px;
+  border: 1px solid red;
+
   .sectionTitle {
-    padding: 0 20px;
-    @include home-title-section;
-    /*------------------ Tablet ------------------*/
-    @media screen and (min-width: 768px) {
-      padding: 0;
+    padding: 0 32px;
+    @include section-title-home;
+  }
+
+  .ribbon {
+    padding: 32px;
+    @include ribbon-style;
+    background: linear-gradient(
+      15deg,
+      $color-slate-grey-5 0%,
+      $color-slate-grey-1 100%
+    );
+
+    .ctaTitle {
+      @include cta-title-style;
     }
   }
 
-  .contactWrapper {
+  .contentWrapper {
+    padding: 0 32px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    /*------------------ Laptop to Desktop ------------------*/
-    @media screen and (min-width: 1062px) {
-      flex-direction: row;
-      /*------------------ to Desktop ------------------*/
-      @media screen and (min-width: 1200px) {
-        gap: 80px;
-      }
+    gap: 32px;
+    border: 1px solid orange;
+
+    .description {
+      @include text-style;
     }
 
-    .contactInformationsSection {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      border-radius: 20px;
-      box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-        inset 2px -2px 4px rgba(255, 255, 255, 0.4),
-        inset -2px 2px 4px rgba(28, 32, 36, 0.6);
-      /*------------------ Tablet to Laptop ------------------*/
-      @media screen and (min-width: 768px) {
-        padding: 0;
-        flex-direction: row;
-        box-shadow: none;
-        /*------------------ to Laptop ------------------*/
-        @media screen and (min-width: 1062px) {
-          width: 50%;
-          padding: 40px;
-          flex-direction: column;
-          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-            inset 4px -4px 8px rgba(255, 255, 255, 0.4),
-            inset -4px 4px 8px rgba(28, 32, 36, 0.6);
+    .socialList {
+      container-type: inline-size;
+      container-name: social;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      border: 1px solid red;
+      //---------- Centrage mobile 3+1
+      @container social (min-width: calc(150px * 3 + 16px * 2))
+         and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
+        /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
+            2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
+        .item:last-child {
+          grid-column: 2;
         }
       }
 
-      .informationsHeader {
+      .item {
         display: flex;
         flex-direction: column;
-        gap: 40px;
-        /*------------------ Tablet to Laptop ------------------*/
-        @media screen and (min-width: 768px) {
+        align-items: center;
+        gap: 16px;
+        border: 1px solid black;
+
+        .contactInfoLink {
           width: 50%;
-          padding: 40px;
-          justify-content: center;
-          border-radius: 20px;
-          box-shadow: 4px -4px 8px rgba(28, 32, 36, 0.2), -4px 4px 8px white,
-            inset 4px -4px 8px rgba(255, 255, 255, 0.4),
-            inset -4px 4px 8px rgba(28, 32, 36, 0.6);
-          /*------------------ to Laptop ------------------*/
-          @media screen and (min-width: 1062px) {
-            width: 100%;
-            padding: 0;
-            box-shadow: none;
-          }
-        }
-
-        .ctoTitle {
-          text-transform: uppercase;
-          font-size: 38px;
-
-          .firstWord {
-            display: block;
-            font-size: 1.5em;
-            font-weight: 600;
-            color: #00b0bd;
-            background: radial-gradient(
-              ellipse farthest-corner at center center,
-              $color-primary 0%,
-              $color-primary-dark 68%,
-              $color-primary-dark-darker 100%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          .line {
-            display: block;
-            .highlight {
-              font-weight: 600;
-              background: radial-gradient(
-                ellipse farthest-corner at right center,
-                $color-primary 0%,
-                $color-primary-dark 68%,
-                $color-primary-dark-darker 100%
-              );
-              background-clip: text;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-            .small {
-              font-size: 0.8em;
-            }
-          }
-        }
-
-        .description {
-          font-size: 14px;
-          color: $color-slate-grey-12;
-        }
-      }
-
-      .socialList {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch; // Force les éléments à avoir la meme hauteur
-        gap: 20px;
-        /*------------------ Tablet to Laptop to Desktop ------------------*/
-        @media screen and (min-width: 768px) {
-          width: 50%;
-          align-items: center;
-          /*------------------ to Laptop ------------------*/
-          @media screen and (min-width: 1062px) {
-            width: 100%;
-            /*------------------ to Desktop ------------------*/
-            @media screen and (min-width: 1200px) {
-              flex-direction: column;
-            }
-          }
-        }
-
-        .item {
           display: flex;
           flex-direction: column;
           align-items: center;
-          flex: 1 1 182px; /* Permet aux éléments de grandir et de rétrécir, avec une base de 200px */
-          gap: 20px;
-          /*------------------ Desktop ------------------*/
-          @media screen and (min-width: 1200px) {
-            flex: none;
+          gap: 4px;
+
+          .contactLabel {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: $color-primary-dark-darker;
           }
 
-          .contactInfoLink {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
+          .separator {
+            height: 1px;
+            width: 100%;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(
+              90deg,
+              rgba(0, 176, 189, 0),
+              rgba(28, 32, 36, 0.2),
+              rgba(0, 176, 189, 0)
+            );
+            border-image-slice: 1;
+            box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+          }
 
-            .contactLabel {
-              font-size: 14px;
-              font-weight: 600;
-              text-transform: uppercase;
-              letter-spacing: 2px;
-              color: $color-primary-dark-darker;
-            }
-            .separator {
-              display: inline-block; /* Permet l'application de width et height */
-              width: 50%;
-              height: 1px;
-              border-bottom: 1px solid;
-              border-image: linear-gradient(
-                90deg,
-                rgba(0, 176, 189, 0),
-                $color-primary-dark,
-                rgba(0, 176, 189, 0)
-              );
-              border-image-slice: 1;
-            }
-            .contactAdress {
-              font-size: 12px;
-              color: $color-slate-grey-12;
-            }
+          .contactAdress {
+            font-size: 10px;
+            font-weight: 500;
+            color: $color-primary-dark-darker;
           }
         }
       }
     }
 
-    .contactFormSection {
-      /*------------------ to Laptop ------------------*/
-      @media screen and (min-width: 1062px) {
-        width: 50%;
-      }
+    .contactFormContainer {
+      border: 1px solid black;
+      height: 600px;
     }
   }
 }
