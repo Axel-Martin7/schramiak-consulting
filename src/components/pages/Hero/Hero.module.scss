@@ -24,8 +24,8 @@
       transform: skewX(10deg) translateX(-50%);
       background: linear-gradient(
         15deg,
-        $color-slate-grey-5 0%,
-        $color-slate-grey-1 100%
+        $color-slate-grey-4 0%,
+        $color-slate-grey-1 80%
       );
       &::before {
         content: '';

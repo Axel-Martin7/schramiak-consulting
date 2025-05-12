@@ -1,152 +1,9 @@
-// 'use client';
-
-// import React, { useState } from 'react';
-// import styles from './ContactForm.module.scss';
-// import Button from '@/components/common/Button';
-
-// interface FormData {
-//   firstName: string;
-//   lastName: string;
-//   email: string;
-//   message: string;
-// }
-
-// /**
-//  * Composant de formulaire de contact
-//  * @returns {React.ReactElement} - Élément React représentant le formulaire de contact
-//  */
-// export default function ContactForm() {
-//   // Etat pour stocker les données du formulaire
-//   const [formData, setFormData] = useState<FormData>({
-//     firstName: '',
-//     lastName: '',
-//     email: '',
-//     message: '',
-//   });
-//   // Etat pour gérer le statut de l'envoi du formulaire
-//   const [status, setStatus] = useState<
-//     'idle' | 'sending' | 'success' | 'error'
-//   >('idle');
-//   // Etat pour stocker les message d'erreur
-//   const [errorMessage, setErrorMessage] = useState<string>('');
-
-//   // Remplacer par useTranslations lorsque vous gérez les traductions
-//   // const t = useTranslations('ContactForm');
-
-//   /**
-//    * Gestionnaire de changement pour les champs du formulaire
-//    * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - Événement de changement
-//    */
-//   const handleChange = (
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-//   ) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
-
-//   /**
-//    * Gestionnaire de soumission du formulaire
-//    * @param {React.FormEvent} e - Événement de soumission
-//    */
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     setStatus('sending');
-//     setErrorMessage(''); // Réinitialiser le message d'erreur
-
-//     try {
-//       const response = await fetch('/api/send', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(formData),
-//       });
-
-//       const result = await response.json();
-
-//       if (response.ok) {
-//         setStatus('success');
-//         // Rénitialisation des champs du formulaire
-//         setFormData({
-//           firstName: '',
-//           lastName: '',
-//           email: '',
-//           message: '',
-//         });
-//       } else {
-//         setStatus('error');
-//         setErrorMessage(result.error || "Une erreur s'est produite.");
-//       }
-//     } catch (error) {
-//       console.error('Erreur:', error);
-//       setStatus('error');
-//       setErrorMessage(
-//         "Une erreur s'est produite lors de l'envoi de votre message."
-//       );
-//     }
-//   };
-
-//   return (
-//     <div className={styles.contactFormContainer}>
-//       <h3 className={styles.formTitle}>Contact</h3>
-
-//       <form className={styles.contactForm} onSubmit={handleSubmit}>
-//         <div className={styles.formGroup}>
-//           <input
-//             className={styles.input}
-//             type="text"
-//             id="firstName"
-//             name="firstName"
-//             value={formData.firstName}
-//             onChange={handleChange}
-//             placeholder="Votre prénom *"
-//             required
-//           />
-
-//           <input
-//             className={styles.input}
-//             type="text"
-//             id="lastName"
-//             name="lastName"
-//             value={formData.lastName}
-//             onChange={handleChange}
-//             placeholder="Votre nom *"
-//             required
-//           />
-
-//           <input
-//             className={styles.input}
-//             type="text"
-//             id="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             placeholder="Votre adresse mail *"
-//             required
-//           />
-
-//           <textarea
-//             className={styles.input}
-//             id="message"
-//             name="message"
-//             value={formData.message}
-//             onChange={handleChange}
-//             placeholder="Votre message "
-//             required
-//           />
-//         </div>
-
-//         <Button variant="primary">Envoyer</Button>
-//       </form>
-//     </div>
-//   );
-// }
-
 'use client';
 
 import React, { FormEvent, useRef, useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { sendContactEmail } from '@/app/actions/contact';
+import SubmitButton from '@/components/common/SubmitButton';
 
 /*-------------------------------*
 //* COMPOSANT ContactForm
@@ -196,91 +53,92 @@ export default function ContactForm() {
     setSending(false);
   }
 
+  // On calcul si on doit afficher la zone de feedback ;
+  const hasFeedback =
+    success || Object.values(errors).some((arr) => arr && arr.length > 0);
+
   //--------------------- Rendu du formulaire :
   return (
-    <>
-      <form
-        ref={formRef}
-        className={styles.contactForm}
-        onSubmit={handleSubmit}
-        noValidate
-      >
+    <form
+      className={styles.contactForm}
+      ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
+    >
+      <div className={styles.formTitleContainer}>
+        <span className={styles.separator}></span>
+        <h4 className={styles.formTitle}>Contact</h4>
+        <span className={styles.separator}></span>
+      </div>
+
+      <div className={styles.fieldsGroup}>
         {/* Honeypot (invisible) */}
         <input
+          className={styles.honeypot}
           type="text"
           name="hp_field"
-          style={{ display: 'none' }}
           tabIndex={-1}
           autoComplete="off"
         />
 
         {/* Nom */}
-        <label htmlFor="name">Votre nom</label>
         <input
+          className={styles.input}
           id="name"
           name="name"
           type="text"
+          placeholder="Votre nom"
           required
-          className={styles.input}
         />
 
         {/* E-mail */}
-        <label htmlFor="email">Votre e-mail</label>
         <input
+          className={styles.input}
           id="email"
           name="email"
           type="email"
+          placeholder="Votre adresse e-mail"
           required
-          className={styles.input}
         />
 
         {/* Message */}
-        <label htmlFor="message">Votre message</label>
         <textarea
+          className={styles.textarea}
           id="message"
           name="message"
+          placeholder="Votre message…"
           required
-          className={styles.textarea}
         />
+      </div>
 
-        {/* Bouton */}
-        <button
+      <div className={styles.submitWrapper}>
+        <SubmitButton
           type="submit"
+          variant="primary"
           disabled={sending}
-          className={styles.submitButton}
+          aria-label="Envoyer le message"
         >
           {sending ? 'Envoi…' : 'Envoyer'}
-        </button>
-      </form>
-
-      {/*-----------------------------------------------------------------------*/}
-      {/* Conteneur ACCESSIBLE pour les retours utilisateur (erreurs & succès) */}
-      {/*-----------------------------------------------------------------------*/}
-      <div aria-live="polite" role="status" className={styles.feedback}>
-        {errors.honeypot && (
-          <p className={styles.error}>{errors.honeypot.join(', ')}</p>
-        )}
-        {errors.rateLimit && (
-          <p className={styles.error}>{errors.rateLimit.join(', ')}</p>
-        )}
-        {errors.name && (
-          <p className={styles.error}>{errors.name.join(', ')}</p>
-        )}
-        {errors.email && (
-          <p className={styles.error}>{errors.email.join(', ')}</p>
-        )}
-        {errors.message && (
-          <p className={styles.error}>{errors.message.join(', ')}</p>
-        )}
-        {errors.mailgun && (
-          <p className={styles.error}>{errors.mailgun.join(', ')}</p>
-        )}
-        {success && (
-          <p className={styles.success}>
-            Merci ! Votre message a bien été envoyé.
-          </p>
-        )}
+        </SubmitButton>
       </div>
-    </>
+
+      {/* Feedback accessible, rendu seulement si hasFeedback */}
+      {hasFeedback && (
+        <div className={styles.feedback} aria-live="polite" role="status">
+          {Object.entries(errors).map(([field, msgs]) =>
+            msgs?.map((msg, i) => (
+              <p key={`${field}-${i}`} className={styles.error}>
+                {msg}
+              </p>
+            ))
+          )}
+          {success && (
+            <p className={styles.success}>
+              Merci ! Votre message a bien été envoyé.
+            </p>
+          )}
+        </div>
+      )}
+    </form>
   );
 }
