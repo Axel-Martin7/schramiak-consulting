@@ -28,21 +28,16 @@
     170px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
     */
       /*--------------- to Desktop ---------------*/
-      //   @media screen and (min-width: 1280px) {
-      //     top: -162px;
-      //     /* 162 =
-      //  260px ( taille du riban( divisée par deux pour obtenir sa moitiée
-      //  + 32px ( taille gap )
-      //  */
-      //     height: calc(100% + (260px / 2) + 32px + 64px);
-      //     /* = 226px ->
-      //  260px ( taille du ribbon ) divisée par deux pour obtenir sa moitiée
-      //  + 32px ( taille gap )
-      //  + 64px = margin-bottom appliqué dans contentWrapper
-      //  */
-      //     padding: 32px;
-      //     gap: 32px;
-      //   }
+      @media screen and (min-width: 1280px) {
+        top: -222px; // Resultat du calcul de la height
+        height: calc(100% + 32px + 190px);
+        /* = 222px ->
+    32px = taille du gap
+    190px = Taille du ribbon (380px divisée par 2 pour obtenir sa moitiée)
+    */
+        padding: 32px;
+        gap: 32px;
+      }
     }
   }
 

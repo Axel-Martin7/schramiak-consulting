@@ -8,7 +8,6 @@ import About from '@/components/pages/About/About';
 import MyServices from '@/components/pages/MyServices/MyServices';
 import Realisations from '@/components/pages/Realisations/Realisations';
 import Contact from '@/components/pages/Contact/Contact';
-import ContactV2 from '@/components/pages/Contact/ContactV2';
 
 type Props = {
   params: { locale: string };
@@ -41,12 +40,8 @@ export default function Home({ params: { locale } }: Props) {
         <Realisations />
       </section>
 
-      <section id="contact" className={styles.contactSection}>
+      <section className={styles.contactSection}>
         <Contact />
-      </section>
-
-      <section className={styles.contactV2Section}>
-        <ContactV2 />
       </section>
     </main>
   );

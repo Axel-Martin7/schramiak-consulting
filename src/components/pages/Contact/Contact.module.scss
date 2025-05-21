@@ -41,21 +41,39 @@
     }
 
     .ctaContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
       /*--------------- Desktop ---------------*/
       @media screen and (min-width: 1280px) {
         max-width: 1280px;
         margin: 0 auto;
+        gap: 32px;
       }
 
       .ctaTitle {
         @include cta-title-style;
-        /*--------------- Tablet L -> Laptop ---------------*/
+        /*--------------- Tablet L  ---------------*/
         @media screen and (min-width: 834px) {
-          width: calc(50% - 12px); // 12px = moitiée des gutters (24px)
-          /*--------------- to Laptop ---------------*/
-          @media screen and (min-width: 1024px) {
-            width: 100%;
-          }
+          width: calc(50% - 12px); // 12px = moitiée taille gutters
+        }
+      }
+
+      .descriptions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        /*--------------- Tablet L  ---------------*/
+        @media screen and (min-width: 834px) {
+          width: calc(50% - 12px); // 12px = moitiée taille gutters
+        }
+
+        .description {
+          @include text-style;
+        }
+
+        .emphasis {
+          @include text-emphasis;
         }
       }
     }
@@ -65,47 +83,18 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-
-    /*--------------- Tablet -> Tablet L -> Laptop -> Desktop ---------------*/
-    @media screen and (min-width: 768px) {
+    /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
+    @media screen and (min-width: 834px) {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
       gap: 24px;
-      /*--------------- to Tablet L ---------------*/
-      @media screen and (min-width: 834px) {
-        margin-bottom: 48px;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(2, min-content);
-        /*--------------- to Laptop ---------------*/
-        @media screen and (min-width: 1024px) {
-          grid-template-columns: repeat(12, 1fr);
-          /*--------------- to Desktop ---------------*/
-          @media screen and (min-width: 1280px) {
-            margin-bottom: 64px;
-            gap: 32px;
-          }
+      /*--------------- to Laptop ---------------*/
+      @media screen and (min-width: 1024px) {
+        grid-template-columns: repeat(12, 1fr);
+        /*--------------- to Desktop ---------------*/
+        @media screen and (min-width: 1280px) {
+          gap: 32px;
         }
-      }
-    }
-
-    .descriptions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      /*--------------- to Tablet L -> laptop ---------------*/
-      @media screen and (min-width: 834px) {
-        grid-column: 1 / span 4;
-        grid-row: 1;
-        /*--------------- to Laptop ---------------*/
-        @media screen and (min-width: 1024px) {
-          grid-column: 1 / span 6;
-        }
-      }
-
-      .description {
-        @include text-style;
-      }
-      .emphasis {
-        @include text-emphasis;
       }
     }
 
@@ -138,16 +127,17 @@
         }
         /*--------------- to Tablet L ---------------*/
         @media screen and (min-width: 834px) {
+          margin: 24px 0 48px 0; // Pour avoir un espace de 48px en bas et en haut (on a deja un gap de 24px)
           grid-column: 1 / span 4;
-          grid-row: 2;
           /*--------------- to Laptop ---------------*/
           @media screen and (min-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
             grid-column: 1 / span 6;
             /*--------------- to Desktop ---------------*/
             @media screen and (min-width: 1280px) {
-              gap: 32px;
+              margin: 32px 0 64px 0; // Pour avoir un espace de 64px en bas et en haut (on a deja un gap de 32px)
               grid-column: 2 / span 4;
+              gap: 32px;
             }
           }
         }
@@ -169,15 +159,15 @@
           flex-direction: column;
           align-items: center;
           gap: 4px;
-          /*--------------- Tablet ---------------*/
-          @media screen and (min-width: 768px) {
-            gap: 8px;
-          }
           &:hover {
             .contactAdress {
               color: $color-primary-dark;
               font-weight: 600;
             }
+          }
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            gap: 8px;
           }
 
           .contactLabel {
@@ -212,12 +202,10 @@
     }
 
     .contactFormContainer {
-      padding-top: 16px;
       /*--------------- Tablet L -> Laptop ---------------*/
       @media screen and (min-width: 834px) {
-        padding-top: 0;
+        position: relative;
         grid-column: 5 / span 4;
-        grid-row: 1 / 3;
         /*--------------- to Laptop ---------------*/
         @media screen and (min-width: 1024px) {
           grid-column: 7 / span 6;
