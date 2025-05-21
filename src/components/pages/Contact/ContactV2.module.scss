@@ -66,11 +66,15 @@
     flex-direction: column;
     gap: 32px;
     border: 1px solid black;
-    /*--------------- Tablet L ---------------*/
+    /*--------------- Tablet L -> Laptop ---------------*/
     @media screen and (min-width: 834px) {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       gap: 24px;
+      /*--------------- to Laptop ---------------*/
+      @media screen and (min-width: 1024px) {
+        grid-template-columns: repeat(12, 1fr);
+      }
     }
 
     .socialList {
@@ -89,7 +93,7 @@
           grid-column: 2;
         }
       }
-      /*--------------- Tablet ---------------*/
+      /*--------------- Tablet -> Tablet L -> Laptop ---------------*/
       @media screen and (min-width: 768px) {
         gap: 24px;
         // Centrage tablette 3+1 :
@@ -105,6 +109,11 @@
         @media screen and (min-width: 834px) {
           margin: 24px 0 48px 0; // Pour avoir un espace de 48px en bas et en haut (on a deja un gap de 24px)
           grid-column: 1 / span 4;
+          /*--------------- to Laptop ---------------*/
+          @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column: 1 / span 6;
+          }
         }
       }
 
@@ -114,6 +123,10 @@
         align-items: center;
         gap: 16px;
         border: 1px solid black;
+        /*--------------- Tablet ---------------*/
+        @media screen and (min-width: 768px) {
+          gap: 24px;
+        }
 
         .contactInfoLink {
           width: 100%;
@@ -126,6 +139,10 @@
               color: $color-primary-dark;
               font-weight: 600;
             }
+          }
+          /*--------------- Tablet ---------------*/
+          @media screen and (min-width: 768px) {
+            gap: 8px;
           }
 
           .contactLabel {
@@ -161,10 +178,14 @@
 
     .contactFormContainer {
       border: 1px solid black;
-      /*--------------- to Tablet L ---------------*/
+      /*--------------- Tablet L -> Laptop ---------------*/
       @media screen and (min-width: 834px) {
         position: relative;
         grid-column: 5 / span 4;
+        /*--------------- to Laptop ---------------*/
+        @media screen and (min-width: 1024px) {
+          grid-column: 7 / span 6;
+        }
       }
     }
   }
