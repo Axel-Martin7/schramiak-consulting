@@ -47,7 +47,6 @@ export default async function Layout({ children, params: { locale } }: Props) {
     <html lang={locale}>
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
-          {/* <Header /> */}
           <Header />
           {children}
           <Footer />

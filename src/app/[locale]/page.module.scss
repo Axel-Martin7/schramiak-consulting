@@ -186,4 +186,19 @@
       }
     }
   }
+
+  .contactV2Section {
+    padding: 32px;
+    border: 1px solid blue;
+  }
+
+  .introductionSection,
+  .heroSection,
+  .aboutSection,
+  .servicesSection,
+  .realisationsSection,
+  .contactSection {
+    /* Ajuste ici à la hauteur réelle de ton header */
+    scroll-margin-top: 80px;
+  }
 }

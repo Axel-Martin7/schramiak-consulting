@@ -8,6 +8,7 @@ import About from '@/components/pages/About/About';
 import MyServices from '@/components/pages/MyServices/MyServices';
 import Realisations from '@/components/pages/Realisations/Realisations';
 import Contact from '@/components/pages/Contact/Contact';
+import ContactV2 from '@/components/pages/Contact/ContactV2';
 
 type Props = {
   params: { locale: string };
@@ -19,34 +20,8 @@ export default function Home({ params: { locale } }: Props) {
   const t = useTranslations('HomePage');
 
   return (
-    // <main className={styles.main}>
-    //   <section className={styles.introductionSection}>
-    //     <Introduction />
-    //   </section>
-
-    //   <section className={styles.heroSection}>
-    //     <Hero />
-    //   </section>
-
-    //   <section className={styles.aboutv3Section}>
-    //     <About />
-    //   </section>
-
-    //   <section className={styles.servicesSection}>
-    //     <MyServices />
-    //   </section>
-
-    //   <section className={styles.realisationsSection}>
-    //     <Realisations />
-    //   </section>
-
-    //   <section className={styles.contactSection}>
-    //     <Contact />
-    //   </section>
-    // </main>
-
     <main className={styles.main}>
-      <section className={styles.introductionSection}>
+      <section id="introduction" className={styles.introductionSection}>
         <Introduction />
       </section>
 
@@ -54,11 +29,11 @@ export default function Home({ params: { locale } }: Props) {
         <Hero />
       </section>
 
-      <section className={styles.aboutSection}>
+      <section id="about" className={styles.aboutSection}>
         <About />
       </section>
 
-      <section className={styles.servicesSection}>
+      <section id="services" className={styles.servicesSection}>
         <MyServices />
       </section>
 
@@ -66,8 +41,12 @@ export default function Home({ params: { locale } }: Props) {
         <Realisations />
       </section>
 
-      <section className={styles.contactSection}>
+      <section id="contact" className={styles.contactSection}>
         <Contact />
+      </section>
+
+      <section className={styles.contactV2Section}>
+        <ContactV2 />
       </section>
     </main>
   );

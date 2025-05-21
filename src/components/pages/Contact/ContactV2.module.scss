@@ -1,0 +1,130 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: 1px solid red;
+
+  .sectionTitle {
+    @include section-title-home;
+  }
+
+  .ribbon {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 32px;
+    @include ribbon-style;
+    background: linear-gradient(
+      15deg,
+      $color-slate-grey-4 0%,
+      $color-slate-grey-1 80%
+    );
+
+    .ctaContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      border: 1px solid black;
+
+      .ctaTitle {
+        @include cta-title-style;
+      }
+
+      .descriptions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .description {
+          @include text-style;
+        }
+
+        .emphasis {
+          @include text-emphasis;
+        }
+      }
+    }
+  }
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border: 1px solid black;
+
+    .socialList {
+      container-type: inline-size;
+      container-name: social;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      border: 1px solid red;
+      // Centrage mobile 3+1 :
+      @container social (min-width: calc(150px * 3 + 16px * 2))
+             and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
+        /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
+                2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
+        .item:last-child {
+          grid-column: 2;
+        }
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        border: 1px solid black;
+
+        .contactInfoLink {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          &:hover {
+            .contactAdress {
+              color: $color-primary-dark;
+              font-weight: 600;
+            }
+          }
+
+          .contactLabel {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $color-primary-dark-darker;
+          }
+
+          .separator {
+            width: 50%;
+            height: 1px;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(
+              90deg,
+              rgba(0, 176, 189, 0),
+              rgba(28, 32, 36, 0.2),
+              rgba(0, 176, 189, 0)
+            );
+            border-image-slice: 1;
+            box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+          }
+
+          .contactAdress {
+            font-size: 10px;
+            font-weight: 500;
+            color: $color-slate-grey-12;
+          }
+        }
+      }
+    }
+
+    .contactFormContainer {
+      border: 1px solid black;
+    }
+  }
+}

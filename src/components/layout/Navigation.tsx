@@ -30,8 +30,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/realisations'}
-            title="Learn more about us"
+            href={{ pathname: '/', hash: 'about' }}
             onClick={onLinkClick}
           >
             A propos
@@ -42,7 +41,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/realisations'}
+            href={'/parcours'}
             title="Learn more about us"
             onClick={onLinkClick}
           >
@@ -54,7 +53,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/realisations'}
+            href={{ pathname: '/', hash: 'services' }}
             title="Learn more about us"
             onClick={onLinkClick}
           >
@@ -78,7 +77,7 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/realisations'}
+            href={{ pathname: '/', hash: 'contact' }}
             title="Learn more about us"
             onClick={onLinkClick}
           >
