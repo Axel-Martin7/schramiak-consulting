@@ -190,6 +190,10 @@
   .contactV2Section {
     padding: 32px;
     border: 1px solid blue;
+    /*--------------- Tablet ---------------*/
+    @media screen and (min-width: 768px) {
+      padding: 48px;
+    }
   }
 
   .introductionSection,
