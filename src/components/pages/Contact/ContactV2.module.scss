@@ -36,6 +36,10 @@
       flex-direction: column;
       gap: 24px;
       border: 1px solid black;
+      /*--------------- Tablet L ---------------*/
+      @media screen and (min-width: 834px) {
+        width: calc(50% - 12px); // 12px = moitiée taille gutters
+      }
 
       .ctaTitle {
         @include cta-title-style;
@@ -62,6 +66,12 @@
     flex-direction: column;
     gap: 32px;
     border: 1px solid black;
+    /*--------------- Tablet L ---------------*/
+    @media screen and (min-width: 834px) {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+    }
 
     .socialList {
       container-type: inline-size;
@@ -90,6 +100,11 @@
           .item:last-child {
             grid-column: 2;
           }
+        }
+        /*--------------- to Tablet L ---------------*/
+        @media screen and (min-width: 834px) {
+          margin: 24px 0 48px 0; // Pour avoir un espace de 48px en bas et en haut (on a deja un gap de 24px)
+          grid-column: 1 / span 4;
         }
       }
 
@@ -146,6 +161,11 @@
 
     .contactFormContainer {
       border: 1px solid black;
+      /*--------------- to Tablet L ---------------*/
+      @media screen and (min-width: 834px) {
+        position: relative;
+        grid-column: 5 / span 4;
+      }
     }
   }
 }

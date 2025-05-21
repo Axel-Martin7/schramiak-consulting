@@ -17,9 +17,8 @@ export default function ContactV2() {
       <div className={styles.ribbon}>
         <div className={styles.ctaContainer}>
           <h2 className={`${styles.ctaTitle} ${barlow.className}`}>
-            <strong className={styles.firstWord}>Offrez</strong>
-            vous un{' '}
-            <strong className={styles.highlightWords}>audit gratuit</strong>
+            <strong className={styles.firstWord}>Réservez</strong>
+            un <strong className={styles.highlightWords}>audit gratuit</strong>
             <span className={styles.newLine}>
               de vos{' '}
               <strong className={styles.highlightWords}>
