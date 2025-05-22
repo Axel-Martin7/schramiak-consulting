@@ -1,18 +1,16 @@
-/* Ce fichier configure et fourni les messages de localisation (traductions) en fonction de la locale demandée par l'utilisateur:
-- Validation des Locales: Il vérifie que la locale demandée est valide (parmi celles définies dans le tableau 'Locales')
-- Chargement dynamique des Messages: Il charge dynamiquement les fichiers de traduction correspondants à la locale valide.
-- Gestion des erreurs: il gère les cas ou la locale demandée n'est pas supportée en renvoyant une 404.
-*/
-
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from './config';
 
 export default getRequestConfig(async ({ locale }) => {
-  // Valide que le paramètre `locale` entrant est valide
-  if (!locales.includes(locale as any)) notFound();
+  // 1️⃣ Validation de la locale
+  if (!locales.includes(locale as any)) {
+    notFound();
+  }
 
-  return {
-    messages: (await import(`../messages/${locale}.json`)).default,
-  };
+  // 2️⃣ Import du JSON complet
+  const messages = (await import(`../messages/${locale}.json`)).default;
+
+  // 3️⃣ On renvoie TOUT l’objet
+  return { locale, messages };
 });

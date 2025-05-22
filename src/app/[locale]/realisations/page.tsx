@@ -15,16 +15,26 @@ type Props = {
 export default function RealisationsPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale); // Appeler cette fonction sur chaques pages et layout ou on souhaite activer le rendu statique. https://www.youtube.com/watch?v=h3IA_Iax-dk
 
-  const t = useTranslations('AboutPage');
+  const t = useTranslations('pages.realisations');
 
   return (
-    <main className={styles.main}>
-      <header className={styles.pageHeader}>
-        <h1 className={`${styles.pageTitle} ${barlow.className}`}>
-          Mes <strong className={styles.highlight}>Réalisations</strong>
+    <main className={styles.main} role="main">
+      <header
+        className={styles.pageHeader}
+        role="banner"
+        aria-labelledby="realisations-title"
+      >
+        <h1
+          id="realisations-title"
+          className={`${styles.pageTitle} ${barlow.className}`}
+        >
+          {t('title-small-word')}{' '}
+          <strong className={styles.highlight}>
+            {t('title-highlight-word')}
+          </strong>
         </h1>
 
-        <div className={styles.coloredBubblesContainer}>
+        <div className={styles.coloredBubblesContainer} aria-hidden="true">
           <span className={styles.bubble1}></span>
           <span className={styles.bubble2}></span>
           <span className={styles.bubble3}></span>
@@ -32,10 +42,14 @@ export default function RealisationsPage({ params: { locale } }: Props) {
         </div>
       </header>
 
-      <section className={styles.realisationsSection}>
+      <section
+        className={styles.realisationsSection}
+        role="region"
+        aria-labelledby="realisations-title"
+      >
         {/*---------- Groupement International Automobile ----------*/}
         <article className={styles.projectContainer}>
-          <div className={styles.mobileSeparator}></div>
+          <div className={styles.mobileSeparator} aria-hidden="true"></div>
 
           <div className={styles.projectTitleCard}>
             <h2 className={styles.projectName}>
@@ -47,21 +61,16 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             <div className={styles.insideFrame}>
               <div className={styles.descriptionsContainer}>
                 <p className={styles.description}>
-                  Au sein d&apos;un groupement international de distribution de
-                  pièces détachées automobiles, lancement de plusieurs projets
-                  et startups en vue de diversifier l&apos;activité.
+                  {t('project-1-description-1')}
                 </p>
                 <p className={styles.description}>
-                  Planification financière et business plan afin de lever les
-                  fonds nécessaires aux développements de ces projets.
+                  {t('project-1-description-2')}
                 </p>
                 <p className={styles.description}>
-                  Pilotage financier de ces projets et participation aux
-                  conseils d&apos;administration.
+                  {t('project-1-description-3')}
                 </p>
                 <p className={styles.description}>
-                  Création d&apos;outils d&apos;analyse et de prévision des
-                  ventes.
+                  {t('project-1-description-4')}
                 </p>
               </div>
             </div>
@@ -73,17 +82,17 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'horloge"
+                  alt={t('time-icon-alt')}
                   src={timeclock}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>3 ans</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-1-time-item-title')}
+              </h3>
               <p className={styles.itemDescription}>
-                Une expérience au sein d&apos;un groupe international, divisée
-                entre le contrôle financier de différentes entités et la gestion
-                de projets innovants.
+                {t('project-1-time-item-description')}
               </p>
             </li>
             {/*----- Role -----*/}
@@ -91,19 +100,21 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'amploule"
+                  alt={t('role-icon-alt')}
                   src={lightBulb}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Gestion de projet</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-1-role-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>Management de projet avec des équipes internationales.</p>
+                  <p>{t('project-1-role-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Elaboration de POCs (Proof of Concept).</p>
+                  <p>{t('project-1-role-item-description-2')}</p>
                 </li>
               </ul>
             </li>
@@ -112,22 +123,24 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone check"
+                  alt={t('results-icon-alt')}
                   src={check}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Résultats</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-1-results-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>12 projets accompagnés.</p>
+                  <p>{t('project-1-results-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>5 entreprises crées.</p>
+                  <p>{t('project-1-results-item-description-2')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Outil de prévision des ventes.</p>
+                  <p>{t('project-1-results-item-description-3')}</p>
                 </li>
               </ul>
             </li>
@@ -146,18 +159,13 @@ export default function RealisationsPage({ params: { locale } }: Props) {
             <div className={styles.insideFrame}>
               <div className={styles.descriptionsContainer}>
                 <p className={styles.description}>
-                  Une startup nouvellement créée, dans le commerce de pièces
-                  détachées automobiles avec des acteurs internationaux.
+                  {t('project-2-description-1')}
                 </p>
                 <p className={styles.description}>
-                  L&apos;entreprise avait besoin de définir l&apos;ensemble de
-                  ses process de gestion, ainsi que d&apos;un accompagnement
-                  pour soutenir sa croissance.
+                  {t('project-2-description-2')}
                 </p>
                 <p className={styles.description}>
-                  Une levée de fonds était à préparer, auprès de financeurs
-                  publiques et privés, avec un suivi auprès des actionnaires et
-                  des audits financiers à piloter.
+                  {t('project-2-description-3')}
                 </p>
               </div>
             </div>
@@ -169,18 +177,17 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'horloge"
+                  alt={t('time-icon-alt')}
                   src={timeclock}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>2 ans</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-2-time-item-title')}
+              </h3>
               <p className={styles.itemDescription}>
-                Un mandat longue durée, avec un rôle de Contrôleur financier à
-                temps partiel pour gérer le quotidien, soutenir
-                l&apos;entreprise dans sa croissance et accompagner le
-                dirigeant.
+                {t('project-2-time-item-description')}
               </p>
             </li>
             {/*----- Role -----*/}
@@ -188,22 +195,24 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'amploule"
+                  alt={t('role-icon-alt')}
                   src={lightBulb}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>CFO temps partiel</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-2-role-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>Choix et configuration d&apos;un ERP.</p>
+                  <p> {t('project-2-role-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Définition des process de gestion.</p>
+                  <p> {t('project-2-role-item-description-2')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Mise en place du système comptable.</p>
+                  <p> {t('project-2-role-item-description-3')}</p>
                 </li>
               </ul>
             </li>
@@ -212,25 +221,27 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone check"
+                  alt={t('results-icon-alt')}
                   src={check}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Résultats</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-2-results-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>Système de gestion déployé avec une équipe restreinte.</p>
+                  <p>{t('project-2-results-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Levée de fonds réalisée.</p>
+                  <p>{t('project-2-results-item-description-2')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Ressources financières optimisées.</p>
+                  <p>{t('project-2-results-item-description-3')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Maîtrise de la trésorerie.</p>
+                  <p>{t('project-2-results-item-description-4')}</p>
                 </li>
               </ul>
             </li>
@@ -242,26 +253,20 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <div className={styles.mobileSeparator}></div>
 
           <div className={styles.projectTitleCard}>
-            <h2 className={styles.projectName}>Sous-traitant horloger</h2>
+            <h2 className={styles.projectName}> {t('project-3-title')}</h2>
           </div>
 
           <div className={styles.projectDescriptionCard}>
             <div className={styles.insideFrame}>
               <div className={styles.descriptionsContainer}>
                 <p className={styles.description}>
-                  Un sous-traitant horloger avait connu des problèmes de suivi
-                  de sa comptabilité suite à un départ et un changement de
-                  logiciel.
+                  {t('project-3-description-1')}
                 </p>
                 <p className={styles.description}>
-                  Une analyse de la situation devait être effectuée dans les
-                  plus brefs délais afin de préparer un conseil
-                  d&apos;administration.
+                  {t('project-3-description-2')}
                 </p>
                 <p className={styles.description}>
-                  La correspondance entre les deux systèmes de comptabilité
-                  devait être assurée et l&apos;ensemble des comptes repris pour
-                  plus de fiabilité et de lisibilité.
+                  {t('project-3-description-3')}
                 </p>
               </div>
             </div>
@@ -273,39 +278,45 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'horloge"
+                  alt={t('time-icon-alt')}
                   src={timeclock}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>1 mois</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-3-time-item-title')}
+              </h3>
             </li>
             {/*----- Role -----*/}
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'amploule"
+                  alt={t('role-icon-alt')}
                   src={lightBulb}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Comptabilité</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-3-role-item-title')}
+              </h3>
             </li>
             {/*----- Résults -----*/}
             <li className={styles.itemCard}>
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone check"
+                  alt={t('results-icon-alt')}
                   src={check}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Etats financiers</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-3-results-item-title')}
+              </h3>
             </li>
           </ul>
         </article>
@@ -315,25 +326,17 @@ export default function RealisationsPage({ params: { locale } }: Props) {
           <div className={styles.mobileSeparator}></div>
 
           <div className={styles.projectTitleCard}>
-            <h2 className={styles.projectName}>Transport de matériaux</h2>
+            <h2 className={styles.projectName}> {t('project-4-title')}</h2>
           </div>
 
           <div className={styles.projectDescriptionCard}>
             <div className={styles.insideFrame}>
               <div className={styles.descriptionsContainer}>
                 <p className={styles.description}>
-                  Une jeune entreprise de transport avait besoin d&apos;un
-                  système de gestion de son activité, lui permettant de suivre
-                  tous les trajets de ses véhicules, de suivre les volumes de
-                  matériaux transportés et d&apos;informer toutes les parties
-                  prenantes (fournisseurs, clients, organismes publiques) de
-                  manière régulière, fiable et automatisée.
+                  {t('project-4-description-1')}
                 </p>
                 <p className={styles.description}>
-                  Le dirigeant souhaitait également améliorer les process de
-                  facturation, de suivi de trésorerie et disposer d&apos;un
-                  outil de gestion lui permettant de suivre sa rentabilité en
-                  temps réel.
+                  {t('project-4-description-2')}
                 </p>
               </div>
             </div>
@@ -345,16 +348,18 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'horloge"
+                  alt={t('time-icon-alt')}
                   src={timeclock}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>3 mois</h3>
+              <h3 className={styles.itemTitle}>
+                {' '}
+                {t('project-4-time-item-title')}
+              </h3>
               <p className={styles.itemDescription}>
-                Une présence régulière dans les locaux de l&apos;entreprise pour
-                un accompagnement des collaborateurs et du dirigeant.
+                {t('project-4-time-item-description')}
               </p>
             </li>
             {/*----- Role -----*/}
@@ -362,25 +367,21 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone d'amploule"
+                  alt={t('role-icon-alt')}
                   src={lightBulb}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Contrôle de gestion</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-4-role-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>
-                    Mise en place d&apos;un système de gestion développé sur
-                    mesure.
-                  </p>
+                  <p>{t('project-4-role-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>
-                    Automatisation des tâches d&apos;envoi de rapports quotiden
-                    et de facturation.
-                  </p>
+                  <p>{t('project-4-role-item-description-2')}</p>
                 </li>
               </ul>
             </li>
@@ -389,24 +390,24 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               <div className={styles.iconContainer}>
                 <Image
                   className={styles.icon}
-                  alt="icone check"
+                  alt={t('results-icon-alt')}
                   src={check}
                   width={48}
                   height={48}
                 />
               </div>
-              <h3 className={styles.itemTitle}>Résultats</h3>
+              <h3 className={styles.itemTitle}>
+                {t('project-4-results-item-title')}
+              </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p>Outil de gestion adapté à son activité.</p>
+                  <p> {t('project-4-role-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>Gain mesuré de 3 jours / mois pour la facturation.</p>
+                  <p> {t('project-4-role-item-description-2')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p>
-                    Economies estimées de 40kCHF annuel sur ses frais de change.
-                  </p>
+                  <p> {t('project-4-role-item-description-3')}</p>
                 </li>
               </ul>
             </li>

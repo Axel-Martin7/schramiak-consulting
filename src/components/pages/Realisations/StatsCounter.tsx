@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import styles from './Realisations.module.scss';
+import { useTranslations } from 'next-intl';
 
 /*-------------------------------*
 //* TYPES ET INTERFACES
@@ -12,49 +13,37 @@ interface StatItem {
   label: string; //                                                Description sous le nombre
 }
 
-//--------------------- Etend React.CSSProperties pour autoriser les variables CSS personnalisées (--target) :
-interface CustomCSSProperties extends React.CSSProperties {
-  [key: `--${string}`]: string | number;
-}
-
 /*-------------------------------*
 //* COMPOSANT StatsCounter
 *   Gére l'animation au scroll via IntersectionObserver
 *-------------------------------*/
 export default function StatsCounter() {
-  //--------------------- Données à afficher dans chaque cercle :
-  const stats: StatItem[] = [
-    { count: 10, suffix: '+', label: "D'années d'expérience" },
-    { count: 12, suffix: '+', label: 'Projets accompagnés' },
-    { count: 5, suffix: '+', label: 'Entreprises créées' },
-    { count: 100, suffix: '%', label: 'De clients satisfaits' },
-  ];
+  const t = useTranslations('pages.home.realisations');
 
-  //--------------------- Référence vers le container des cercles :
+  const counts = [10, 12, 5, 100];
+  const suffixes = ['+', '+', '+', '%'];
+
+  // On lit chaque label individuellement
+  const stats: StatItem[] = counts.map((count, i) => ({
+    count,
+    suffix: suffixes[i],
+    label: t(`statsLabels.${i}`), // ex. 'statsLabels.0'
+  }));
+
   const containerRef = useRef<HTMLDivElement>(null);
-
-  /*-------------------------------*
-  //* USE EFFECT : IntersectionObserver
-  *   Déclenchement de l'animation quand la grille atteint 50% de visibilité dans le viewport
-  *-------------------------------*/
   useEffect(() => {
-    const element = containerRef.current; //                          DOM node observé
-    if (!element) return;
-
+    const el = containerRef.current;
+    if (!el) return;
     const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            //                                                        Ajoute la classe CSS locale 'inView' pour déclencher countUp
-            element.classList.add(styles.inView);
-            io.unobserve(element); //                                 On arrête d'observer après le premier trigger
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add(styles.inView);
+          io.disconnect();
+        }
       },
-      { threshold: 0.25 } //                                           50% visible pour déclencher
+      { threshold: 0.25 }
     );
-
-    io.observe(element);
+    io.observe(el);
     return () => io.disconnect();
   }, []);
 
@@ -63,21 +52,25 @@ export default function StatsCounter() {
   *-------------------------------*/
   return (
     <div ref={containerRef} className={styles.shapesContainer}>
-      {stats.map((item, i) => (
+      {stats.map(({ count, suffix, label }, i) => (
         <div className={styles.object} key={i}>
-          <div className={styles.coloredHalfCircle} />
+          <div className={styles.coloredHalfCircle} aria-hidden="true" />
 
           {/* Cercle de contenu : on injecte --target pour Houdini */}
           <div
             className={styles.contentCircle}
-            style={{ '--target': item.count } as React.CSSProperties}
+            style={{ '--target': count } as React.CSSProperties}
+            role="group"
+            aria-labelledby={`stat-label-${i}`}
           >
-            <p className={styles.number} data-suffix={item.suffix}></p>
-            <p className={styles.text}>{item.label}</p>
+            <p className={styles.number} data-suffix={suffix} />
+            <p id={`stat-label-${i}`} className={styles.text}>
+              {label}
+            </p>
           </div>
 
           {/* Effet miroir / reflet */}
-          <div className={styles.objectReflection}>
+          <div className={styles.objectReflection} aria-hidden="true">
             <div className={styles.contentCircleReflection} />
           </div>
         </div>

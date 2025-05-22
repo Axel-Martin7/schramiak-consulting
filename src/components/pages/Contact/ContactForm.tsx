@@ -4,6 +4,7 @@ import React, { FormEvent, useRef, useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { sendContactEmail } from '@/app/actions/contact';
 import SubmitButton from '@/components/common/SubmitButton';
+import { useTranslations } from 'next-intl';
 
 /*-------------------------------*
 //* COMPOSANT ContactForm
@@ -13,6 +14,8 @@ import SubmitButton from '@/components/common/SubmitButton';
 // - Gère feedback erreurs / succès
 *-------------------------------*/
 export default function ContactForm() {
+  const t = useTranslations('pages.home.contact');
+
   //--------------------- Référence au formulaire :
   const formRef = useRef<HTMLFormElement>(null);
   //--------------------- Etat local pour feedback :
@@ -33,7 +36,7 @@ export default function ContactForm() {
     const form = formRef.current!;
     const hp = (form.elements.namedItem('hp_field') as HTMLInputElement).value;
     if (hp) {
-      setErrors({ honeypot: ['Bot détecté'] });
+      setErrors({ honeypot: [t('error.botDetected')] });
       setSending(false);
       return;
     }
@@ -64,11 +67,15 @@ export default function ContactForm() {
       ref={formRef}
       onSubmit={handleSubmit}
       noValidate
+      aria-labelledby="contact-form-title"
+      role="form"
     >
       <div className={styles.formTitleContainer}>
-        <span className={styles.separator}></span>
-        <h4 className={styles.formTitle}>Contact</h4>
-        <span className={styles.separator}></span>
+        <span className={styles.separator} aria-hidden="true"></span>
+        <h4 id="contact-form-title" className={styles.formTitle}>
+          Contact
+        </h4>
+        <span className={styles.separator} aria-hidden="true"></span>
       </div>
 
       <div className={styles.fieldsGroup}>
@@ -87,7 +94,7 @@ export default function ContactForm() {
           id="name"
           name="name"
           type="text"
-          placeholder="Votre nom"
+          placeholder={t('form-name-placeholder')}
           required
         />
 
@@ -97,7 +104,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="Votre adresse e-mail"
+          placeholder={t('form-email-placeholder')}
           required
         />
 
@@ -106,7 +113,7 @@ export default function ContactForm() {
           className={styles.textarea}
           id="message"
           name="message"
-          placeholder="Votre message…"
+          placeholder={t('form-message-placeholder')}
           required
         />
       </div>
@@ -116,9 +123,9 @@ export default function ContactForm() {
           type="submit"
           variant="primary"
           disabled={sending}
-          aria-label="Envoyer le message"
+          aria-label={t('form-submit-btn-aria')}
         >
-          {sending ? 'Envoi…' : 'Envoyer'}
+          {sending ? t('form-submit-sending') : t('form-submit-label')}
         </SubmitButton>
       </div>
 
@@ -132,11 +139,7 @@ export default function ContactForm() {
               </p>
             ))
           )}
-          {success && (
-            <p className={styles.success}>
-              Merci ! Votre message a bien été envoyé.
-            </p>
-          )}
+          {success && <p className={styles.success}>{t('successMessage')}</p>}
         </div>
       )}
     </form>

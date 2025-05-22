@@ -2,15 +2,18 @@
 
 import styles from './LocaleSwitcherSelect.module.scss';
 import { usePathname, useRouter } from '@/navigation';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState, useTransition } from 'react';
 
 type Props = {
-  defaultValue: string; // Nom de Props à changer ?
+  defaultValue: string;
 };
 
 export default function LocaleSwitcherSelect({ defaultValue }: Props) {
+  const t = useTranslations('common.localeSwitcher');
   const router = useRouter();
   const pathname = usePathname();
+
   const [isChecked, setIsChecked] = useState(defaultValue === 'en');
   const [isPending, startTransition] = useTransition();
 
@@ -25,7 +28,7 @@ export default function LocaleSwitcherSelect({ defaultValue }: Props) {
     setIsChecked(checked);
     // Délai pour laisser le temps à l'animation de se jouer:
     setTimeout(() => {
-      const newLocale = event.target.checked ? 'en' : 'fr';
+      const newLocale = checked ? 'en' : 'fr';
       startTransition(() => {
         router.replace(pathname, { locale: newLocale });
       });
@@ -33,7 +36,11 @@ export default function LocaleSwitcherSelect({ defaultValue }: Props) {
   }
 
   return (
-    <div className={styles.switcherContainer}>
+    <div
+      className={styles.switcherContainer}
+      role="group"
+      aria-label={t('label')}
+    >
       <span className={styles.label}>FR</span>
 
       <label className={styles.switcher}>
@@ -42,9 +49,12 @@ export default function LocaleSwitcherSelect({ defaultValue }: Props) {
           onChange={onToggleChange}
           checked={isChecked}
           className={styles.input}
+          role="switch"
+          aria-checked={isChecked}
+          aria-label={t('label')}
         />
 
-        <span className={styles.slider}></span>
+        <span className={styles.slider} aria-hidden></span>
       </label>
 
       <span className={styles.label}>EN</span>

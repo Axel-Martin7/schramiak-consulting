@@ -1,17 +1,288 @@
 {
-  "HomePage": {
-    "title": "Bonjour Monde!"
-  },
-  "LocaleLayout": {
-    "metadata-title": "un exemple de next-intl",
-    "metadata-description": "Généré en créant une app Next"
-  },
-  "LocaleSwitcher": {
-    "label": "Changez de langue",
-    "locale": "{locale, select, fr {FR} en {EN} other {Inconnue}}"
+  "metadata": {
+    "layout": {
+      "title": "My consulting site",
+      "description": "The official site of steven Schramiak, financial consultant"
+    },
+    "home": {
+      "title": "Home – Consulting",
+      "description": "Discover my financial consulting expertise"
+    },
+    "journey": {
+      "title": "Journey – Consulting",
+      "description": "My professional background"
+    },
+    "realisations": {
+      "title": "Projects – Consulting",
+      "description": "Case studies and completed projects"
+    }
   },
 
-  "AboutPage": {
-    "title": "Bonjour about!"
+  "common": {
+    "footer": {
+      "thanksMessage": "Merci de votre visite !",
+      "credit": "Développé par"
+    },
+
+    "localeSwitcher": {
+      "label": "Changer de langue",
+      "locale": "{locale, select, fr {FR} en {EN} other {Inconnue}}"
+    },
+
+    "burgerMenu": {
+      "openLabel": "Ouvrir le menu",
+      "closeLabel": "Fermer le menu",
+      "panelLabel": "Menu de navigation mobile"
+    },
+
+    "navigation": {
+      "ariaLabel": "Navigation principale",
+      "links": {
+        "home": {
+          "label": "Accueil",
+          "title": "Aller à la page d'accueil"
+        },
+
+        "about": {
+          "label": "Ma présentation",
+          "title": "Découvrir qui je suis"
+        },
+
+        "journey": {
+          "label": "Mon parcours",
+          "title": "Consulter mon parcours professionnel"
+        },
+
+        "services": {
+          "label": "Mes services",
+          "title": "Découvrir les services proposés"
+        },
+
+        "realisations": {
+          "label": "Mes réalisations",
+          "title": "Voir mes réalisations et cas clients"
+        },
+
+        "contact": {
+          "label": "Contact",
+          "title": "Entrer en contact"
+        }
+      }
+    },
+
+    "socialsIcons": {
+      "linkedinAria": "Consultez mon profil Linkedin",
+      "locationAria": "Afficher ma localisation",
+      "emailAria": "Envoyez-moi un e-mail",
+      "whatsappAria": "Contactez-moi sur WhatsApp"
+    },
+
+    "logo": {
+      "alt": {
+        "headerLogo": "Logo de Steven Schramiak consulting",
+        "footerLogo": "Logo de Steven Schramiak consulting"
+      }
+    }
+  },
+
+  "pages": {
+    "home": {
+      "hero": {
+        "title-first-word": "Optimisez",
+        "title-small-word-1": "votre",
+        "title-highlight-word-1": "gestion opérationnelle",
+        "title-small-word-2": "&",
+        "title-highlight-word-2": "financière",
+
+        "description": "Fr Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae voluptas aut explicabo voluptatem earum, officia ad pariatur dolor  aliquid eum molestias distinctio quos nemo perspiciatis assumenda temporibus! Labore, quos repellendus!",
+
+        "cta-btn-services-label": "Découvrez mes services",
+        "cta-btn-services-aria": "Découvrez mes services",
+        "cta-btn-contact-label": "Obtenez un audit gratuit",
+        "cta-btn-contact-aria": "Obtenez un audit gratuit",
+
+        "image-alt": "Image d'ampoule symbolisant l'optimisation"
+      },
+
+      "about": {
+        "section-title": "présentation",
+
+        "image-alt": "Portrait de Steven Schramiak",
+        "image-reflect-alt": "Reflet du portrait de Steven Schramiak",
+
+        "quote": "Chaque projet passe par l'établissement d'une relation de confiance et d'un système de collaboration, en vue de contribuer à votre réussite ainsi qu'à celle de vos clients.",
+        "role": "Consultant financier",
+        "description-1": "Bienvenue, je suis Steven Schramiak, consultant en management financier avec une forte polyvalence et un esprit entrepreneurial. Avec plus de 10 ans d'expérience dans le domaine, j'ai aidé de nombreuses entreprises à optimiser leur gestion financière et opérationnelle. Mon parcours professionnel m'a permis de développer une expertise pointue en controlling, gestion de projet et création de start-ups.",
+        "description-2": "Ayant collaboré avec des PME et des start-ups de divers secteurs, j'ai acquis une riche expérience dans des industries telles que la construction, les services aux entreprises, le commerce de détail et la vente en ligne. Mon approche est centrée sur la mise en place de solutions innovantes et adaptées aux besoins spécifiques de chaque entreprise, tout en assurant une transparence et une confidentialité totale.",
+
+        "btn-label": "Découvrez mon parcours",
+        "btn-aria": "Découvrez plus en détails mon parcours professionnel."
+      },
+
+      "services": {
+        "section-title": "Mes services",
+
+        "description-1": "En tant que consultant, mon rôle sera de mettre en place les stratégies et outils nécessaires à l'atteinte de vos objectifs ainsi que de ceux de vos clients.",
+        "emphasis": "Le plus haut niveau de confidentialité, une transparence et une collaboration totale.",
+        "description-2": "Ces engagements nous permettront de gérer au mieux vos ressources et de mettre en place les outils adaptés à votre activité, tout en accompagnant vos équipes.",
+
+        "service-1-title-word-2": "Contrôleur financier",
+        "service-1-description": "Renforcement de votre équipe par une présence à temps partiel dans vos locaux.",
+
+        "service-2-title-word-1": "Rentabilité",
+        "service-2-title-word-2": "Gestion des risques",
+        "service-2-description-1": "Analyse de la chaîne de valeur et de la rentabilité.",
+        "service-2-description-2": "Gestion des risques & amélioration de l'efficacité opérationnelle.",
+
+        "service-3-title": "Gestion de projet",
+        "service-3-description-1": "Création, implémentation et déploiement de solutions et processus sur mesure.",
+        "service-3-description-2": "Développements logiciels métiers.",
+
+        "service-4-title-word-1": "Planification financière",
+        "service-4-title-word-2": "Business plan",
+        "service-4-description-1": "Vision stratégique et financière sur 3-5 ans.",
+        "service-4-description-2": "Accompagnement financements."
+      },
+
+      "realisations": {
+        "section-title": "Mes réalisations",
+
+        "statsLabels": {
+          "0": "d'années d'expérience",
+          "1": "projets accompagnés",
+          "2": "entreprises créées",
+          "3": "de clients satisfaits"
+        },
+
+        "emphasis": "Chaque projet réalisé témoigne de mon engagement à fournir des solutions financières sur mesure.",
+        "description": "Explorez en détail mes missions, les objectifs atteints et les résultats obtenus pour mes clients en cliquant sur le bouton ci-dessous.",
+
+        "btn-label": "Explorez mes réalisations",
+        "btn-aria": "Voir la page de mes réalisations"
+      },
+
+      "contact": {
+        "sectionTitle": "Rencontrons-nous",
+
+        "title-first-word": "Réservez",
+        "title-small-word-1": "un",
+        "title-highlight-word-1": "audit gratuit",
+        "title-small-word-2": "de vos",
+        "title-highlight-word-2": "besoins dès maintenant",
+        "title-small-word-3": "!",
+
+        "description": "Je suis convaincu que mes compétences et mon expérience variée seront des atouts majeurs pour votre entreprise.",
+        "emphasis": "Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux contribuer à votre succès.",
+
+        "localisation-adress": "1208 Genève",
+
+        "form-name-placeholder": "Votre nom",
+        "form-email-placeholder": "Votre adresse e-mail",
+        "form-message-placeholder": "Votre message...",
+
+        "form-submit-btn-aria": "Envoyer le message",
+        "form-submit-sending": "Envoi…",
+        "form-submit-label": "Envoyer",
+
+        "successMessage": "Merci ! Votre message a bien été envoyé."
+      }
+    },
+
+    "journey": {
+      "title-small-word": "Mon",
+      "title-highlight-word": "parcours",
+
+      "card1-role": "Apprenti",
+      "card1-description-1": "Développement commercial.",
+      "card1-description-2": "Mise en place de process de gestion.",
+
+      "card2-title-word-1": "Master",
+      "card2-title-word-2": "Contrôle de gestion",
+      "card2-title-word-3": "& Audit financier",
+
+      "card3-role": "Analyste",
+      "card3-description-1": "Analyse des états financiers des entreprises cotées en Europe.",
+
+      "card4-role": "Responsable administratif & comptable",
+      "card4-description-1": "Contrôle de gestion et des coûts",
+      "card4-description-2": "Établissement des budgets.",
+      "card4-description-3": "Tableaux de suivi et indicateurs.",
+      "card4-description-4": "Gestion de la trésorerie.",
+      "card4-description-5": "Clôtures comptables.",
+      "card4-description-6": "Gestion des audits.",
+
+      "card5-role": "Manager contrôle financie",
+      "card5-description-1": "Contrôle financier des start-ups du groupe.",
+      "card5-description-2": "Création de start-ups, planification financière.",
+      "card5-description-3": "Structuration et amélioration des process de gestion.",
+      "card5-description-4": "Gestion de la trésorerie et financements.",
+      "card5-description-5": "Gestion des audits.",
+      "card5-description-6": "Management de projets innovants.",
+
+      "card6-title": "Consultant indépendant",
+      "card6-role": "Management financier & optimisation des process",
+      "card6-description-1": "Audit des systèmes de gestion.",
+      "card6-description-2": "Accompagnement des collaborateurs et dirigeants.",
+      "card6-description-3": "Mise en place de process et d'outils de reporting."
+    },
+
+    "realisations": {
+      "title-small-word": "Mes",
+      "title-highlight-word": "Réalisations",
+
+      "time-icon-alt": "icone d'horloge",
+      "role-icon-alt": "icone de rôle",
+      "results-icon-alt": "icone de résultats",
+
+      "project-1-description-1": "Au sein d'un groupement international de distribution de pièces détachées automobiles, lancement de plusieurs projets et start-ups en vue de diversifier l'activité.",
+      "project-1-description-2": "Planification financière et business plan afin de lever les fonds nécessaires aux développements de ces projets.",
+      "project-1-description-3": "Pilotage financier de ces projets et participation aux conseils d'administration.",
+      "project-1-description-4": "Création d'outils d'analyse et de prévision des ventes.",
+      "project-1-time-item-title": "3 ans",
+      "project-1-time-item-description": "Une expérience au sein d'un groupe international, divisée entre le contrôle financier de différentes entités et la gestion de projets innovants.",
+      "project-1-role-item-title": "Gestion de projet",
+      "project-1-role-item-description-1": "Management de projet avec des équipes internationales.",
+      "project-1-role-item-description-2": "Élaboration de POCs (Proof of Concept).",
+      "project-1-results-item-title": "Résultats",
+      "project-1-results-item-description-1": "12 projets accompagnés.",
+      "project-1-results-item-description-2": "5 entreprises créées.",
+      "project-1-results-item-description-3": "Outil de prévision des ventes.",
+
+      "project-2-description-1": "Une start-up nouvellement créée, dans le commerce de pièces détachées automobiles avec des acteurs internationaux.",
+      "project-2-description-2": "L'entreprise avait besoin de définir l'ensemble de ses process de gestion, ainsi que d'un accompagnement pour soutenir sa croissance.",
+      "project-2-description-3": "Une levée de fonds était à préparer, auprès de financeurs publiques et privés, avec un suivi auprès des actionnaires et des audits financiers à piloter.",
+      "project-2-time-item-title": "2 ans",
+      "project-2-time-item-description": "Un mandat longue durée, avec un rôle de Contrôleur financier à temps partiel pour gérer le quotidien, soutenir l'entreprise dans sa croissance et accompagner le dirigeant.",
+      "project-2-role-item-title": "CFO temps partiel",
+      "project-2-role-item-description-1": "Choix et configuration d'un ERP.",
+      "project-2-role-item-description-2": "Définition des process de gestion.",
+      "project-2-role-item-description-3": "Mise en place du système comptable.",
+      "project-2-results-item-title": "Résultats",
+      "project-2-results-item-description-1": "Système de gestion déployé avec une équipe restreinte.",
+      "project-2-results-item-description-2": "Levée de fonds réalisée.",
+      "project-2-results-item-description-3": "Ressources financières optimisées.",
+      "project-2-results-item-description-4": "Maîtrise de la trésorerie.",
+
+      "project-3-title": "Sous-traitant horloger",
+      "project-3-description-1": "Un sous-traitant horloger avait connu des problèmes de suivi de sa comptabilité suite à un départ et un changement de logiciel.",
+      "project-3-description-2": "Une analyse de la situation devait être effectuée dans les plus brefs délais afin de préparer un conseil d'administration.",
+      "project-3-description-3": "La correspondance entre les deux systèmes de comptabilité devait être assurée et l'ensemble des comptes repris pour plus de fiabilité et de lisibilité.",
+      "project-3-time-item-title": "1 mois",
+      "project-3-role-item-title": "Comptabilité",
+      "project-3-results-item-title": "États financiers",
+
+      "project-4-title": "Transport de matériaux",
+      "project-4-description-1": "Une jeune entreprise de transport avait besoin d'un système de gestion de son activité, lui permettant de suivre tous les trajets de ses véhicules, de suivre les volumes de matériaux transportés et d'informer toutes les parties prenantes (fournisseurs, clients, organismes publiques) de manière régulière, fiable et automatisée.",
+      "project-4-description-2": "Le dirigeant souhaitait également améliorer les process de facturation, de suivi de trésorerie et disposer d'un outil de gestion lui permettant de suivre sa rentabilité en temps réel.",
+      "project-4-time-item-title": "3 mois",
+      "project-4-time-item-description": "Une présence régulière dans les locaux de l'entreprise pour un accompagnement des collaborateurs et du dirigeant.",
+      "project-4-role-item-title": "Contrôle de gestion",
+      "project-4-role-item-description-1": "Mise en place d'un système de gestion développé sur mesure.",
+      "project-4-role-item-description-2": "Automatisation des tâches d'envoi de rapports quotidien et de facturation.",
+      "project-4-results-item-title": "Résultats",
+      "project-4-results-item-description-1": "Outil de gestion adapté à son activité.",
+      "project-4-results-item-description-2": "Gain mesuré de 3 jours / mois pour la facturation.",
+      "project-4-results-item-description-3": "Économies estimées de 40kCHF annuel sur ses frais de change."
+    }
   }
 }

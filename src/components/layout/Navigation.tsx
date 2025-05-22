@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
 import { Link } from '@/navigation';
+import { useTranslations } from 'next-intl';
 
 interface NavigationProps {
   variant: 'footerNav' | 'headerMobileNav' | 'headerNav';
@@ -8,10 +9,21 @@ interface NavigationProps {
 }
 
 export default function Navigation({ variant, onLinkClick }: NavigationProps) {
+  const t = useTranslations('common.navigation');
+  const ariaLabel = t('ariaLabel');
+
+  // const ariaLabel =
+  //   variant === 'footerNav'
+  //     ? 'Navigation du pied de page'
+  //     : variant === 'headerMobileNav'
+  //     ? 'Navigation mobile principale'
+  //     : 'Navigation principale';
+
   return (
     <nav
       className={`${styles.navigation} ${styles[variant]}`}
-      aria-label="Navigation principale"
+      role="navigation"
+      aria-label={ariaLabel}
     >
       <ul className={styles.navList}>
         {/*---------- HOME ----------*/}
@@ -19,10 +31,10 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           <Link
             className={styles.link}
             href="/"
-            title="Learn more about us"
+            title={t('links.home.title')}
             onClick={onLinkClick}
           >
-            Accueil
+            {t('links.home.label')}
           </Link>
         </li>
 
@@ -31,9 +43,10 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           <Link
             className={styles.link}
             href={{ pathname: '/', hash: 'about' }}
+            title={t('links.about.title')}
             onClick={onLinkClick}
           >
-            A propos
+            {t('links.about.label')}
           </Link>
         </li>
 
@@ -41,11 +54,11 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/parcours'}
-            title="Learn more about us"
+            href="/parcours"
+            title={t('links.journey.title')}
             onClick={onLinkClick}
           >
-            Mon Parcours
+            {t('links.journey.label')}
           </Link>
         </li>
 
@@ -54,10 +67,10 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           <Link
             className={styles.link}
             href={{ pathname: '/', hash: 'services' }}
-            title="Learn more about us"
+            title={t('links.services.title')}
             onClick={onLinkClick}
           >
-            Mes services
+            {t('links.services.label')}
           </Link>
         </li>
 
@@ -65,11 +78,11 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
         <li className={styles.navItem}>
           <Link
             className={styles.link}
-            href={'/realisations'}
-            title="Learn more about us"
+            href="/realisations"
+            title={t('links.realisations.title')}
             onClick={onLinkClick}
           >
-            Mes réalisations
+            {t('links.realisations.label')}
           </Link>
         </li>
 
@@ -78,10 +91,10 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
           <Link
             className={styles.link}
             href={{ pathname: '/', hash: 'contact' }}
-            title="Learn more about us"
+            title={t('links.contact.title')}
             onClick={onLinkClick}
           >
-            Contact
+            {t('links.contact.label')}
           </Link>
         </li>
       </ul>

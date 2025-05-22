@@ -4,31 +4,41 @@ import Image from 'next/image';
 import ampoule from '../../../../public/ampoule.jpg';
 import { barlow } from '@/styles/font';
 import CtaButton from '@/components/common/CtaButton';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('pages.home.hero');
+
   return (
-    <div className={styles.heroRibbon}>
-      <div className={styles.skewedContainer}></div>
+    <div
+      className={styles.heroRibbon}
+      role="region"
+      aria-labelledby="hero-title"
+    >
+      <div className={styles.skewedContainer} aria-hidden="true"></div>
 
       <div className={styles.contentContainer}>
         <section className={styles.ctaSection}>
-          <h2 className={`${styles.heroTitle} ${barlow.className}`}>
-            <strong className={styles.firstWord}>Optimisez </strong>
-            votre{' '}
+          <h2
+            id="hero-title"
+            className={`${styles.heroTitle} ${barlow.className}`}
+          >
+            <strong className={styles.firstWord}>
+              {t('title-first-word')}{' '}
+            </strong>
+            {t('title-small-word-1')}{' '}
             <strong className={styles.highlightWords}>
-              gestion opérationnelle{' '}
+              {t('title-highlight-word-1')}{' '}
             </strong>
             <span className={styles.newLine}>
-              &<strong className={styles.highlightWords}> financière</strong>
+              {t('title-small-word-2')}{' '}
+              <strong className={styles.highlightWords}>
+                {t('title-highlight-word-2')}
+              </strong>
             </span>
           </h2>
 
-          <p className={styles.description}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
-            voluptas aut explicabo voluptatem earum, officia ad pariatur dolor
-            aliquid eum molestias distinctio quos nemo perspiciatis assumenda
-            temporibus! Labore, quos repellendus!
-          </p>
+          <p className={styles.description}>{t('description')} </p>
 
           <div className={styles.buttonsContainer}>
             <CtaButton
@@ -36,7 +46,7 @@ export default function Hero() {
               variant="secondary"
               aria-label="Découvrez mes services"
             >
-              Découvrez mes services
+              {t('cta-btn-services-label')}
             </CtaButton>
 
             <CtaButton
@@ -44,22 +54,22 @@ export default function Hero() {
               variant="primary"
               aria-label="Obtenez un audit gratuit"
             >
-              Obtenez un audit gratuit
+              {t('cta-btn-contact-label')}
             </CtaButton>
           </div>
         </section>
 
-        <section className={styles.imageSection}>
+        <figure className={styles.imageSection}>
           <Image
             className={styles.image}
-            alt="Ampoule symbolisant l'optimisation"
+            alt={t('image-alt')}
             src={ampoule}
             placeholder="blur"
             quality={100}
             fill
             sizes="(min-width: 1280px) 624px, (min-width: 768px) 50vw, 100vh"
           />
-        </section>
+        </figure>
       </div>
     </div>
   );

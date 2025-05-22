@@ -1,11 +1,13 @@
 import React, { useId } from 'react';
 import styles from './Logo.module.scss';
+import { useTranslations } from 'next-intl';
 
 interface LogoProps {
   variant: 'footerLogo' | 'headerLogo';
 }
 
 export default function Logo({ variant }: LogoProps) {
+  const t = useTranslations('common.logo');
   const id = useId(); // Hook pour générer un ID unique pour le dégradé de chaque instance
   const gradientId = `grad-${id}`;
   const gradientColors =
@@ -16,6 +18,8 @@ export default function Logo({ variant }: LogoProps) {
   return (
     <div className={`${styles.logoContainer} ${styles[variant]}`}>
       <svg
+        role="img"
+        aria-label={t(`alt.${variant}`)}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 375 375"
         preserveAspectRatio="xMidYMid meet"

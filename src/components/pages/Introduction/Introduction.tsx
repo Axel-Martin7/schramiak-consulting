@@ -5,23 +5,27 @@ import ScrollIndicator from '@/components/common/ScrollIndicator';
 
 export default function Introduction() {
   return (
-    <div className={styles.shapesContainer}>
+    <div
+      className={styles.shapesContainer}
+      role="banner"
+      aria-labelledby="main-title"
+    >
       <div className={styles.contentDiamond}>
         <div className={styles.titlesContainer}>
-          <h1 className={styles.mainTitle}>
+          <h1 id="main-title" className={styles.mainTitle}>
             <small className={styles.firstName}>Steven</small>
             <strong className={`${styles.lastName} ${barlow.className}`}>
               Schramiak
             </strong>
           </h1>
 
-          <div className={styles.titleSeparator}></div>
+          <div className={styles.titleSeparator} aria-hidden="true"></div>
 
           <h2 className={styles.role}>Consulting</h2>
         </div>
       </div>
 
-      <div className={styles.decorativesDiamonds}>
+      <div className={styles.decorativesDiamonds} aria-hidden="true">
         <div className={styles.diamond2}></div>
         <div className={styles.diamond3}></div>
         <div className={styles.diamond4}></div>

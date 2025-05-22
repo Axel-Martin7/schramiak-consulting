@@ -6,8 +6,11 @@ import ReactDOM from 'react-dom';
 import Navigation from '../Navigation';
 import { SocialIcon } from '../../common/SocialIcon';
 import iconStyles from '@/components/common/SocialIcon.module.scss';
+import { useTranslations } from 'next-intl';
 
 export default function BurgerMenu() {
+  const t = useTranslations('common.burgerMenu');
+  const tSocial = useTranslations('common.socialsIcons');
   const [isMenuOpen, setIsMenuOpen] = useState(false); //           State qui détermine si le menu est ouvert ou fermé.
 
   /*--------------------------------------------------
@@ -24,10 +27,18 @@ export default function BurgerMenu() {
     setIsMenuOpen(false);
   };
 
+  const buttonLabel = isMenuOpen ? t('closeLabel') : t('openLabel');
+
   return (
     <>
       <div className={styles.burgerContainer}>
-        <button className={styles.burgerButton} onClick={toggleMenu}>
+        <button
+          className={styles.burgerButton}
+          onClick={toggleMenu}
+          aria-label={buttonLabel}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav-panel"
+        >
           <div
             className={`${styles.burgerLinesContainer} ${
               isMenuOpen ? styles.open : ''
@@ -41,7 +52,12 @@ export default function BurgerMenu() {
       </div>
 
       {/*----------- RENDU DU PANNEAU DEROULANT VIA UN PORTAIL REACT ------------*/}
-      <DropdownPanel isOpen={isMenuOpen} onLinkClick={closeMenu} />
+      <DropdownPanel
+        isOpen={isMenuOpen}
+        onLinkClick={closeMenu}
+        panelLabel={t('panelLabel')}
+        tSocial={tSocial}
+      />
     </>
   );
 }
@@ -54,9 +70,16 @@ export default function BurgerMenu() {
 interface DropdownPanelProps {
   isOpen: boolean;
   onLinkClick: () => void;
+  panelLabel: string;
+  tSocial: ReturnType<typeof useTranslations>;
 }
 
-function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
+function DropdownPanel({
+  isOpen,
+  onLinkClick,
+  panelLabel,
+  tSocial,
+}: DropdownPanelProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -68,7 +91,15 @@ function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
   }
 
   return ReactDOM.createPortal(
-    <div className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}>
+    <div
+      id="mobile-nav-panel"
+      className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}
+      role="region" // Regroupe le panneau (pas de <nav> imbriqué)
+      aria-label={panelLabel} // Bonne pratique ARIA
+      aria-hidden={!isOpen} // Cache le panneau des AT quand fermé
+      tabIndex={isOpen ? 0 : -1} // Rend focusable quand ouvert
+      onKeyDown={(e) => e.key === 'Escape' && onLinkClick()} // ESC ferme le menu
+    >
       {/* Le composant Navigation recoit la prop onLinkClick qui ferme le panneau dès qu'un lien est cliqué */}
       <Navigation variant="headerMobileNav" onLinkClick={onLinkClick} />
 
@@ -77,7 +108,7 @@ function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
           type="linkedin"
           href="https://linkedin.com/company/your-company"
           variant="default"
-          ariaLabel="Visit LinkedIn"
+          ariaLabel={tSocial('linkedinAria')}
           className={iconStyles.itemOnPanel}
         />
 
@@ -85,21 +116,21 @@ function DropdownPanel({ isOpen, onLinkClick }: DropdownPanelProps) {
           type="location"
           href="https://example.com/location"
           variant="default"
-          ariaLabel="View location"
+          ariaLabel={tSocial('locationAria')}
           className={iconStyles.itemOnPanel}
         />
         <SocialIcon
           type="email"
           href="mailto:contact@example.com"
           variant="default"
-          ariaLabel="Send an email"
+          ariaLabel={tSocial('emailAria')}
           className={iconStyles.itemOnPanel}
         />
         <SocialIcon
           type="whatsapp"
           href="https://wa.me/123456789"
           variant="default"
-          ariaLabel="Chat on WhatsApp"
+          ariaLabel={tSocial('whatsappAria')}
           className={iconStyles.itemOnPanel}
         />
       </div>

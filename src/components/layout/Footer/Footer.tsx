@@ -4,16 +4,27 @@ import { barlow } from '@/styles/font';
 import Navigation from '@/components/layout/Navigation';
 import Logo from '@/components/common/Logo';
 import { SocialIcon } from '@/components/common/SocialIcon';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('common.footer');
+  const tSocial = useTranslations('common.socialIcon');
+
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      role="contentinfo"
+      aria-labelledby="footer-thanks"
+    >
       <section className={styles.thanksSection}>
         <div className={styles.contentContainer}>
-          <span className={styles.separator}></span>
+          <span className={styles.separator} aria-hidden="true"></span>
           <div className={styles.thanksMessageContainer}>
-            <h3 className={`${styles.thanksMessage} ${barlow.className}`}>
-              Merci de votre visite !
+            <h3
+              id="footer-thanks"
+              className={`${styles.thanksMessage} ${barlow.className}`}
+            >
+              {t('thanksMessage')}
             </h3>
             <p className={styles.signature}>S.Schramiak</p>
           </div>
@@ -39,31 +50,31 @@ export default function Footer() {
               type="location"
               href="https://example.com/location"
               variant="footer" // nouvelle variante pour le Footer
-              ariaLabel="View location"
+              ariaLabel={tSocial('locationAria')}
             />
             <SocialIcon
               type="email"
               href="mailto:contact@example.com"
               variant="footer"
-              ariaLabel="Send an email"
+              ariaLabel={tSocial('emailAria')}
             />
             <SocialIcon
               type="whatsapp"
               href="https://wa.me/123456789"
               variant="footer"
-              ariaLabel="Chat on WhatsApp"
+              ariaLabel={tSocial('whatsappAria')}
             />
             <SocialIcon
               type="linkedin"
               href="https://linkedin.com/company/your-company"
               variant="footer"
-              ariaLabel="Visit LinkedIn"
+              ariaLabel={tSocial('linkedinAria')}
             />
           </div>
         </div>
 
         <small className={styles.credit}>
-          Développé par{' '}
+          {t('credit')}{' '}
           <a
             href="https://axel-martin.com"
             target="_blank"

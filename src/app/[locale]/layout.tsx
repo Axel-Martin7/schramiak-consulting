@@ -31,11 +31,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: Omit<Props, 'children'>) {
-  const t = await getTranslations({ locale, namespace: 'LocaleLayout' });
-
+  const t = await getTranslations({ locale, namespace: 'metadata.layout' });
   return {
-    title: t('metadata-title'),
-    description: t('metadata-description'),
+    title: t('title'),
+    description: t('description'),
   };
 }
 

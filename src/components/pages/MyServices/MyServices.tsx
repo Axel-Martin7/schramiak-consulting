@@ -2,30 +2,31 @@ import React from 'react';
 import styles from './MyServices.module.scss';
 import { barlow } from '@/styles/font';
 import Pyramid from './Pyramid';
+import { useTranslations } from 'next-intl';
 
 export default function MyServices() {
+  const t = useTranslations('pages.home.services');
+
   return (
-    <div className={styles.servicesContainer}>
+    <div
+      className={styles.servicesContainer}
+      role="region"
+      aria-labelledby="services-title"
+    >
       <div className={styles.sectionTitle}>
-        <h3 className={`${styles.title} ${barlow.className}`}>Mes services </h3>
-        <div className={styles.titleSeparator}></div>
+        <h3
+          id="services-title"
+          className={`${styles.title} ${barlow.className}`}
+        >
+          {t('section-title')}
+        </h3>
+        <div className={styles.titleSeparator} aria-hidden="true"></div>
       </div>
 
       <div className={styles.sectionDescription}>
-        <p className={styles.description}>
-          En tant que consultant, mon rôle sera de mettre en place les
-          stratégies et outils nécessaires à l&apos;atteinte de vos objectifs
-          ainsi que de ceux de vos clients.
-        </p>
-        <p className={styles.emphasis}>
-          Le plus haut niveau de confidentialité, une transparence et une
-          collaboration totale.
-        </p>
-        <p className={styles.description}>
-          Ces engagements nous permettront de gérer au mieux vos ressources et
-          de mettre en place les outils adaptés à votre activité, tout en
-          accompagnant vos équipes.
-        </p>
+        <p className={styles.description}>{t('description-1')}</p>
+        <p className={styles.emphasis}>{t('emphasis')}</p>
+        <p className={styles.description}>{t('description-2')}</p>
       </div>
 
       <ul className={styles.servicesList}>
@@ -35,13 +36,12 @@ export default function MyServices() {
 
             <div className={styles.serviceInformationContainer}>
               <h4 className={styles.serviceTitle}>
-                CFO <small className={styles.small}>/</small> Contrôleur
-                financier
+                CFO <small className={styles.small}>/</small>{' '}
+                {t('service-1-title-word-2')}
               </h4>
 
               <p className={styles.serviceDescription}>
-                Renforcement de votre équipe par une présence à temps partiel
-                dans vos locaux.
+                {t('service-1-description')}
               </p>
             </div>
           </div>
@@ -53,13 +53,14 @@ export default function MyServices() {
 
             <div className={styles.serviceInformationContainer}>
               <h4 className={styles.serviceTitle}>
-                Rentabilité
-                <small className={styles.small}> &</small> Gestion des risques
+                {t('service-2-title-word-1')}
+                <small className={styles.small}> &</small>{' '}
+                {t('service-2-title-word-2')}
               </h4>
               <p className={styles.serviceDescription}>
-                Analyse de la chaîne de valeur et de la rentabilité. <br></br>
-                Gestion des risques & amélioration de l&apos;efficacité
-                opérationnelle.
+                {t('service-2-description-1')}
+                <br></br>
+                {t('service-2-description-2')}
               </p>
             </div>
           </div>
@@ -70,11 +71,10 @@ export default function MyServices() {
             <div className={styles.bubble3} aria-hidden="true"></div>
 
             <div className={styles.serviceInformationContainer}>
-              <h4 className={styles.serviceTitle}>Gestion de projet</h4>
+              <h4 className={styles.serviceTitle}> {t('service-3-title')}</h4>
               <p className={styles.serviceDescription}>
-                Création, implémentation et déploiement de solutions et
-                processus sur mesure. <br></br>
-                Développements logiciels métiers.
+                {t('service-3-description-1')} <br></br>
+                {t('service-3-description-2')}
               </p>
             </div>
           </div>
@@ -86,19 +86,20 @@ export default function MyServices() {
 
             <div className={styles.serviceInformationContainer}>
               <h4 className={styles.serviceTitle}>
-                Planification financière
-                <small className={styles.small}> &</small> Business plan
+                {t('service-4-title-word-1')}
+                <small className={styles.small}> &</small>{' '}
+                {t('service-4-title-word-2')}
               </h4>
               <p className={styles.serviceDescription}>
-                Vision stratégique et financière 3/5 ans. <br></br>
-                Accompagnement financements.
+                {t('service-4-description-1')} <br></br>
+                {t('service-4-description-2')}
               </p>
             </div>
           </div>
         </li>
       </ul>
 
-      <div className={styles.decorativePyramidContainer}>
+      <div className={styles.decorativePyramidContainer} aria-hidden="true">
         <Pyramid />
       </div>
     </div>
