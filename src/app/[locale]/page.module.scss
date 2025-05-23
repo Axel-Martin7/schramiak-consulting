@@ -109,6 +109,7 @@
 
 .main {
   padding-top: 80px; // taille du Header
+  contain: paint;
 
   .introductionSection {
     height: calc(100svh - 80px); // 80px = taille du Header

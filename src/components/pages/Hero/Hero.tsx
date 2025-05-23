@@ -38,7 +38,11 @@ export default function Hero() {
             </span>
           </h2>
 
-          <p className={styles.description}>{t('description')} </p>
+          <div className={styles.descriptions}>
+            <p className={styles.description}>{t('description-1')}</p>
+            <p className={styles.description}>{t('description-2')}</p>
+          </div>
+          {/* <p className={styles.description}>{t('description-1')} </p> */}
 
           <div className={styles.buttonsContainer}>
             <CtaButton

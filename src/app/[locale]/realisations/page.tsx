@@ -401,13 +401,13 @@ export default function RealisationsPage({ params: { locale } }: Props) {
               </h3>
               <ul className={styles.itemDescriptionList}>
                 <li className={styles.itemDescription}>
-                  <p> {t('project-4-role-item-description-1')}</p>
+                  <p> {t('project-4-results-item-description-1')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p> {t('project-4-role-item-description-2')}</p>
+                  <p> {t('project-4-results-item-description-2')}</p>
                 </li>
                 <li className={styles.itemDescription}>
-                  <p> {t('project-4-role-item-description-3')}</p>
+                  <p> {t('project-4-results-item-description-3')}</p>
                 </li>
               </ul>
             </li>

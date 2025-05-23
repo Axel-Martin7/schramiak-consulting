@@ -60,7 +60,7 @@
     //---------- Centrage mobile 3+1
     // 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
     @container shapes (min-width: calc(150px * 3 + 16px * 2))
-        and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
+         and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
       // 2) On centre le 4ᵉ cercle sur la 2ᵉ colonne
       .object:last-child {
         grid-column: 2;
@@ -72,7 +72,7 @@
       gap: 24px;
       // --------- Centrage tablette 3+1 (gap=24px) :
       @container shapes (min-width: calc(150px * 3 + 24px * 2))
-     and (max-width: calc(150px * 4 + 24px * 3 - 1px)) {
+      and (max-width: calc(150px * 4 + 24px * 3 - 1px)) {
         // 2) On centre le 4ᵉ cercle sur la 2ᵉ colonne
         .object:last-child {
           grid-column: 2;
@@ -118,13 +118,13 @@
         height: 50%;
         border-radius: 0 0 50% 50% / 0 0 100% 100%;
         /*
-                      border-radius en syntaxe étendue : "0 0 50% 50% / 0 0 100% 100%"
-                      => top-left corner  : 0  /  0
-                         top-right corner : 0  /  0
-                         bottom-right     : 50% / 100%
-                         bottom-left      : 50% / 100%
-                      Concrètement, pour un bloc de 100% × 50%, ça forme la moitié d'un vrai cercle.
-                     */
+                       border-radius en syntaxe étendue : "0 0 50% 50% / 0 0 100% 100%"
+                       => top-left corner  : 0  /  0
+                          top-right corner : 0  /  0
+                          bottom-right     : 50% / 100%
+                          bottom-left      : 50% / 100%
+                       Concrètement, pour un bloc de 100% × 50%, ça forme la moitié d'un vrai cercle.
+                      */
         background: linear-gradient(
           45deg,
           $color-primary-dark 0%,
@@ -144,10 +144,6 @@
         transform: translate(-50%, -50%);
         width: 80%;
         aspect-ratio: 1/1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         border-radius: inherit;
         background: linear-gradient(
           15deg,
@@ -161,34 +157,50 @@
         //----- Initialisation du compteur CSS :
         --count: 0;
         counter-reset: stat var(--count);
-      }
 
-      .number {
-        font-size: 40px;
-        font-weight: 700;
+        .number {
+          height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
 
-        //----- on affiche la variable et son suffixe :
-        &::before {
-          content: counter(stat) attr(data-suffix);
+          border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+          font-size: 40px;
+          font-weight: 700;
+
+          //----- on affiche la variable et son suffixe :
+          &::before {
+            content: counter(stat);
+          }
+          &::after {
+            content: attr(data-suffix);
+            padding-left: 4px;
+          }
           color: $color-primary-dark;
+        }
+
+        .text {
+          height: 50%;
+          padding: 16px 24px;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          border-radius: 0 0 50% 50% / 0 0 100% 100%;
+          font-size: 14px;
+          line-height: 1.2;
+          // font-weight: 500;
+          color: $color-primary-dark-darker;
         }
       }
 
-      .text {
-        text-align: center;
-        line-height: 1.2;
-        font-weight: 500;
-        color: $color-primary-dark-darker;
-      }
       // 2) Pour chaque “tranche” de largeur de cercle, on règle taille du nombre & description :
-      @container circle (min-width: 120px) and (max-width: 167px) {
+      @container circle (min-width: 100px) and (max-width: 167px) {
         .contentCircle {
           .number {
             font-size: 28px;
           }
           .text {
-            width: 65%;
-            margin-top: 8px;
+            padding: 4px 24px;
             font-size: 12px;
           }
         }
@@ -199,8 +211,6 @@
             font-size: 36px;
           }
           .text {
-            width: 55%;
-            margin-top: 8px;
             font-size: 14px;
           }
         }
@@ -211,8 +221,6 @@
             font-size: 40px;
           }
           .text {
-            width: 55%;
-            margin-top: 16px;
             font-size: 14px;
           }
         }
@@ -272,7 +280,6 @@
       }
     }
   }
-
   .descriptionWrapper {
     display: flex;
     flex-direction: column;
