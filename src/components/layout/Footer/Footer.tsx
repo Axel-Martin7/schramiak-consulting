@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('common.footer');
-  const tSocial = useTranslations('common.socialIcon');
+  const tSocial = useTranslations('common.socialsIcons');
 
   return (
     <footer

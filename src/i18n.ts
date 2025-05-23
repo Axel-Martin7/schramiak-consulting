@@ -12,5 +12,5 @@ export default getRequestConfig(async ({ locale }) => {
   const messages = (await import(`../messages/${locale}.json`)).default;
 
   // 3️⃣ On renvoie TOUT l’objet
-  return { locale, messages };
+  return { messages };
 });

@@ -230,9 +230,9 @@
       "title-small-word": "My",
       "title-highlight-word": "Achievements",
 
-      "time-icon-alt": "",
-      "role-icon-alt": "",
-      "results-icon-alt": "",
+      "time-icon-alt": "Clock icon",
+      "role-icon-alt": "Role icon",
+      "results-icon-alt": "Results icon",
 
       "project-1-description-1": "As part of an international automotive spare-parts distribution network, I spearheaded the launch of multiple projects and start-ups to broaden the company’s scope.",
       "project-1-description-2": "Developed financial plans and business cases to secure the necessary funding for these initiatives.",
