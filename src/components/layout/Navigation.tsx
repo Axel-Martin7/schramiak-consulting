@@ -12,13 +12,6 @@ export default function Navigation({ variant, onLinkClick }: NavigationProps) {
   const t = useTranslations('common.navigation');
   const ariaLabel = t('ariaLabel');
 
-  // const ariaLabel =
-  //   variant === 'footerNav'
-  //     ? 'Navigation du pied de page'
-  //     : variant === 'headerMobileNav'
-  //     ? 'Navigation mobile principale'
-  //     : 'Navigation principale';
-
   return (
     <nav
       className={`${styles.navigation} ${styles[variant]}`}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './BurgerMenu.module.scss';
 import ReactDOM from 'react-dom';
 import Navigation from '../Navigation';
@@ -80,60 +80,76 @@ function DropdownPanel({
   panelLabel,
   tSocial,
 }: DropdownPanelProps) {
-  const [isMounted, setIsMounted] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
 
+  // 1) On attend le montage client avant d'appeler createPortal
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setIsMounted(true);
+    setMounted(true);
   }, []);
 
-  if (!isMounted) {
-    return null; // Rendu indentique initialement (serveur et client) : rien n'est affiché
-  }
+  // 2) On gère l'affichage du contenu avec délai pour préserver la transition CSS
+  const [showContent, setShowContent] = useState(isOpen);
+  useEffect(() => {
+    if (isOpen) {
+      setShowContent(true);
+      return;
+    }
+    const tm = window.setTimeout(() => setShowContent(false), 500);
+    return () => clearTimeout(tm);
+  }, [isOpen]);
 
+  // 3) Si on n'est pas encore client, on ne rend rien (pas de document)
+  if (!mounted) return null;
+
+  // 4) Une fois client, on peut safe-portal
   return ReactDOM.createPortal(
     <div
       id="mobile-nav-panel"
+      ref={panelRef}
       className={`${styles.dropdownPanel} ${isOpen ? styles.open : ''}`}
       role="region" // Regroupe le panneau (pas de <nav> imbriqué)
       aria-label={panelLabel} // Bonne pratique ARIA
-      aria-hidden={!isOpen} // Cache le panneau des AT quand fermé
-      tabIndex={isOpen ? 0 : -1} // Rend focusable quand ouvert
       onKeyDown={(e) => e.key === 'Escape' && onLinkClick()} // ESC ferme le menu
     >
-      {/* Le composant Navigation recoit la prop onLinkClick qui ferme le panneau dès qu'un lien est cliqué */}
-      <Navigation variant="headerMobileNav" onLinkClick={onLinkClick} />
+      {showContent && (
+        <>
+          {/* Le composant Navigation recoit la prop onLinkClick qui ferme le panneau dès qu'un lien est cliqué */}
+          <Navigation variant="headerMobileNav" onLinkClick={onLinkClick} />
 
-      <div className={styles.socialContainer}>
-        <SocialIcon
-          type="linkedin"
-          href="https://linkedin.com/company/your-company"
-          variant="default"
-          ariaLabel={tSocial('linkedinAria')}
-          className={iconStyles.itemOnPanel}
-        />
+          <div className={styles.socialContainer}>
+            <SocialIcon
+              type="linkedin"
+              href="https://linkedin.com/company/your-company"
+              variant="default"
+              ariaLabel={tSocial('linkedinAria')}
+              className={iconStyles.itemOnPanel}
+            />
 
-        <SocialIcon
-          type="location"
-          href="https://example.com/location"
-          variant="default"
-          ariaLabel={tSocial('locationAria')}
-          className={iconStyles.itemOnPanel}
-        />
-        <SocialIcon
-          type="email"
-          href="mailto:contact@example.com"
-          variant="default"
-          ariaLabel={tSocial('emailAria')}
-          className={iconStyles.itemOnPanel}
-        />
-        <SocialIcon
-          type="whatsapp"
-          href="https://wa.me/123456789"
-          variant="default"
-          ariaLabel={tSocial('whatsappAria')}
-          className={iconStyles.itemOnPanel}
-        />
-      </div>
+            <SocialIcon
+              type="location"
+              href="https://example.com/location"
+              variant="default"
+              ariaLabel={tSocial('locationAria')}
+              className={iconStyles.itemOnPanel}
+            />
+            <SocialIcon
+              type="email"
+              href="mailto:contact@example.com"
+              variant="default"
+              ariaLabel={tSocial('emailAria')}
+              className={iconStyles.itemOnPanel}
+            />
+            <SocialIcon
+              type="whatsapp"
+              href="https://wa.me/123456789"
+              variant="default"
+              ariaLabel={tSocial('whatsappAria')}
+              className={iconStyles.itemOnPanel}
+            />
+          </div>
+        </>
+      )}
     </div>,
     document.body
   );
