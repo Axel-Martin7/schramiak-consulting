@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Introduction.module.scss';
 import { barlow } from '@/styles/font';
-import ScrollIndicator from '@/components/common/ScrollIndicator';
 
 export default function Introduction() {
   return (
@@ -41,8 +40,6 @@ export default function Introduction() {
 
         <div className={styles.shadowEllipse}></div>
       </div>
-
-      <ScrollIndicator />
     </div>
   );
 }

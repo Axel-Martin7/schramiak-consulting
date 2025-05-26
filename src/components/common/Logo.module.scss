@@ -27,15 +27,15 @@
   filter: drop-shadow(-2px 2px 2px $color-slate-grey-12);
 
   svg {
-    width: 96px;
-    height: 96px;
+    width: 128px;
+    height: 128px;
   }
 
   .logoCaption {
-    font-size: 8px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 4.3px;
+    letter-spacing: 6.5px;
     color: $color-teal-4;
   }
 }

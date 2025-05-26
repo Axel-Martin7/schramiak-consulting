@@ -6,17 +6,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &:hover {
-    path {
-      fill: var(--hover-fill);
-    }
+
+  // remplissage via CSS ( Safari supporte fill en CSS )
+  path {
+    fill: var(--fill);
+    transition: fill 0.2s ease;
   }
+  &:hover path {
+    fill: var(--hover-fill);
+  }
+}
+
+//*---------- ASSURE QUE LE SVG OCCUPE TOUT LE CONTENEUR ----------*
+.icon {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 //*---------- VARIANT : DEFAULT ----------*
 //---------- Style pour les items pour le reste du site :
 .item {
+  // on garde l’aspect-ratio pour les navigateurs modernes…
   @include social-icon-default-variant;
+
+  height: 48px;
+
+  @media screen and (min-width: 1080px) {
+    height: 32px;
+  }
 }
 
 //---------- Style pour les items dans le panneau déroulant :
@@ -52,6 +70,9 @@
       inset 0px 0px 30px $color-slate-grey-7,
     )
   );
+
+  // fallback hauteur
+  height: 48px !important;
 }
 
 //*---------- VARIANT : CONTACT ----------*

@@ -1,20 +1,20 @@
 {
   "metadata": {
     "layout": {
-      "title": "My consulting site",
-      "description": "The official site of steven Schramiak, financial consultant"
+      "title": "Steven Schramiak - Consultant financier à Gemève",
+      "description": "Steven Schramiak, consultant financier basé à Genève, accompagne start-ups et PME en Suisse et à l’international : audit gratuit, CFO à temps partiel, optimisation trésorerie et process sur-mesure."
     },
     "home": {
-      "title": "Home – Consulting",
-      "description": "Discover my financial consulting expertise"
+      "title": "Optimisez votre gestion financière et opérationnelle",
+      "description": "Transformez vos ambitions en résultats concrets grâce à un audit gratuit : reporting, budget, prévisions de trésorerie et stratégie de financement pour PME & start-ups."
     },
     "journey": {
-      "title": "Journey – Consulting",
-      "description": "My professional background"
+      "title": "Mon parcours en contrôle de gestion & audit",
+      "description": "découvrez mes 10 ans d’expérience en contrôle de gestion, optimisation de process et création de start-ups."
     },
     "realisations": {
-      "title": "Projects – Consulting",
-      "description": "Case studies and completed projects"
+      "title": "Études de cas clients",
+      "description": "Découvrez les projets que j'ai accompagnés avec des outils sur-mesure pour optimiser trésorerie, reporting et pilotage financier."
     }
   },
 
@@ -82,6 +82,10 @@
         "headerLogo": "Logo de Steven Schramiak consulting",
         "footerLogo": "Logo de Steven Schramiak consulting"
       }
+    },
+
+    "scrollIndicator": {
+      "label": "Faire défiler vers le bas"
     }
   },
 

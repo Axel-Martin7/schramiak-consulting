@@ -1,12 +1,26 @@
 import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import React from 'react';
 import styles from './page.module.scss';
 import { barlow } from '@/styles/font';
+import { Metadata } from 'next';
 
 type Props = {
   params: { locale: string };
 };
+
+export async function generateMetadata({
+  params: { locale },
+}: Props): Promise<Metadata> {
+  const t = await getTranslations({
+    locale,
+    namespace: 'metadata.journey',
+  });
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 export default function ParcoursPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale); // Appeler cette fonction sur chaques pages et layout ou on souhaite activer le rendu statique. https://www.youtube.com/watch?v=h3IA_Iax-dk

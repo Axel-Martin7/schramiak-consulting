@@ -158,7 +158,7 @@ export const SocialIcon: FC<SocialIconProps> = ({
             <div className={styles.iconContainer}>
               <svg viewBox="0 0 24 24" className={svgClass}>
                 <defs>{gradientElements}</defs>
-                <path d={d} fill="var(--fill)" />
+                <path d={d} fill={fillValue} />
               </svg>
             </div>
           </div>
@@ -168,14 +168,14 @@ export const SocialIcon: FC<SocialIconProps> = ({
         <div className={[styles.item, className].filter(Boolean).join(' ')}>
           <svg viewBox="0 0 24 24" className={svgClass}>
             <defs>{gradientElements}</defs>
-            <path d={d} fill="var(--fill)" />
+            <path d={d} fill={fillValue} />
           </svg>
         </div>
       ) : (
         // Structure spécifique pour 'footer', on affiche directement le svg
         <svg viewBox="0 0 24 24" className={svgClass}>
           <defs>{gradientElements}</defs>
-          <path d={d} fill="var(--fill)" />
+          <path d={d} fill={fillValue} />
         </svg>
       )}
     </a>

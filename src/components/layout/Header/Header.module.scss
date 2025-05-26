@@ -79,10 +79,19 @@
 
     .logoContainer {
       flex: 1;
+
       /*------------------ to Desktop ------------------*/
       @media screen and (min-width: 1280px) {
         display: flex;
         justify-content: center;
+      }
+
+      .logoLink {
+        &:hover svg {
+          transform: scale(1.1);
+          filter: drop-shadow(-2px 2px 2px rgba(28, 32, 36, 0.2))
+            drop-shadow(2px -2px 2px #fcfcfd);
+        }
       }
     }
 

@@ -5,6 +5,7 @@ import Navigation from '@/components/layout/Navigation';
 import Logo from '@/components/common/Logo';
 import { SocialIcon } from '@/components/common/SocialIcon';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 export default function Footer() {
   const t = useTranslations('common.footer');
@@ -40,7 +41,9 @@ export default function Footer() {
       </section>
 
       <section className={styles.carvedSection}>
-        <Logo variant="footerLogo" />
+        <Link className={styles.logoLink} href={'/'} aria-label="SSC Logo">
+          <Logo variant="footerLogo" />
+        </Link>
 
         <div className={styles.navigationContainer}>
           <Navigation variant="footerNav" />
