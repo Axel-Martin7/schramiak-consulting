@@ -26,7 +26,6 @@ export default function Contact() {
         <div className={styles.ctaContainer}>
           <h2 className={`${styles.ctaTitle} ${barlow.className}`}>
             <strong className={styles.firstWord}>
-              {' '}
               {t('title-first-word')}
             </strong>
             {t('title-small-word-1')}{' '}

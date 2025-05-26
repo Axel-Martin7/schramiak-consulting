@@ -99,32 +99,19 @@
     }
 
     .socialList {
-      container-type: inline-size;
-      container-name: social;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 16px;
-      // Centrage mobile 3+1 :
-      @container social (min-width: calc(150px * 3 + 16px * 2))
-             and (max-width: calc(150px * 4 + 16px * 3 - 1px)) {
-        /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
-                2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
+      // Centrage “3+1” entre 546px et 713px
+      @media (min-width: 546px) and (max-width: 713px) {
         .item:last-child {
           grid-column: 2;
         }
       }
+
       /*--------------- Tablet -> Tablet L -> Laptop -> Desktop ---------------*/
       @media screen and (min-width: 768px) {
         gap: 24px;
-        // Centrage tablette 3+1 :
-        @container social (min-width: calc(150px * 3 + 24px * 2))
-             and (max-width: calc(150px * 4 + 24px * 3 - 1px)) {
-          /* 1) Dès que la largeur permet précisément 3 colonnes (entre env. 482px et 648px)
-                2) On centre le 4ᵉ cercle sur la 2ᵉ colonne */
-          .item:last-child {
-            grid-column: 2;
-          }
-        }
         /*--------------- to Tablet L ---------------*/
         @media screen and (min-width: 834px) {
           margin: 24px 0 48px 0; // Pour avoir un espace de 48px en bas et en haut (on a deja un gap de 24px)
