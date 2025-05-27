@@ -28,7 +28,7 @@ export async function generateMetadata({
 }: Omit<Props, 'children'>) {
   const t = await getTranslations({ locale, namespace: 'metadata.layout' });
 
-  const origin = 'https://monsite.com';
+  const origin = 'https://https://ssc-consulting.vercel.app';
   const pathPrefix = `/${locale}`;
 
   return {

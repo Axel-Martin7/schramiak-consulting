@@ -57,107 +57,32 @@ export default function ParcoursPage({ params: { locale } }: Props) {
         role="region"
         aria-labelledby="journey-title"
       >
-        {/*---------- Clim diffusion ----------*/}
+        {/*---------- Consultant indépendant ----------*/}
         <article className={styles.card}>
           <div className={styles.cardInfosContainer}>
             <div className={styles.titlesContainer}>
-              <h2 className={styles.cardName}>Clim diffusion</h2>
-              <h3 className={styles.role}> {t('card1-role')}</h3>
+              <h2 className={styles.cardName}>{t('card6-title')}</h2>
+              <h3 className={styles.role}>{t('card6-role')}</h3>
             </div>
 
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card1-description-1')}</p>
+                <p>{t('card6-description-1')}</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card1-description-2')}</p>
+                <p>{t('card6-description-2')}</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card6-description-3')}</p>
               </li>
             </ul>
           </div>
 
-          <time className={styles.cardDate} dateTime="2011">
-            2011
-          </time>
-        </article>
-
-        {/*---------- Master ----------*/}
-        <article className={styles.card}>
-          <div className={styles.cardInfosContainer}>
-            <div className={styles.titlesContainer}>
-              <h2 className={styles.cardName}>
-                <strong className={styles.strong}>
-                  {t('card2-title-word-1')}{' '}
-                </strong>
-                <span className={styles.line}>{t('card2-title-word-2')} </span>
-                {t('card2-title-word-3')}
-              </h2>
-            </div>
-          </div>
-
-          <div className={styles.cardDate}>2014</div>
-        </article>
-
-        {/*---------- Bloomberg ----------*/}
-        <article className={styles.card}>
-          <div className={styles.cardInfosContainer}>
-            <div className={styles.titlesContainer}>
-              <h2 className={styles.cardName}>Bloomberg</h2>
-              <h3 className={styles.role}>{t('card3-role')}</h3>
-            </div>
-
-            <ul className={styles.cardDescriptionsList}>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card3-description-1')}</p>
-              </li>
-            </ul>
-          </div>
-
-          <time className={styles.cardDate} dateTime="2015">
-            2015
-          </time>
-        </article>
-
-        {/*---------- Vinci Construction ----------*/}
-        <article className={styles.card}>
-          <div className={styles.cardInfosContainer}>
-            <div className={styles.titlesContainer}>
-              <h2 className={styles.cardName}>Vinci construction</h2>
-              <h3 className={styles.role}>{t('card4-role')}</h3>
-            </div>
-
-            <ul className={styles.cardDescriptionsList}>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-1')}</p>
-              </li>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-2')}</p>
-              </li>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-3')}</p>
-              </li>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-4')}</p>
-              </li>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-5')}</p>
-              </li>
-              <li className={styles.description}>
-                <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card4-description-6')}</p>
-              </li>
-            </ul>
-          </div>
-
-          <time className={styles.cardDate} dateTime="2017">
-            2017
+          <time className={styles.cardDate} dateTime="2023">
+            2023
           </time>
         </article>
 
@@ -202,32 +127,107 @@ export default function ParcoursPage({ params: { locale } }: Props) {
           </time>
         </article>
 
-        {/*---------- Consultant indépendant ----------*/}
+        {/*---------- Vinci Construction ----------*/}
         <article className={styles.card}>
           <div className={styles.cardInfosContainer}>
             <div className={styles.titlesContainer}>
-              <h2 className={styles.cardName}>{t('card6-title')}</h2>
-              <h3 className={styles.role}>{t('card6-role')}</h3>
+              <h2 className={styles.cardName}>Vinci construction</h2>
+              <h3 className={styles.role}>{t('card4-role')}</h3>
             </div>
 
             <ul className={styles.cardDescriptionsList}>
               <li className={styles.description}>
                 <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card6-description-1')}</p>
+                <p>{t('card4-description-1')}</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card6-description-2')}</p>
+                <p>{t('card4-description-2')}</p>
               </li>
               <li className={styles.description}>
                 <span className={styles.bubble} aria-hidden="true"></span>
-                <p>{t('card6-description-3')}</p>
+                <p>{t('card4-description-3')}</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card4-description-4')}</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card4-description-5')}</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card4-description-6')}</p>
               </li>
             </ul>
           </div>
 
-          <time className={styles.cardDate} dateTime="2023">
-            2023
+          <time className={styles.cardDate} dateTime="2017">
+            2017
+          </time>
+        </article>
+
+        {/*---------- Bloomberg ----------*/}
+        <article className={styles.card}>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Bloomberg</h2>
+              <h3 className={styles.role}>{t('card3-role')}</h3>
+            </div>
+
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card3-description-1')}</p>
+              </li>
+            </ul>
+          </div>
+
+          <time className={styles.cardDate} dateTime="2015">
+            2015
+          </time>
+        </article>
+
+        {/*---------- Master ----------*/}
+        <article className={styles.card}>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>
+                <strong className={styles.strong}>
+                  {t('card2-title-word-1')}{' '}
+                </strong>
+                <span className={styles.line}>{t('card2-title-word-2')} </span>
+                {t('card2-title-word-3')}
+              </h2>
+            </div>
+          </div>
+
+          <div className={styles.cardDate}>2014</div>
+        </article>
+
+        {/*---------- Clim diffusion ----------*/}
+        <article className={styles.card}>
+          <div className={styles.cardInfosContainer}>
+            <div className={styles.titlesContainer}>
+              <h2 className={styles.cardName}>Clim diffusion</h2>
+              <h3 className={styles.role}> {t('card1-role')}</h3>
+            </div>
+
+            <ul className={styles.cardDescriptionsList}>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card1-description-1')}</p>
+              </li>
+              <li className={styles.description}>
+                <span className={styles.bubble} aria-hidden="true"></span>
+                <p>{t('card1-description-2')}</p>
+              </li>
+            </ul>
+          </div>
+
+          <time className={styles.cardDate} dateTime="2011">
+            2011
           </time>
         </article>
 

@@ -15,3 +15,9 @@ body {
   background-attachment: fixed; /* Le dégradé reste fixe */
   background-size: cover; /* Le dégradé couvre l'écran */
 }
+
+h1 {
+  font-size: 40px;
+  line-height: 1;
+  margin-block: 0em; /* remplace la marge UA implicite */
+}
