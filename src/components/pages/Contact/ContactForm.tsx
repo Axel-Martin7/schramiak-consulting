@@ -84,38 +84,53 @@ export default function ContactForm() {
           className={styles.honeypot}
           type="text"
           name="hp_field"
-          tabIndex={-1}
+          hidden
           autoComplete="off"
         />
 
         {/* Nom */}
-        <input
-          className={styles.input}
-          id="name"
-          name="name"
-          type="text"
-          placeholder={t('form-name-placeholder')}
-          required
-        />
+        <div className={styles.field}>
+          <label htmlFor="name" className={styles.visuallyHidden}>
+            {t('form-name-label')}
+          </label>
+          <input
+            className={styles.input}
+            id="name"
+            name="name"
+            type="text"
+            placeholder={t('form-name-label')}
+            required
+          />
+        </div>
 
         {/* E-mail */}
-        <input
-          className={styles.input}
-          id="email"
-          name="email"
-          type="email"
-          placeholder={t('form-email-placeholder')}
-          required
-        />
+        <div className={styles.field}>
+          <label htmlFor="email" className={styles.visuallyHidden}>
+            {t('form-email-label')}
+          </label>
+          <input
+            className={styles.input}
+            id="email"
+            name="email"
+            type="email"
+            placeholder={t('form-email-label')}
+            required
+          />
+        </div>
 
         {/* Message */}
-        <textarea
-          className={styles.textarea}
-          id="message"
-          name="message"
-          placeholder={t('form-message-placeholder')}
-          required
-        />
+        <div className={styles.field}>
+          <label htmlFor="message" className={styles.visuallyHidden}>
+            {t('form-message-label')}
+          </label>
+          <textarea
+            className={styles.textarea}
+            id="message"
+            name="message"
+            placeholder={t('form-message-placeholder')}
+            required
+          />
+        </div>
       </div>
 
       <div className={styles.submitWrapper}>

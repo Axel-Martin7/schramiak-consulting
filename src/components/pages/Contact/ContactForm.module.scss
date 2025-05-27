@@ -1,6 +1,165 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+// .contactForm {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 16px;
+//   /*--------------- Tablet L -> Laptop -> Desktop ---------------*/
+//   @media screen and (min-width: 834px) {
+//     position: absolute;
+//     top: -232px; // Resultat du calcul de la height
+//     width: 100%;
+//     height: calc(100% + 24px + 208px);
+//     /* = 232px ->
+//     24px = taille du gap
+//     208px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
+//     */
+//     padding: 24px;
+//     gap: 24px;
+//     @include card-style;
+//     /*--------------- to Laptop ---------------*/
+//     @media screen and (min-width: 1024px) {
+//       top: -194px; // Resultat du calcul de la height
+//       height: calc(100% + 24px + 170px);
+//       /* = 194px ->
+//     24px = taille du gap
+//     170px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
+//     */
+//       /*--------------- to Desktop ---------------*/
+//       @media screen and (min-width: 1280px) {
+//         top: -222px; // Resultat du calcul de la height
+//         height: calc(100% + 32px + 190px);
+//         /* = 222px ->
+//     32px = taille du gap
+//     190px = Taille du ribbon (380px divisée par 2 pour obtenir sa moitiée)
+//     */
+//         padding: 32px;
+//         gap: 32px;
+//       }
+//     }
+//   }
+
+//   .formTitleContainer {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     gap: 16px;
+
+//     .formTitle {
+//       font-size: 20px;
+//       font-weight: 700;
+//       text-transform: uppercase;
+//       @include sub-titles-style;
+//     }
+
+//     .separator {
+//       width: 100%;
+//       height: 2px;
+//       border-radius: 16px;
+//       box-shadow: inset 0px 1px 1px rgba(28, 32, 36, 0.1),
+//         inset 0 -1px 1px white;
+//     }
+//   }
+
+//   .fieldsGroup {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 8px;
+//     border: 1px solid black;
+//     /*--------------- Tablet L -> Desktop ---------------*/
+//     @media screen and (min-width: 834px) {
+//       flex: 1;
+//       gap: 12px;
+//       /*--------------- to Desktop ---------------*/
+//       @media screen and (min-width: 1280px) {
+//         gap: 16px;
+//       }
+//     }
+
+//     .field {
+//       display: flex;
+//       flex-direction: column;
+//       width: 100%; /* prend toute la largeur comme ton input */
+//       gap: 4px; /* un petit espacement label ↔ champ, optionnel */
+//       border: 1px solid red;
+
+//       .visuallyHidden {
+//         position: absolute !important;
+//         width: 1px;
+//         height: 1px;
+//         padding: 0;
+//         margin: -1px;
+//         overflow: hidden;
+//         clip: rect(0, 0, 0, 0);
+//         white-space: nowrap;
+//         border: 0;
+//       }
+//     }
+
+//     .honeypot {
+//       position: absolute;
+//       left: -9999px;
+//       opacity: 0;
+//       height: 0;
+//       width: 0;
+//     }
+
+//     .input,
+//     .textarea {
+//       padding: 16px;
+//       border-radius: 16px;
+//       background-color: $color-slate-grey-2;
+//       box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.1),
+//         -2px 2px 4px rgba(255, 255, 255, 0.4),
+//         inset 0px 0px 2px rgba(28, 32, 36, 0.4),
+//         inset -2px 2px 4px rgba(28, 32, 36, 0.4);
+//       border: none;
+
+//       &:focus {
+//         border: 1px solid $color-primary;
+//         outline: none;
+//       }
+//     }
+
+//     .textarea {
+//       resize: none; /* Désactiver le redimensionnement */
+//       overflow-y: auto; /* Activer le défilement vertical */
+//       min-height: 300px;
+//       /*--------------- Tablet L ---------------*/
+//       @media screen and (min-width: 834px) {
+//         flex: 1;
+//         min-height: auto;
+//       }
+//     }
+//   }
+
+//   .submitWrapper {
+//     width: 224px;
+//     margin-top: 8px;
+//   }
+
+//   .feedback {
+//     margin-bottom: 16px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     font-size: 14px;
+//     line-height: 1.43;
+//     font-weight: 600;
+
+//     .error {
+//       color: red;
+//     }
+
+//     .success {
+//       color: $color-primary-dark;
+//     }
+//   }
+// }
+
 .contactForm {
   display: flex;
   flex-direction: column;
@@ -13,9 +172,9 @@
     width: 100%;
     height: calc(100% + 24px + 208px);
     /* = 232px ->
-    24px = taille du gap
-    208px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
-    */
+     24px = taille du gap
+     208px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
+     */
     padding: 24px;
     gap: 24px;
     @include card-style;
@@ -24,17 +183,17 @@
       top: -194px; // Resultat du calcul de la height
       height: calc(100% + 24px + 170px);
       /* = 194px ->
-    24px = taille du gap
-    170px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
-    */
+     24px = taille du gap
+     170px = Taille du ribbon (416px divisée par 2 pour obtenir sa moitiée)
+     */
       /*--------------- to Desktop ---------------*/
       @media screen and (min-width: 1280px) {
         top: -222px; // Resultat du calcul de la height
         height: calc(100% + 32px + 190px);
         /* = 222px ->
-    32px = taille du gap
-    190px = Taille du ribbon (380px divisée par 2 pour obtenir sa moitiée)
-    */
+     32px = taille du gap
+     190px = Taille du ribbon (380px divisée par 2 pour obtenir sa moitiée)
+     */
         padding: 32px;
         gap: 32px;
       }
@@ -86,31 +245,51 @@
       width: 0;
     }
 
-    .input,
-    .textarea {
-      padding: 16px;
-      border-radius: 16px;
-      background-color: $color-slate-grey-2;
-      box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.1),
-        -2px 2px 4px rgba(255, 255, 255, 0.4),
-        inset 0px 0px 2px rgba(28, 32, 36, 0.4),
-        inset -2px 2px 4px rgba(28, 32, 36, 0.4);
-      border: none;
-
-      &:focus {
-        border: 1px solid $color-primary;
-        outline: none;
+    .field {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      &:last-child {
+        flex: 1; // le wrapper de la textarea grandit
       }
-    }
 
-    .textarea {
-      resize: none; /* Désactiver le redimensionnement */
-      overflow-y: auto; /* Activer le défilement vertical */
-      min-height: 300px;
-      /*--------------- Tablet L ---------------*/
-      @media screen and (min-width: 834px) {
-        flex: 1;
-        min-height: auto;
+      .visuallyHidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .input,
+      .textarea {
+        padding: 16px;
+        border-radius: 16px;
+        background-color: $color-slate-grey-2;
+        box-shadow: 2px -2px 4px rgba(28, 32, 36, 0.1),
+          -2px 2px 4px rgba(255, 255, 255, 0.4),
+          inset 0px 0px 2px rgba(28, 32, 36, 0.4),
+          inset -2px 2px 4px rgba(28, 32, 36, 0.4);
+        border: none;
+        &:focus {
+          border: 1px solid $color-primary;
+          outline: none;
+        }
+      }
+
+      .textarea {
+        resize: none; /* Désactiver le redimensionnement */
+        overflow-y: auto; /* Activer le défilement vertical */
+        min-height: 300px;
+        /*--------------- Tablet L ---------------*/
+        @media screen and (min-width: 834px) {
+          flex: 1;
+          min-height: auto;
+        }
       }
     }
   }

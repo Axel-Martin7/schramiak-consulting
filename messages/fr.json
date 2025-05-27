@@ -181,8 +181,9 @@
 
         "localisation-adress": "1208 Genève",
 
-        "form-name-placeholder": "Votre nom",
-        "form-email-placeholder": "Votre adresse e-mail",
+        "form-name-label": "Votre nom",
+        "form-email-label": "Votre adresse e-mail",
+        "form-message-label": "Votre message",
         "form-message-placeholder": "Votre message...",
 
         "form-submit-btn-aria": "Envoyer le message",

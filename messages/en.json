@@ -181,8 +181,9 @@
 
         "localisation-adress": "1208 Geneva",
 
-        "form-name-placeholder": "Your name",
-        "form-email-placeholder": "Your email adress",
+        "form-name-label": "Your name",
+        "form-email-label": "Your email adress",
+        "form-message-label": "Your message",
         "form-message-placeholder": "Your message...",
 
         "form-submit-btn-aria": "Send Message",
