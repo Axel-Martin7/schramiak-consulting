@@ -60,8 +60,6 @@ export async function generateMetadata({
 
     // Robots : indexer et suivre
     robots: { index: true, follow: true },
-    // Favicon
-    icons: [{ rel: 'icon', url: '/favicon.ico' }],
     // hreflang : versions FR et EN de **toutes** les pages
     alternates: {
       languages: {
