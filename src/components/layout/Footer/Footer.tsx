@@ -51,25 +51,25 @@ export default function Footer() {
           <div className={styles.socialItemsContainer}>
             <SocialIcon
               type="location"
-              href="https://example.com/location"
+              href="https://www.google.com/maps/place/1208+Genève"
               variant="footer" // nouvelle variante pour le Footer
               ariaLabel={tSocial('locationAria')}
             />
             <SocialIcon
               type="email"
-              href="mailto:contact@example.com"
+              href="mailto:steven.schramiak@icloud.com"
               variant="footer"
               ariaLabel={tSocial('emailAria')}
             />
             <SocialIcon
               type="whatsapp"
-              href="https://wa.me/123456789"
+              href="https://wa.me/41782047078"
               variant="footer"
               ariaLabel={tSocial('whatsappAria')}
             />
             <SocialIcon
               type="linkedin"
-              href="https://linkedin.com/company/your-company"
+              href="https://www.linkedin.com/in/steven-schramiak-2005/"
               variant="footer"
               ariaLabel={tSocial('linkedinAria')}
             />

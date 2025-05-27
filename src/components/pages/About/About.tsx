@@ -57,26 +57,26 @@ export default function About() {
             <div className={styles.socialContainer}>
               <SocialIcon
                 type="linkedin"
-                href="https://linkedin.com/company/your-company"
+                href="https://www.linkedin.com/in/steven-schramiak-2005/"
                 variant="default"
                 ariaLabel={tSocial('linkedinAria')}
               />
 
               <SocialIcon
                 type="location"
-                href="https://example.com/location"
+                href="https://www.google.com/maps/place/1208+Genève"
                 variant="default"
                 ariaLabel={tSocial('locationAria')}
               />
               <SocialIcon
                 type="email"
-                href="mailto:contact@example.com"
+                href="mailto:steven.schramiak@icloud.com"
                 variant="default"
                 ariaLabel={tSocial('emailAria')}
               />
               <SocialIcon
                 type="whatsapp"
-                href="https://wa.me/123456789"
+                href="https://wa.me/41782047078"
                 variant="default"
                 ariaLabel={tSocial('whatsappAria')}
               />

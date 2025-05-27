@@ -74,14 +74,14 @@ export default function Contact() {
           <li className={styles.item}>
             <SocialIcon
               type="email"
-              href="mailto:contact@example.com"
+              href="mailto:steven.schramiak@icloud.com"
               variant="contact"
-              ariaLabel={tSocial('locationAria')}
+              ariaLabel={tSocial('emailAria')}
             />
             <a
               className={styles.contactInfoLink}
               href="mailto:steven.schramiak@icloud.com"
-              aria-label={tSocial('locationAria')}
+              aria-label={tSocial('emailAria')}
             >
               <span className={styles.contactLabel}>E-mail</span>
               <span className={styles.separator} aria-hidden="true"></span>
@@ -96,12 +96,12 @@ export default function Contact() {
               type="linkedin"
               href="https://www.linkedin.com/in/steven-schramiak-2005/"
               variant="contact"
-              ariaLabel={tSocial('locationAria')}
+              ariaLabel={tSocial('linkedinAria')}
             />
             <a
               className={styles.contactInfoLink}
               href="https://www.linkedin.com/in/steven-schramiak-2005/"
-              aria-label={tSocial('locationAria')}
+              aria-label={tSocial('linkedinAria')}
             >
               <span className={styles.contactLabel}>Linkedin</span>
               <span className={styles.separator} aria-hidden="true"></span>
@@ -116,12 +116,12 @@ export default function Contact() {
               type="whatsapp"
               href="https://wa.me/41782047078"
               variant="contact"
-              ariaLabel={tSocial('locationAria')}
+              ariaLabel={tSocial('whatsappAria')}
             />
             <a
               className={styles.contactInfoLink}
               href="https://wa.me/41782047078"
-              aria-label={tSocial('locationAria')}
+              aria-label={tSocial('whatsappAria')}
             >
               <span className={styles.contactLabel}>Whatsapp</span>
               <span className={styles.separator} aria-hidden="true"></span>
