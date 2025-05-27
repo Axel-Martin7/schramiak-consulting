@@ -46,6 +46,8 @@ export default function LocaleSwitcherSelect({ defaultValue }: Props) {
       <label className={styles.switcher}>
         <input
           type="checkbox"
+          id="locale-switch"
+          name="locale"
           onChange={onToggleChange}
           checked={isChecked}
           className={styles.input}

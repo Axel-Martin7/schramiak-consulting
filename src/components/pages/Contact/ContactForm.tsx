@@ -83,8 +83,8 @@ export default function ContactForm() {
         <input
           className={styles.honeypot}
           type="text"
+          id="hp_field"
           name="hp_field"
-          hidden
           autoComplete="off"
         />
 
@@ -100,6 +100,7 @@ export default function ContactForm() {
             type="text"
             placeholder={t('form-name-label')}
             required
+            autoComplete="name"
           />
         </div>
 
@@ -115,6 +116,7 @@ export default function ContactForm() {
             type="email"
             placeholder={t('form-email-label')}
             required
+            autoComplete="email"
           />
         </div>
 
@@ -129,6 +131,7 @@ export default function ContactForm() {
             name="message"
             placeholder={t('form-message-placeholder')}
             required
+            autoComplete="off"
           />
         </div>
       </div>
@@ -136,6 +139,8 @@ export default function ContactForm() {
       <div className={styles.submitWrapper}>
         <SubmitButton
           type="submit"
+          name="submit"
+          id="contact-submit"
           variant="primary"
           disabled={sending}
           aria-label={t('form-submit-btn-aria')}
