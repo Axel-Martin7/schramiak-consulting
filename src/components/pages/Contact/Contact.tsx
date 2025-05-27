@@ -16,15 +16,15 @@ export default function Contact() {
       aria-labelledby="contact-section-title"
     >
       <div className={styles.sectionTitle}>
-        <h2 className={`${styles.title} ${barlow.className}`}>
+        <h3 className={`${styles.title} ${barlow.className}`}>
           {t('sectionTitle')}
-        </h2>
+        </h3>
         <div className={styles.titleSeparator} aria-hidden="true"></div>
       </div>
 
       <div className={styles.ribbon}>
         <div className={styles.ctaContainer}>
-          <h2 className={`${styles.ctaTitle} ${barlow.className}`}>
+          <h3 className={`${styles.ctaTitle} ${barlow.className}`}>
             <strong className={styles.firstWord}>
               {t('title-first-word')}
             </strong>
@@ -39,7 +39,7 @@ export default function Contact() {
               </strong>{' '}
               {t('title-small-word-3')}
             </span>
-          </h2>
+          </h3>
 
           <div className={styles.descriptions}>
             <p className={styles.description}>{t('description')}</p>
